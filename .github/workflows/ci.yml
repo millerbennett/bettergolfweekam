@@ -1,0 +1,40 @@
+name: CI
+
+# Parser tests run against saved copies of the real upstream pages. If
+# amateurgolftour.net changes its markup, the parsers would otherwise fail
+# silently - every table returning zero rows and the mirror rendering an empty
+# but perfectly valid site. These fail loudly instead.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["data/**", "README.md"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Parser tests
+        run: python -m pytest tests/ -q
+
+      - name: Render smoke test
+        run: |
+          python -m build.render --site-url https://example.invalid
+          test -s public/index.html
+          test -s public/digest.txt
+          test -s public/status.json
+          python -c "import json,sys; json.load(open('public/status.json'))"
+          python -c "import xml.dom.minidom,sys; xml.dom.minidom.parse('public/feed.xml')"

@@ -1,0 +1,147 @@
+name: Update mirror
+
+# Cadence is deliberately conservative. `--mode auto` reads data/state.json and
+# the schedule, then fetches only what is actually stale, so a typical run makes
+# zero or one upstream request and finishes in well under a minute. The site's
+# robots.txt asks for a 10s crawl delay, which the scraper honours.
+#
+# Free-tier notes:
+#  * Actions minutes are unlimited on public repos.
+#  * Cloudflare Pages allows 500 deploys/month, so the deploy step is gated on
+#    the data actually changing (see `changed` below) rather than running every
+#    time the cron fires.
+
+on:
+  schedule:
+    # Every 20 minutes, 10:00-23:59 UTC (roughly 6am-8pm Eastern). This is the
+    # window where tee times drop and rounds are played.
+    - cron: "*/20 10-23 * * *"
+    # One deeper pass overnight to pick up schedule/standings/announcement edits.
+    - cron: "25 8 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Crawl mode"
+        default: auto
+        type: choice
+        options: [auto, daily, live, full]
+      force:
+        description: "Ignore freshness stamps"
+        default: false
+        type: boolean
+
+concurrency:
+  group: update-mirror
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # Freshness stamps are what stop every run from re-fetching everything.
+      # They are deliberately not committed (that would be ~40 commits a day
+      # from the cron alone), so they ride in the Actions cache instead. A cache
+      # miss just means one slightly larger crawl, not a broken run.
+      - name: Restore crawl state
+        uses: actions/cache/restore@v4
+        with:
+          path: data/state.json
+          key: crawl-state-${{ github.run_id }}
+          restore-keys: crawl-state-
+
+      - name: Pick crawl mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+            echo "force=${{ inputs.force && '--force' || '' }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "25 8 * * *" ]; then
+            echo "mode=daily" >> "$GITHUB_OUTPUT"
+            echo "force=" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=auto" >> "$GITHUB_OUTPUT"
+            echo "force=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Crawl
+        run: python -m scraper.crawl --mode ${{ steps.mode.outputs.mode }} ${{ steps.mode.outputs.force }}
+
+      - name: Save crawl state
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/state.json
+          key: crawl-state-${{ github.run_id }}
+
+      - name: Detect changes
+        id: diff
+        run: |
+          # state.json and meta.json are gitignored, so anything git sees here
+          # is genuinely changed mirrored content and worth a rebuild.
+          if git diff --quiet -- data/ && [ -z "$(git ls-files --others --exclude-standard data/)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "data: refresh ($(date -u +%Y-%m-%dT%H:%MZ))"
+          # A manual dispatch can overlap the cron; rebase rather than fail.
+          for attempt in 1 2 3; do
+            git push && exit 0
+            git pull --rebase --autostash origin main
+          done
+          exit 1
+
+      - name: Render site
+        # A manual run always redeploys: it is the escape hatch if a previous
+        # deploy failed after its data was already committed, which would
+        # otherwise leave every later run seeing "no change" and never retrying.
+        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: python -m build.render --site-url "${{ vars.SITE_URL || 'https://bettergolfweekam.pages.dev' }}"
+
+      - name: Deploy to Cloudflare Pages
+        # A manual run always redeploys: it is the escape hatch if a previous
+        # deploy failed after its data was already committed, which would
+        # otherwise leave every later run seeing "no change" and never retrying.
+        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=${{ vars.CF_PAGES_PROJECT || 'bettergolfweekam' }} --branch=main
+
+      - name: Summary
+        run: |
+          {
+            echo "### Mirror update"
+            echo ""
+            echo "- mode: \`${{ steps.mode.outputs.mode }}\`"
+            echo "- content changed: \`${{ steps.diff.outputs.changed }}\`"
+            echo ""
+            echo '```'
+            cat data/meta.json
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

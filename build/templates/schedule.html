@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Schedule — {{ cfg.site_title }}{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>{{ cfg.season }} schedule</h1>
+  <p class="sub">{{ events | length }} playing days. Majors highlighted. Every row links to
+     tee times, results and live scoring for that event.</p>
+  <div class="scroll">
+  <table class="schedule">
+    <thead><tr>
+      <th>Date</th><th>Event</th><th>Course</th><th>Start</th><th>Cost</th><th>Status</th>
+    </tr></thead>
+    <tbody>
+    {% for e in events %}
+      <tr class="{{ 'major' if e.is_major }} {{ 'past' if e.is_past }} {{ 'today' if e.is_today }}">
+        <td class="nowrap">{{ e.date | short_date }}</td>
+        <td><a href="{{ url("t/" ~ e.tid) }}">{{ e.name }}</a>
+            {% if e.is_major %}<span class="major">MAJOR</span>{% endif %}</td>
+        <td>{% if e.course_url %}<a href="{{ e.course_url }}" rel="nofollow noopener">{{ e.course }}</a>
+            {% else %}{{ e.course }}{% endif %}</td>
+        <td class="nowrap">{{ e.start_time }}<br><span class="sub">{{ e.start_type }}</span></td>
+        <td class="nowrap">{{ e.cost }}</td>
+        <td class="nowrap">{{ e.status }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endblock %}

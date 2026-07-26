@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}My season — {{ cfg.site_title }}{% endblock %}
+{% block content %}
+
+<section class="card">
+  <h1>{{ cfg.player.name }}</h1>
+  <p class="sub">Player {{ cfg.player.id }}{% if me_standing %} · {{ me_standing.flight }}{% endif %}</p>
+  {% if me_standing %}
+    <p class="big">#{{ me_standing.Position }}</p>
+    <ul class="stats">
+      <li><span>{{ me_standing.Points }}</span>points</li>
+      <li><span>{{ me_standing.Tournaments }}</span>events</li>
+      <li><span>{{ me_standing.Handicap }}</span>index</li>
+      <li><span>{{ me_standing.Birdies }}</span>birdies</li>
+      <li><span>{{ me_standing.Eagles }}</span>eagles</li>
+      <li><span>${{ me_standing.Earnings }}</span>earnings</li>
+    </ul>
+    {% if me_gap %}<p class="notice">{{ me_gap }}</p>{% endif %}
+  {% else %}
+    <p class="notice">No standings row found for player {{ cfg.player.id }} in {{ cfg.season }}.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>Next tee time</h2>
+  {% if my_tee_time %}
+    <p class="event-title">{{ next_event.name }}</p>
+    <p class="sub">{{ next_event.course }} · {{ next_event.date | pretty_date }}</p>
+    <p class="highlight">Off <strong>{{ my_tee_time.tee_time }}</strong> from hole
+       {{ my_tee_time.starting_hole }} ({{ my_tee_time.group }})</p>
+    <p class="sub">Playing with:
+      {% for p in my_group if p.player_id != cfg.player.id %}{{ p.name }} ({{ p.flight }}){% if not loop.last %}, {% endif %}{% else %}—{% endfor %}
+    </p>
+  {% elif next_event %}
+    <p class="event-title">{{ next_event.name }}</p>
+    <p class="sub">{{ next_event.course }} · {{ next_event.date | pretty_date }}
+       ({{ next_event.date | days_away }})</p>
+    <p class="notice">Tee times not posted yet.</p>
+  {% else %}
+    <p class="notice">No upcoming events.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>My {{ cfg.season }} card</h2>
+  {% if my_results %}
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Date</th><th>Event</th><th>Flight</th><th>Pos</th><th>Score</th><th>Points</th><th>$</th></tr></thead>
+    <tbody>
+    {% for r in my_results %}
+      <tr>
+        <td class="nowrap">{{ r.event.date | short_date }}</td>
+        <td><a href="{{ url("t/" ~ r.event.tid) }}">{{ r.event.name }}</a></td>
+        <td>{{ r.flight_short }}</td>
+        <td>{{ r.Position }}</td>
+        <td>{{ r.Score }}</td>
+        <td>{{ r.Points }}</td>
+        <td>{{ r.Earnings }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% else %}
+  <p class="notice">No posted results for you yet this season.</p>
+  {% endif %}
+</section>
+
+{% endblock %}

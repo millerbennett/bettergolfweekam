@@ -1,0 +1,46 @@
+name: Deploy site
+
+# The update workflow only deploys when mirrored *data* moves. This one covers
+# the other case: templates, CSS, renderer or config changed, so the site needs
+# rebuilding from data already in the repo. No crawling happens here.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "build/**"
+      - "config.json"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-site
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Render site
+        run: python -m build.render --site-url "${{ vars.SITE_URL || 'https://bettergolfweekam.pages.dev' }}"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=${{ vars.CF_PAGES_PROJECT || 'bettergolfweekam' }} --branch=main

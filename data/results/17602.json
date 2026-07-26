@@ -1,0 +1,27 @@
+{
+  "tid": "17602",
+  "posted": false,
+  "columns": [
+    "Position",
+    "ID",
+    "Name",
+    "Home Tour",
+    "Score",
+    "Points",
+    "Earnings",
+    "Birdies",
+    "Eagles",
+    "Event Index"
+  ],
+  "flights": [],
+  "event": {
+    "tid": "17602",
+    "date": "2026-07-25",
+    "name": "DC Metro Battlefield Open",
+    "course": "Stonewall Golf Club",
+    "start_time": "1:00",
+    "start_type": "Straight Tee",
+    "is_major": false
+  },
+  "fetched_at": "2026-07-26T19:20:14+00:00"
+}

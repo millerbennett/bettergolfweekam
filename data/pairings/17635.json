@@ -1,0 +1,2274 @@
+{
+  "tid": "17635",
+  "available": true,
+  "published": true,
+  "players": [
+    {
+      "player_id": "32091",
+      "name": "Middleton, Tim",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "1",
+      "group": "Group 1A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "41197",
+      "name": "Abernathy, Stephen",
+      "tour": "Richmond",
+      "flight": "B",
+      "starting_hole": "1",
+      "group": "Group 1A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "2178",
+      "name": "Joyner, Lyle",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "1",
+      "group": "Group 1A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "57627",
+      "name": "Brown, Garrett",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "1",
+      "group": "Group 1A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "27555",
+      "name": "Greenfield, Chris",
+      "tour": "Tidewater, VA",
+      "flight": "Champ",
+      "starting_hole": "1",
+      "group": "Group 1B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "50136",
+      "name": "Haines, Andrew",
+      "tour": "Tidewater, VA",
+      "flight": "Champ",
+      "starting_hole": "1",
+      "group": "Group 1B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "63458",
+      "name": "Fleming, Derionne",
+      "tour": "Washington, DC Metro",
+      "flight": "Champ",
+      "starting_hole": "1",
+      "group": "Group 1B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "37387",
+      "name": "Sanford, Zane",
+      "tour": "Tidewater, VA",
+      "flight": "Champ",
+      "starting_hole": "1",
+      "group": "Group 1B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "50374",
+      "name": "Dario, Ian",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "2",
+      "group": "Group 2A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "30678",
+      "name": "Carreon, Fredy",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "2",
+      "group": "Group 2A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "63181",
+      "name": "Cottrell, Griffin",
+      "tour": "Richmond",
+      "flight": "A",
+      "starting_hole": "2",
+      "group": "Group 2A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "41792",
+      "name": "Endorf, Kristen",
+      "tour": "Richmond",
+      "flight": "A-W",
+      "starting_hole": "2",
+      "group": "Group 2A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62556",
+      "name": "Capozza, Zack",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "2",
+      "group": "Groupm 2B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "53431",
+      "name": "Engler, DJ",
+      "tour": "Richmond",
+      "flight": "A",
+      "starting_hole": "2",
+      "group": "Groupm 2B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "46186",
+      "name": "Dobrick, Thomas",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "2",
+      "group": "Groupm 2B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "24966",
+      "name": "Flemer, Jordan",
+      "tour": "Richmond",
+      "flight": "A",
+      "starting_hole": "2",
+      "group": "Groupm 2B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "11241",
+      "name": "Marshall, Donny",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "3",
+      "group": "Group 3",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "10721",
+      "name": "Layne, Brian",
+      "tour": "Richmond",
+      "flight": "A",
+      "starting_hole": "3",
+      "group": "Group 3",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "41893",
+      "name": "Godinez, Marcus",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "3",
+      "group": "Group 3",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "15873",
+      "name": "Gibert, Keith",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "3",
+      "group": "Group 3",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "57933",
+      "name": "Richardson, Trey",
+      "tour": "Richmond",
+      "flight": "B",
+      "starting_hole": "4",
+      "group": "Group 4A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "30949",
+      "name": "Martin, Kevin",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "4",
+      "group": "Group 4A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "11403",
+      "name": "Murphee, Michael",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "4",
+      "group": "Group 4A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "52001",
+      "name": "Montefusco, David",
+      "tour": "Richmond",
+      "flight": "A",
+      "starting_hole": "4",
+      "group": "Group 4A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "10689",
+      "name": "Sullins, Ron",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "4",
+      "group": "Group 4B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "38956",
+      "name": "Staples, Ryan",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "4",
+      "group": "Group 4B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62029",
+      "name": "Somerset, JD",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "4",
+      "group": "Group 4B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "12061",
+      "name": "Wright, Allen",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "4",
+      "group": "Group 4B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "61565",
+      "name": "Anderson, Bradley",
+      "tour": "Richmond",
+      "flight": "B",
+      "starting_hole": "5",
+      "group": "Group 5",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "10751",
+      "name": "Beckett, Kenneth",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "5",
+      "group": "Group 5",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "33880",
+      "name": "Cheeks, LC",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "5",
+      "group": "Group 5",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "28377",
+      "name": "Bland, Kennedy",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "5",
+      "group": "Group 5",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "56458",
+      "name": "Distler, Eric",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "6",
+      "group": "Group 6A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "28567",
+      "name": "Gafford, Hayden",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "6",
+      "group": "Group 6A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "61979",
+      "name": "Doster, Malcolm",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "6",
+      "group": "Group 6A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62369",
+      "name": "Dario, Jax",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "6",
+      "group": "Group 6A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "53131",
+      "name": "Garrett, Jamall",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "6",
+      "group": "Group 6B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "51338",
+      "name": "Furlow, Craig",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "6",
+      "group": "Group 6B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62805",
+      "name": "Browning, Paul",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "6",
+      "group": "Group 6B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62541",
+      "name": "Johnson, Reggie",
+      "tour": "Richmond",
+      "flight": "B",
+      "starting_hole": "6",
+      "group": "Group 6B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "45919",
+      "name": "Gomez, Jose",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "7",
+      "group": "Group 7",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "55665",
+      "name": "Hawkins, Kevin",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "7",
+      "group": "Group 7",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "52368",
+      "name": "Harris, Michael",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "7",
+      "group": "Group 7",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "19726",
+      "name": "Lederer, John",
+      "tour": "Richmond",
+      "flight": "A",
+      "starting_hole": "7",
+      "group": "Group 7",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "39484",
+      "name": "Lambertsen, Chris",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "8",
+      "group": "Group 8A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "56623",
+      "name": "Rouse, Jamie",
+      "tour": "Richmond",
+      "flight": "B",
+      "starting_hole": "8",
+      "group": "Group 8A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "45234",
+      "name": "Lawson, Travis",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "8",
+      "group": "Group 8A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "49827",
+      "name": "Shapiro, Max",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "8",
+      "group": "Group 8A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "36058",
+      "name": "Okoba, Stephen",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "8",
+      "group": "Group 8B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "33977",
+      "name": "Smith, James",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "8",
+      "group": "Group 8B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "14587",
+      "name": "VanSickle, Timothy",
+      "tour": "Richmond",
+      "flight": "B",
+      "starting_hole": "8",
+      "group": "Group 8B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "61949",
+      "name": "Weathers, Thomas",
+      "tour": "Richmond",
+      "flight": "A",
+      "starting_hole": "8",
+      "group": "Group 8B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "57759",
+      "name": "Thomas, Larry",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "9",
+      "group": "Group 9A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "57076",
+      "name": "Yarbrough, Shaquille",
+      "tour": "Richmond",
+      "flight": "B",
+      "starting_hole": "9",
+      "group": "Group 9A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "33816",
+      "name": "Woodard, James",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "9",
+      "group": "Group 9A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "41877",
+      "name": "Wolk, Jim",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "9",
+      "group": "Group 9B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "46625",
+      "name": "Call, Zach",
+      "tour": "Tidewater, VA",
+      "flight": "B",
+      "starting_hole": "9",
+      "group": "Group 9B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "51392",
+      "name": "Devine, Ron",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "9",
+      "group": "Group 9B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "53202",
+      "name": "Mathisen, Michael",
+      "tour": "Richmond",
+      "flight": "C",
+      "starting_hole": "9",
+      "group": "Group 9B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "18247",
+      "name": "Franklin, Cephas",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "10",
+      "group": "Group 10A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "13847",
+      "name": "Quinones, Carlos",
+      "tour": "Tidewater, VA",
+      "flight": "A",
+      "starting_hole": "10",
+      "group": "Group 10A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "27861",
+      "name": "Hargett, Bobby",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "10",
+      "group": "Group 10A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "37411",
+      "name": "James, Bruce",
+      "tour": "Richmond",
+      "flight": "C",
+      "starting_hole": "10",
+      "group": "Group 10A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "27933",
+      "name": "Brown, Franklin",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "10",
+      "group": "Group 10B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "43339",
+      "name": "Claytor, Roger",
+      "tour": "Richmond",
+      "flight": "C",
+      "starting_hole": "10",
+      "group": "Group 10B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "56463",
+      "name": "Eckel, Bobby",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "10",
+      "group": "Group 10B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "31967",
+      "name": "Shugart, Dave",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "10",
+      "group": "Group 10B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "3309",
+      "name": "Boyer, Stan",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "11",
+      "group": "Group 11",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "45721",
+      "name": "Fitzsimmons, Tom",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "11",
+      "group": "Group 11",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "39173",
+      "name": "Maitland, Forest",
+      "tour": "Richmond",
+      "flight": "C",
+      "starting_hole": "11",
+      "group": "Group 11",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "16139",
+      "name": "Parrish, John",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "11",
+      "group": "Group 11",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "61923",
+      "name": "Emerson, Danny",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "12",
+      "group": "Group 12",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "54443",
+      "name": "Hanna, Chuck",
+      "tour": "Richmond",
+      "flight": "C",
+      "starting_hole": "12",
+      "group": "Group 12",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "43242",
+      "name": "Hines, Dan",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "12",
+      "group": "Group 12",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "49530",
+      "name": "Lorenz, Aaron",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "12",
+      "group": "Group 12",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "57473",
+      "name": "Lyne, Mike",
+      "tour": "Richmond",
+      "flight": "C",
+      "starting_hole": "13",
+      "group": "Group 13A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "28157",
+      "name": "Enzor, Wayne",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "13",
+      "group": "Group 13A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "48076",
+      "name": "Thompson, Jay",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "13",
+      "group": "Group 13A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "42370",
+      "name": "Lare, Hal",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "13",
+      "group": "Group 13B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "10754",
+      "name": "Schapowal, Nick",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "13",
+      "group": "Group 13B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "39448",
+      "name": "Simmons, Titus",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "13",
+      "group": "Group 13B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "34010",
+      "name": "Tyrrell, Milton",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "13",
+      "group": "Group 13B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "19029",
+      "name": "Legarda, Roman",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "14",
+      "group": "Group 14",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "20564",
+      "name": "Maitland, Larry",
+      "tour": "Richmond",
+      "flight": "C",
+      "starting_hole": "14",
+      "group": "Group 14",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "56591",
+      "name": "Thompson, Zak",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "14",
+      "group": "Group 14",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "56165",
+      "name": "Sitko, Edward",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "14",
+      "group": "Group 14",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "56836",
+      "name": "Williams, Jeffreys",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "15",
+      "group": "Group 15A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "61976",
+      "name": "Jackson, Shaun",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "15",
+      "group": "Group 15A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "55443",
+      "name": "Grenell, Tom",
+      "tour": "Richmond",
+      "flight": "B",
+      "starting_hole": "15",
+      "group": "Group 15A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62933",
+      "name": "Walker, Chris",
+      "tour": "Richmond",
+      "flight": "D",
+      "starting_hole": "15",
+      "group": "Group 15A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "49929",
+      "name": "Graves, Will",
+      "tour": "Richmond",
+      "flight": "D",
+      "starting_hole": "15",
+      "group": "Group 15B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "13562",
+      "name": "Faggert, David",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "15",
+      "group": "Group 15B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "49241",
+      "name": "Hancock, Dawn",
+      "tour": "Washington, DC Metro",
+      "flight": "D-W",
+      "starting_hole": "15",
+      "group": "Group 15B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "59864",
+      "name": "Hayes, LaRon",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "15",
+      "group": "Group 15B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "17744",
+      "name": "Alexander, Sal",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "59364",
+      "name": "Edwards, Will",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62010",
+      "name": "Miller, Doland",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "16",
+      "group": "Group 16A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "10768",
+      "name": "Baxter, Arthur",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "45195",
+      "name": "O'Neill, Jim",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62601",
+      "name": "Haynes, Derek",
+      "tour": "Richmond",
+      "flight": "C",
+      "starting_hole": "16",
+      "group": "Group 16B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62272",
+      "name": "Niesen, Jeremiah",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "53294",
+      "name": "Lott, Jeremy",
+      "tour": "Richmond",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "48823",
+      "name": "Norwood, Richard",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "17",
+      "group": "Group 17",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "63327",
+      "name": "Newell, Hunter",
+      "tour": "Richmond",
+      "flight": "D",
+      "starting_hole": "17",
+      "group": "Group 17",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "53960",
+      "name": "Davis, Eric",
+      "tour": "Richmond",
+      "flight": "D",
+      "starting_hole": "17",
+      "group": "Group 17",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "57622",
+      "name": "Bass, Daniel",
+      "tour": "Richmond",
+      "flight": "D",
+      "starting_hole": "17",
+      "group": "Group 17",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "48960",
+      "name": "Taylor, Matthew",
+      "tour": "Richmond",
+      "flight": "A",
+      "starting_hole": "18",
+      "group": "Group 18A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "41848",
+      "name": "Hartselle, Mike",
+      "tour": "Tidewater, VA",
+      "flight": "Champ",
+      "starting_hole": "18",
+      "group": "Group 18A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "62377",
+      "name": "Wallace, Parker",
+      "tour": "Tidewater, VA",
+      "flight": "Champ",
+      "starting_hole": "18",
+      "group": "Group 18A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "63477",
+      "name": "Washburn, Shane",
+      "tour": "Tidewater, VA",
+      "flight": "Champ",
+      "starting_hole": "18",
+      "group": "Group 18A",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "45722",
+      "name": "Spittle, Will",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "18",
+      "group": "Group 18B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "49406",
+      "name": "Thomas, Carlos",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "18",
+      "group": "Group 18B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "35826",
+      "name": "Williams, Jimmie",
+      "tour": "Richmond",
+      "flight": "D",
+      "starting_hole": "18",
+      "group": "Group 18B",
+      "tee_time": "09:00 AM"
+    },
+    {
+      "player_id": "33443",
+      "name": "York, Jennifer",
+      "tour": "Tidewater, VA",
+      "flight": "D-W",
+      "starting_hole": "18",
+      "group": "Group 18B",
+      "tee_time": "09:00 AM"
+    }
+  ],
+  "groups": [
+    {
+      "group": "Group 1A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "1",
+      "players": [
+        {
+          "player_id": "32091",
+          "name": "Middleton, Tim",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "1",
+          "group": "Group 1A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "41197",
+          "name": "Abernathy, Stephen",
+          "tour": "Richmond",
+          "flight": "B",
+          "starting_hole": "1",
+          "group": "Group 1A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "2178",
+          "name": "Joyner, Lyle",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "1",
+          "group": "Group 1A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "57627",
+          "name": "Brown, Garrett",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "1",
+          "group": "Group 1A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 1B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "1",
+      "players": [
+        {
+          "player_id": "27555",
+          "name": "Greenfield, Chris",
+          "tour": "Tidewater, VA",
+          "flight": "Champ",
+          "starting_hole": "1",
+          "group": "Group 1B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "50136",
+          "name": "Haines, Andrew",
+          "tour": "Tidewater, VA",
+          "flight": "Champ",
+          "starting_hole": "1",
+          "group": "Group 1B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "63458",
+          "name": "Fleming, Derionne",
+          "tour": "Washington, DC Metro",
+          "flight": "Champ",
+          "starting_hole": "1",
+          "group": "Group 1B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "37387",
+          "name": "Sanford, Zane",
+          "tour": "Tidewater, VA",
+          "flight": "Champ",
+          "starting_hole": "1",
+          "group": "Group 1B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 2A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "2",
+      "players": [
+        {
+          "player_id": "50374",
+          "name": "Dario, Ian",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "2",
+          "group": "Group 2A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "30678",
+          "name": "Carreon, Fredy",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "2",
+          "group": "Group 2A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "63181",
+          "name": "Cottrell, Griffin",
+          "tour": "Richmond",
+          "flight": "A",
+          "starting_hole": "2",
+          "group": "Group 2A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "41792",
+          "name": "Endorf, Kristen",
+          "tour": "Richmond",
+          "flight": "A-W",
+          "starting_hole": "2",
+          "group": "Group 2A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Groupm 2B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "2",
+      "players": [
+        {
+          "player_id": "62556",
+          "name": "Capozza, Zack",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "2",
+          "group": "Groupm 2B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "53431",
+          "name": "Engler, DJ",
+          "tour": "Richmond",
+          "flight": "A",
+          "starting_hole": "2",
+          "group": "Groupm 2B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "46186",
+          "name": "Dobrick, Thomas",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "2",
+          "group": "Groupm 2B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "24966",
+          "name": "Flemer, Jordan",
+          "tour": "Richmond",
+          "flight": "A",
+          "starting_hole": "2",
+          "group": "Groupm 2B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 3",
+      "tee_time": "09:00 AM",
+      "starting_hole": "3",
+      "players": [
+        {
+          "player_id": "11241",
+          "name": "Marshall, Donny",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "3",
+          "group": "Group 3",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "10721",
+          "name": "Layne, Brian",
+          "tour": "Richmond",
+          "flight": "A",
+          "starting_hole": "3",
+          "group": "Group 3",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "41893",
+          "name": "Godinez, Marcus",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "3",
+          "group": "Group 3",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "15873",
+          "name": "Gibert, Keith",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "3",
+          "group": "Group 3",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 4A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "4",
+      "players": [
+        {
+          "player_id": "57933",
+          "name": "Richardson, Trey",
+          "tour": "Richmond",
+          "flight": "B",
+          "starting_hole": "4",
+          "group": "Group 4A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "30949",
+          "name": "Martin, Kevin",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "4",
+          "group": "Group 4A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "11403",
+          "name": "Murphee, Michael",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "4",
+          "group": "Group 4A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "52001",
+          "name": "Montefusco, David",
+          "tour": "Richmond",
+          "flight": "A",
+          "starting_hole": "4",
+          "group": "Group 4A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 4B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "4",
+      "players": [
+        {
+          "player_id": "10689",
+          "name": "Sullins, Ron",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "4",
+          "group": "Group 4B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "38956",
+          "name": "Staples, Ryan",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "4",
+          "group": "Group 4B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "62029",
+          "name": "Somerset, JD",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "4",
+          "group": "Group 4B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "12061",
+          "name": "Wright, Allen",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "4",
+          "group": "Group 4B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 5",
+      "tee_time": "09:00 AM",
+      "starting_hole": "5",
+      "players": [
+        {
+          "player_id": "61565",
+          "name": "Anderson, Bradley",
+          "tour": "Richmond",
+          "flight": "B",
+          "starting_hole": "5",
+          "group": "Group 5",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "10751",
+          "name": "Beckett, Kenneth",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "5",
+          "group": "Group 5",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "33880",
+          "name": "Cheeks, LC",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "5",
+          "group": "Group 5",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "28377",
+          "name": "Bland, Kennedy",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "5",
+          "group": "Group 5",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 6A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "6",
+      "players": [
+        {
+          "player_id": "56458",
+          "name": "Distler, Eric",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "6",
+          "group": "Group 6A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "28567",
+          "name": "Gafford, Hayden",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "6",
+          "group": "Group 6A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "61979",
+          "name": "Doster, Malcolm",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "6",
+          "group": "Group 6A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "62369",
+          "name": "Dario, Jax",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "6",
+          "group": "Group 6A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 6B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "6",
+      "players": [
+        {
+          "player_id": "53131",
+          "name": "Garrett, Jamall",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "6",
+          "group": "Group 6B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "51338",
+          "name": "Furlow, Craig",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "6",
+          "group": "Group 6B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "62805",
+          "name": "Browning, Paul",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "6",
+          "group": "Group 6B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "62541",
+          "name": "Johnson, Reggie",
+          "tour": "Richmond",
+          "flight": "B",
+          "starting_hole": "6",
+          "group": "Group 6B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 7",
+      "tee_time": "09:00 AM",
+      "starting_hole": "7",
+      "players": [
+        {
+          "player_id": "45919",
+          "name": "Gomez, Jose",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "7",
+          "group": "Group 7",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "55665",
+          "name": "Hawkins, Kevin",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "7",
+          "group": "Group 7",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "52368",
+          "name": "Harris, Michael",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "7",
+          "group": "Group 7",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "19726",
+          "name": "Lederer, John",
+          "tour": "Richmond",
+          "flight": "A",
+          "starting_hole": "7",
+          "group": "Group 7",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 8A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "8",
+      "players": [
+        {
+          "player_id": "39484",
+          "name": "Lambertsen, Chris",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "8",
+          "group": "Group 8A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "56623",
+          "name": "Rouse, Jamie",
+          "tour": "Richmond",
+          "flight": "B",
+          "starting_hole": "8",
+          "group": "Group 8A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "45234",
+          "name": "Lawson, Travis",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "8",
+          "group": "Group 8A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "49827",
+          "name": "Shapiro, Max",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "8",
+          "group": "Group 8A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 8B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "8",
+      "players": [
+        {
+          "player_id": "36058",
+          "name": "Okoba, Stephen",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "8",
+          "group": "Group 8B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "33977",
+          "name": "Smith, James",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "8",
+          "group": "Group 8B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "14587",
+          "name": "VanSickle, Timothy",
+          "tour": "Richmond",
+          "flight": "B",
+          "starting_hole": "8",
+          "group": "Group 8B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "61949",
+          "name": "Weathers, Thomas",
+          "tour": "Richmond",
+          "flight": "A",
+          "starting_hole": "8",
+          "group": "Group 8B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 9A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "9",
+      "players": [
+        {
+          "player_id": "57759",
+          "name": "Thomas, Larry",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "9",
+          "group": "Group 9A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "57076",
+          "name": "Yarbrough, Shaquille",
+          "tour": "Richmond",
+          "flight": "B",
+          "starting_hole": "9",
+          "group": "Group 9A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "33816",
+          "name": "Woodard, James",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "9",
+          "group": "Group 9A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 9B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "9",
+      "players": [
+        {
+          "player_id": "41877",
+          "name": "Wolk, Jim",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "9",
+          "group": "Group 9B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "46625",
+          "name": "Call, Zach",
+          "tour": "Tidewater, VA",
+          "flight": "B",
+          "starting_hole": "9",
+          "group": "Group 9B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "51392",
+          "name": "Devine, Ron",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "9",
+          "group": "Group 9B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "53202",
+          "name": "Mathisen, Michael",
+          "tour": "Richmond",
+          "flight": "C",
+          "starting_hole": "9",
+          "group": "Group 9B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 10A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "10",
+      "players": [
+        {
+          "player_id": "18247",
+          "name": "Franklin, Cephas",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "10",
+          "group": "Group 10A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "13847",
+          "name": "Quinones, Carlos",
+          "tour": "Tidewater, VA",
+          "flight": "A",
+          "starting_hole": "10",
+          "group": "Group 10A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "27861",
+          "name": "Hargett, Bobby",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "10",
+          "group": "Group 10A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "37411",
+          "name": "James, Bruce",
+          "tour": "Richmond",
+          "flight": "C",
+          "starting_hole": "10",
+          "group": "Group 10A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 10B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "10",
+      "players": [
+        {
+          "player_id": "27933",
+          "name": "Brown, Franklin",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "10",
+          "group": "Group 10B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "43339",
+          "name": "Claytor, Roger",
+          "tour": "Richmond",
+          "flight": "C",
+          "starting_hole": "10",
+          "group": "Group 10B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "56463",
+          "name": "Eckel, Bobby",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "10",
+          "group": "Group 10B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "31967",
+          "name": "Shugart, Dave",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "10",
+          "group": "Group 10B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 11",
+      "tee_time": "09:00 AM",
+      "starting_hole": "11",
+      "players": [
+        {
+          "player_id": "3309",
+          "name": "Boyer, Stan",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "11",
+          "group": "Group 11",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "45721",
+          "name": "Fitzsimmons, Tom",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "11",
+          "group": "Group 11",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "39173",
+          "name": "Maitland, Forest",
+          "tour": "Richmond",
+          "flight": "C",
+          "starting_hole": "11",
+          "group": "Group 11",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "16139",
+          "name": "Parrish, John",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "11",
+          "group": "Group 11",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 12",
+      "tee_time": "09:00 AM",
+      "starting_hole": "12",
+      "players": [
+        {
+          "player_id": "61923",
+          "name": "Emerson, Danny",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "12",
+          "group": "Group 12",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "54443",
+          "name": "Hanna, Chuck",
+          "tour": "Richmond",
+          "flight": "C",
+          "starting_hole": "12",
+          "group": "Group 12",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "43242",
+          "name": "Hines, Dan",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "12",
+          "group": "Group 12",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "49530",
+          "name": "Lorenz, Aaron",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "12",
+          "group": "Group 12",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 13A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "13",
+      "players": [
+        {
+          "player_id": "57473",
+          "name": "Lyne, Mike",
+          "tour": "Richmond",
+          "flight": "C",
+          "starting_hole": "13",
+          "group": "Group 13A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "28157",
+          "name": "Enzor, Wayne",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "13",
+          "group": "Group 13A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "48076",
+          "name": "Thompson, Jay",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "13",
+          "group": "Group 13A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 13B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "13",
+      "players": [
+        {
+          "player_id": "42370",
+          "name": "Lare, Hal",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "13",
+          "group": "Group 13B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "10754",
+          "name": "Schapowal, Nick",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "13",
+          "group": "Group 13B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "39448",
+          "name": "Simmons, Titus",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "13",
+          "group": "Group 13B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "34010",
+          "name": "Tyrrell, Milton",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "13",
+          "group": "Group 13B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 14",
+      "tee_time": "09:00 AM",
+      "starting_hole": "14",
+      "players": [
+        {
+          "player_id": "19029",
+          "name": "Legarda, Roman",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "14",
+          "group": "Group 14",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "20564",
+          "name": "Maitland, Larry",
+          "tour": "Richmond",
+          "flight": "C",
+          "starting_hole": "14",
+          "group": "Group 14",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "56591",
+          "name": "Thompson, Zak",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "14",
+          "group": "Group 14",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "56165",
+          "name": "Sitko, Edward",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "14",
+          "group": "Group 14",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 15A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "15",
+      "players": [
+        {
+          "player_id": "56836",
+          "name": "Williams, Jeffreys",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "15",
+          "group": "Group 15A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "61976",
+          "name": "Jackson, Shaun",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "15",
+          "group": "Group 15A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "55443",
+          "name": "Grenell, Tom",
+          "tour": "Richmond",
+          "flight": "B",
+          "starting_hole": "15",
+          "group": "Group 15A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "62933",
+          "name": "Walker, Chris",
+          "tour": "Richmond",
+          "flight": "D",
+          "starting_hole": "15",
+          "group": "Group 15A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 15B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "15",
+      "players": [
+        {
+          "player_id": "49929",
+          "name": "Graves, Will",
+          "tour": "Richmond",
+          "flight": "D",
+          "starting_hole": "15",
+          "group": "Group 15B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "13562",
+          "name": "Faggert, David",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "15",
+          "group": "Group 15B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "49241",
+          "name": "Hancock, Dawn",
+          "tour": "Washington, DC Metro",
+          "flight": "D-W",
+          "starting_hole": "15",
+          "group": "Group 15B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "59864",
+          "name": "Hayes, LaRon",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "15",
+          "group": "Group 15B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 16A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "16",
+      "players": [
+        {
+          "player_id": "17744",
+          "name": "Alexander, Sal",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "59364",
+          "name": "Edwards, Will",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "62010",
+          "name": "Miller, Doland",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "16",
+          "group": "Group 16A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "10768",
+          "name": "Baxter, Arthur",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 16B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "16",
+      "players": [
+        {
+          "player_id": "45195",
+          "name": "O'Neill, Jim",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "62601",
+          "name": "Haynes, Derek",
+          "tour": "Richmond",
+          "flight": "C",
+          "starting_hole": "16",
+          "group": "Group 16B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "62272",
+          "name": "Niesen, Jeremiah",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "53294",
+          "name": "Lott, Jeremy",
+          "tour": "Richmond",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 17",
+      "tee_time": "09:00 AM",
+      "starting_hole": "17",
+      "players": [
+        {
+          "player_id": "48823",
+          "name": "Norwood, Richard",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "17",
+          "group": "Group 17",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "63327",
+          "name": "Newell, Hunter",
+          "tour": "Richmond",
+          "flight": "D",
+          "starting_hole": "17",
+          "group": "Group 17",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "53960",
+          "name": "Davis, Eric",
+          "tour": "Richmond",
+          "flight": "D",
+          "starting_hole": "17",
+          "group": "Group 17",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "57622",
+          "name": "Bass, Daniel",
+          "tour": "Richmond",
+          "flight": "D",
+          "starting_hole": "17",
+          "group": "Group 17",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 18A",
+      "tee_time": "09:00 AM",
+      "starting_hole": "18",
+      "players": [
+        {
+          "player_id": "48960",
+          "name": "Taylor, Matthew",
+          "tour": "Richmond",
+          "flight": "A",
+          "starting_hole": "18",
+          "group": "Group 18A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "41848",
+          "name": "Hartselle, Mike",
+          "tour": "Tidewater, VA",
+          "flight": "Champ",
+          "starting_hole": "18",
+          "group": "Group 18A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "62377",
+          "name": "Wallace, Parker",
+          "tour": "Tidewater, VA",
+          "flight": "Champ",
+          "starting_hole": "18",
+          "group": "Group 18A",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "63477",
+          "name": "Washburn, Shane",
+          "tour": "Tidewater, VA",
+          "flight": "Champ",
+          "starting_hole": "18",
+          "group": "Group 18A",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 18B",
+      "tee_time": "09:00 AM",
+      "starting_hole": "18",
+      "players": [
+        {
+          "player_id": "45722",
+          "name": "Spittle, Will",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "18",
+          "group": "Group 18B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "49406",
+          "name": "Thomas, Carlos",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "18",
+          "group": "Group 18B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "35826",
+          "name": "Williams, Jimmie",
+          "tour": "Richmond",
+          "flight": "D",
+          "starting_hole": "18",
+          "group": "Group 18B",
+          "tee_time": "09:00 AM"
+        },
+        {
+          "player_id": "33443",
+          "name": "York, Jennifer",
+          "tour": "Tidewater, VA",
+          "flight": "D-W",
+          "starting_hole": "18",
+          "group": "Group 18B",
+          "tee_time": "09:00 AM"
+        }
+      ]
+    }
+  ],
+  "event": {
+    "tid": "17635",
+    "date": "2026-04-18",
+    "name": "The Old Dominion Challenge",
+    "course": "The Golf Club at Mattaponi Springs",
+    "start_time": "9:00",
+    "start_type": "Shotgun",
+    "is_major": false
+  },
+  "fetched_at": "2026-07-26T19:23:16+00:00"
+}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Points race — {{ cfg.site_title }}{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>{{ standings.season }} points race</h1>
+  <p class="sub">Your row is highlighted.</p>
+  {% for flight in standings.flights %}
+    <h3>{{ flight.name }}</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr>{% for col in columns %}<th>{{ col }}</th>{% endfor %}</tr></thead>
+      <tbody>
+      {% for row in flight.rows %}
+        <tr{% if row.ID == cfg.player.id %} class="mine"{% endif %}>
+          {% for col in columns %}<td>{{ row[col] }}</td>{% endfor %}
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}

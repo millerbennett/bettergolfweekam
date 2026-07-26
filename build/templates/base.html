@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ cfg.site_title }}{% endblock %}</title>
+<meta name="description" content="{% block description %}Unofficial mirror of the {{ cfg.tour_name }} Golfweek Amateur Tour schedule, tee times, live scores and points race.{% endblock %}">
+<link rel="stylesheet" href="{{ rel }}style.css">
+<link rel="alternate" type="application/rss+xml" title="{{ cfg.site_title }} updates" href="{{ rel }}feed.xml">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>⛳</text></svg>">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{{ url('index.html') }}">⛳ {{ cfg.tour_short }}</a>
+  <nav>
+    <a href="{{ url('index.html') }}">Now</a>
+    <a href="{{ url('schedule.html') }}">Schedule</a>
+    <a href="{{ url('standings.html') }}">Points</a>
+    <a href="{{ url('me.html') }}">Me</a>
+    <a href="{{ url('feed.html') }}">Updates</a>
+    <a href="{{ url('info.html') }}">Info</a>
+  </nav>
+</header>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<footer>
+  <p>Unofficial personal mirror. Source of truth:
+     <a href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/default.aspx">amateurgolftour.net</a>.
+     Nothing here is affiliated with or endorsed by the Golfweek Amateur Tour.</p>
+  <p>Mirror updated <time datetime="{{ generated_iso }}">{{ generated_human }}</time>.
+     Machine-readable: <a href="{{ rel }}status.json">status.json</a> ·
+     <a href="{{ rel }}digest.txt">digest.txt</a> ·
+     <a href="{{ rel }}feed.xml">RSS</a></p>
+</footer>
+</body>
+</html>

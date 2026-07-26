@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+public/
+.wrangler/
+
+# Bookkeeping that changes on every run. Committing it would mean ~40 commits a
+# day from the cron alone, so CI persists state.json through the Actions cache
+# instead and regenerates meta.json each run.
+data/state.json
+data/meta.json

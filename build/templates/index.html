@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if live %}
+<section class="card live">
+  <h1>Playing now — {{ live.event.name }}</h1>
+  <p class="sub">{{ live.event.course }} · {{ live.event.date | pretty_date }}</p>
+  {% if me_live %}
+  <p class="highlight">You: <strong>{{ me_live.total }}</strong> ({{ me_live.to_par }}) thru {{ me_live.thru }} —
+     position <strong>{{ me_live.position }}</strong> in {{ me_live.flight }}</p>
+  {% endif %}
+  {% for flight in live.flights %}
+  <h3>{{ flight.name }}</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Pos</th><th>Player</th><th>Total</th><th>Thru</th><th>To par</th></tr></thead>
+    <tbody>
+    {% for row in flight.rows %}
+      <tr{% if row.name == cfg.player.name %} class="mine"{% endif %}>
+        <td>{{ row.position }}</td><td>{{ row.name }}</td>
+        <td>{{ row.total }}</td><td>{{ row.thru }}</td><td>{{ row.to_par }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section class="card">
+  <h1>Next up</h1>
+  {% if next_event %}
+    <p class="event-title">
+      {% if next_event.is_major %}<span class="major">MAJOR</span>{% endif %}
+      {{ next_event.name }}
+    </p>
+    <p class="sub">{{ next_event.course }}</p>
+    <p class="countdown">{{ next_event.date | pretty_date }} · {{ next_event.start_time }} {{ next_event.start_type }}
+       <span class="pill">{{ next_event.date | days_away }}</span></p>
+
+    {% if my_tee_time %}
+      <p class="highlight">Your tee time: <strong>{{ my_tee_time.tee_time }}</strong>
+         off hole {{ my_tee_time.starting_hole }} ({{ my_tee_time.group }})</p>
+      <p class="sub">Playing with:
+        {% for p in my_group if p.player_id != cfg.player.id %}{{ p.name }} ({{ p.flight }}){% if not loop.last %}, {% endif %}{% else %}—{% endfor %}
+      </p>
+    {% elif next_pairings and next_pairings.published %}
+      <p class="notice">Tee times are posted, but you are not on the pairing sheet.</p>
+    {% else %}
+      <p class="notice">Tee times not posted yet. They usually drop 1–2 days before.
+         This mirror checks every {{ cfg.freshness.pairings_minutes }} minutes in the
+         {{ cfg.freshness.pairings_window_days }} days beforehand.</p>
+    {% endif %}
+    <p><a class="button" href="{{ url("t/" ~ next_event.tid) }}">Event page →</a></p>
+  {% else %}
+    <p class="notice">No further events on the {{ cfg.season }} schedule.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h1>Your season</h1>
+  {% if me_standing %}
+    <p class="big">#{{ me_standing.Position }} <span class="sub">in {{ me_standing.flight }}</span></p>
+    <ul class="stats">
+      <li><span>{{ me_standing.Points }}</span>points</li>
+      <li><span>{{ me_standing.Tournaments }}</span>events</li>
+      <li><span>{{ me_standing.Handicap }}</span>index</li>
+      <li><span>{{ me_standing.Birdies }}</span>birdies</li>
+      <li><span>${{ me_standing.Earnings }}</span>earnings</li>
+    </ul>
+    {% if me_gap %}<p class="sub">{{ me_gap }}</p>{% endif %}
+    <p><a class="button" href="{{ url('me.html') }}">Full detail →</a></p>
+  {% else %}
+    <p class="notice">No {{ cfg.season }} standings row found for player {{ cfg.player.id }}.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h1>Latest updates</h1>
+  {% if changes %}
+  <ol class="feed">
+    {% for c in changes[:8] %}
+    <li>
+      <span class="kind kind-{{ c.kind }}">{{ c.kind }}</span>
+      <a href="{{ url(c.url) }}">{{ c.title }}</a>
+      {% if c.detail %}<span class="detail">{{ c.detail }}</span>{% endif %}
+      <time datetime="{{ c.ts }}">{{ c.ts | ago }}</time>
+    </li>
+    {% endfor %}
+  </ol>
+  <p><a class="button" href="{{ url('feed.html') }}">All updates →</a></p>
+  {% else %}
+  <p class="notice">Nothing recorded yet — the feed fills in as the mirror sees changes.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h1>Recent results</h1>
+  {% if recent_results %}
+  <ul class="plain">
+    {% for r in recent_results %}
+    <li><a href="{{ url("t/" ~ r.event.tid) }}">{{ r.event.date | pretty_date }} — {{ r.event.name }}</a>
+        {% if r.me %}<span class="detail">you: {{ r.me.Position }} in {{ r.me.flight_short }},
+        {{ r.me.Score }} ({{ r.me.Points }} pts)</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="notice">No posted results yet this season.</p>
+  {% endif %}
+</section>
+
+{% endblock %}

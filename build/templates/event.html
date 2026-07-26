@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}{{ event.name }} — {{ cfg.site_title }}{% endblock %}
+{% block description %}Tee times, live scoring and results for {{ event.name }} at {{ event.course }} on {{ event.date }}.{% endblock %}
+{% block content %}
+
+<section class="card">
+  <h1>{% if event.is_major %}<span class="major">MAJOR</span> {% endif %}{{ event.name }}</h1>
+  <p class="sub">{{ event.course }}</p>
+  <p class="countdown">{{ event.date | pretty_date }} · {{ event.start_time }} {{ event.start_type }}
+     <span class="pill">{{ event.date | days_away }}</span></p>
+  {% if event.cost %}<p class="sub">Entry {{ event.cost }}</p>{% endif %}
+  <p class="sub">
+    Upstream:
+    <a href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/listing.aspx?id={{ event.tid }}">roster</a> ·
+    <a href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/results.aspx?id={{ event.tid }}">results</a>
+  </p>
+</section>
+
+{% if live and live.live %}
+<section class="card live">
+  <h2>Live scoring</h2>
+  {% for flight in live.flights %}
+    <h3>{{ flight.name }}</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Pos</th><th>Player</th><th>Total</th><th>Thru</th><th>To par</th></tr></thead>
+      <tbody>
+      {% for row in flight.rows %}
+        <tr{% if row.name == cfg.player.name %} class="mine"{% endif %}>
+          <td>{{ row.position }}</td><td>{{ row.name }}</td>
+          <td>{{ row.total }}</td><td>{{ row.thru }}</td><td>{{ row.to_par }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table></div>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section class="card">
+  <h2>Tee times</h2>
+  {% if pairings and pairings.published %}
+    <p class="sub">{{ pairings.groups | length }} groups · {{ pairings.players | length }} players</p>
+    <div class="groups">
+    {% for group in pairings.groups %}
+      <div class="group{% if group.has_me %} mine{% endif %}">
+        <div class="group-head">
+          <strong>{{ group.tee_time }}</strong>
+          <span class="sub">{{ group.group }} · hole {{ group.starting_hole }}</span>
+        </div>
+        <ul>
+        {% for p in group.players %}
+          <li{% if p.player_id == cfg.player.id %} class="mine"{% endif %}>{{ p.name }}
+             <span class="detail">{{ p.flight }}</span></li>
+        {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+    </div>
+  {% elif pairings and pairings.available is false %}
+    <p class="notice">Not on the {{ cfg.tour_short }} pairing sheet — this event is
+       run by a neighbouring tour. Check
+       <a href="{{ cfg.base_url }}/livescore/Leaderboard.aspx">the livescore site</a>.</p>
+  {% else %}
+    <p class="notice">Not posted yet.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>Results</h2>
+  {% if results and results.posted %}
+    {% for flight in results.flights %}
+      <h3>{{ flight.name }}</h3>
+      <div class="scroll">
+      <table>
+        <thead><tr>{% for col in results.columns %}<th>{{ col }}</th>{% endfor %}</tr></thead>
+        <tbody>
+        {% for row in flight.rows %}
+          <tr{% if row.ID == cfg.player.id %} class="mine"{% endif %}>
+            {% for col in results.columns %}<td>{{ row[col] }}</td>{% endfor %}
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="notice">Not posted yet.</p>
+  {% endif %}
+</section>
+
+{% endblock %}

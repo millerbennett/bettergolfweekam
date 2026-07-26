@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Updates — {{ cfg.site_title }}{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>What's changed</h1>
+  <p class="sub">Everything this mirror has noticed change upstream, newest first.
+     Also available as <a href="{{ rel }}feed.xml">RSS</a>.</p>
+  {% if changes %}
+  <ol class="feed">
+    {% for c in changes %}
+    <li>
+      <span class="kind kind-{{ c.kind }}">{{ c.kind }}</span>
+      {% if c.url %}<a href="{{ url(c.url) }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}
+      {% if c.detail %}<span class="detail">{{ c.detail }}</span>{% endif %}
+      <time datetime="{{ c.ts }}">{{ c.ts | ago }}</time>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="notice">Nothing recorded yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

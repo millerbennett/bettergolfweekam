@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Tour info — {{ cfg.site_title }}{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Tour info</h1>
+  <p class="sub">Mirrored announcement and reference pages.</p>
+  <ul class="plain">
+  {% for p in pages %}
+    <li><a href="{{ url("info/" ~ p.id) }}">{{ p.nav_title }}</a>
+        {% if p.title and p.title != p.nav_title %}<span class="detail">{{ p.title }}</span>{% endif %}</li>
+  {% endfor %}
+  </ul>
+</section>
+{% endblock %}

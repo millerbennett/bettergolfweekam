@@ -1,0 +1,730 @@
+{
+  "tid": "17937",
+  "available": true,
+  "published": true,
+  "players": [
+    {
+      "player_id": "61569",
+      "name": "Kelley, Josh",
+      "tour": "Atlanta, GA",
+      "flight": "Champ",
+      "starting_hole": "1",
+      "group": "Group 1B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "60074",
+      "name": "McMahon, Michael",
+      "tour": "Washington, DC Metro",
+      "flight": "Champ",
+      "starting_hole": "1",
+      "group": "Group 1B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "50569",
+      "name": "Devine, Ben",
+      "tour": "Washington, DC Metro",
+      "flight": "Champ",
+      "starting_hole": "1",
+      "group": "Group 1B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "57627",
+      "name": "Brown, Garrett",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "1",
+      "group": "Group 1B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "18247",
+      "name": "Franklin, Cephas",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "1",
+      "group": "Group 1A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "49718",
+      "name": "Beaufort, Dre",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "starting_hole": "1",
+      "group": "Group 1A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "34091",
+      "name": "Sams, Darin",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "1",
+      "group": "Group 1A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "27933",
+      "name": "Brown, Franklin",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "1",
+      "group": "Group 1A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "50474",
+      "name": "Geraghty, Ross",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "15",
+      "group": "Group 15A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "26388",
+      "name": "Phillips, David",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "15",
+      "group": "Group 15A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "40768",
+      "name": "Taylor, Nick",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "15",
+      "group": "Group 15A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "21524",
+      "name": "Mutzabaugh, Ken",
+      "tour": "Atlanta, GA",
+      "flight": "D",
+      "starting_hole": "15",
+      "group": "Group 15A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "57946",
+      "name": "Brooks, Maguel",
+      "tour": "Tidewater, VA",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "45133",
+      "name": "Lewis, Lenny",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "61575",
+      "name": "Jones, Carlton",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "63399",
+      "name": "Coleman, LaMont",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "34317",
+      "name": "Gray, Willie",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "49241",
+      "name": "Hancock, Dawn",
+      "tour": "Washington, DC Metro",
+      "flight": "D-W",
+      "starting_hole": "16",
+      "group": "Group 16A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "34277",
+      "name": "Branch, Garry",
+      "tour": "Washington, DC Metro",
+      "flight": "D",
+      "starting_hole": "16",
+      "group": "Group 16A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "62036",
+      "name": "Benzing, Laurie",
+      "tour": "Washington, DC Metro",
+      "flight": "D-W",
+      "starting_hole": "16",
+      "group": "Group 16A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "23550",
+      "name": "Hall, Don",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "17",
+      "group": "Group 17B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "55920",
+      "name": "Giles, Alex",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "17",
+      "group": "Group 17B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "48932",
+      "name": "Horn, John",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "starting_hole": "17",
+      "group": "Group 17B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "62012",
+      "name": "Rowe, Denise",
+      "tour": "Washington, DC Metro",
+      "flight": "C-W",
+      "starting_hole": "17",
+      "group": "Group 17B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "33880",
+      "name": "Cheeks, LC",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "17",
+      "group": "Group 17A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "28567",
+      "name": "Gafford, Hayden",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "17",
+      "group": "Group 17A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "36058",
+      "name": "Okoba, Stephen",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "17",
+      "group": "Group 17A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "61979",
+      "name": "Doster, Malcolm",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "17",
+      "group": "Group 17A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "30678",
+      "name": "Carreon, Fredy",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "18",
+      "group": "Group 18A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "45490",
+      "name": "Crowley, Craig",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "18",
+      "group": "Group 18A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "47443",
+      "name": "Facello, Scott",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "18",
+      "group": "Group 18A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "63739",
+      "name": "Low, Kennan",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "18",
+      "group": "Group 18A",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "50358",
+      "name": "Rosenfield, Chuck",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "18",
+      "group": "Group 18B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "50631",
+      "name": "Spangler, Blake",
+      "tour": "Washington, DC Metro",
+      "flight": "A",
+      "starting_hole": "18",
+      "group": "Group 18B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "19369",
+      "name": "Rashid, Rafiq",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "18",
+      "group": "Group 18B",
+      "tee_time": "08:00 AM"
+    },
+    {
+      "player_id": "51002",
+      "name": "Miller, Bennett",
+      "tour": "Washington, DC Metro",
+      "flight": "B",
+      "starting_hole": "18",
+      "group": "Group 18B",
+      "tee_time": "08:00 AM"
+    }
+  ],
+  "groups": [
+    {
+      "group": "Group 1B",
+      "tee_time": "08:00 AM",
+      "starting_hole": "1",
+      "players": [
+        {
+          "player_id": "61569",
+          "name": "Kelley, Josh",
+          "tour": "Atlanta, GA",
+          "flight": "Champ",
+          "starting_hole": "1",
+          "group": "Group 1B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "60074",
+          "name": "McMahon, Michael",
+          "tour": "Washington, DC Metro",
+          "flight": "Champ",
+          "starting_hole": "1",
+          "group": "Group 1B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "50569",
+          "name": "Devine, Ben",
+          "tour": "Washington, DC Metro",
+          "flight": "Champ",
+          "starting_hole": "1",
+          "group": "Group 1B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "57627",
+          "name": "Brown, Garrett",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "1",
+          "group": "Group 1B",
+          "tee_time": "08:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 1A",
+      "tee_time": "08:00 AM",
+      "starting_hole": "1",
+      "players": [
+        {
+          "player_id": "18247",
+          "name": "Franklin, Cephas",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "1",
+          "group": "Group 1A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "49718",
+          "name": "Beaufort, Dre",
+          "tour": "Tidewater, VA",
+          "flight": "C",
+          "starting_hole": "1",
+          "group": "Group 1A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "34091",
+          "name": "Sams, Darin",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "1",
+          "group": "Group 1A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "27933",
+          "name": "Brown, Franklin",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "1",
+          "group": "Group 1A",
+          "tee_time": "08:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 15A",
+      "tee_time": "08:00 AM",
+      "starting_hole": "15",
+      "players": [
+        {
+          "player_id": "50474",
+          "name": "Geraghty, Ross",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "15",
+          "group": "Group 15A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "26388",
+          "name": "Phillips, David",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "15",
+          "group": "Group 15A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "40768",
+          "name": "Taylor, Nick",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "15",
+          "group": "Group 15A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "21524",
+          "name": "Mutzabaugh, Ken",
+          "tour": "Atlanta, GA",
+          "flight": "D",
+          "starting_hole": "15",
+          "group": "Group 15A",
+          "tee_time": "08:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 16B",
+      "tee_time": "08:00 AM",
+      "starting_hole": "16",
+      "players": [
+        {
+          "player_id": "57946",
+          "name": "Brooks, Maguel",
+          "tour": "Tidewater, VA",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "45133",
+          "name": "Lewis, Lenny",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "61575",
+          "name": "Jones, Carlton",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "63399",
+          "name": "Coleman, LaMont",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16B",
+          "tee_time": "08:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 16A",
+      "tee_time": "08:00 AM",
+      "starting_hole": "16",
+      "players": [
+        {
+          "player_id": "34317",
+          "name": "Gray, Willie",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "49241",
+          "name": "Hancock, Dawn",
+          "tour": "Washington, DC Metro",
+          "flight": "D-W",
+          "starting_hole": "16",
+          "group": "Group 16A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "34277",
+          "name": "Branch, Garry",
+          "tour": "Washington, DC Metro",
+          "flight": "D",
+          "starting_hole": "16",
+          "group": "Group 16A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "62036",
+          "name": "Benzing, Laurie",
+          "tour": "Washington, DC Metro",
+          "flight": "D-W",
+          "starting_hole": "16",
+          "group": "Group 16A",
+          "tee_time": "08:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 17B",
+      "tee_time": "08:00 AM",
+      "starting_hole": "17",
+      "players": [
+        {
+          "player_id": "23550",
+          "name": "Hall, Don",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "17",
+          "group": "Group 17B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "55920",
+          "name": "Giles, Alex",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "17",
+          "group": "Group 17B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "48932",
+          "name": "Horn, John",
+          "tour": "Washington, DC Metro",
+          "flight": "C",
+          "starting_hole": "17",
+          "group": "Group 17B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "62012",
+          "name": "Rowe, Denise",
+          "tour": "Washington, DC Metro",
+          "flight": "C-W",
+          "starting_hole": "17",
+          "group": "Group 17B",
+          "tee_time": "08:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 17A",
+      "tee_time": "08:00 AM",
+      "starting_hole": "17",
+      "players": [
+        {
+          "player_id": "33880",
+          "name": "Cheeks, LC",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "17",
+          "group": "Group 17A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "28567",
+          "name": "Gafford, Hayden",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "17",
+          "group": "Group 17A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "36058",
+          "name": "Okoba, Stephen",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "17",
+          "group": "Group 17A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "61979",
+          "name": "Doster, Malcolm",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "17",
+          "group": "Group 17A",
+          "tee_time": "08:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 18A",
+      "tee_time": "08:00 AM",
+      "starting_hole": "18",
+      "players": [
+        {
+          "player_id": "30678",
+          "name": "Carreon, Fredy",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "18",
+          "group": "Group 18A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "45490",
+          "name": "Crowley, Craig",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "18",
+          "group": "Group 18A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "47443",
+          "name": "Facello, Scott",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "18",
+          "group": "Group 18A",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "63739",
+          "name": "Low, Kennan",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "18",
+          "group": "Group 18A",
+          "tee_time": "08:00 AM"
+        }
+      ]
+    },
+    {
+      "group": "Group 18B",
+      "tee_time": "08:00 AM",
+      "starting_hole": "18",
+      "players": [
+        {
+          "player_id": "50358",
+          "name": "Rosenfield, Chuck",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "18",
+          "group": "Group 18B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "50631",
+          "name": "Spangler, Blake",
+          "tour": "Washington, DC Metro",
+          "flight": "A",
+          "starting_hole": "18",
+          "group": "Group 18B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "19369",
+          "name": "Rashid, Rafiq",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "18",
+          "group": "Group 18B",
+          "tee_time": "08:00 AM"
+        },
+        {
+          "player_id": "51002",
+          "name": "Miller, Bennett",
+          "tour": "Washington, DC Metro",
+          "flight": "B",
+          "starting_hole": "18",
+          "group": "Group 18B",
+          "tee_time": "08:00 AM"
+        }
+      ]
+    }
+  ],
+  "event": {
+    "tid": "17937",
+    "date": "2026-07-11",
+    "name": "The DC Open",
+    "course": "The Links at Gettysburg",
+    "start_time": "8:00",
+    "start_type": "Shotgun",
+    "is_major": false
+  },
+  "fetched_at": "2026-07-26T19:24:16+00:00"
+}
