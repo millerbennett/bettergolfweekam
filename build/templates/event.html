@@ -9,13 +9,13 @@
   <p class="countdown">{{ event.date | pretty_date }} · {{ event.start_time }} {{ event.start_type }}
      <span class="pill">{{ event.date | days_away }}</span></p>
   {% if event.cost %}<p class="sub">Entry {{ event.cost }}</p>{% endif %}
-  <p class="sub">
-    Verify upstream (deep links — no dropdowns):
-    <a href="{{ cfg.base_url }}/livescore/Leaderboard.aspx?t={{ event.tid }}">leaderboard</a> ·
-    <a href="{{ cfg.base_url }}/livescore/skinsLB.aspx?t={{ event.tid }}">skins</a> ·
-    <a href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/results.aspx?id={{ event.tid }}">results</a> ·
-    <a href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/listing.aspx?id={{ event.tid }}">roster</a>
-  </p>
+  <p class="sub label">Check upstream</p>
+  <div class="chips">
+    <a class="chip" href="{{ cfg.base_url }}/livescore/Leaderboard.aspx?t={{ event.tid }}">Leaderboard</a>
+    <a class="chip" href="{{ cfg.base_url }}/livescore/skinsLB.aspx?t={{ event.tid }}">Skins</a>
+    <a class="chip" href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/results.aspx?id={{ event.tid }}">Results</a>
+    <a class="chip" href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/listing.aspx?id={{ event.tid }}">Roster</a>
+  </div>
 </section>
 
 {% if live and live.live %}
@@ -26,13 +26,14 @@
   {% endif %}
   {% for flight in live.flights %}
     <h3>{{ flight.name }}</h3>
-    <div class="scroll"><table>
-      <thead><tr><th>Pos</th><th>Player</th><th>Total</th><th>Thru</th><th>To par</th></tr></thead>
+    <div class="scroll"><table class="data board">
+      <thead><tr><th>Pos</th><th>Player</th><th class="num">Total</th><th class="num">Thru</th><th class="num">To par</th></tr></thead>
       <tbody>
       {% for row in flight.rows %}
         <tr{% if row.name == cfg.player.name %} class="mine"{% endif %}>
           <td>{{ row.position }}</td><td>{{ row.name }}</td>
-          <td>{{ row.total }}</td><td>{{ row.thru }}</td><td>{{ row.to_par }}</td>
+          <td class="num">{{ row.total }}</td><td class="num">{{ row.thru }}</td>
+          <td class="num">{{ row.to_par }}</td>
         </tr>
       {% endfor %}
       </tbody>
@@ -44,7 +45,7 @@
 {% if roster and roster.available %}
 <section class="card">
   <h2>Field</h2>
-  <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'notice' }}">
+  <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'warn' }}">
     {% if my_roster_status == 'registered' %}
       You are <strong>registered and paid</strong> for this event.
     {% elif my_roster_status == 'waiting' %}
@@ -61,7 +62,7 @@
   </ul>
   {% if roster.sold_out %}<p class="notice"><strong>Sold out.</strong></p>{% endif %}
 
-  <div class="scroll"><table>
+  <div class="scroll"><table class="data">
     <thead><tr><th>Flight</th>{% for f in roster.filled_by_flight %}<th>{{ f }}</th>{% endfor %}</tr></thead>
     <tbody>
       <tr><td>Registered</td>{% for f, n in roster.filled_by_flight.items() %}<td>{{ n }}</td>{% endfor %}</tr>
@@ -71,12 +72,13 @@
 
   <h3>Registered ({{ roster.registered | length }})</h3>
   {% if roster.registered %}
-  <div class="scroll"><table>
-    <thead><tr><th>ID</th><th>Player</th><th>Flight</th><th>Home tour</th></tr></thead>
+  <div class="scroll"><table class="data">
+    <thead><tr><th class="c-id">ID</th><th>Player</th><th>Flight</th><th class="c-tour">Home tour</th></tr></thead>
     <tbody>
     {% for p in roster.registered %}
       <tr{% if p.player_id == cfg.player.id %} class="mine"{% endif %}>
-        <td>{{ p.player_id }}</td><td>{{ p.name }}</td><td>{{ p.flight }}</td><td>{{ p.tour }}</td>
+        <td class="c-id">{{ p.player_id }}</td><td>{{ p.name }}</td>
+        <td>{{ p.flight }}</td><td class="c-tour">{{ p.tour }}</td>
       </tr>
     {% endfor %}
     </tbody>
@@ -87,12 +89,13 @@
 
   {% if roster.waiting %}
   <h3>Waiting list ({{ roster.waiting | length }})</h3>
-  <div class="scroll"><table>
-    <thead><tr><th>ID</th><th>Player</th><th>Flight</th><th>Home tour</th></tr></thead>
+  <div class="scroll"><table class="data">
+    <thead><tr><th class="c-id">ID</th><th>Player</th><th>Flight</th><th class="c-tour">Home tour</th></tr></thead>
     <tbody>
     {% for p in roster.waiting %}
       <tr{% if p.player_id == cfg.player.id %} class="mine"{% endif %}>
-        <td>{{ p.player_id }}</td><td>{{ p.name }}</td><td>{{ p.flight }}</td><td>{{ p.tour }}</td>
+        <td class="c-id">{{ p.player_id }}</td><td>{{ p.name }}</td>
+        <td>{{ p.flight }}</td><td class="c-tour">{{ p.tour }}</td>
       </tr>
     {% endfor %}
     </tbody>
@@ -169,12 +172,12 @@
     {% for flight in results.flights %}
       <h3>{{ flight.name }}</h3>
       <div class="scroll">
-      <table>
-        <thead><tr>{% for col in results.columns %}<th>{{ col }}</th>{% endfor %}</tr></thead>
+      <table class="data">
+        <thead><tr>{% for col in results.columns %}<th class="c-{{ col | slug }}">{{ col }}</th>{% endfor %}</tr></thead>
         <tbody>
         {% for row in flight.rows %}
           <tr{% if row.ID == cfg.player.id %} class="mine"{% endif %}>
-            {% for col in results.columns %}<td>{{ row[col] }}</td>{% endfor %}
+            {% for col in results.columns %}<td class="c-{{ col | slug }}">{{ row[col] }}</td>{% endfor %}
           </tr>
         {% endfor %}
         </tbody>

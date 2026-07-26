@@ -11,13 +11,14 @@
   {% endif %}
   {% for flight in live.flights %}
   <h3>{{ flight.name }}</h3>
-  <div class="scroll"><table>
-    <thead><tr><th>Pos</th><th>Player</th><th>Total</th><th>Thru</th><th>To par</th></tr></thead>
+  <div class="scroll"><table class="data board">
+    <thead><tr><th>Pos</th><th>Player</th><th class="num">Total</th><th class="num">Thru</th><th class="num">To par</th></tr></thead>
     <tbody>
     {% for row in flight.rows %}
       <tr{% if row.name == cfg.player.name %} class="mine"{% endif %}>
         <td>{{ row.position }}</td><td>{{ row.name }}</td>
-        <td>{{ row.total }}</td><td>{{ row.thru }}</td><td>{{ row.to_par }}</td>
+        <td class="num">{{ row.total }}</td><td class="num">{{ row.thru }}</td>
+        <td class="num">{{ row.to_par }}</td>
       </tr>
     {% endfor %}
     </tbody>
@@ -38,7 +39,7 @@
        <span class="pill">{{ next_event.date | days_away }}</span></p>
 
     {% if next_roster and next_roster.available %}
-      <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'notice' }}">
+      <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'warn' }}">
         {% if my_roster_status == 'registered' %}Registered and paid.
         {% elif my_roster_status == 'waiting' %}On the waiting list — signed up, not yet paid.
         {% elif my_roster_status == 'absent' %}<strong>You are not signed up.</strong>
@@ -98,7 +99,6 @@
     </li>
     {% endfor %}
   </ol>
-  <p><a class="button" href="{{ url('feed.html') }}">All updates →</a></p>
   {% else %}
   <p class="notice">Nothing recorded yet — the feed fills in as the mirror sees changes.</p>
   {% endif %}

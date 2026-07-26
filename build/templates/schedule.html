@@ -1,30 +1,55 @@
 {% extends "base.html" %}
 {% block title %}Schedule — {{ cfg.site_title }}{% endblock %}
+
+{% macro event_row(e, dim=false) %}
+<li class="ev{{ ' ev-dim' if dim }}{{ ' ev-live' if e.status_kind == 'live' }}">
+  <a class="ev-hit" href="{{ url('t/' ~ e.tid) }}">
+    <span class="ev-date">
+      <b>{{ e.date | day_num }}</b>
+      <i>{{ e.date | month_abbr }}</i>
+    </span>
+    <span class="ev-main">
+      <span class="ev-name">{{ e.name }}</span>
+      <span class="ev-meta">{{ e.course }}</span>
+      <span class="ev-meta ev-facts">
+        {% if e.is_major %}<em class="tag tag-major">Major</em>{% endif %}
+        <span>{{ e.start_time }} {{ e.start_type }}{% if e.cost and e.cost != '$' %} · {{ e.cost }}{% endif %}</span>
+      </span>
+    </span>
+    <span class="ev-end">
+      {% if e.status_kind != 'idle' %}<em class="tag tag-{{ e.status_kind }}">{{ e.status }}</em>{% endif %}
+      {% if e.my_registration == 'registered' %}<em class="tag tag-you">You're in</em>
+      {% elif e.my_registration == 'waiting' %}<em class="tag tag-wait">Waitlist</em>{% endif %}
+    </span>
+  </a>
+</li>
+{% endmacro %}
+
 {% block content %}
-<section class="card">
-  <h1>{{ cfg.season }} schedule</h1>
-  <p class="sub">{{ events | length }} playing days. Majors highlighted. Every row links to
-     tee times, results and live scoring for that event.</p>
-  <div class="scroll">
-  <table class="schedule">
-    <thead><tr>
-      <th>Date</th><th>Event</th><th>Course</th><th>Start</th><th>Cost</th><th>Status</th>
-    </tr></thead>
-    <tbody>
-    {% for e in events %}
-      <tr class="{{ 'major' if e.is_major }} {{ 'past' if e.is_past }} {{ 'today' if e.is_today }}">
-        <td class="nowrap">{{ e.date | short_date }}</td>
-        <td><a href="{{ url("t/" ~ e.tid) }}">{{ e.name }}</a>
-            {% if e.is_major %}<span class="major">MAJOR</span>{% endif %}</td>
-        <td>{% if e.course_url %}<a href="{{ e.course_url }}" rel="nofollow noopener">{{ e.course }}</a>
-            {% else %}{{ e.course }}{% endif %}</td>
-        <td class="nowrap">{{ e.start_time }}<br><span class="sub">{{ e.start_type }}</span></td>
-        <td class="nowrap">{{ e.cost }}</td>
-        <td class="nowrap">{{ e.status }}</td>
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
-  </div>
+
+{% if today %}
+<section class="card card-live">
+  <h1 class="eyebrow"><span class="dot"></span>Happening today</h1>
+  <ul class="ev-list">{% for e in today %}{{ event_row(e) }}{% endfor %}</ul>
 </section>
+{% endif %}
+
+<section class="card">
+  <h1>Coming up</h1>
+  {% if upcoming %}
+    <p class="sub">{{ upcoming | length }} left in {{ cfg.season }}.</p>
+    <ul class="ev-list">{% for e in upcoming %}{{ event_row(e) }}{% endfor %}</ul>
+  {% else %}
+    <p class="notice">Season complete — nothing left on the {{ cfg.season }} schedule.</p>
+  {% endif %}
+</section>
+
+{% if past %}
+<section class="card">
+  <h1>Played</h1>
+  <p class="sub">Most recent first.</p>
+  <ul class="ev-list">{% for e in past %}{{ event_row(e, dim=true) }}{% endfor %}</ul>
+</section>
+{% endif %}
+
 {% endblock %}

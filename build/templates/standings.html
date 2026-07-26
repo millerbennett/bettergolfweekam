@@ -3,16 +3,19 @@
 {% block content %}
 <section class="card">
   <h1>{{ standings.season }} points race</h1>
-  <p class="sub">Your row is highlighted.</p>
+  <p class="sub">Your row is highlighted. Narrow screens show position, name and
+     points — rotate or widen for the full breakdown.</p>
   {% for flight in standings.flights %}
     <h3>{{ flight.name }}</h3>
     <div class="scroll">
-    <table>
-      <thead><tr>{% for col in columns %}<th>{{ col }}</th>{% endfor %}</tr></thead>
+    <table class="data">
+      <thead><tr>
+        {% for col in columns %}<th class="c-{{ col | slug }}">{{ col }}</th>{% endfor %}
+      </tr></thead>
       <tbody>
       {% for row in flight.rows %}
         <tr{% if row.ID == cfg.player.id %} class="mine"{% endif %}>
-          {% for col in columns %}<td>{{ row[col] }}</td>{% endfor %}
+          {% for col in columns %}<td class="c-{{ col | slug }}">{{ row[col] }}</td>{% endfor %}
         </tr>
       {% endfor %}
       </tbody>

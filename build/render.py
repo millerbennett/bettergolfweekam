@@ -42,6 +42,25 @@ def pretty_date(iso: str) -> str:
     return f"{d.strftime('%A, %B')} {d.day}, {d.year}"
 
 
+def day_num(iso: str) -> str:
+    try:
+        return str(date.fromisoformat(iso).day)
+    except (TypeError, ValueError):
+        return "?"
+
+
+def month_abbr(iso: str) -> str:
+    try:
+        return date.fromisoformat(iso).strftime("%b")
+    except (TypeError, ValueError):
+        return ""
+
+
+def slug(text: str) -> str:
+    """Column name -> css class suffix, so narrow screens can drop columns."""
+    return re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-") or "x"
+
+
 def short_date(iso: str) -> str:
     try:
         d = date.fromisoformat(iso)
@@ -139,6 +158,9 @@ class Site:
             short_date=short_date,
             days_away=make_days_away(self.today),
             ago=ago,
+            day_num=day_num,
+            month_abbr=month_abbr,
+            slug=slug,
         )
 
     def upstream(self, tid: str) -> dict:
@@ -296,19 +318,22 @@ class Site:
         out.sort(key=lambda r: r["event"]["date"], reverse=True)
         return out
 
-    def event_status(self, event: dict) -> str:
+    def event_status(self, event: dict) -> tuple[str, str]:
+        """(label, kind) for the status pill. kind drives its colour."""
         tid = event["tid"]
+        if event.get("is_today") and (self.live.get(tid) or {}).get("live"):
+            return "Live", "live"
         if (self.results.get(tid) or {}).get("posted"):
-            return "Results"
+            return "Results", "done"
         if (self.live.get(tid) or {}).get("live"):
-            return "LIVE"
+            return "Scores", "done"
         if (self.pairings.get(tid) or {}).get("published"):
-            return "Tee times"
+            return "Tee times", "ready"
         if (self.rosters.get(tid) or {}).get("sold_out"):
-            return "Sold out"
+            return "Sold out", "full"
         if event.get("registration_open"):
-            return "Register"
-        return "Scheduled"
+            return "Register", "open"
+        return "Scheduled", "idle"
 
     # -- writing ---------------------------------------------------------
 
@@ -373,8 +398,18 @@ class Site:
         )
 
         for event in self.events:
-            event["status"] = self.event_status(event)
-        self._render("schedule.html", "schedule.html", events=self.events)
+            event["status"], event["status_kind"] = self.event_status(event)
+            event["my_registration"] = self.my_roster_status(event["tid"])
+
+        # Ordered by what you'd look for: in progress, then what's coming,
+        # then history newest-first - rather than one flat chronological list.
+        self._render(
+            "schedule.html", "schedule.html",
+            today=[e for e in self.events if e["is_today"]],
+            upcoming=[e for e in self.events if not e["is_past"] and not e["is_today"]],
+            past=list(reversed([e for e in self.events if e["is_past"]])),
+            events=self.events,
+        )
 
         columns = [c for c in self.standings.get("columns", []) if c != "Detail"]
         self._render("standings.html", "standings.html",

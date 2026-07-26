@@ -79,7 +79,12 @@ def site(tmp_path, monkeypatch):
              "date": (TODAY + timedelta(days=13)).isoformat(), "is_major": True,
              "course": "Rock Harbor (Rock)"}
 
-    write("schedule.json", {"season": 2026, "events": [EVENT, later]})
+    # An already-played event too, so all three schedule sections exist.
+    earlier = {**EVENT, "tid": "17601", "name": "DC Metro Battle on the Ridge",
+               "date": (TODAY - timedelta(days=43)).isoformat(),
+               "course": "Blue Ridge Shadows Golf Club", "is_major": False}
+
+    write("schedule.json", {"season": 2026, "events": [earlier, EVENT, later]})
     write("standings.json", standings)
     write("changes.json", [{"ts": "2026-07-25T12:00:00+00:00", "kind": "teetimes",
                            "title": "Tee times posted", "detail": "You are off 1:20 PM",
@@ -208,10 +213,46 @@ def test_finished_round_is_reported_before_official_results(site):
     assert me["total"] == "87" and me["position"] == "1" and me["flight"] == "B"
 
 
+def test_schedule_is_ordered_by_relevance_not_chronology(site):
+    """Happening now, then what's coming, then history newest-first."""
+    _, public = site
+    page = read(public, "schedule.html")
+    now, soon, past = (page.find("Happening today"), page.find("Coming up"),
+                       page.find("Played"))
+    assert -1 < now < soon < past
+
+
+def test_schedule_uses_no_table(site):
+    """The 6-column table forced a horizontal scrollbar even on desktop."""
+    _, public = site
+    page = read(public, "schedule.html")
+    assert "<table" not in page
+    assert 'class="ev-hit"' in page
+
+
+def test_schedule_omits_a_badge_for_the_default_state(site):
+    """A "Scheduled" badge on every row is noise and steals name width."""
+    _, public = site
+    assert "tag-idle" not in read(public, "schedule.html")
+
+
+def test_upstream_links_are_chips_not_inline_text(site):
+    """They were 17px tall and unhittable on a phone."""
+    _, public = site
+    page = read(public, f"t/{TID}.html")
+    assert page.count('class="chip"') == 4
+    assert "Verify upstream (deep links" not in page
+
+
+def test_homepage_has_no_redundant_updates_button(site):
+    _, public = site
+    assert "All updates" not in read(public, "index.html")
+
+
 def test_every_event_gets_a_page(site):
     _, public = site
-    assert (public / "t" / f"{TID}.html").exists()
-    assert (public / "t" / "17639.html").exists()
+    for tid in (TID, LATER_TID, "17601"):
+        assert (public / "t" / f"{tid}.html").exists()
 
 
 def test_nested_pages_resolve_shared_assets(site):
