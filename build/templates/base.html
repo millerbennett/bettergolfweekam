@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}{{ cfg.site_title }}{% endblock %}</title>
 <meta name="description" content="{% block description %}Unofficial mirror of the {{ cfg.tour_name }} Golfweek Amateur Tour schedule, tee times, live scores and points race.{% endblock %}">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0d1310" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <link rel="stylesheet" href="{{ rel }}style.css">
 <link rel="alternate" type="application/rss+xml" title="{{ cfg.site_title }} updates" href="{{ rel }}feed.xml">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>⛳</text></svg>">
