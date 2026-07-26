@@ -8,7 +8,12 @@
   <p class="sub">{{ event.course }}</p>
   <p class="countdown">{{ event.date | pretty_date }} · {{ event.start_time }} {{ event.start_type }}
      <span class="pill">{{ event.date | days_away }}</span></p>
-  {% if event.cost %}<p class="sub">Entry {{ event.cost }}</p>{% endif %}
+  {% if event.cost and event.cost != '$' %}<p class="sub">Entry {{ event.cost }}</p>{% endif %}
+  {% if event.registration_open and event.register_url and my_roster_status != 'registered' %}
+    <p><a class="button" href="{{ event.register_url }}">
+      {{ "Pay for your spot" if my_roster_status == 'waiting' else "Register for this event" }} ↗
+    </a></p>
+  {% endif %}
   <p class="sub label">Check upstream</p>
   <div class="chips">
     <a class="chip" href="{{ cfg.base_url }}/livescore/Leaderboard.aspx?t={{ event.tid }}">Leaderboard</a>

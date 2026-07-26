@@ -62,7 +62,14 @@
          This mirror checks every {{ cfg.freshness.pairings_minutes }} minutes in the
          {{ cfg.freshness.pairings_window_days }} days beforehand.</p>
     {% endif %}
-    <p><a class="button" href="{{ url("t/" ~ next_event.tid) }}">Event page →</a></p>
+    <p class="cta-row">
+      {% if next_event.registration_open and next_event.register_url and my_roster_status != 'registered' %}
+        <a class="button" href="{{ next_event.register_url }}">
+          {{ "Pay for your spot" if my_roster_status == 'waiting' else "Register" }} ↗
+        </a>
+      {% endif %}
+      <a class="button button-ghost" href="{{ url("t/" ~ next_event.tid) }}">Event page →</a>
+    </p>
   {% else %}
     <p class="notice">No further events on the {{ cfg.season }} schedule.</p>
   {% endif %}

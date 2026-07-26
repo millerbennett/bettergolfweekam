@@ -77,7 +77,9 @@ def site(tmp_path, monkeypatch):
     # A future event too, so "next up" has somewhere to point after today.
     later = {**EVENT, "tid": "17639", "name": "DC Metro Open Championship",
              "date": (TODAY + timedelta(days=13)).isoformat(), "is_major": True,
-             "course": "Rock Harbor (Rock)"}
+             "course": "Rock Harbor (Rock)", "registration_open": True,
+             "register_url": "https://www.amateurgolftour.net/register/"
+                             "tournamentReg.aspx?tournament=17639"}
 
     # An already-played event too, so all three schedule sections exist.
     earlier = {**EVENT, "tid": "17601", "name": "DC Metro Battle on the Ridge",
@@ -247,6 +249,46 @@ def test_upstream_links_are_chips_not_inline_text(site):
 def test_homepage_has_no_redundant_updates_button(site):
     _, public = site
     assert "All updates" not in read(public, "index.html")
+
+
+REGISTER_URL = "https://www.amateurgolftour.net/register/tournamentReg.aspx?tournament=17639"
+
+
+def test_open_event_gets_a_real_register_link(site):
+    """The schedule showed a "Register" badge but never linked anywhere."""
+    _, public = site
+    for page in ("schedule.html", f"t/{LATER_TID}.html"):
+        assert REGISTER_URL in read(public, page), f"missing on {page}"
+
+
+def test_homepage_cta_follows_the_next_event_not_the_open_one(site):
+    """"Next up" here is today's event, whose entry has long closed.
+
+    Advertising a Register button for a different event under that heading
+    would point at the wrong tournament.
+    """
+    _, public = site
+    assert "tournamentReg.aspx" not in read(public, "index.html")
+
+
+def test_register_button_is_not_offered_once_registered(site):
+    """The played event is one I'm entered for; only the state should show."""
+    _, public = site
+    page = read(public, f"t/{TID}.html")
+    assert "tournamentReg.aspx" not in page
+
+
+def test_schedule_row_keeps_two_independent_links(site):
+    """Row body opens the event; the button goes to registration.
+
+    A row-wide <a> can't contain a second <a>, so the title stretches its hit
+    area over the row instead.
+    """
+    _, public = site
+    page = read(public, "schedule.html")
+    assert 'class="ev-name stretch"' in page
+    assert 'class="btn-mini"' in page
+    assert "<a class=\"ev-hit\"" not in page
 
 
 def test_every_event_gets_a_page(site):

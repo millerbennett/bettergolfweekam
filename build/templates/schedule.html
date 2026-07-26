@@ -3,13 +3,13 @@
 
 {% macro event_row(e, dim=false) %}
 <li class="ev{{ ' ev-dim' if dim }}{{ ' ev-live' if e.status_kind == 'live' }}">
-  <a class="ev-hit" href="{{ url('t/' ~ e.tid) }}">
+  <div class="ev-hit">
     <span class="ev-date">
       <b>{{ e.date | day_num }}</b>
       <i>{{ e.date | month_abbr }}</i>
     </span>
     <span class="ev-main">
-      <span class="ev-name">{{ e.name }}</span>
+      <a class="ev-name stretch" href="{{ url('t/' ~ e.tid) }}">{{ e.name }}</a>
       <span class="ev-meta">{{ e.course }}</span>
       <span class="ev-meta ev-facts">
         {% if e.is_major %}<em class="tag tag-major">Major</em>{% endif %}
@@ -17,11 +17,18 @@
       </span>
     </span>
     <span class="ev-end">
-      {% if e.status_kind != 'idle' %}<em class="tag tag-{{ e.status_kind }}">{{ e.status }}</em>{% endif %}
-      {% if e.my_registration == 'registered' %}<em class="tag tag-you">You're in</em>
-      {% elif e.my_registration == 'waiting' %}<em class="tag tag-wait">Waitlist</em>{% endif %}
+      {% if e.status_kind not in ('idle', 'open') %}
+        <em class="tag tag-{{ e.status_kind }}">{{ e.status }}</em>
+      {% endif %}
+      {% if e.my_registration == 'registered' %}
+        <em class="tag tag-you">You're in</em>
+      {% elif e.my_registration == 'waiting' %}
+        <em class="tag tag-wait">Waitlist</em>
+      {% elif e.registration_open and e.register_url %}
+        <a class="btn-mini" href="{{ e.register_url }}">Register</a>
+      {% endif %}
     </span>
-  </a>
+  </div>
 </li>
 {% endmacro %}
 
