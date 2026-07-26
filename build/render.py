@@ -135,6 +135,9 @@ class Site:
         self.changes = read_json("changes.json", default=[]) or []
         self.meta = read_json("meta.json", default={}) or {}
 
+        # The season the mirror labels itself with comes from the crawled
+        # schedule, not from config, so a rollover carries through on its own.
+        self.season = self.schedule.get("season") or cfg.get("season")
         self.events = [e for e in self.schedule.get("events", []) if e.get("tid")]
         for event in self.events:
             delta = self._delta(event["date"])
@@ -363,6 +366,7 @@ class Site:
             rel,
             self.env.get_template(template).render(
                 cfg=self.cfg,
+                season=self.season,
                 rel=prefix,
                 url=url,
                 generated_iso=self.now.isoformat(timespec="seconds"),
@@ -445,8 +449,9 @@ class Site:
                          skins=self.skins.get(tid),
                          my_roster_status=self.my_roster_status(tid))
 
+        index = read_json("content_index.json") or {}
         pages = []
-        for entry in self.cfg["content_pages"]:
+        for entry in index.get("pages") or self.cfg.get("content_pages", []):
             page = read_json(f"content/{entry['id']}.json")
             if not page:
                 continue
@@ -475,7 +480,7 @@ class Site:
         payload = {
             "generated_at": self.now.isoformat(timespec="seconds"),
             "tour": self.cfg["tour_name"],
-            "season": self.cfg["season"],
+            "season": self.season,
             "site": self.site_url,
             "player": {"id": self.player_id, "name": self.cfg["player"]["name"]},
             "live": None,

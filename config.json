@@ -3,7 +3,8 @@
   "tour_name": "Washington, DC Metro",
   "tour_short": "DC Metro",
   "site_title": "DC Metro Golfweek Am Tour",
-  "season": 2026,
+  "_season_note": "null follows whatever season the site has selected; set a number only to pin an old one",
+  "season": null,
   "timezone": "America/New_York",
   "base_url": "https://www.amateurgolftour.net",
 

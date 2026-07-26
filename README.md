@@ -122,6 +122,41 @@ persisted through the Actions cache instead. Committing them would mean roughly
 only when mirrored content genuinely moved. A cache miss costs one slightly
 larger crawl, nothing worse.
 
+## Long-term maintenance
+
+The intent is that this needs no attention between seasons. What that required:
+
+- **The season is detected, not configured.** Both the schedule and standings
+  dropdowns mark the live season `selected`, so the crawler reads it from the
+  page. `"season": null` in `config.json` means "follow the site"; set a number
+  only to pin an old season. Every page labels itself from the crawled data, so
+  a January rollover carries through on its own.
+- **Info pages are discovered from the tour's nav**, not hardcoded. Some ids are
+  season-specific (the "2026 Hole-N-One Challenge"), so a fixed list would
+  quietly mirror dead pages each year. `content_pages` in `config.json` is now
+  only a fallback if discovery finds nothing.
+- **A weekly heartbeat keeps the cron alive.** GitHub disables scheduled
+  workflows after 60 days of repository inactivity. Nothing upstream changes
+  between late September and March, and unchanged snapshots are deliberately
+  left alone — so without this the repo would go silent over the winter and the
+  schedule would switch itself off before the next season. `data/heartbeat.json`
+  moves once a week and is excluded from the deploy gate.
+- **An empty parse cannot blank the mirror.** If the schedule or standings
+  suddenly parse to zero rows when data was previously known, the crawl raises
+  instead of writing the empty result. A site redesign shows up as a failed run,
+  not as a mirror that quietly renders nothing.
+- **Fixture tests catch markup changes.** `tests/fixtures/` holds real captured
+  pages; the parsers assert against real values, so a redesign fails CI rather
+  than silently producing empty tables.
+
+Things that could still need you, none of them annual:
+
+| If | Symptom | Fix |
+|---|---|---|
+| Cloudflare token expires or is revoked | Deploy step fails; site freezes but stays up | Mint a new one, update the secret |
+| The tour redesigns its site | CI goes red on the fixture tests | Recapture fixtures, adjust parsers |
+| You change flight or tour | Your rows stop being highlighted | Update `player` in `config.json` |
+
 ## Setup
 
 ### 1. GitHub

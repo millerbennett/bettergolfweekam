@@ -25,7 +25,7 @@
       {% elif e.my_registration == 'waiting' %}
         <em class="tag tag-wait">Waitlist</em>
       {% elif e.registration_open and e.register_url %}
-        <a class="btn-mini" href="{{ e.register_url }}">Register</a>
+        <a class="btn-mini" target="_blank" rel="noopener" href="{{ e.register_url }}">Register</a>
       {% endif %}
     </span>
   </div>
@@ -44,10 +44,10 @@
 <section class="card">
   <h1>Coming up</h1>
   {% if upcoming %}
-    <p class="sub">{{ upcoming | length }} left in {{ cfg.season }}.</p>
+    <p class="sub">{{ upcoming | length }} left in {{ season }}.</p>
     <ul class="ev-list">{% for e in upcoming %}{{ event_row(e) }}{% endfor %}</ul>
   {% else %}
-    <p class="notice">Season complete — nothing left on the {{ cfg.season }} schedule.</p>
+    <p class="notice">Season complete — nothing left on the {{ season }} schedule.</p>
   {% endif %}
 </section>
 

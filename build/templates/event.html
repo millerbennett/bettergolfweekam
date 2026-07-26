@@ -10,16 +10,16 @@
      <span class="pill">{{ event.date | days_away }}</span></p>
   {% if event.cost and event.cost != '$' %}<p class="sub">Entry {{ event.cost }}</p>{% endif %}
   {% if event.registration_open and event.register_url and my_roster_status != 'registered' %}
-    <p><a class="button" href="{{ event.register_url }}">
+    <p><a class="button" target="_blank" rel="noopener" href="{{ event.register_url }}">
       {{ "Pay for your spot" if my_roster_status == 'waiting' else "Register for this event" }} ↗
     </a></p>
   {% endif %}
   <p class="sub label">Check upstream</p>
   <div class="chips">
-    <a class="chip" href="{{ cfg.base_url }}/livescore/Leaderboard.aspx?t={{ event.tid }}">Leaderboard</a>
-    <a class="chip" href="{{ cfg.base_url }}/livescore/skinsLB.aspx?t={{ event.tid }}">Skins</a>
-    <a class="chip" href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/results.aspx?id={{ event.tid }}">Results</a>
-    <a class="chip" href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/listing.aspx?id={{ event.tid }}">Roster</a>
+    <a class="chip" target="_blank" rel="noopener" href="{{ cfg.base_url }}/livescore/Leaderboard.aspx?t={{ event.tid }}">Leaderboard</a>
+    <a class="chip" target="_blank" rel="noopener" href="{{ cfg.base_url }}/livescore/skinsLB.aspx?t={{ event.tid }}">Skins</a>
+    <a class="chip" target="_blank" rel="noopener" href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/results.aspx?id={{ event.tid }}">Results</a>
+    <a class="chip" target="_blank" rel="noopener" href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/listing.aspx?id={{ event.tid }}">Roster</a>
   </div>
 </section>
 
@@ -132,7 +132,7 @@
   {% elif pairings and pairings.available is false %}
     <p class="notice">Not on the {{ cfg.tour_short }} pairing sheet — this event is
        run by a neighbouring tour. Check
-       <a href="{{ cfg.base_url }}/livescore/Leaderboard.aspx">the livescore site</a>.</p>
+       <a href="{{ cfg.base_url }}/livescore/Leaderboard.aspx" target="_blank" rel="noopener">the livescore site</a>.</p>
   {% else %}
     <p class="notice">Not posted yet.</p>
   {% endif %}

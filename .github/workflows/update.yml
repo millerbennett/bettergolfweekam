@@ -90,9 +90,10 @@ jobs:
       - name: Detect changes
         id: diff
         run: |
-          # state.json and meta.json are gitignored, so anything git sees here
-          # is genuinely changed mirrored content and worth a rebuild.
-          if git diff --quiet -- data/ && [ -z "$(git ls-files --others --exclude-standard data/)" ]; then
+          # state.json and meta.json are gitignored. heartbeat.json is
+          # committed - it exists purely to keep the cron alive over a quiet
+          # off-season - but it is not content, so it must not trigger a deploy.
+          if git diff --quiet -- data/ ':!data/heartbeat.json'              && [ -z "$(git ls-files --others --exclude-standard data/)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"

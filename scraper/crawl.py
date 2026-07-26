@@ -84,11 +84,28 @@ class Crawler:
     # -- units of work ---------------------------------------------------
 
     def crawl_schedule(self) -> None:
-        season = self.cfg["season"]
         previous = read_json("schedule.json") or {}
         prior_by_tid = {e.get("tid"): e for e in previous.get("events", [])}
 
-        payload = sources.fetch_schedule(self.fetcher, self.cfg, season)
+        # season=None: follow whatever the site says is current, so a January
+        # rollover needs no edit to config.json.
+        payload = sources.fetch_schedule(self.fetcher, self.cfg)
+
+        # A parse that suddenly yields nothing means the markup moved, not that
+        # the tour cancelled its season. Refuse to overwrite a good schedule
+        # with an empty one - that would blank the whole mirror silently.
+        if prior_by_tid and not payload["events"]:
+            raise RuntimeError(
+                f"schedule parsed to 0 events but {len(prior_by_tid)} were known; "
+                "refusing to overwrite - upstream markup has probably changed"
+            )
+
+        if previous.get("season") and previous["season"] != payload["season"]:
+            record_change(self.changes, "season",
+                          f"{payload['season']} season is up",
+                          f"Schedule switched from {previous['season']} to "
+                          f"{payload['season']}", "/schedule.html")
+
         changed = self.save("schedule.json", payload, "schedule")
         if not changed or not prior_by_tid:
             return
@@ -112,9 +129,17 @@ class Crawler:
                               f"{event['date']} - {event['cost']}", f"/t/{event['tid']}.html")
 
     def crawl_standings(self) -> None:
-        season = self.cfg["season"]
         previous = read_json("standings.json") or {}
-        payload = sources.fetch_standings(self.fetcher, self.cfg, season)
+        payload = sources.fetch_standings(self.fetcher, self.cfg)
+        prior_rows = sum(len(f.get("rows", [])) for f in previous.get("flights", []))
+        new_rows = sum(len(f.get("rows", [])) for f in payload.get("flights", []))
+        # Same guard as the schedule, except a new season legitimately starts
+        # empty - so only refuse when the season has not changed.
+        if prior_rows and not new_rows and previous.get("season") == payload.get("season"):
+            raise RuntimeError(
+                f"standings parsed to 0 players but {prior_rows} were known; "
+                "refusing to overwrite - upstream markup has probably changed"
+            )
         if not self.save("standings.json", payload, "standings"):
             return
 
@@ -240,8 +265,27 @@ class Crawler:
             record_change(self.changes, "skins", f"You won a skin: {self.event_label(event)}",
                           hole, f"/t/{tid}.html")
 
+    def content_pages(self) -> list[dict]:
+        """Info pages to mirror, discovered from the tour's nav when possible.
+
+        Falls back to the configured list if discovery turns up nothing, so a
+        nav redesign degrades to the old behaviour instead of losing the
+        section entirely.
+        """
+        cached = read_json("content_index.json") or {}
+        if self.due("content_index", self.fresh["content_hours"]):
+            try:
+                found = sources.discover_content_pages(self.fetcher, self.cfg)
+                if found:
+                    cached = {"pages": found}
+                    save_snapshot("content_index.json", cached)
+                touch(self.state, "content_index")
+            except Exception as exc:
+                log.warning("content discovery failed, using cache/config: %s", exc)
+        return cached.get("pages") or self.cfg.get("content_pages", [])
+
     def crawl_content(self) -> None:
-        for page in self.cfg["content_pages"]:
+        for page in self.content_pages():
             page_id = page["id"]
             key = f"content:{page_id}"
             if not self.due(key, self.fresh["content_hours"]):
@@ -334,6 +378,14 @@ class Crawler:
 
         if self.mode in ("full", "auto", "daily"):
             self.attempt("content", self.crawl_content)
+
+        # GitHub disables scheduled workflows after 60 days without repo
+        # activity. Between late September and March nothing upstream changes,
+        # so - now that unchanged snapshots are left alone - the repo would go
+        # silent and the cron would switch itself off before the next season.
+        # A stamp that only moves once a week keeps it alive at ~52 commits a
+        # year, and the workflow excludes it from the deploy gate.
+        write_json("heartbeat.json", {"week": now_utc().strftime("%G-W%V")})
 
         save_state(self.state)
         save_changes(self.changes)

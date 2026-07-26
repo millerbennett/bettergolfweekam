@@ -15,6 +15,7 @@ from .parse import (
     rows_of,
     sectioned_table,
     select_options,
+    selected_option,
     zip_record,
 )
 
@@ -37,7 +38,7 @@ def leaderboard_url(cfg: dict) -> str:
 # Schedule
 # --------------------------------------------------------------------------
 
-def _parse_us_date(text: str, season: int) -> str | None:
+def _parse_us_date(text: str) -> str | None:
     """'7/25/26' or '07/25/2026' -> ISO '2026-07-25'."""
     match = re.match(r"\s*(\d{1,2})/(\d{1,2})/(\d{2,4})", text or "")
     if not match:
@@ -51,11 +52,25 @@ def _parse_us_date(text: str, season: int) -> str | None:
         return None
 
 
-def fetch_schedule(fetcher: Fetcher, cfg: dict, season: int) -> dict:
-    """The season schedule table, one record per playing day."""
+def fetch_schedule(fetcher: Fetcher, cfg: dict, season: int | None = None) -> dict:
+    """The season schedule table, one record per playing day.
+
+    With `season=None` this follows whatever season the site itself has
+    selected, so a January rollover needs no edit here. The detected season
+    comes back in the payload and is what the rest of the mirror labels
+    itself with.
+    """
     url = tour_url(cfg, "Schedule.aspx")
-    page = fetcher.post_form(url, {"season_dd": str(season)}) if season != cfg["season"] \
-        else fetcher.get(url)
+    page = fetcher.get(url)
+    current = selected_option(page, "season_dd")
+    if season is not None and str(season) != current:
+        page = fetcher.post_form(url, {"season_dd": str(season)})
+        current = str(season)
+
+    season = int(current) if current and current.isdigit() else season
+    if season is None:
+        raise RuntimeError("could not determine the current season")
+
     table = find_table(page, css_class="schedule-table")
     if not table:
         raise RuntimeError("schedule table not found")
@@ -64,7 +79,7 @@ def fetch_schedule(fetcher: Fetcher, cfg: dict, season: int) -> dict:
     for row in rows_of(table):
         if row.is_header or row.is_section or len(row.cells) < 4:
             continue
-        iso = _parse_us_date(row.cells[0], season)
+        iso = _parse_us_date(row.cells[0])
         if not iso:
             continue
         # "DC Metro Masters\n@ Twin Lakes GC (Oaks)"
@@ -343,10 +358,16 @@ def _as_int(text: str | None) -> int | None:
 # Season points race
 # --------------------------------------------------------------------------
 
-def fetch_standings(fetcher: Fetcher, cfg: dict, season: int) -> dict:
+def fetch_standings(fetcher: Fetcher, cfg: dict, season: int | None = None) -> dict:
+    """The season points race. `season=None` follows the site's own selection."""
     url = tour_url(cfg, "Standings.aspx")
-    page = fetcher.post_form(url, {"tournament_dd": str(season)}) if season != cfg["season"] \
-        else fetcher.get(url)
+    page = fetcher.get(url)
+    current = selected_option(page, "tournament_dd")
+    if season is not None and str(season) != current:
+        page = fetcher.post_form(url, {"tournament_dd": str(season)})
+        current = str(season)
+    season = int(current) if current and current.isdigit() else season
+
     table = find_table(page, css_class="schedule-table")
     if not table:
         raise RuntimeError("standings table not found")
@@ -509,6 +530,31 @@ def fetch_skins(fetcher: Fetcher, cfg: dict, tid: str) -> dict:
 # Announcement / info pages
 # --------------------------------------------------------------------------
 
+def discover_content_pages(fetcher: Fetcher, cfg: dict) -> list[dict]:
+    """Find the tour's info pages from its own home page nav.
+
+    These ids are season-specific in places ("2026 Hole-N-One Challenge"), so a
+    hardcoded list goes stale every January and quietly mirrors dead pages.
+    Reading them off the nav each day keeps the set current by itself.
+    """
+    page = fetcher.get(tour_url(cfg, "default.aspx"))
+    slug = cfg["tour_slug"]
+    found: dict[int, str] = {}
+    for match in re.finditer(
+        r"""<a[^>]*href=['"][^'"]*%s_tour_pages/readContent\.aspx\?id=(\d+)['"][^>]*>(.*?)</a>"""
+        % re.escape(slug),
+        page, re.S | re.I,
+    ):
+        page_id, title = int(match.group(1)), clean(match.group(2))
+        # The nav repeats some links as bare images; keep the labelled one.
+        if title and (page_id not in found or not found[page_id]):
+            found[page_id] = title
+
+    pages = [{"id": pid, "title": title} for pid, title in sorted(found.items()) if title]
+    log.info("discovered %d content pages from the tour home page", len(pages))
+    return pages
+
+
 def _absolutise(fragment: str, page_base: str) -> str:
     """Point href/src in mirrored markup back at the origin.
 
@@ -524,7 +570,23 @@ def _absolutise(fragment: str, page_base: str) -> str:
         target = origin + url if url.startswith("/") else page_base + url
         return f"{attr}={quote}{target}{quote}"
 
-    return re.sub(r"""\b(href|src)=(['"])([^'"]*)\2""", fix, fragment, flags=re.I)
+    fragment = re.sub(r"""\b(href|src)=(['"])([^'"]*)\2""", fix, fragment, flags=re.I)
+    return _open_offsite(fragment)
+
+
+def _open_offsite(fragment: str) -> str:
+    """Make links in mirrored markup open in a new tab.
+
+    Everything in here points back at amateurgolftour.net, so following one
+    in place would silently navigate the reader out of the mirror.
+    """
+    def mark(match: re.Match) -> str:
+        tag = match.group(0)
+        if "target=" in tag.lower():
+            return tag
+        return tag[:-1].rstrip() + ' target="_blank" rel="noopener">'
+
+    return re.sub(r"<a\b[^>]*href=[^>]*>", mark, fragment, flags=re.I)
 
 
 def fetch_content(fetcher: Fetcher, cfg: dict, page_id: int) -> dict:

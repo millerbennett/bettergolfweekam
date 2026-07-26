@@ -16,7 +16,7 @@ from pathlib import Path
 import pytest
 
 from scraper import crawl, sources
-from scraper.parse import find_table, select_options
+from scraper.parse import find_table, select_options, selected_option
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -167,6 +167,61 @@ def test_results_rows_are_keyed_by_column():
     assert winner["ID"] == "44286"
     assert winner["Name"] == "Ayubi, Fred"
     assert winner["Score"] == "76"
+
+
+# --------------------------------------------------------------------------
+# Season detection  (what keeps this project from needing an edit each January)
+# --------------------------------------------------------------------------
+
+def test_selected_option_reads_the_live_season():
+    """Regression: the word-boundary in this regex was once written into the
+    file as a literal 0x08 backspace byte, which is invisible in an editor and
+    made the function silently return None for every input."""
+    assert selected_option(fixture("schedule.html"), "season_dd") == "2026"
+    assert selected_option(fixture("standings.html"), "tournament_dd") == "2026"
+
+
+def test_selected_option_is_absent_when_nothing_is_marked():
+    assert selected_option("<select name='x'><option value='1'>1</option></select>", "x") is None
+    assert selected_option("<p>no select here</p>", "x") is None
+
+
+def test_schedule_detects_the_season_without_being_told():
+    data = sources.fetch_schedule(FakeFetcher(fixture("schedule.html")), CFG)
+    assert data["season"] == 2026
+
+
+def test_standings_detects_the_season_without_being_told():
+    data = sources.fetch_standings(FakeFetcher(fixture("standings.html")), CFG)
+    assert data["season"] == 2026
+
+
+def test_detecting_the_season_costs_one_request():
+    fetcher = FakeFetcher(fixture("schedule.html"))
+    sources.fetch_schedule(fetcher, CFG)
+    assert fetcher.request_count == 1
+
+
+def test_content_pages_are_discovered_from_the_nav():
+    """Hardcoded ids go stale: some are season-specific, like the
+    "2026 Hole-N-One Challenge"."""
+    pages = sources.discover_content_pages(FakeFetcher(fixture("home.html")), CFG)
+    ids = {p["id"] for p in pages}
+    assert {5744, 5747, 5755, 5762, 5763} <= ids
+    assert all(p["title"] for p in pages)
+
+
+def test_mirrored_links_open_in_a_new_tab():
+    """Everything in mirrored markup points off-site."""
+    out = sources._absolutise('<a href="Pairings.aspx">tee times</a>',
+                              "https://www.amateurgolftour.net/dc_tour_pages/")
+    assert 'target="_blank"' in out and 'rel="noopener"' in out
+
+
+def test_mirrored_links_keep_an_existing_target():
+    out = sources._absolutise('<a target="_self" href="x.aspx">x</a>',
+                              "https://www.amateurgolftour.net/dc_tour_pages/")
+    assert out.count("target=") == 1
 
 
 # --------------------------------------------------------------------------

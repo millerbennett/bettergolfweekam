@@ -4,7 +4,7 @@
 <section class="card">
   <h1>{{ page.nav_title }}</h1>
   <div class="chips">
-    <a class="chip" href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/readContent.aspx?id={{ page.id }}">View on amateurgolftour.net</a>
+    <a class="chip" target="_blank" rel="noopener" href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/readContent.aspx?id={{ page.id }}">View on amateurgolftour.net</a>
   </div>
   <div class="mirrored">{{ page.html | safe }}</div>
 </section>

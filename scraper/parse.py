@@ -124,6 +124,29 @@ def zip_record(headers: list[str], values: list[str]) -> dict[str, str]:
     return {h: (values[i] if i < len(values) else "") for i, h in enumerate(headers)}
 
 
+def selected_option(page: str, name: str) -> str | None:
+    """The value the server marked `selected` in a <select>.
+
+    The schedule and standings dropdowns both mark the live season this way,
+    which is what lets the crawler follow a season rollover on its own instead
+    of waiting for someone to edit config.json every January.
+    """
+    match = re.search(
+        r"""<select[^>]*(?:name|id)=['"]%s['"][^>]*>(.*?)</select>""" % re.escape(name),
+        page, re.S | re.I,
+    )
+    if not match:
+        return None
+    option = re.search(
+        r"""<option[^>]*\s+selected[^>]*value=['"]([^'"]*)['"]|"""
+        r"""<option[^>]*value=['"]([^'"]*)['"][^>]*\s+selected""",
+        match.group(1), re.I,
+    )
+    if not option:
+        return None
+    return option.group(1) or option.group(2)
+
+
 def select_options(page: str, name: str) -> list[tuple[str, str]]:
     """Return (value, label) pairs for a <select> by name or id."""
     match = re.search(

@@ -17,7 +17,7 @@
     </ul>
     {% if me_gap %}<p class="notice">{{ me_gap }}</p>{% endif %}
   {% else %}
-    <p class="notice">No standings row found for player {{ cfg.player.id }} in {{ cfg.season }}.</p>
+    <p class="notice">No standings row found for player {{ cfg.player.id }} in {{ season }}.</p>
   {% endif %}
 </section>
 
@@ -42,7 +42,7 @@
 </section>
 
 <section class="card">
-  <h2>My {{ cfg.season }} card</h2>
+  <h2>My {{ season }} card</h2>
   {% if my_results %}
   <div class="scroll">
   <table class="data">

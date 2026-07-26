@@ -64,14 +64,14 @@
     {% endif %}
     <p class="cta-row">
       {% if next_event.registration_open and next_event.register_url and my_roster_status != 'registered' %}
-        <a class="button" href="{{ next_event.register_url }}">
+        <a class="button" target="_blank" rel="noopener" href="{{ next_event.register_url }}">
           {{ "Pay for your spot" if my_roster_status == 'waiting' else "Register" }} ↗
         </a>
       {% endif %}
       <a class="button button-ghost" href="{{ url("t/" ~ next_event.tid) }}">Event page →</a>
     </p>
   {% else %}
-    <p class="notice">No further events on the {{ cfg.season }} schedule.</p>
+    <p class="notice">No further events on the {{ season }} schedule.</p>
   {% endif %}
 </section>
 
@@ -89,7 +89,7 @@
     {% if me_gap %}<p class="sub">{{ me_gap }}</p>{% endif %}
     <p><a class="button" href="{{ url('me.html') }}">Full detail →</a></p>
   {% else %}
-    <p class="notice">No {{ cfg.season }} standings row found for player {{ cfg.player.id }}.</p>
+    <p class="notice">No {{ season }} standings row found for player {{ cfg.player.id }}.</p>
   {% endif %}
 </section>
 
