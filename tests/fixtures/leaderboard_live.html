@@ -1,0 +1,536 @@
+<script>console.log('cStatus=0')</script><script>console.log('isPostback')</script><script>console.log('Tournament=17602')</script><script>console.log('t1=0')</script><script>console.log('t2=0')</script><script>console.log('tournament <> 0')</script><script>console.log('Is One Day getting header for:17602')</script><script>console.log('paying with flight:1 and tournament: 17602')</script><script>console.log('result=1')</script><script>console.log('paynum=1')</script><script>console.log('paying with flight:2 and tournament: 17602')</script><script>console.log('result=3')</script><script>console.log('paynum=3')</script><script>console.log('paying with flight:3 and tournament: 17602')</script><script>console.log('result=1')</script><script>console.log('paynum=1')</script><script>console.log('paying with flight:4 and tournament: 17602')</script><script>console.log('result=3')</script><script>console.log('paynum=3')</script><script>console.log('paying with flight:5 and tournament: 17602')</script><script>console.log('result=2')</script><script>console.log('paynum=2')</script><script>console.log('writing leaderboardtext')</script><script>console.log('tournamentID=17602')</script>
+
+
+
+<!DOCTYPE html>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+     <script>
+
+        var timer = setTimeout(function() {
+
+            window.location='/livescore/leaderboard.aspx?t=17602';
+
+        }, 60000);
+
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+
+	Golfweek Amateur Tour Leaderboard
+
+</title><link href="lsStyles.css" rel="stylesheet" /><link href="/livescore/inc/footer.css" rel="stylesheet" />
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <form name="form1" method="post" action="./Leaderboard.aspx" id="form1">
+
+<div>
+
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+</div>
+
+
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+var theForm = document.forms['form1'];
+
+if (!theForm) {
+
+    theForm = document.form1;
+
+}
+
+function __doPostBack(eventTarget, eventArgument) {
+
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+
+        theForm.__EVENTTARGET.value = eventTarget;
+
+        theForm.__EVENTARGUMENT.value = eventArgument;
+
+        theForm.submit();
+
+    }
+
+}
+
+//]]>
+
+</script>
+
+
+
+
+
+<div>
+
+
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C6A32B48" />
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+
+</div>
+
+      <div id="page-container">
+
+            <div id="content-wrap">
+
+        <div id="header" class="header">&nbsp;</div>            
+
+                 
+
+                        <div class="menu"><a href="skinsLB.aspx">Jump To Skins Leaderboards</a><br /><br />
+
+        <div class="leaderBoardLinkTitle">Leaderboards</div>
+
+            <select name="tournaments_dd" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;tournaments_dd\&#39;,\&#39;\&#39;)&#39;, 0)" id="tournaments_dd" style="width:500px;">
+
+	<option value="--Select Tournament--">--Select Tournament--</option>
+
+	<option value="18043">18043 07/09/2026 12:30 PM   Riverdale Dunes (Denver, CO)</option>
+
+	<option value="17506">17506 07/11/2026 02:00 PM   Riverton Pointe Golf &amp; Country Club (Hilton Head-Savannah)</option>
+
+	<option value="17570">17570 07/11/2026 08:30 AM   Rio Pinar GC (Orlando, FL)</option>
+
+	<option value="17691">17691 07/11/2026 08:00 AM Summer Major Combo DFW w/ LA North The Tempest GC (Dallas- Fort Worth, TX)</option>
+
+	<option value="17715">17715 07/11/2026 11:00 AM English Turn English Turn Golf &amp; Country Club (Mississippi)</option>
+
+	<option value="17819">17819 07/11/2026 10:00 AM   Gull Lake View Golf Resort (Stonehedge South) (Michigan)</option>
+
+	<option value="17857">17857 07/11/2026 12:00 PM The Magic City Championship Highland Park GC (Alabama)</option>
+
+	<option value="17871">17871 07/11/2026 09:00 AM Never Out Of Bounds Championship The Gauntlet Golf Club (Richmond)</option>
+
+	<option value="17898">17898 07/11/2026 11:54 AM The Climbing Bear Trace at Cumberland Mountain (Nashville, TN)</option>
+
+	<option value="17912">17912 07/11/2026 09:00 AM   Chamberlyne Country Club (Arkansas)</option>
+
+	<option value="17937">17937 07/11/2026 08:00 AM The DC Open The Links at Gettysburg (Washington, DC Metro)</option>
+
+	<option value="17968">17968 07/11/2026 10:00 AM   North Shore Golf Course (Eastern NC)</option>
+
+	<option value="18012">18012 07/11/2026 10:00 AM Battle at the Bear Bear&#39;s Best Golf Course (Atlanta, GA)</option>
+
+	<option value="18061">18061 07/11/2026 10:00 AM SOLD OUT!! SlicedGolf Playing After The Pros Major Fyre Lake GC (Chicago, IL)</option>
+
+	<option value="18113">18113 07/11/2026 09:00 AM El Paso Classic Lone Star Golf Club (El Paso, TX/ Las Cruces, NM)</option>
+
+	<option value="18135">18135 07/11/2026 12:30 PM TEST AT TROY BURNE* Troy Burne Golf Club (Minneapolis/St. Paul, MN)</option>
+
+	<option value="18247">18247 07/11/2026 10:00 AM   Covered Bridge Golf Club (Indiana-Western KY)</option>
+
+	<option value="18254">18254 07/11/2026 10:00 AM Mid-Season Major Duel in the Dells Wild Rock Golf Club (Milwaukee, WI)</option>
+
+	<option value="17692">17692 07/12/2026 08:00 AM Summer Major Combo DFW w/ LA North The Tempest GC (Dallas- Fort Worth, TX)</option>
+
+	<option value="17708">17708 07/12/2026 10:30 PM Any Given Sunday  Ardea Country Club (South) (Tampa, FL)</option>
+
+	<option value="17956">17956 07/12/2026 08:00 AM   Sycamore Ridge Golf Club (Kansas)</option>
+
+	<option value="17998">17998 07/12/2026 10:30 AM   Heatherwoode Golf Club (Cincinnati/Dayton)</option>
+
+	<option value="18062">18062 07/12/2026 10:00 AM SOLD OUT!! SlicedGolf Playing After The Pros Major TPC Deere Run (Chicago, IL)</option>
+
+	<option value="18255">18255 07/12/2026 10:00 AM Mid-Season Major Duel in the Dells Wild Rock Golf Club (Milwaukee, WI)</option>
+
+	<option value="17661">17661 07/13/2026 10:00 AM The Carrie On Homes Classic - MONDAY Greenbrier Country Club (Tidewater, VA)</option>
+
+	<option value="17980">17980 07/13/2026 12:00 PM   The Lakes Golf &amp; CC (Columbus, OH)</option>
+
+	<option value="18205">18205 07/13/2026 10:00 AM   Waubeeka Golf Links (New York Upstate)</option>
+
+	<option value="17845">17845 07/17/2026 12:00 PM   Olivas Links (California)</option>
+
+	<option value="18285">18285 07/17/2026 11:10 AM Lake Lure Skins Game Bald Mountain Golf Course (Charleston, SC)</option>
+
+	<option value="17520">17520 07/18/2026 08:30 AM   The Florida Club (South Florida)</option>
+
+	<option value="17752">17752 07/18/2026 09:00 AM Blacksburg Regional Pete Dye River Course of Virginia Tech (Regionals)</option>
+
+	<option value="17761">17761 07/18/2026 08:00 AM Dancing Rabbit Dancing Rabbit Golf Club (Azaleas) (Mississippi)</option>
+
+	<option value="17786">17786 07/18/2026 11:07 AM Jack &amp; Arnie&#39;s Challenge World Golf Village (King &amp; Bear) (North Florida)</option>
+
+	<option value="17821">17821 07/18/2026 11:00 AM  Hawk Hollow &amp; Eagle Eye Major Hawk Hollow GC (Michigan)</option>
+
+	<option value="17847">17847 07/18/2026 10:00 AM Pacific Open Glen Annie Golf Club (California)</option>
+
+	<option value="17887">17887 07/18/2026 08:30 AM Cypress Lakes Tournament Cypress Lakes GC (Central North Carolina)</option>
+
+	<option value="17931">17931 07/18/2026 07:30 AM   Apple Valley Golf Course (NC) (Charleston, SC)</option>
+
+	<option value="17957">17957 07/18/2026 09:00 AM The Open Golf Club at Deer Chase (Kansas)</option>
+
+	<option value="18090">18090 07/18/2026 09:00 AM The Olde Course at Loveland The Olde Course at Loveland (Denver, CO)</option>
+
+	<option value="18168">18168 07/18/2026 10:00 AM   Mallard Creek GC (Pacific Northwest)</option>
+
+	<option value="18224">18224 07/18/2026 01:00 PM King of the Mountain Stonecrest GC (Kentucky)</option>
+
+	<option value="17621">17621 07/19/2026 08:00 AM Prescott Valley Open Prescott Country Club (Arizona)</option>
+
+	<option value="17753">17753 07/19/2026 09:00 AM Blacksburg Regional Pete Dye River Course of Virginia Tech (Regionals)</option>
+
+	<option value="17762">17762 07/19/2026 08:00 AM Dancing Rabbit Dancing Rabbit Golf Club (Oaks) (Mississippi)</option>
+
+	<option value="17822">17822 07/19/2026 11:00 AM  Eagle Eye Golf Course (Michigan)</option>
+
+	<option value="17848">17848 07/19/2026 10:00 AM   Sandpiper Golf Club (California)</option>
+
+	<option value="17932">17932 07/19/2026 08:30 AM   Bald Mountain Golf Course (Charleston, SC)</option>
+
+	<option value="17958">17958 07/19/2026 08:30 AM The Open Osage National CC (Kansas)</option>
+
+	<option value="18063">18063 07/19/2026 08:30 AM   Makray Memorial Golf Club (Chicago, IL)</option>
+
+	<option value="18138">18138 07/19/2026 12:00 AM PHALEN OPEN* Phalen GC (Minneapolis/St. Paul, MN)</option>
+
+	<option value="18160">18160 07/19/2026 10:00 AM   Birch Creek Golf Club (St. Louis, MO)</option>
+
+	<option value="18225">18225 07/19/2026 11:30 AM King of the Mountain Stonecrest GC (Kentucky)</option>
+
+	<option value="18248">18248 07/19/2026 11:00 AM   French Lick Resort (Donald Ross)  (Indiana-Western KY)</option>
+
+	<option value="17535">17535 07/21/2026 12:00 PM White Manor White Manor Country Club (Philadelphia, PA Metro)</option>
+
+	<option selected="selected" value="17602">17602 07/25/2026 01:00 PM DC Metro Battlefield Open  Stonewall Golf Club (Washington, DC Metro)</option>
+
+	<option value="17625">17625 07/25/2026 08:30 AM Celebration (Combo with Tampa) Celebration Golf Club (Orlando, FL)</option>
+
+	<option value="17676">17676 07/25/2026 08:00 AM   Huntington Park GC (Louisiana North)</option>
+
+	<option value="17969">17969 07/25/2026 09:00 AM CANCELLED Occano Golf Course (Eastern NC)</option>
+
+	<option value="18013">18013 07/25/2026 10:00 AM The Mountaintop Marathon Major Currahee Club Golf Course (Atlanta, GA)</option>
+
+	<option value="18047">18047 07/25/2026 09:00 AM Bella Ridge Bella Ridge GC (Denver, CO)</option>
+
+	<option value="18078">18078 07/25/2026 11:00 AM  INDIANAPOLIS OPEN - 2 DAY MAJOR Birck Boilermaker Golf Complex (Kampen-Cosler) (Indianapolis, IN)</option>
+
+	<option value="18139">18139 07/25/2026 11:00 AM RUMBLE AT THE REFUGE* Refuge Golf Club (Minneapolis/St. Paul, MN)</option>
+
+	<option value="18187">18187 07/25/2026 08:00 AM Event #8 Mallard Golf Club (Louisiana South)</option>
+
+	<option value="18262">18262 07/25/2026 11:56 AM   Broadlands Golf Club (Milwaukee, WI)</option>
+
+	<option value="18282">18282 07/25/2026 10:30 AM Fort Jackson Major Fort Jackson Golf Club (Wildcat) (Columbia, SC)</option>
+
+	<option value="17550">17550 07/26/2026 07:02 AM Showdown at Aliante Aliante GC (Las Vegas, NV)</option>
+
+	<option value="17583">17583 07/26/2026 02:00 PM   Cowans Ford CC (Charlotte, NC)</option>
+
+	<option value="17693">17693 07/26/2026 08:00 AM   Hawks Creek Golf Club (Dallas- Fort Worth, TX)</option>
+
+	<option value="17913">17913 07/26/2026 10:00 AM Village Masters Hot Springs Village (Ponce De Leon) (Arkansas)</option>
+
+	<option value="17930">17930 07/26/2026 09:00 AM   Palmetto Hall (Robert Cupp Course) (Hilton Head-Savannah)</option>
+
+	<option value="17941">17941 07/26/2026 12:00 PM   Ellsworth Meadows Golf Club (Cleveland/ Akron)</option>
+
+	<option value="17981">17981 07/26/2026 12:30 PM   Apple Valley Golf Course (OH) (Columbus, OH)</option>
+
+	<option value="18014">18014 07/26/2026 01:00 PM The Mountaintop Marathon Major Currahee Club Golf Course (Atlanta, GA)</option>
+
+	<option value="18064">18064 07/26/2026 12:30 PM WEST-SOUTH ROTATION Arrowhead Golf Club (Chicago, IL)</option>
+
+	<option value="18079">18079 07/26/2026 11:00 AM   Birck Boilermaker Golf Complex (Ackerman-Allen) (Indianapolis, IN)</option>
+
+	<option value="18097">18097 07/26/2026 11:56 AM The Shading WillowBrook Golf Club (Nashville, TN)</option>
+
+	<option value="18284">18284 07/26/2026 10:30 AM Fort Jackson Major Fort Jackson Golf Club (Wildcat) (Columbia, SC)</option>
+
+	<option value="17914">17914 07/27/2026 10:00 AM Village Masters Hot Springs Village (Diamante) (Arkansas)</option>
+
+	<option value="17999">17999 07/27/2026 10:00 AM   Oasis Golf Club (Cincinnati/Dayton)</option>
+
+	<option value="18203">18203 07/27/2026 10:30 AM   Schenectady Municipal GC (New York Upstate)</option>
+
+	<option value="17526">17526 08/01/2026 09:00 AM The Players Championship Beechwood Country Club (Tidewater, VA)</option>
+
+	<option value="17823">17823 08/01/2026 10:00 AM   The Medalist Golf Club (Michigan)</option>
+
+	<option value="17858">17858 08/01/2026 10:00 AM The Gulf Coast Summer Championship Lost Key Golf Club (Alabama)</option>
+
+	<option value="17863">17863 08/01/2026 01:00 PM Sedona Masters presented by SlicedGolf Seven Canyons (Arizona)</option>
+
+	<option value="17888">17888 08/01/2026 09:30 AM Gates Four Tournament Gates Four Golf &amp; Country Club (Central North Carolina)</option>
+
+	<option value="17959">17959 08/01/2026 12:30 PM   Paradise Pointe Golf Complex (The Posse) (Kansas)</option>
+
+	<option value="18029">18029 08/01/2026 09:00 AM  Quarles Electric Classic Savannah Lakes Village (Tara) (Augusta, GA)</option>
+
+	<option value="18114">18114 08/01/2026 08:00 AM Craig Christianson Memorial Butterfield Trail Golf Club (El Paso, TX/ Las Cruces, NM)</option>
+
+	<option value="18188">18188 08/01/2026 08:00 AM Event #9 TPC of Louisiana (Louisiana South)</option>
+
+	<option value="18204">18204 08/01/2026 12:00 PM   Eagle Crest Golf Club (New York Upstate)</option>
+
+	<option value="18210">18210 08/01/2026 10:30 AM   Country Club of South Carolina (Columbia, SC)</option>
+
+	<option value="18226">18226 08/01/2026 01:31 PM Pine Mountain Championship Wasioto Winds GC (Kentucky)</option>
+
+	<option value="17527">17527 08/02/2026 09:00 AM The Players Championship Beechwood Country Club (Tidewater, VA)</option>
+
+	<option value="17703">17703 08/02/2026 12:00 AM Sedona Masters presented by SlicedGolf Oakcreek Country Club (Arizona)</option>
+
+	<option value="17859">17859 08/02/2026 08:03 AM The Gulf Coast Summer Championship Lost Key Golf Club (Alabama)</option>
+
+	<option value="17982">17982 08/02/2026 12:00 PM   Denison Golf Course (Columbus, OH)</option>
+
+	<option value="18092">18092 08/02/2026 10:00 AM  Broadlands Golf Course The Broadlands GC (Denver, CO)</option>
+
+	<option value="18161">18161 08/02/2026 11:15 AM   Tapawingo National Golf Club (St. Louis, MO)</option>
+
+	<option value="18271">18271 08/02/2026 12:00 PM  Eagle Crest Golf Club (New York Upstate)</option>
+
+	<option value="18291">18291 08/02/2026 01:00 PM THE WILDS INVITATIONAL The Wilds GC (Minneapolis/St. Paul, MN)</option>
+
+
+
+</select> 
+
+    </div>
+
+                <div>
+
+            <div id="leaderBoard" class="leaderBoard">
+
+              <table class="lsLeaderBoardTable">
+
+                  <tr><td colspan="9" align="center">Updated every 60 seconds</td></tr>
+
+                  <tr>
+
+                      <td colspan="9" class='lbtournamentname'><!--Flight: &nbsp;-->
+
+                          <div id="flightSelect">
+
+                        <span id="tName"></span>
+
+                        <select name="Flights" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;Flights\&#39;,\&#39;\&#39;)&#39;, 0)" id="Flights">
+
+	<option selected="selected" value="0">All</option>
+
+	<option value="1">Champ</option>
+
+	<option value="2">A Flight</option>
+
+	<option value="3">B Flight</option>
+
+	<option value="4">C Flight</option>
+
+	<option value="5">D Flight</option>
+
+
+
+</select>
+
+                              </div>
+
+                      </td>
+
+                  </tr>
+
+                  <span id="lblLeaderBoard"><tr><td colspan='9' class='lbTournamentName'>DC Metro Battlefield Open  Stonewall Golf Club<br />07/25/2026</td></tr><tr class='lbHeader'><td>Position</td><td>Player</td><td>&nbsp;</td><td>Total</td><td>Thru</td><td>Currently</td></tr><tr class='lbHoleHeader'><td colspan='8'>Champ Flight Leaderboard</td></tr><tr><td class='lbPlayerRow'>1</td><td class='lbPlayerName'>Devine, Ben - Washington, DC Metro - Champ</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>80</td><td class='lbPlayerRow'>11</td><td class='lbPlayerRow'>+ 8</td></tr><tr><td colspan='6' class='cutline'></td></tr><tr><td class='lbPlayerRow'>2</td><td class='lbPlayerName'>McMahon, Michael - Washington, DC Metro - Champ</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>86</td><td class='lbPlayerRow'>14</td><td class='lbPlayerRow'>+ 14</td></tr><tr class='lbHoleHeader'><td colspan='8'>A Flight Leaderboard</td></tr><tr><td class='lbPlayerRow'>1</td><td class='lbPlayerName'>Facello, Scott - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>80</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 8</td></tr><tr><td class='lbPlayerRow'>2</td><td class='lbPlayerName'>Brown, Garrett - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>81</td><td class='lbPlayerRow'>7</td><td class='lbPlayerRow'>+ 9</td></tr><tr><td class='lbPlayerRow'>3</td><td class='lbPlayerName'>Ogletree, Steve - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>82</td><td class='lbPlayerRow'>11</td><td class='lbPlayerRow'>+ 10</td></tr><tr><td colspan='6' class='cutline'></td></tr><tr><td class='lbPlayerRow'>4</td><td class='lbPlayerName'>Crowley, Craig - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>83</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 11</td></tr><tr><td class='lbPlayerRow'>T5</td><td class='lbPlayerName'>Patterson, Bryan - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>89</td><td class='lbPlayerRow'>16</td><td class='lbPlayerRow'>+ 17</td></tr><tr><td class='lbPlayerRow'>T5</td><td class='lbPlayerName'>Thomas, Larry - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>89</td><td class='lbPlayerRow'>7</td><td class='lbPlayerRow'>+ 17</td></tr><tr><td class='lbPlayerRow'>7</td><td class='lbPlayerName'>Yi, Myong - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>90</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 18</td></tr><tr><td class='lbPlayerRow'>8</td><td class='lbPlayerName'>Rosenfield, Chuck - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>91</td><td class='lbPlayerRow'>14</td><td class='lbPlayerRow'>+ 19</td></tr><tr><td class='lbPlayerRow'>9</td><td class='lbPlayerName'>Carreon, Fredy - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>94</td><td class='lbPlayerRow'>16</td><td class='lbPlayerRow'>+ 22</td></tr><tr><td class='lbPlayerRow'>10</td><td class='lbPlayerName'>Smith, Anson - Washington, DC Metro - A</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>96</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 24</td></tr><tr class='lbHoleHeader'><td colspan='8'>B Flight Leaderboard</td></tr><tr><td class='lbPlayerRow'>1</td><td class='lbPlayerName'>Miller, Bennett - Washington, DC Metro - B</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>87</td><td class='lbPlayerRow'>11</td><td class='lbPlayerRow'>+ 15</td></tr><tr><td colspan='6' class='cutline'></td></tr><tr><td class='lbPlayerRow'>T2</td><td class='lbPlayerName'>Gafford, Hayden - Washington, DC Metro - B</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>94</td><td class='lbPlayerRow'>14</td><td class='lbPlayerRow'>+ 22</td></tr><tr><td class='lbPlayerRow'>T2</td><td class='lbPlayerName'>Hawkins, Kevin - Washington, DC Metro - B</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>94</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 22</td></tr><tr><td class='lbPlayerRow'>4</td><td class='lbPlayerName'>Okoba, Stephen - Washington, DC Metro - B</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>95</td><td class='lbPlayerRow'>7</td><td class='lbPlayerRow'>+ 23</td></tr><tr class='lbHoleHeader'><td colspan='8'>C Flight Leaderboard</td></tr><tr><td class='lbPlayerRow'>1</td><td class='lbPlayerName'>Tyrrell, Milton  - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>84</td><td class='lbPlayerRow'>11</td><td class='lbPlayerRow'>+ 12</td></tr><tr><td class='lbPlayerRow'>2</td><td class='lbPlayerName'>Briggs, James - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>88</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 16</td></tr><tr><td class='lbPlayerRow'>3</td><td class='lbPlayerName'>Shugart, Dave - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>92</td><td class='lbPlayerRow'>16</td><td class='lbPlayerRow'>+ 20</td></tr><tr><td colspan='6' class='cutline'></td></tr><tr><td class='lbPlayerRow'>T4</td><td class='lbPlayerName'>Franklin, Cephas - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>93</td><td class='lbPlayerRow'>7</td><td class='lbPlayerRow'>+ 21</td></tr><tr><td class='lbPlayerRow'>T4</td><td class='lbPlayerName'>Thompson, Zak - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>93</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 21</td></tr><tr><td class='lbPlayerRow'>T4</td><td class='lbPlayerName'>Taplin, Maurice  - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>93</td><td class='lbPlayerRow'>14</td><td class='lbPlayerRow'>+ 21</td></tr><tr><td class='lbPlayerRow'>T7</td><td class='lbPlayerName'>Hines, Dan - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>94</td><td class='lbPlayerRow'>16</td><td class='lbPlayerRow'>+ 22</td></tr><tr><td class='lbPlayerRow'>T7</td><td class='lbPlayerName'>Devine, Ron - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>94</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 22</td></tr><tr><td class='lbPlayerRow'>T9</td><td class='lbPlayerName'>Sams, Darin - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>95</td><td class='lbPlayerRow'>11</td><td class='lbPlayerRow'>+ 23</td></tr><tr><td class='lbPlayerRow'>T9</td><td class='lbPlayerName'>Giles, Alex - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>95</td><td class='lbPlayerRow'>14</td><td class='lbPlayerRow'>+ 23</td></tr><tr><td class='lbPlayerRow'>11</td><td class='lbPlayerName'>Bunner, Gil - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>97</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 25</td></tr><tr><td class='lbPlayerRow'>12</td><td class='lbPlayerName'>Simmons, Titus - Washington, DC Metro - C</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>110</td><td class='lbPlayerRow'>7</td><td class='lbPlayerRow'>+ 38</td></tr><tr class='lbHoleHeader'><td colspan='8'>D Flight Leaderboard</td></tr><tr><td class='lbPlayerRow'>1</td><td class='lbPlayerName'>Alexander, Sal - Washington, DC Metro - D</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>91</td><td class='lbPlayerRow'>11</td><td class='lbPlayerRow'>+ 19</td></tr><tr><td class='lbPlayerRow'>2</td><td class='lbPlayerName'>Taylor, Nick - Washington, DC Metro - D</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>93</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 21</td></tr><tr><td colspan='6' class='cutline'></td></tr><tr><td class='lbPlayerRow'>T3</td><td class='lbPlayerName'>Jones, Carlton - Washington, DC Metro - D</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>98</td><td class='lbPlayerRow'>16</td><td class='lbPlayerRow'>+ 26</td></tr><tr><td class='lbPlayerRow'>T3</td><td class='lbPlayerName'>Hayes, LaRon  - Washington, DC Metro - D</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>98</td><td class='lbPlayerRow'>7</td><td class='lbPlayerRow'>+ 26</td></tr><tr><td class='lbPlayerRow'>5</td><td class='lbPlayerName'>Phillips, David - Washington, DC Metro - D</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>99</td><td class='lbPlayerRow'>18</td><td class='lbPlayerRow'>+ 27</td></tr><tr><td class='lbPlayerRow'>6</td><td class='lbPlayerName'>Hancock, Dawn - Washington, DC Metro - D</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>101</td><td class='lbPlayerRow'>14</td><td class='lbPlayerRow'>+ 29</td></tr><tr><td class='lbPlayerRow'>7</td><td class='lbPlayerName'>Lewis, Lenny - Washington, DC Metro - D</td><td class='lbPlayerRow'>&nbsp;</td><td class='lbPlayerRow'>110</td><td class='lbPlayerRow'>16</td><td class='lbPlayerRow'>+ 38</td></tr></span>
+
+              </table>
+
+                </div>
+
+        </div>
+
+      </div>
+
+     <script src="/new/Site/javascript/core/jquery.min.js" type="text/javascript"></script>
+
+        <script src="/new/Site/javascript/core/popper.min.js" type="text/javascript"></script>
+
+        <script src="/new/Site/javascript/core/bootstrap.min.js" type="text/javascript"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <footer class="footer-style">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-12">
+
+                       <style type="text/css">
+
+<!--
+
+.footerLink {
+
+}
+
+-->
+
+</style>
+
+<a href="/Default.aspx" class="footerLink">Home</a>
+
+<div class="dropup">
+
+<button class="dropbtn">Find A Tour Near Me &#9652;</button>
+
+    <div class="dropup-content">
+
+        <p><a class="dropdown-item" href="/alabama_tour_pages/default.aspx">Alabama</a>
+
+          <a class="dropdown-item" href="/phoenix_tour_pages/default.aspx">Arizona</a>
+
+          <a class="dropdown-item" href="/arkansas_tour_pages/default.aspx">Arkansas</a>
+
+          <a class="dropdown-item" href="/atlanta_tour_pages/default.aspx">Atlanta, GA</a>
+
+          <a class="dropdown-item" href="/augusta_tour_pages/default.aspx">Augusta, GA</a>
+
+          <a class="dropdown-item" href="/central_california_tour_pages/default.aspx">California</a>
+
+          <a class="dropdown-item" href="/triad_tour_pages/default.aspx">Central North Carolina</a>
+
+          <a class="dropdown-item" href="/charleston_tour_pages/default.aspx">Charleston, SC</a>
+
+          <a class="dropdown-item" href="/Charlotte_tour_pages/default.aspx">Charlotte, NC</a>
+
+          <a class="dropdown-item" href="/chicago_tour_pages/default.aspx">Chicago, IL</a>
+
+          <a class="dropdown-item" href="/cincinnati_tour_pages/default.aspx">Cincinnati/Dayton, OH</a>
+
+          <a class="dropdown-item" href="/cleveland_tour_pages/default.aspx">Cleveland/Akron, OH</a>
+
+          <a class="dropdown-item" href="/columbia_tour_pages/default.aspx">Columbia, SC</a>
+
+          <a class="dropdown-item" href="/columbus_tour_pages/default.aspx">Columbus,OH</a>
+
+          <a class="dropdown-item" href="/dallas_tour_pages/default.aspx">Dallas/Ft. Worth, TX</a>
+
+          <a class="dropdown-item" href="/denver_tour_pages/default.aspx">Denver, CO</a>
+
+          <a class="dropdown-item" href="/downeast_tour_pages/default.aspx">Eastern NC</a>
+
+          <a class="dropdown-item" href="/el_paso_tour_pages/default.aspx">El Paso, TX/ Las Cruces, NM</a>
+
+          <a class="dropdown-item" href="/hiltonhead_tour_pages/default.aspx">Hilton Head- Savannah</a>
+
+          <a class="dropdown-item" href="/houston_tour_pages/default.aspx">Houston, TX</a>
+
+          <a class="dropdown-item" href="/indywky_tour_pages/default.aspx">Indiana-W Ky</a>
+
+          <a class="dropdown-item" href="/indy_tour_pages/default.aspx">Indianapolis, IN</a>
+
+          <a class="dropdown-item" href="/jacksonville_tour_pages/default.aspx">Jacksonville, FL</a>
+
+          <a class="dropdown-item" href="/kansas_tour_pages/default.aspx">Kansas</a>
+
+          <a class="dropdown-item" href="/lexington_tour_pages/default.aspx">Kentucky</a>
+
+          <a class="dropdown-item" href="/las_vegas_tour_pages/default.aspx">Las Vegas, NV</a>
+
+          <a class="dropdown-item" href="/nla_tour_pages/default.aspx">Louisiana North</a>
+
+          <a class="dropdown-item" href="/sla_tour_pages/default.aspx">Louisiana South</a>
+
+          
+
+          <a class="dropdown-item" href="/detroit_tour_pages/default.aspx">Michigan East</a>
+
+          <a class="dropdown-item" href="/miw_tour_pages/default.aspx">Michigan West</a>
+
+          <a class="dropdown-item" href="/milwaukee_tour_pages/default.aspx">Milwaukee, WI</a>
+
+          <a class="dropdown-item" href="/minneapolis_tour_pages/default.aspx">Minneapolis/St. Paul, MN</a>
+
+          <a class="dropdown-item" href="/mississippi_tour_pages/default.aspx">Mississippi</a>
+
+         
+
+          <a class="dropdown-item" href="/nashville_tour_pages/default.aspx">Nashville, TN</a>
+
+          <a class="dropdown-item" href="/new_jersey_tour_pages/default.aspx">New Jersey</a>
+
+          
+
+          <a class="dropdown-item" href="/upstateny_tour_pages/default.aspx">NY Upstate</a>
+
+          <a class="dropdown-item" href="/ncfl_tour_pages/default.aspx">North Central Florida</a>
+
+          <a class="dropdown-item" href="/orlando_tour_pages/default.aspx">Orlando, FL</a>
+
+          <a class="dropdown-item" href="/philly_tour_pages/default.aspx">Philadelphia, PA Metro</a>
+
+          
+
+          <a class="dropdown-item" href="/richmond_tour_pages/default.aspx">Richmond, VA</a>
+
+          
+
+          <a class="dropdown-item" href="/southflorida_tour_pages/default.aspx">South Florida</a>
+
+          <a class="dropdown-item" href="/stlouis_tour_pages/default.aspx">St. Louis, MO</a>
+
+          <a class="dropdown-item" href="/tampa_tour_pages/default.aspx">Tampa, FL</a>
+
+          <a class="dropdown-item" href="/tidewater_tour_pages/default.aspx">Tidewater, VA</a>
+
+          
+
+          
+
+          <a class="dropdown-item" href="/dc_tour_pages/default.aspx">Washington, DC Metro</a>
+
+          <a class="dropdown-item" href="/regional_pages/default.aspx">Regionals</a>
+
+          <a class="dropdown-item" href="/tour_championship/default.aspx">Tour Championship</a></p>
+
+</div>
+
+</div>
+
+<a href="/register/Signup.aspx" class="footerLink">Join Now</a>
+
+<a href="https://www.senioramateurgolftour.net/Default.aspx" class="footerLink">Senior Amateur Golf Tour</a> 
+
+                    </div>
+
+                </div>
+
+            </div>
+
+       </footer>
+
+</div>
+
+        
+
+    </form>
+
+</body>
+
+</html>
+

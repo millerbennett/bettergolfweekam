@@ -326,6 +326,38 @@ def test_livescore_strips_tour_and_flight_from_player_names():
     assert leader["thru"] == "18"
 
 
+def test_a_finished_board_is_not_reported_as_in_progress():
+    """"Board has rows" is not liveness. Every card here is thru 18."""
+    data = sources.fetch_livescore(FakeFetcher(fixture("leaderboard.html")), CFG, "17602")
+    assert data["status"] == "complete"
+    assert data["still_out"] == 0
+    assert data["finished"] == data["players"] == 35
+
+
+def test_a_mid_round_board_is_in_progress():
+    """Fixture is the real board with the Thru column rewound on some
+    players; no genuine mid-round capture exists to use."""
+    data = sources.fetch_livescore(FakeFetcher(fixture("leaderboard_live.html")), CFG, "17602")
+    assert data["status"] == "in_progress"
+    assert data["still_out"] > 0
+    assert data["still_out"] + data["finished"] == data["players"]
+
+
+def test_an_empty_board_has_not_started():
+    board = '<span id="lblLeaderBoard"><table></table></span>'
+    data = sources.fetch_livescore(FakeFetcher(board), CFG, "17602")
+    assert data["status"] == "not_started"
+    assert data["live"] is False
+
+
+@pytest.mark.parametrize(
+    "value,holes",
+    [("18", 18), ("7", 7), ("F", 18), ("f", 18), ("", None), ("-", None), (None, None)],
+)
+def test_thru_column_parsing(value, holes):
+    assert sources._thru(value) == holes
+
+
 def test_livescore_ignores_cutline_separator_rows():
     """The board injects `<td class='cutline'>` spacers between placings."""
     data = sources.fetch_livescore(FakeFetcher(fixture("leaderboard.html")), CFG, "17602")

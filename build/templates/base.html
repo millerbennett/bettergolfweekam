@@ -16,12 +16,12 @@
 <header class="topbar">
   <a class="brand" href="{{ url('index.html') }}">⛳ {{ cfg.tour_short }}</a>
   <nav>
-    <a href="{{ url('index.html') }}">Now</a>
-    <a href="{{ url('schedule.html') }}">Schedule</a>
-    <a href="{{ url('standings.html') }}">Points</a>
-    <a href="{{ url('me.html') }}">Me</a>
-    <a href="{{ url('feed.html') }}">Updates</a>
-    <a href="{{ url('info.html') }}">Info</a>
+    <a href="{{ url('index.html') }}"{% if nav == 'now' %} class="active" aria-current="page"{% endif %}>Now</a>
+    <a href="{{ url('schedule.html') }}"{% if nav == 'schedule' %} class="active" aria-current="page"{% endif %}>Schedule</a>
+    <a href="{{ url('standings.html') }}"{% if nav == 'points' %} class="active" aria-current="page"{% endif %}>Points</a>
+    <a href="{{ url('me.html') }}"{% if nav == 'me' %} class="active" aria-current="page"{% endif %}>Me</a>
+    <a href="{{ url('feed.html') }}"{% if nav == 'updates' %} class="active" aria-current="page"{% endif %}>Updates</a>
+    <a href="{{ url('info.html') }}"{% if nav == 'info' %} class="active" aria-current="page"{% endif %}>Info</a>
   </nav>
 </header>
 

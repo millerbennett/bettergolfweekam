@@ -1,15 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% if live %}
-<section class="card live">
-  <h1>Playing now — {{ live.event.name }}</h1>
-  <p class="sub">{{ live.event.course }} · {{ live.event.date | pretty_date }}</p>
-  {% if me_live %}
-  <p class="highlight">You: <strong>{{ me_live.total }}</strong> ({{ me_live.to_par }}) thru {{ me_live.thru }} —
-     position <strong>{{ me_live.position }}</strong> in {{ me_live.flight }}</p>
+{% if today_board %}
+<section class="card card-live">
+  {% if today_board.status == 'in_progress' %}
+    <h1 class="eyebrow"><span class="dot"></span>Playing now — {{ today_board.event.name }}</h1>
+    <p class="sub">{{ today_board.event.course }} ·
+       {{ today_board.still_out }} of {{ today_board.players }} still on the course</p>
+  {% else %}
+    <h1>Today's round — final</h1>
+    <p class="sub">{{ today_board.event.name }} · {{ today_board.event.course }}</p>
+    <p class="sub">All {{ today_board.players }} cards in. Official results post separately.</p>
   {% endif %}
-  {% for flight in live.flights %}
+
+  {% if me_today %}
+  <p class="highlight">You: <strong>{{ me_today.total }}</strong> ({{ me_today.to_par }})
+     thru {{ me_today.thru }} — position <strong>{{ me_today.position }}</strong>
+     in {{ me_today.flight }}</p>
+  {% endif %}
+
+  {% for flight in today_board.flights %}
   <h3>{{ flight.name }}</h3>
   <div class="scroll"><table class="data board">
     <thead><tr><th>Pos</th><th>Player</th><th class="num">Total</th><th class="num">Thru</th><th class="num">To par</th></tr></thead>
@@ -24,6 +34,7 @@
     </tbody>
   </table></div>
   {% endfor %}
+  <p><a class="button button-ghost" href="{{ url("t/" ~ today_board.tid) }}">Event page →</a></p>
 </section>
 {% endif %}
 

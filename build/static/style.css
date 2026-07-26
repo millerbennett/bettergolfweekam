@@ -156,7 +156,12 @@ a { color: var(--accent-ink); text-underline-offset: 3px; }
   white-space: nowrap;
   border-bottom: 2px solid transparent;
 }
-.topbar nav a:hover { color: var(--accent-ink); border-bottom-color: var(--accent); }
+.topbar nav a:hover { color: var(--accent-ink); border-bottom-color: var(--line-2); }
+.topbar nav a.active {
+  color: var(--accent-ink);
+  border-bottom-color: var(--accent);
+  text-shadow: 0 0 18px var(--accent-glow);
+}
 
 main {
   max-width: 960px;

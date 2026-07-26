@@ -53,9 +53,8 @@ EVENT = {
 }
 
 
-@pytest.fixture
-def site(tmp_path, monkeypatch):
-    """A Site backed by a temp data/ dir containing one live event."""
+def build_site(tmp_path, monkeypatch, board_fixture="leaderboard.html"):
+    """A Site backed by a temp data/ dir containing today's event."""
     data, public = tmp_path / "data", tmp_path / "public"
     data.mkdir()
     monkeypatch.setattr(store, "DATA", data)
@@ -66,7 +65,7 @@ def site(tmp_path, monkeypatch):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(payload), encoding="utf-8")
 
-    live = sources.fetch_livescore(FakeFetcher(fixture("leaderboard.html")), CFG, TID)
+    live = sources.fetch_livescore(FakeFetcher(fixture(board_fixture)), CFG, TID)
     live.update(tid=TID, event=EVENT)
 
     pairings = sources.fetch_pairings(FakeFetcher(fixture("pairings.html")), CFG, TID)
@@ -109,16 +108,44 @@ def site(tmp_path, monkeypatch):
     return site, public
 
 
+@pytest.fixture
+def site(tmp_path, monkeypatch):
+    """Today's event, already finished — every card in."""
+    return build_site(tmp_path, monkeypatch)
+
+
+@pytest.fixture
+def live_site(tmp_path, monkeypatch):
+    """Today's event mid-round, with players still on the course."""
+    return build_site(tmp_path, monkeypatch, "leaderboard_live.html")
+
+
 def read(public, name):
     return (public / name).read_text(encoding="utf-8")
 
 
-def test_live_event_surfaces_on_the_dashboard(site):
-    _, public = site
+def test_round_in_progress_says_playing_now(live_site):
+    _, public = live_site
     index = read(public, "index.html")
     assert "Playing now" in index
-    assert "DC Metro Battlefield Open" in index
+    assert "still on the course" in index
     assert "B Flight Leaderboard" in index
+
+
+def test_finished_round_is_not_called_live(site):
+    """Every card is in. Previously "has rows" counted as live, so the
+    dashboard claimed play was underway all evening after the last putt."""
+    _, public = site
+    index = read(public, "index.html")
+    assert "Playing now" not in index
+    assert "Today's round — final" in index
+    assert "B Flight Leaderboard" in index      # the board still shows
+
+
+def test_todays_board_is_the_first_thing_on_the_page(site):
+    _, public = site
+    index = read(public, "index.html")
+    assert index.index("Today's round") < index.index("Next up")
 
 
 def test_dashboard_highlights_my_live_score(site):
@@ -129,21 +156,35 @@ def test_dashboard_highlights_my_live_score(site):
     assert 'class="mine"' in index
 
 
-def test_status_json_reports_the_live_round(site):
-    _, public = site
+def test_status_json_reports_the_live_round(live_site):
+    _, public = live_site
     status = json.loads(read(public, "status.json"))
     assert status["live"] is not None
     assert status["live"]["event"] == "DC Metro Battlefield Open"
-    assert status["live"]["me"]["total"] == "87"
-    assert status["live"]["me"]["thru"] == "18"
+    assert status["live"]["status"] == "in_progress"
+    assert status["live"]["still_on_course"] > 0
     assert len(status["live"]["leaders"]) == 5
 
 
-def test_digest_leads_with_the_live_round(site):
+def test_status_json_omits_live_once_the_round_is_over(site):
     _, public = site
+    status = json.loads(read(public, "status.json"))
+    assert status["live"] is None
+    assert status["last_round"]["me"]["total"] == "87"
+
+
+def test_digest_leads_with_the_live_round(live_site):
+    _, public = live_site
     digest = read(public, "digest.txt")
     assert "LIVE NOW: DC Metro Battlefield Open" in digest
-    assert "You: 87" in digest
+    assert "still on the course" in digest
+
+
+def test_digest_does_not_claim_live_after_the_last_putt(site):
+    _, public = site
+    digest = read(public, "digest.txt")
+    assert "LIVE NOW" not in digest
+    assert "LAST ROUND" in digest
 
 
 def test_status_json_reports_my_tee_time(site):

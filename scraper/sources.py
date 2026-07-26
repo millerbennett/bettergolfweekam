@@ -444,15 +444,53 @@ def fetch_livescore(fetcher: Fetcher, cfg: dict, tid: str) -> dict:
         )
 
     flights = [f for f in flights if f["rows"]]
-    count = sum(len(f["rows"]) for f in flights)
-    log.info("livescore %s: %d players scoring", tid, count)
+    rows = [r for f in flights for r in f["rows"]]
+
+    # "Has rows" is not the same as "is being played". Read the Thru column:
+    # a player between 1 and 17 holes is still out there, 18 (or F) is done.
+    # Without this the board reads as live all evening after the last putt,
+    # and reads as nothing at all after the horn but before the first score.
+    out, done = 0, 0
+    for row in rows:
+        holes = _thru(row.get("thru"))
+        if holes is None:
+            continue
+        if holes >= 18:
+            done += 1
+        elif holes > 0:
+            out += 1
+
+    if not rows:
+        status = "not_started"
+    elif out:
+        status = "in_progress"
+    elif done:
+        status = "complete"
+    else:
+        status = "in_progress"     # scores exist but Thru is unreadable
+
+    log.info("livescore %s: %d players, %d still out, %d finished (%s)",
+             tid, len(rows), out, done, status)
     return {
         "available": True,
-        "live": count > 0,
+        "live": bool(rows),          # the board has something to show
+        "status": status,            # not_started | in_progress | complete
+        "players": len(rows),
+        "still_out": out,
+        "finished": done,
         "tournament": title,
         "date": board_date,
         "flights": flights,
     }
+
+
+def _thru(value: str | None) -> int | None:
+    """Holes completed. The board uses a number, or F/- for a finished card."""
+    text = (value or "").strip().upper()
+    if text in ("F", "FIN", "FINAL"):
+        return 18
+    match = re.match(r"(\d{1,2})", text)
+    return int(match.group(1)) if match else None
 
 
 # --------------------------------------------------------------------------

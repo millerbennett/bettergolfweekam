@@ -194,15 +194,25 @@ class Site:
         return upcoming[0] if upcoming else None
 
     @property
-    def live_now(self) -> dict | None:
-        """A board for an event being played right now."""
+    def today_board(self) -> dict | None:
+        """Today's livescore board, whatever state it is in."""
         for event in self.events:
-            if self._delta(event["date"]) != 0:
-                continue
-            board = self.live.get(event["tid"])
-            if board and board.get("live"):
-                return board
+            if self._delta(event["date"]) == 0:
+                board = self.live.get(event["tid"])
+                if board and board.get("live"):
+                    return board
         return None
+
+    @property
+    def live_now(self) -> dict | None:
+        """A board for a round actually being played right now.
+
+        Not merely "the board has rows": that stayed true all evening after
+        the last putt. Status comes from the Thru column - someone between 1
+        and 17 holes means play is still going.
+        """
+        board = self.today_board
+        return board if board and board.get("status") == "in_progress" else None
 
     @property
     def latest_board(self) -> dict | None:
@@ -345,6 +355,11 @@ class Site:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
 
+    NAV_FOR = {
+        "index.html": "now", "schedule.html": "schedule", "standings.html": "points",
+        "me.html": "me", "feed.html": "updates", "info.html": "info",
+    }
+
     def _render(self, template: str, rel: str, **ctx) -> None:
         depth = rel.count("/")
         prefix = "../" * depth
@@ -367,6 +382,7 @@ class Site:
             self.env.get_template(template).render(
                 cfg=self.cfg,
                 season=self.season,
+                nav=ctx.pop("nav", None) or self.NAV_FOR.get(rel),
                 rel=prefix,
                 url=url,
                 generated_iso=self.now.isoformat(timespec="seconds"),
@@ -388,6 +404,8 @@ class Site:
         self._render(
             "index.html", "index.html",
             live=self.live_now,
+            today_board=self.today_board,
+            me_today=self.me_on_board(self.today_board),
             me_live=self.my_live(),
             next_event=next_event,
             next_pairings=self.pairings.get(next_event["tid"]) if next_event else None,
@@ -442,7 +460,7 @@ class Site:
             results = self.results.get(tid) or {}
             if results.get("columns"):
                 results = {**results, "columns": [c for c in results["columns"] if c != "Detail"]}
-            self._render("event.html", f"t/{tid}.html",
+            self._render("event.html", f"t/{tid}.html", nav="schedule",
                          event=event, pairings=pairings,
                          results=results, live=self.live.get(tid),
                          roster=self.rosters.get(tid),
@@ -457,7 +475,7 @@ class Site:
                 continue
             page.setdefault("nav_title", entry["title"])
             pages.append(page)
-            self._render("info_page.html", f"info/{page['id']}.html", page=page)
+            self._render("info_page.html", f"info/{page['id']}.html", nav="info", page=page)
         self._render("info.html", "info.html", pages=pages)
 
         self._write("status.json", json.dumps(self.status(), indent=2) + "\n")
@@ -496,6 +514,9 @@ class Site:
             payload["live"] = {
                 "event": board.get("event", {}).get("name"),
                 "course": board.get("event", {}).get("course"),
+                "status": board.get("status"),
+                "still_on_course": board.get("still_out"),
+                "players": board.get("players"),
                 "me": me_live and {
                     "position": me_live["position"], "total": me_live["total"],
                     "thru": me_live["thru"], "to_par": me_live["to_par"],
@@ -590,6 +611,8 @@ class Site:
 
         if s["live"]:
             lines.append(f"LIVE NOW: {s['live']['event']} at {s['live']['course']}")
+            lines.append(f"  {s['live']['still_on_course']} of {s['live']['players']} "
+                         f"still on the course.")
             if s["live"]["me"]:
                 me = s["live"]["me"]
                 lines.append(f"  You: {me['total']} ({me['to_par']}) thru {me['thru']}, "

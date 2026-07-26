@@ -25,9 +25,13 @@
 
 {% if live and live.live %}
 <section class="card live">
-  <h2>{{ "Live scoring" if event.is_today else "Livescore board" }}</h2>
-  {% if not event.is_today %}
-  <p class="sub">Final board as scored on the day. Official results may differ once posted.</p>
+  {% if live.status == 'in_progress' %}
+    <h2 class="eyebrow"><span class="dot"></span>Live scoring</h2>
+    <p class="sub">{{ live.still_out }} of {{ live.players }} still on the course.</p>
+  {% else %}
+    <h2>Livescore board</h2>
+    <p class="sub">All cards in, as scored on the day.
+       Official results may differ once posted.</p>
   {% endif %}
   {% for flight in live.flights %}
     <h3>{{ flight.name }}</h3>

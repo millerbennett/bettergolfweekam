@@ -205,6 +205,30 @@ leaderboard identifies players by name, not id. Your id appears in the
 To mirror a different tour, change `tour_slug` and `tour_name` and refresh
 `content_pages` with that tour's `readContent.aspx` ids.
 
+## How "live" is decided
+
+Not by the clock, and not by whether the board has rows on it — that was the
+first implementation and it was wrong in both directions: it claimed play was
+underway all evening after the last putt, and showed nothing between the horn
+and the first posted score.
+
+The board carries a **Thru** column, so status is derived from it:
+
+| Status | Means |
+|---|---|
+| `not_started` | Board exists but no scores posted |
+| `in_progress` | At least one player between 1 and 17 holes |
+| `complete` | Everyone still listed is thru 18 (or `F`) |
+
+Only `in_progress` on today's date shows as "Playing now". A finished round
+still displays its board, labelled as final. `status.json` carries the status
+plus `still_on_course`, so a scheduled check can tell the difference.
+
+Caveat worth knowing: this reflects *scores entered*, not reality. Scoring is
+done by a player in each group, so a group that hasn't posted for a few holes
+looks further back than it is, and a round shows `complete` once the last
+scorekeeper submits rather than when the last putt drops.
+
 ## For scheduled checks
 
 Three endpoints exist specifically so an assistant or script can watch the tour
