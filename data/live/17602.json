@@ -1,6 +1,10 @@
 {
   "available": true,
   "live": true,
+  "status": "complete",
+  "players": 35,
+  "still_out": 0,
+  "finished": 35,
   "tournament": "DC Metro Battlefield Open Stonewall Golf Club",
   "date": "07/25/2026",
   "flights": [
@@ -320,5 +324,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-07-26T20:54:26+00:00"
+  "fetched_at": "2026-07-26T23:59:44+00:00"
 }
