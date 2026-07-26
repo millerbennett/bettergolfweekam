@@ -38,21 +38,26 @@ class FakeFetcher:
     def __init__(self, page: str):
         self.page = page
         self.request_count = 0
+        self.last_url = None
 
     def get(self, url):
         self.request_count += 1
+        self.last_url = url
         return self.page
 
     def form_page(self, url, cache=False):
         self.request_count += 1
+        self.last_url = url
         return self.page
 
     def submit(self, url, page, fields):
         self.request_count += 1
+        self.last_url = url
         return self.page
 
     def post_form(self, url, fields):
         self.request_count += 1
+        self.last_url = url
         return self.page
 
 
@@ -274,12 +279,24 @@ def test_livescore_ignores_cutline_separator_rows():
         assert all(row["position"] for row in flight["rows"])
 
 
-def test_livescore_refuses_ids_outside_the_dropdown_window():
-    """Posting one would trip __EVENTVALIDATION and 500."""
+def test_livescore_is_fetched_by_querystring_in_one_request():
+    """`?t=` beats driving the dropdown.
+
+    The POST path needed a GET for __VIEWSTATE first, and 500'd outright for
+    any id that had aged out of the dropdown's rolling window.
+    """
     fetcher = FakeFetcher(fixture("leaderboard.html"))
-    data = sources.fetch_livescore(fetcher, CFG, "17632")
-    assert data["available"] is False
+    sources.fetch_livescore(fetcher, CFG, "17602")
     assert fetcher.request_count == 1
+    assert fetcher.last_url == (
+        "https://www.amateurgolftour.net/livescore/Leaderboard.aspx?t=17602"
+    )
+
+
+def test_board_url_is_a_usable_deep_link():
+    assert sources.board_url(CFG, "17602").endswith("/livescore/Leaderboard.aspx?t=17602")
+    assert sources.skins_url(CFG, "17602").endswith("/livescore/skinsLB.aspx?t=17602")
+    assert sources.skins_url(CFG).endswith("/livescore/skinsLB.aspx")
 
 
 # --------------------------------------------------------------------------
@@ -325,11 +342,18 @@ def test_ctp_game_has_a_pot_but_no_holes():
     assert ctp["summary"]["Total CTP Pot"] == "$260"
 
 
-def test_skins_refuses_ids_outside_the_dropdown_window():
+def test_skins_is_fetched_by_querystring_in_one_request():
     fetcher = FakeFetcher(fixture("skins.html"))
-    data = sources.fetch_skins(fetcher, CFG, "99999")
-    assert data["available"] is False
+    sources.fetch_skins(fetcher, CFG, "17602")
     assert fetcher.request_count == 1
+    assert fetcher.last_url.endswith("/livescore/skinsLB.aspx?t=17602")
+
+
+def test_a_page_without_a_board_reports_unavailable():
+    """An unknown id renders the shell with no leaderboard span."""
+    fetcher = FakeFetcher("<html><body>no board here</body></html>")
+    assert sources.fetch_skins(fetcher, CFG, "99999")["available"] is False
+    assert sources.fetch_livescore(fetcher, CFG, "99999")["available"] is False
 
 
 def test_skins_won_lookup_names_the_hole_and_value():

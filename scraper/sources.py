@@ -367,24 +367,26 @@ def fetch_standings(fetcher: Fetcher, cfg: dict, season: int) -> dict:
 # Livescore leaderboard
 # --------------------------------------------------------------------------
 
+def board_url(cfg: dict, tid: str) -> str:
+    """Deep link to the upstream leaderboard for one tournament."""
+    return f"{leaderboard_url(cfg)}?t={tid}"
+
+
 def fetch_livescore(fetcher: Fetcher, cfg: dict, tid: str) -> dict:
     """Poll the live leaderboard for a tournament.
 
-    The livescore pages share the tour pages' tournament id namespace, so no
-    lookup is needed. The dropdown only carries a rolling window of current
-    events though, and posting an id outside it trips __EVENTVALIDATION and
-    returns HTTP 500 - so check the options before submitting.
-    """
-    url = leaderboard_url(cfg)
-    form = fetcher.form_page(url)
-    if tid not in {value for value, _ in select_options(form, "tournaments_dd")}:
-        log.info("livescore %s: not in the leaderboard's current window", tid)
-        return {"available": False, "live": False, "flights": []}
+    `?t=<tid>` selects the tournament directly, which beats driving the
+    dropdown three ways: one request instead of two, no __EVENTVALIDATION
+    window to trip (posting an archived id returns HTTP 500), and it keeps
+    working for events that have aged out of the dropdown entirely.
 
-    page = fetcher.submit(url, form, {"tournaments_dd": tid, "Flights": "0"})
+    The livescore app shares the tour pages' tournament id namespace, so the
+    id from a `results.aspx?id=` link works here unchanged.
+    """
+    page = fetcher.get(board_url(cfg, tid))
     match = re.search(r'<span id="lblLeaderBoard">(.*?)</span>', page, re.S)
     if not match:
-        return {"available": True, "live": False, "flights": []}
+        return {"available": False, "live": False, "flights": []}
     board = match.group(1)
 
     title, board_date = "", ""
@@ -436,8 +438,9 @@ def fetch_livescore(fetcher: Fetcher, cfg: dict, tid: str) -> dict:
 # Skins / CTP cash games
 # --------------------------------------------------------------------------
 
-def skins_url(cfg: dict) -> str:
-    return f"{cfg['base_url']}/livescore/skinsLB.aspx"
+def skins_url(cfg: dict, tid: str | None = None) -> str:
+    url = f"{cfg['base_url']}/livescore/skinsLB.aspx"
+    return f"{url}?t={tid}" if tid else url
 
 
 def _parse_game(table_html: str) -> dict | None:
@@ -486,17 +489,15 @@ def fetch_skins(fetcher: Fetcher, cfg: dict, tid: str) -> dict:
     Public, despite being reachable only via the livescore area: no login is
     needed here or on the leaderboard. Each event runs several games at once -
     a Super Skins across all flights, one per flight, and a CTP pot.
-    """
-    url = skins_url(cfg)
-    form = fetcher.form_page(url, cache=True)
-    if tid not in {value for value, _ in select_options(form, "tournaments_dd")}:
-        log.info("skins %s: not in the current window", tid)
-        return {"tid": tid, "available": False, "games": []}
 
-    page = fetcher.submit(url, form, {"tournaments_dd": tid})
+    Selected by `?t=<tid>` for the same reasons as the leaderboard. Skins data
+    outlives the live board: an archived event still returns its games after
+    the leaderboard itself has been emptied.
+    """
+    page = fetcher.get(skins_url(cfg, tid))
     match = re.search(r'<span id="lblLeaderBoard">(.*?)</span>', page, re.S)
     if not match:
-        return {"tid": tid, "available": True, "games": []}
+        return {"tid": tid, "available": False, "games": []}
 
     tables = find_all_tables(match.group(1))
     games = [g for g in (_parse_game(t) for t in tables) if g]

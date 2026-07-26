@@ -30,8 +30,8 @@ reader) can watch the tour for you — see [For scheduled checks](#for-scheduled
 | `results.aspx?id=` | GET | `data/results/<tid>.json` |
 | `listing.aspx?id=` | GET | `data/roster/<tid>.json` |
 | `Standings.aspx` | GET | `data/standings.json` |
-| `livescore/Leaderboard.aspx` | POST (`tournaments_dd`) | `data/live/<tid>.json` |
-| `livescore/skinsLB.aspx` | POST (`tournaments_dd`) | `data/skins/<tid>.json` |
+| `livescore/Leaderboard.aspx?t=` | GET | `data/live/<tid>.json` |
+| `livescore/skinsLB.aspx?t=` | GET | `data/skins/<tid>.json` |
 | `readContent.aspx?id=` | GET | `data/content/<id>.json` |
 
 Two things worth knowing about the upstream site, both handled in `scraper/`:
@@ -39,9 +39,15 @@ Two things worth knowing about the upstream site, both handled in `scraper/`:
 - **Tournament ids are shared across tour pages and the livescore app.** The id
   in a `results.aspx?id=` link is the same id the leaderboard's dropdown uses.
   No cross-referencing needed.
-- **The leaderboard dropdown only carries a rolling window of current events.**
-  Posting an id outside that window trips ASP.NET's `__EVENTVALIDATION` and
-  returns HTTP 500, so `fetch_livescore` checks the options before submitting.
+- **The livescore pages accept `?t=<tid>`.** Undocumented, but it beats
+  driving the dropdown three ways: one request instead of two, no
+  `__EVENTVALIDATION` window to trip (posting an id that has aged out of the
+  dropdown returns HTTP 500), and it still resolves archived events. These
+  double as deep links for checking the mirror against the real site, and are
+  published on every event page and in `status.json`.
+- **Pairings has no such escape hatch.** `Pairings.aspx?id=` is ignored, so tee
+  times still go through the dropdown POST, and ids absent from it are skipped
+  rather than 500'd.
 
 **The livescore area needs no login.** Its "Player Login" takes a golfer id and
 no password, but nothing behind it is needed to *read* scores: the leaderboard

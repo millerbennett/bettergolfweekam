@@ -10,9 +10,11 @@
      <span class="pill">{{ event.date | days_away }}</span></p>
   {% if event.cost %}<p class="sub">Entry {{ event.cost }}</p>{% endif %}
   <p class="sub">
-    Upstream:
-    <a href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/listing.aspx?id={{ event.tid }}">roster</a> ·
-    <a href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/results.aspx?id={{ event.tid }}">results</a>
+    Verify upstream (deep links — no dropdowns):
+    <a href="{{ cfg.base_url }}/livescore/Leaderboard.aspx?t={{ event.tid }}">leaderboard</a> ·
+    <a href="{{ cfg.base_url }}/livescore/skinsLB.aspx?t={{ event.tid }}">skins</a> ·
+    <a href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/results.aspx?id={{ event.tid }}">results</a> ·
+    <a href="{{ cfg.base_url }}/{{ cfg.tour_slug }}_tour_pages/listing.aspx?id={{ event.tid }}">roster</a>
   </p>
 </section>
 

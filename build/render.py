@@ -141,6 +141,20 @@ class Site:
             ago=ago,
         )
 
+    def upstream(self, tid: str) -> dict:
+        """Deep links straight to the upstream views for one tournament.
+
+        The livescore pages accept `?t=<tid>`, so these skip the dropdowns
+        entirely - useful for checking the mirror against the real site.
+        """
+        base, slug = self.cfg["base_url"], self.cfg["tour_slug"]
+        return {
+            "leaderboard": f"{base}/livescore/Leaderboard.aspx?t={tid}",
+            "skins": f"{base}/livescore/skinsLB.aspx?t={tid}",
+            "results": f"{base}/{slug}_tour_pages/results.aspx?id={tid}",
+            "roster": f"{base}/{slug}_tour_pages/listing.aspx?id={tid}",
+        }
+
     def _delta(self, iso: str) -> int:
         try:
             return (date.fromisoformat(iso) - self.today).days
@@ -465,6 +479,7 @@ class Site:
                 "cost": next_event["cost"],
                 "is_major": next_event["is_major"],
                 "url": f"{self.site_url}/t/{next_event['tid']}",
+                "upstream": self.upstream(next_event["tid"]),
                 "tee_times_posted": bool(
                     (self.pairings.get(next_event["tid"]) or {}).get("published")
                 ),
@@ -507,6 +522,7 @@ class Site:
                     "official": False,
                     "me": me and {"position": me["position"], "total": me["total"],
                                   "to_par": me["to_par"], "flight": me["flight"]},
+                    "upstream": self.upstream(board.get("tid")),
                 }
 
         if last:
