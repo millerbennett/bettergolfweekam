@@ -598,6 +598,11 @@ table.data tr.mine, table.data tr.mine:hover {
   font-weight: 700;
 }
 table.data tr.mine td { border-bottom-color: var(--accent-line); }
+/* The accent bar marking your row is an inset shadow on this cell, and the
+   default cell padding has no left side - so without a gutter the 3px bar
+   lands directly on top of the position number. Applied to every first cell,
+   not just highlighted ones, so columns stay aligned row to row. */
+table.data th:first-child, table.data td:first-child { padding-left: 10px; }
 table.data tr.mine td:first-child {
   color: var(--accent-ink);
   box-shadow: inset 3px 0 0 var(--accent);
