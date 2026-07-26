@@ -433,6 +433,78 @@ def fetch_livescore(fetcher: Fetcher, cfg: dict, tid: str) -> dict:
 
 
 # --------------------------------------------------------------------------
+# Skins / CTP cash games
+# --------------------------------------------------------------------------
+
+def skins_url(cfg: dict) -> str:
+    return f"{cfg['base_url']}/livescore/skinsLB.aspx"
+
+
+def _parse_game(table_html: str) -> dict | None:
+    """One cash-game table: a title, up to 18 hole rows, then a pot summary.
+
+    Skins tables and the CTP table share this shape; CTP simply has no holes.
+    """
+    rows = rows_of(table_html)
+    if not rows:
+        return None
+
+    title, holes, summary = "", [], {}
+    for row in rows:
+        cells = row.cells
+        if not any(cells):
+            continue
+        if row.is_section and not title:
+            title = cells[0]
+            continue
+        if cells[0].strip() == "Hole":
+            continue  # column header
+        if cells[0].strip().isdigit() and len(cells) >= 4:
+            hole = {
+                "hole": cells[0].strip(),
+                "player": cells[1].strip(),
+                "score": cells[2].strip(),
+                "type": cells[3].strip(),
+                "paid_out": cells[4].strip() if len(cells) > 4 else "",
+            }
+            if any(hole[k] for k in ("player", "type")):
+                holes.append(hole)
+            continue
+        # "... | Total Skins Pot: | $300"
+        for i, cell in enumerate(cells[:-1]):
+            if cell.strip().endswith(":"):
+                summary[cell.strip().rstrip(":")] = cells[i + 1].strip()
+
+    if not title or (not holes and not summary):
+        return None
+    return {"title": title, "holes": holes, "summary": summary}
+
+
+def fetch_skins(fetcher: Fetcher, cfg: dict, tid: str) -> dict:
+    """Skins and closest-to-the-pin results for a tournament.
+
+    Public, despite being reachable only via the livescore area: no login is
+    needed here or on the leaderboard. Each event runs several games at once -
+    a Super Skins across all flights, one per flight, and a CTP pot.
+    """
+    url = skins_url(cfg)
+    form = fetcher.form_page(url, cache=True)
+    if tid not in {value for value, _ in select_options(form, "tournaments_dd")}:
+        log.info("skins %s: not in the current window", tid)
+        return {"tid": tid, "available": False, "games": []}
+
+    page = fetcher.submit(url, form, {"tournaments_dd": tid})
+    match = re.search(r'<span id="lblLeaderBoard">(.*?)</span>', page, re.S)
+    if not match:
+        return {"tid": tid, "available": True, "games": []}
+
+    tables = find_all_tables(match.group(1))
+    games = [g for g in (_parse_game(t) for t in tables) if g]
+    log.info("skins %s: %d games", tid, len(games))
+    return {"tid": tid, "available": True, "games": games}
+
+
+# --------------------------------------------------------------------------
 # Announcement / info pages
 # --------------------------------------------------------------------------
 

@@ -88,6 +88,10 @@ def site(tmp_path, monkeypatch):
     write(f"live/{TID}.json", live)
     write(f"pairings/{TID}.json", pairings)
 
+    skins = sources.fetch_skins(FakeFetcher(fixture("skins.html")), CFG, TID)
+    skins["event"] = EVENT
+    write(f"skins/{TID}.json", skins)
+
     # The upcoming major: a real field the configured player is NOT in.
     roster = sources.fetch_roster(FakeFetcher(fixture("roster.html")), CFG, later["tid"])
     roster["event"] = later
@@ -180,6 +184,28 @@ def test_event_without_roster_data_omits_the_field_section(site):
     """Today's event has no roster file; the section must not render empty."""
     _, public = site
     assert "<h2>Field</h2>" not in read(public, f"t/{TID}.html")
+
+
+def test_skins_render_on_the_event_page(site):
+    _, public = site
+    page = read(public, f"t/{TID}.html")
+    assert "Skins" in page
+    assert "Hawkins, Kevin" in page      # won hole 11 in B flight
+    assert "$30" in page                 # B flight pot
+
+
+def test_finished_round_is_reported_before_official_results(site):
+    """Official results can lag the round by days.
+
+    The livescore board is the only record in that gap, so the digest must be
+    able to report it - clearly labelled unofficial.
+    """
+    _, public = site
+    site_obj, _ = site
+    board = site_obj.latest_board
+    assert board is not None
+    me = site_obj.me_on_board(board)
+    assert me["total"] == "87" and me["position"] == "1" and me["flight"] == "B"
 
 
 def test_every_event_gets_a_page(site):

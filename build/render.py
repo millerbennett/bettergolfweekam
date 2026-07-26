@@ -124,6 +124,7 @@ class Site:
 
         self.pairings = {e["tid"]: read_json(f"pairings/{e['tid']}.json") for e in self.events}
         self.rosters = {e["tid"]: read_json(f"roster/{e['tid']}.json") for e in self.events}
+        self.skins = {e["tid"]: read_json(f"skins/{e['tid']}.json") for e in self.events}
         self.results = {e["tid"]: read_json(f"results/{e['tid']}.json") for e in self.events}
         self.live = {e["tid"]: read_json(f"live/{e['tid']}.json") for e in self.events}
 
@@ -155,6 +156,7 @@ class Site:
 
     @property
     def live_now(self) -> dict | None:
+        """A board for an event being played right now."""
         for event in self.events:
             if self._delta(event["date"]) != 0:
                 continue
@@ -162,6 +164,19 @@ class Site:
             if board and board.get("live"):
                 return board
         return None
+
+    @property
+    def latest_board(self) -> dict | None:
+        """The most recent livescore board, live or just finished.
+
+        Official results can lag the round by days, so this is what the mirror
+        can say about an event you have already played.
+        """
+        played = [
+            (e["date"], self.live[e["tid"]]) for e in self.events
+            if self._delta(e["date"]) <= 0 and (self.live.get(e["tid"]) or {}).get("live")
+        ]
+        return max(played, key=lambda p: p[0])[1] if played else None
 
     def my_standing(self) -> dict | None:
         for flight in self.standings.get("flights", []):
@@ -230,15 +245,23 @@ class Site:
             return "waiting"
         return "absent"
 
-    def my_live(self) -> dict | None:
-        board = self.live_now
+    def me_on_board(self, board: dict | None) -> dict | None:
+        """Find the configured player on a livescore board.
+
+        Matched by name: the board carries no player ids.
+        """
         if not board:
             return None
         for flight in board.get("flights", []):
             for row in flight.get("rows", []):
                 if row.get("name") == self.cfg["player"]["name"]:
-                    return {**row, "flight": flight["name"]}
+                    # Board sections are named "B Flight Leaderboard"; the
+                    # bare flight letter is what reads well in a summary.
+                    return {**row, "flight": flight_short(flight["name"])}
         return None
+
+    def my_live(self) -> dict | None:
+        return self.me_on_board(self.live_now)
 
     def my_result(self, tid: str) -> dict | None:
         data = self.results.get(tid)
@@ -370,6 +393,7 @@ class Site:
                          event=event, pairings=pairings,
                          results=results, live=self.live.get(tid),
                          roster=self.rosters.get(tid),
+                         skins=self.skins.get(tid),
                          my_roster_status=self.my_roster_status(tid))
 
         pages = []
@@ -409,6 +433,7 @@ class Site:
             "next_event": None,
             "my_standing": None,
             "last_result": None,
+            "last_round": None,
             "recent_changes": self.changes[:10],
             "source_last_checked": self.meta.get("last_run"),
         }
@@ -470,6 +495,19 @@ class Site:
                 "handicap": me_standing.get("Handicap"),
                 "note": self.my_gap(),
             }
+
+        board = self.latest_board
+        if board and not self.live_now:
+            me = self.me_on_board(board)
+            posted = (self.results.get(board.get("tid")) or {}).get("posted")
+            if not posted:
+                payload["last_round"] = {
+                    "event": board.get("event", {}).get("name"),
+                    "date": board.get("event", {}).get("date"),
+                    "official": False,
+                    "me": me and {"position": me["position"], "total": me["total"],
+                                  "to_par": me["to_par"], "flight": me["flight"]},
+                }
 
         if last:
             entry = last[0]
@@ -544,6 +582,15 @@ class Site:
                          f"(index {st['handicap']}).")
             if st["note"]:
                 lines.append(f"  {st['note']}")
+            lines.append("")
+
+        if s["last_round"] and s["last_round"]["me"]:
+            rnd, me = s["last_round"], s["last_round"]["me"]
+            lines.append(f"LAST ROUND (unofficial - from the livescore board): "
+                         f"{rnd['event']} ({rnd['date']})")
+            lines.append(f"  You: {me['total']} ({me['to_par']}), "
+                         f"position {me['position']} in {me['flight']}.")
+            lines.append("  Official results not posted yet.")
             lines.append("")
 
         if s["last_result"] and s["last_result"]["me"]:

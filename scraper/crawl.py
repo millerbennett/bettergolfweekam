@@ -221,6 +221,25 @@ class Crawler:
             record_change(self.changes, "live", f"Scoring underway: {self.event_label(event)}",
                           "", f"/t/{tid}.html")
 
+    def crawl_skins(self, event: dict) -> None:
+        tid = event["tid"]
+        rel = f"skins/{tid}.json"
+        previous = read_json(rel) or {}
+        payload = sources.fetch_skins(self.fetcher, self.cfg, tid)
+        if not payload.get("available"):
+            touch(self.state, f"skins:{tid}")
+            return
+        payload["event"] = _event_stub(event)
+        if not self.save(rel, payload, f"skins:{tid}") or not previous:
+            return
+
+        me = self.cfg["player"]["name"]
+        won_before = _skins_won(previous, me)
+        won_now = _skins_won(payload, me)
+        for hole in won_now - won_before:
+            record_change(self.changes, "skins", f"You won a skin: {self.event_label(event)}",
+                          hole, f"/t/{tid}.html")
+
     def crawl_content(self) -> None:
         for page in self.cfg["content_pages"]:
             page_id = page["id"]
@@ -292,10 +311,23 @@ class Crawler:
                 if self.due(f"results:{event['tid']}", max_age):
                     self.attempt(f"results {event['tid']}", self.crawl_results, event)
 
-        # Live scoring on the day of an event.
+        # Live scoring and cash games: during play, and for a few days after.
+        #
+        # The livescore board is the only place a finished round shows up until
+        # the tour posts official results, which can take days. Dropping it at
+        # midnight would leave the mirror blank about an event you just played,
+        # so keep polling until results land or the retain window closes.
         if self.mode in ("full", "auto", "live"):
-            for event in [e for e in events if days_until(e["date"], self.today) == 0]:
-                self.attempt(f"live {event['tid']}", self.crawl_live, event)
+            for event in events:
+                away = days_until(event["date"], self.today)
+                if not -self.fresh["live_retain_days"] <= away <= 0:
+                    continue
+                if (read_json(f"results/{event['tid']}.json") or {}).get("posted"):
+                    continue  # superseded by the official result
+                # Every run while play is underway; sparingly once it is over.
+                if away == 0 or self.due(f"live:{event['tid']}", self.fresh["live_after_hours"]):
+                    self.attempt(f"live {event['tid']}", self.crawl_live, event)
+                    self.attempt(f"skins {event['tid']}", self.crawl_skins, event)
 
         if self.mode in ("full", "daily") or self.due("standings", self.fresh["standings_hours"]):
             self.attempt("standings", self.crawl_standings)
@@ -343,6 +375,18 @@ def _find_player_result(payload: dict, player_id: str) -> dict | None:
             if row.get("ID") == player_id:
                 return {**row, "flight": flight["name"]}
     return None
+
+
+def _skins_won(payload: dict, player_name: str) -> set[str]:
+    """Human-readable descriptions of skins the configured player holds."""
+    won = set()
+    for game in payload.get("games", []):
+        for hole in game.get("holes", []):
+            if hole.get("player") == player_name:
+                value = game.get("summary", {}).get("Each Skin Value", "")
+                won.add(f"{game['title']} - hole {hole['hole']} "
+                        f"({hole['type']}, {hole['score']}){f' worth {value}' if value else ''}")
+    return won
 
 
 def _roster_status(payload: dict, player_id: str) -> str:

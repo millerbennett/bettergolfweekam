@@ -24,6 +24,8 @@
     "pairings_minutes": 45,
     "results_window_days": 10,
     "live_window_hours": 14,
+    "live_retain_days": 4,
+    "live_after_hours": 3,
     "roster_window_days": 45,
     "roster_hours": 6
   },

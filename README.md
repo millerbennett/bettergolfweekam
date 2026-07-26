@@ -31,6 +31,7 @@ reader) can watch the tour for you — see [For scheduled checks](#for-scheduled
 | `listing.aspx?id=` | GET | `data/roster/<tid>.json` |
 | `Standings.aspx` | GET | `data/standings.json` |
 | `livescore/Leaderboard.aspx` | POST (`tournaments_dd`) | `data/live/<tid>.json` |
+| `livescore/skinsLB.aspx` | POST (`tournaments_dd`) | `data/skins/<tid>.json` |
 | `readContent.aspx?id=` | GET | `data/content/<id>.json` |
 
 Two things worth knowing about the upstream site, both handled in `scraper/`:
@@ -41,6 +42,11 @@ Two things worth knowing about the upstream site, both handled in `scraper/`:
 - **The leaderboard dropdown only carries a rolling window of current events.**
   Posting an id outside that window trips ASP.NET's `__EVENTVALIDATION` and
   returns HTTP 500, so `fetch_livescore` checks the options before submitting.
+
+**The livescore area needs no login.** Its "Player Login" takes a golfer id and
+no password, but nothing behind it is needed to *read* scores: the leaderboard
+and the skins board are both public, and the login exists to *enter* scores.
+This project never touches `livescore/Score.aspx`.
 
 `robots.txt` on the origin asks for `Crawl-Delay: 10`, and the scraper honours it
 globally, so crawls are paced in minutes rather than seconds.
@@ -93,7 +99,10 @@ fetches only what's due:
 - **Rosters** — who's in the field and how much room is left, every 6 hours for
   events up to 45 days out. Wider than the tee-time window, since that's when
   you'd still decide to enter.
-- **Live scores** — polled on event days only.
+- **Live scores and skins** — polled every run while a round is underway, then
+  every 3 hours for 4 days after, until official results post. The livescore
+  board is the only record of a finished round in that gap, so dropping it at
+  midnight would leave the mirror blank about an event you just played.
 - **Results** — polled every 3 hours for 10 days after an event, until posted.
 - **Schedule / standings** — every 12 hours. **Announcements** — every 24 hours.
 

@@ -1,0 +1,265 @@
+{
+  "tid": "17602",
+  "available": true,
+  "games": [
+    {
+      "title": "Super Skins(Birdie Or Better)",
+      "holes": [
+        {
+          "hole": "1",
+          "player": "Briggs, James",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "3",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "4",
+          "player": "Devine, Ron",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "5",
+          "player": "Facello, Scott",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "7",
+          "player": "Devine, Ben",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "11",
+          "player": "Hawkins, Kevin",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "13",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "14",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "16",
+          "player": "Brown, Garrett",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "17",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "18",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        }
+      ],
+      "summary": {
+        "Total Players": "30",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$300",
+        "Total Skins": "6",
+        "Each Skin Value": "$50"
+      }
+    },
+    {
+      "title": "Skins: B Flight(Birdie Or Better)",
+      "holes": [
+        {
+          "hole": "11",
+          "player": "Hawkins, Kevin",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "18",
+          "player": "Gafford, Hayden",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        }
+      ],
+      "summary": {
+        "Total Players": "3",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$30",
+        "Total Skins": "2",
+        "Each Skin Value": "$15"
+      }
+    },
+    {
+      "title": "Skins: C Flight(Birdie Or Better)",
+      "holes": [
+        {
+          "hole": "1",
+          "player": "Briggs, James",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "3",
+          "player": "Franklin, Cephas",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "4",
+          "player": "Devine, Ron",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "14",
+          "player": "Franklin, Cephas",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        }
+      ],
+      "summary": {
+        "Total Players": "11",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$110",
+        "Total Skins": "4",
+        "Each Skin Value": "$27"
+      }
+    },
+    {
+      "title": "Skins D Flight(Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "7",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$70",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "Skins: Champ - A (Birdie Or Better)",
+      "holes": [
+        {
+          "hole": "3",
+          "player": "Crowley, Craig",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "5",
+          "player": "Facello, Scott",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "7",
+          "player": "Devine, Ben",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "13",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "14",
+          "player": "Devine, Ben",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "16",
+          "player": "Brown, Garrett",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "17",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "18",
+          "player": "Ogletree, Steve",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "Yes"
+        }
+      ],
+      "summary": {
+        "Total Players": "10",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$100",
+        "Total Skins": "6",
+        "Each Skin Value": "$16"
+      }
+    },
+    {
+      "title": "CTP: Champ - A - B - C - D",
+      "holes": [],
+      "summary": {
+        "Total Players": "26",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total CTP Pot": "$260"
+      }
+    }
+  ],
+  "event": {
+    "tid": "17602",
+    "date": "2026-07-25",
+    "name": "DC Metro Battlefield Open",
+    "course": "Stonewall Golf Club",
+    "start_time": "1:00",
+    "start_type": "Straight Tee",
+    "is_major": false
+  },
+  "fetched_at": "2026-07-26T20:26:18+00:00"
+}

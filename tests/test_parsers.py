@@ -283,6 +283,63 @@ def test_livescore_refuses_ids_outside_the_dropdown_window():
 
 
 # --------------------------------------------------------------------------
+# Skins / CTP
+# --------------------------------------------------------------------------
+
+def test_skins_parses_every_game_on_the_card():
+    """One event runs a Super Skins, a per-flight skins game, and a CTP pot."""
+    data = sources.fetch_skins(FakeFetcher(fixture("skins.html")), CFG, "17602")
+    assert data["available"] is True
+    titles = [g["title"] for g in data["games"]]
+    assert len(titles) == 6
+    assert any(t.startswith("Super Skins") for t in titles)
+    assert any("B Flight" in t for t in titles)
+    assert any(t.startswith("CTP") for t in titles)
+
+
+def test_skins_lists_only_holes_that_were_won():
+    """Tied holes render as blank rows and roll the pot over."""
+    data = sources.fetch_skins(FakeFetcher(fixture("skins.html")), CFG, "17602")
+    b_flight = next(g for g in data["games"] if "B Flight" in g["title"])
+    won = [h for h in b_flight["holes"] if h["player"]]
+    assert len(won) == 2
+    assert {h["hole"] for h in won} == {"11", "18"}
+    assert won[0]["player"] == "Hawkins, Kevin"
+    assert won[0]["type"] == "Birdie"
+    assert won[0]["paid_out"] == "Yes"
+
+
+def test_skins_captures_the_pot_maths():
+    data = sources.fetch_skins(FakeFetcher(fixture("skins.html")), CFG, "17602")
+    b_flight = next(g for g in data["games"] if "B Flight" in g["title"])
+    assert b_flight["summary"]["Total Players"] == "3"
+    assert b_flight["summary"]["Total Skins Pot"] == "$30"
+    assert b_flight["summary"]["Total Skins"] == "2"
+    assert b_flight["summary"]["Each Skin Value"] == "$15"
+
+
+def test_ctp_game_has_a_pot_but_no_holes():
+    data = sources.fetch_skins(FakeFetcher(fixture("skins.html")), CFG, "17602")
+    ctp = next(g for g in data["games"] if g["title"].startswith("CTP"))
+    assert ctp["holes"] == []
+    assert ctp["summary"]["Total CTP Pot"] == "$260"
+
+
+def test_skins_refuses_ids_outside_the_dropdown_window():
+    fetcher = FakeFetcher(fixture("skins.html"))
+    data = sources.fetch_skins(fetcher, CFG, "99999")
+    assert data["available"] is False
+    assert fetcher.request_count == 1
+
+
+def test_skins_won_lookup_names_the_hole_and_value():
+    data = sources.fetch_skins(FakeFetcher(fixture("skins.html")), CFG, "17602")
+    won = crawl._skins_won(data, "Hawkins, Kevin")
+    assert any("hole 11" in w and "$15" in w for w in won)
+    assert crawl._skins_won(data, "Miller, Bennett") == set()
+
+
+# --------------------------------------------------------------------------
 # Change feed
 # --------------------------------------------------------------------------
 
