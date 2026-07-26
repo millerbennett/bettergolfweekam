@@ -175,6 +175,36 @@ class Crawler:
             record_change(self.changes, "results", f"Results updated: {self.event_label(event)}",
                           "", f"/t/{tid}.html")
 
+    def crawl_roster(self, event: dict) -> None:
+        tid = event["tid"]
+        rel = f"roster/{tid}.json"
+        previous = read_json(rel) or {}
+        payload = sources.fetch_roster(self.fetcher, self.cfg, tid)
+        payload["event"] = _event_stub(event)
+        if not self.save(rel, payload, f"roster:{tid}"):
+            return
+        if not previous:
+            return  # first sighting is not news
+
+        was, now = _roster_status(previous, self.cfg["player"]["id"]), \
+            _roster_status(payload, self.cfg["player"]["id"])
+        if was != now:
+            wording = {
+                "registered": "You are registered (paid) for",
+                "waiting": "You are on the waiting list for",
+                "absent": "You are no longer listed for",
+            }[now]
+            record_change(self.changes, "roster", f"{wording} {self.event_label(event)}",
+                          f"{payload['filled_slots']} of {payload['total_slots']} slots filled, "
+                          f"{payload['total_waiting']} waiting", f"/t/{tid}.html")
+
+        if payload.get("sold_out") and not previous.get("sold_out"):
+            record_change(self.changes, "roster", f"Sold out: {self.event_label(event)}",
+                          f"{payload['total_waiting']} on the waiting list", f"/t/{tid}.html")
+        elif previous.get("sold_out") and payload.get("sold_out") is False:
+            record_change(self.changes, "roster", f"Spots opened: {self.event_label(event)}",
+                          f"{payload['open_slots']} now open", f"/t/{tid}.html")
+
     def crawl_live(self, event: dict) -> None:
         tid = event["tid"]
         rel = f"live/{tid}.json"
@@ -222,7 +252,9 @@ class Crawler:
             # the same pages (--force makes everything look due).
             for event in events:
                 self.attempt(f"pairings {event['tid']}", self.crawl_pairings, event)
-                if days_until(event["date"], self.today) <= 0:
+                if days_until(event["date"], self.today) >= 0:
+                    self.attempt(f"roster {event['tid']}", self.crawl_roster, event)
+                else:
                     self.attempt(f"results {event['tid']}", self.crawl_results, event)
         else:
             # Tee times: poll hard in the days before an event, since they drop
@@ -238,6 +270,16 @@ class Crawler:
                 max_age = 24.0 if known.get("published") else self.fresh["pairings_minutes"] / 60.0
                 if self.due(f"pairings:{event['tid']}", max_age):
                     self.attempt(f"pairings {event['tid']}", self.crawl_pairings, event)
+
+            # Rosters: who is in the field and how much room is left. Worth
+            # watching further out than tee times, since that is the window
+            # where you would still decide to sign up.
+            for event in events:
+                away = days_until(event["date"], self.today)
+                if not 0 <= away <= self.fresh["roster_window_days"]:
+                    continue
+                if self.due(f"roster:{event['tid']}", self.fresh["roster_hours"]):
+                    self.attempt(f"roster {event['tid']}", self.crawl_roster, event)
 
             # Results for anything recently played that has not posted yet.
             recent = [
@@ -301,6 +343,15 @@ def _find_player_result(payload: dict, player_id: str) -> dict | None:
             if row.get("ID") == player_id:
                 return {**row, "flight": flight["name"]}
     return None
+
+
+def _roster_status(payload: dict, player_id: str) -> str:
+    """Where the configured player sits on a roster: registered/waiting/absent."""
+    if any(p.get("player_id") == player_id for p in payload.get("registered", [])):
+        return "registered"
+    if any(p.get("player_id") == player_id for p in payload.get("waiting", [])):
+        return "waiting"
+    return "absent"
 
 
 def _find_player_pairing(payload: dict, player_id: str) -> dict | None:

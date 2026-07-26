@@ -36,6 +36,66 @@
 </section>
 {% endif %}
 
+{% if roster and roster.available %}
+<section class="card">
+  <h2>Field</h2>
+  <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'notice' }}">
+    {% if my_roster_status == 'registered' %}
+      You are <strong>registered and paid</strong> for this event.
+    {% elif my_roster_status == 'waiting' %}
+      You are on the <strong>waiting list</strong> — signed up but not yet paid.
+    {% elif my_roster_status == 'absent' %}
+      You are <strong>not signed up</strong> for this event.
+    {% endif %}
+  </p>
+
+  <ul class="stats">
+    <li><span>{{ roster.filled_slots }}/{{ roster.total_slots }}</span>slots filled</li>
+    <li><span>{{ roster.open_slots }}</span>open</li>
+    <li><span>{{ roster.total_waiting }}</span>waiting</li>
+  </ul>
+  {% if roster.sold_out %}<p class="notice"><strong>Sold out.</strong></p>{% endif %}
+
+  <div class="scroll"><table>
+    <thead><tr><th>Flight</th>{% for f in roster.filled_by_flight %}<th>{{ f }}</th>{% endfor %}</tr></thead>
+    <tbody>
+      <tr><td>Registered</td>{% for f, n in roster.filled_by_flight.items() %}<td>{{ n }}</td>{% endfor %}</tr>
+      <tr><td>Waiting</td>{% for f in roster.filled_by_flight %}<td>{{ roster.waiting_by_flight.get(f, '0') }}</td>{% endfor %}</tr>
+    </tbody>
+  </table></div>
+
+  <h3>Registered ({{ roster.registered | length }})</h3>
+  {% if roster.registered %}
+  <div class="scroll"><table>
+    <thead><tr><th>ID</th><th>Player</th><th>Flight</th><th>Home tour</th></tr></thead>
+    <tbody>
+    {% for p in roster.registered %}
+      <tr{% if p.player_id == cfg.player.id %} class="mine"{% endif %}>
+        <td>{{ p.player_id }}</td><td>{{ p.name }}</td><td>{{ p.flight }}</td><td>{{ p.tour }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  {% else %}
+  <p class="notice">Nobody registered yet.</p>
+  {% endif %}
+
+  {% if roster.waiting %}
+  <h3>Waiting list ({{ roster.waiting | length }})</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>ID</th><th>Player</th><th>Flight</th><th>Home tour</th></tr></thead>
+    <tbody>
+    {% for p in roster.waiting %}
+      <tr{% if p.player_id == cfg.player.id %} class="mine"{% endif %}>
+        <td>{{ p.player_id }}</td><td>{{ p.name }}</td><td>{{ p.flight }}</td><td>{{ p.tour }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  {% endif %}
+</section>
+{% endif %}
+
 <section class="card">
   <h2>Tee times</h2>
   {% if pairings and pairings.published %}

@@ -9,6 +9,7 @@ from datetime import date
 from .net import Fetcher
 from .parse import (
     clean,
+    find_all_tables,
     find_table,
     first_link,
     rows_of,
@@ -219,6 +220,123 @@ def fetch_results(fetcher: Fetcher, cfg: dict, tid: str) -> dict:
     posted = any(f["rows"] for f in flights)
     log.info("results %s: posted=%s, %d flights", tid, posted, len(flights))
     return {"tid": tid, "posted": posted, "columns": headers, "flights": flights}
+
+
+# --------------------------------------------------------------------------
+# Roster / field  (plain GET, like results)
+# --------------------------------------------------------------------------
+
+FLIGHTS = ("Champ", "A", "B", "C", "D")
+
+
+def _flight_summary(table_html: str) -> dict:
+    """Read one of the roster page's two wide summary tables.
+
+    Both have the same shape: an outer header row using colspan, a sub-header
+    row naming the flights, then a single row of values. Columns are located by
+    finding the flight labels rather than by fixed index, so an added or
+    reordered flight does not silently shift every number by one.
+    """
+    rows = rows_of(table_html)
+    header, sub, values = "", None, None
+    for i, row in enumerate(rows):
+        positions = {j: c for j, c in enumerate(row.cells) if c in FLIGHTS}
+        if len(positions) >= 3 and i + 1 < len(rows):
+            header = " ".join(rows[i - 1].cells) if i else ""
+            sub, values = positions, rows[i + 1].cells
+            break
+    if not sub or not values:
+        return {}
+
+    first, last = min(sub), max(sub)
+
+    def at(index: int) -> str:
+        return values[index] if 0 <= index < len(values) else ""
+
+    return {
+        "header": header,
+        "by_flight": {label: at(index) for index, label in sub.items()},
+        "leading": at(first - 1) if first else "",
+        "total": at(last + 1),
+        "trailing": at(last + 2),
+    }
+
+
+def _player_rows(table_html: str) -> list[dict]:
+    headers, records = sectioned_table(table_html)
+    players = []
+    for rec in records:
+        row = zip_record(headers, rec["values"])
+        if not row.get("ID", "").strip():
+            continue
+        players.append(
+            {
+                "player_id": row.get("ID", "").strip(),
+                "name": row.get("Player", "").strip(),
+                "flight": row.get("Flight", "").strip(),
+                "tour": row.get("Home Tour", "").strip(),
+                "paid_member": row.get("Paid Member", "").strip(),
+                "paid_tournament": row.get("Paid Tournament", "").strip(),
+            }
+        )
+    return players
+
+
+def fetch_roster(fetcher: Fetcher, cfg: dict, tid: str) -> dict:
+    """Who is signed up for a tournament, plus how much room is left.
+
+    The page stacks four tables: capacity by flight, the confirmed field, a
+    waiting-list summary, and the waiting list itself. "Waiting" here means
+    signed up but not yet paid - every waiting row has Paid Tournament = No.
+    """
+    page = fetcher.get(tour_url(cfg, f"listing.aspx?id={tid}"))
+    tables = find_all_tables(page, css_class="schedule-table")
+    if not tables:
+        return {"tid": tid, "available": False, "registered": [], "waiting": []}
+
+    capacity, waiting_summary = {}, {}
+    player_tables = []
+    for table in tables:
+        rows = rows_of(table)
+        if not rows:
+            continue
+        heading = " ".join(rows[0].cells)
+        if "Player" in heading and "Flight" in heading:
+            player_tables.append(table)
+        elif "Waiting" in heading:
+            waiting_summary = _flight_summary(table)
+        elif "Slots" in heading:
+            capacity = _flight_summary(table)
+
+    registered = _player_rows(player_tables[0]) if player_tables else []
+    waiting = _player_rows(player_tables[1]) if len(player_tables) > 1 else []
+
+    total_slots = _as_int(capacity.get("leading"))
+    open_slots = _as_int(capacity.get("trailing"))
+    filled = _as_int(capacity.get("total"))
+
+    log.info("roster %s: %s registered, %s waiting, %s open of %s",
+             tid, len(registered), len(waiting), open_slots, total_slots)
+    return {
+        "tid": tid,
+        "available": True,
+        "total_slots": total_slots,
+        "filled_slots": filled if filled is not None else len(registered),
+        "open_slots": open_slots,
+        "sold_out": open_slots == 0 if open_slots is not None else None,
+        "filled_by_flight": capacity.get("by_flight", {}),
+        "waiting_by_flight": waiting_summary.get("by_flight", {}),
+        "total_waiting": _as_int(waiting_summary.get("total")),
+        "registered": registered,
+        "waiting": waiting,
+    }
+
+
+def _as_int(text: str | None) -> int | None:
+    try:
+        return int(str(text).strip())
+    except (TypeError, ValueError):
+        return None
 
 
 # --------------------------------------------------------------------------

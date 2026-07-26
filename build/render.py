@@ -123,6 +123,7 @@ class Site:
             event["is_today"] = delta == 0
 
         self.pairings = {e["tid"]: read_json(f"pairings/{e['tid']}.json") for e in self.events}
+        self.rosters = {e["tid"]: read_json(f"roster/{e['tid']}.json") for e in self.events}
         self.results = {e["tid"]: read_json(f"results/{e['tid']}.json") for e in self.events}
         self.live = {e["tid"]: read_json(f"live/{e['tid']}.json") for e in self.events}
 
@@ -213,6 +214,22 @@ class Site:
         )
         return mine, group
 
+    def my_roster_status(self, tid: str | None) -> str:
+        """registered / waiting / absent / unknown for the configured player.
+
+        "unknown" is deliberately distinct from "absent": with no roster
+        snapshot yet, saying "you are not signed up" would be asserting a
+        falsehood about the thing the reader most needs to trust.
+        """
+        data = self.rosters.get(tid) if tid else None
+        if not data or not data.get("available"):
+            return "unknown"
+        if any(p.get("player_id") == self.player_id for p in data.get("registered", [])):
+            return "registered"
+        if any(p.get("player_id") == self.player_id for p in data.get("waiting", [])):
+            return "waiting"
+        return "absent"
+
     def my_live(self) -> dict | None:
         board = self.live_now
         if not board:
@@ -250,6 +267,8 @@ class Site:
             return "LIVE"
         if (self.pairings.get(tid) or {}).get("published"):
             return "Tee times"
+        if (self.rosters.get(tid) or {}).get("sold_out"):
+            return "Sold out"
         if event.get("registration_open"):
             return "Register"
         return "Scheduled"
@@ -306,6 +325,8 @@ class Site:
             me_live=self.my_live(),
             next_event=next_event,
             next_pairings=self.pairings.get(next_event["tid"]) if next_event else None,
+            next_roster=self.rosters.get(next_event["tid"]) if next_event else None,
+            my_roster_status=self.my_roster_status(next_event["tid"] if next_event else None),
             my_tee_time=my_tee_time,
             my_group=my_group,
             me_standing=me_standing,
@@ -347,7 +368,9 @@ class Site:
                 results = {**results, "columns": [c for c in results["columns"] if c != "Detail"]}
             self._render("event.html", f"t/{tid}.html",
                          event=event, pairings=pairings,
-                         results=results, live=self.live.get(tid))
+                         results=results, live=self.live.get(tid),
+                         roster=self.rosters.get(tid),
+                         my_roster_status=self.my_roster_status(tid))
 
         pages = []
         for entry in self.cfg["content_pages"]:
@@ -420,6 +443,14 @@ class Site:
                 "tee_times_posted": bool(
                     (self.pairings.get(next_event["tid"]) or {}).get("published")
                 ),
+                "my_registration": self.my_roster_status(next_event["tid"]),
+                "field": (lambda r: r and {
+                    "filled": r.get("filled_slots"),
+                    "total": r.get("total_slots"),
+                    "open": r.get("open_slots"),
+                    "waiting": r.get("total_waiting"),
+                    "sold_out": r.get("sold_out"),
+                })(self.rosters.get(next_event["tid"])),
                 "my_tee_time": my_tee_time and {
                     "time": my_tee_time["tee_time"],
                     "starting_hole": my_tee_time["starting_hole"],
@@ -481,6 +512,18 @@ class Site:
             lines.append(f"  {pretty_date(event['date'])} - {event['start']} "
                          f"({event['days_away']} days away)")
             lines.append(f"  Entry {event['cost']}")
+            registration = {
+                "registered": "  YOU ARE REGISTERED (paid).",
+                "waiting": "  YOU ARE ON THE WAITING LIST (signed up, not yet paid).",
+                "absent": "  YOU ARE NOT SIGNED UP for this event.",
+            }.get(event["my_registration"])
+            if registration:
+                lines.append(registration)
+            if event["field"]:
+                field = event["field"]
+                lines.append(f"  Field: {field['filled']}/{field['total']} filled, "
+                             f"{field['open']} open, {field['waiting']} waiting"
+                             f"{' - SOLD OUT' if field['sold_out'] else ''}")
             if event["my_tee_time"]:
                 tee = event["my_tee_time"]
                 lines.append(f"  YOUR TEE TIME: {tee['time']} off hole "

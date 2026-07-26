@@ -37,6 +37,17 @@
     <p class="countdown">{{ next_event.date | pretty_date }} · {{ next_event.start_time }} {{ next_event.start_type }}
        <span class="pill">{{ next_event.date | days_away }}</span></p>
 
+    {% if next_roster and next_roster.available %}
+      <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'notice' }}">
+        {% if my_roster_status == 'registered' %}Registered and paid.
+        {% elif my_roster_status == 'waiting' %}On the waiting list — signed up, not yet paid.
+        {% elif my_roster_status == 'absent' %}<strong>You are not signed up.</strong>
+        {% endif %}
+        <span class="detail">{{ next_roster.filled_slots }}/{{ next_roster.total_slots }} filled ·
+          {{ next_roster.open_slots }} open · {{ next_roster.total_waiting }} waiting</span>
+      </p>
+    {% endif %}
+
     {% if my_tee_time %}
       <p class="highlight">Your tee time: <strong>{{ my_tee_time.tee_time }}</strong>
          off hole {{ my_tee_time.starting_hole }} ({{ my_tee_time.group }})</p>

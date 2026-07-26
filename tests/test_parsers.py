@@ -165,6 +165,64 @@ def test_results_rows_are_keyed_by_column():
 
 
 # --------------------------------------------------------------------------
+# Roster
+# --------------------------------------------------------------------------
+
+def test_roster_reads_capacity_and_both_player_lists():
+    data = sources.fetch_roster(FakeFetcher(fixture("roster.html")), CFG, "17639")
+    assert data["available"] is True
+    assert data["total_slots"] == 80
+    assert data["filled_slots"] == 8
+    assert data["open_slots"] == 72
+    assert data["sold_out"] is False
+    assert len(data["registered"]) == 8
+    assert len(data["waiting"]) == 18
+    assert data["total_waiting"] == 18
+
+
+def test_roster_flight_counts_are_keyed_by_flight_not_position():
+    data = sources.fetch_roster(FakeFetcher(fixture("roster.html")), CFG, "17639")
+    assert data["filled_by_flight"] == {"Champ": "1", "A": "1", "B": "0", "C": "4", "D": "2"}
+    assert data["waiting_by_flight"] == {"Champ": "0", "A": "2", "B": "4", "C": "7", "D": "5"}
+    # The two summary tables must not be swapped: 8 filled vs 18 waiting.
+    assert sum(int(v) for v in data["filled_by_flight"].values()) == data["filled_slots"]
+
+
+def test_roster_separates_paid_from_waiting():
+    """Waiting means signed up but not yet paid - every waiting row says No."""
+    data = sources.fetch_roster(FakeFetcher(fixture("roster.html")), CFG, "17639")
+    assert all(p["paid_tournament"] == "Yes" for p in data["registered"])
+    assert all(p["paid_tournament"] == "No" for p in data["waiting"])
+    assert data["registered"][0]["name"] == "Devine, Ben"
+    assert data["registered"][0]["flight"] == "Champ"
+
+
+def test_roster_keeps_players_from_visiting_tours():
+    data = sources.fetch_roster(FakeFetcher(fixture("roster.html")), CFG, "17639")
+    tours = {p["tour"] for p in data["waiting"]}
+    assert "Chicago, IL" in tours and "Washington, DC Metro" in tours
+
+
+def test_empty_roster_parses_as_an_open_field():
+    data = sources.fetch_roster(FakeFetcher(fixture("roster_empty.html")), CFG, "17640")
+    assert data["available"] is True
+    assert data["registered"] == [] and data["waiting"] == []
+    assert data["total_slots"] == 80 and data["open_slots"] == 80
+    assert data["sold_out"] is False
+
+
+@pytest.mark.parametrize(
+    "payload,expected",
+    [({"registered": [{"player_id": "51002"}], "waiting": []}, "registered"),
+     ({"registered": [], "waiting": [{"player_id": "51002"}]}, "waiting"),
+     ({"registered": [{"player_id": "999"}], "waiting": []}, "absent"),
+     ({}, "absent")],
+)
+def test_roster_status_lookup(payload, expected):
+    assert crawl._roster_status(payload, "51002") == expected
+
+
+# --------------------------------------------------------------------------
 # Standings
 # --------------------------------------------------------------------------
 

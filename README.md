@@ -28,6 +28,7 @@ reader) can watch the tour for you — see [For scheduled checks](#for-scheduled
 | `Schedule.aspx` | GET | `data/schedule.json` |
 | `Pairings.aspx` | POST (`tournament_dd`) | `data/pairings/<tid>.json` |
 | `results.aspx?id=` | GET | `data/results/<tid>.json` |
+| `listing.aspx?id=` | GET | `data/roster/<tid>.json` |
 | `Standings.aspx` | GET | `data/standings.json` |
 | `livescore/Leaderboard.aspx` | POST (`tournaments_dd`) | `data/live/<tid>.json` |
 | `readContent.aspx?id=` | GET | `data/content/<id>.json` |
@@ -78,7 +79,7 @@ Modes:
 | `auto` | What cron runs. Fetches only what `data/state.json` says is stale — usually 0–1 requests. |
 | `daily` | Forces schedule, standings and announcement pages. |
 | `live` | Only polls the leaderboard for events happening today. |
-| `full` | Backfills every event's pairings and results. ~10 minutes at the 10s crawl delay. |
+| `full` | Backfills every event's pairings, plus rosters for upcoming events and results for past ones. ~10 minutes at the 10s crawl delay. |
 
 Add `--force` to ignore freshness stamps.
 
@@ -89,6 +90,9 @@ fetches only what's due:
 
 - **Tee times** — polled every 45 minutes in the 5 days before an event, then
   left alone once they're published. This is the case the mirror exists for.
+- **Rosters** — who's in the field and how much room is left, every 6 hours for
+  events up to 45 days out. Wider than the tee-time window, since that's when
+  you'd still decide to enter.
 - **Live scores** — polled on event days only.
 - **Results** — polled every 3 hours for 10 days after an event, until posted.
 - **Schedule / standings** — every 12 hours. **Announcements** — every 24 hours.
@@ -156,9 +160,10 @@ To mirror a different tour, change `tour_slug` and `tour_name` and refresh
 Three endpoints exist specifically so an assistant or script can watch the tour
 without parsing HTML:
 
-- **`/digest.txt`** — a plain-text briefing: next event, whether tee times are
-  out, your tee time and playing partners, your points position, last result,
-  recent changes. Cheapest thing to read.
+- **`/digest.txt`** — a plain-text briefing: next event, whether you're
+  registered, how full the field is, whether tee times are out, your tee time
+  and playing partners, your points position, last result, recent changes.
+  Cheapest thing to read.
 - **`/status.json`** — the same information structured.
 - **`/feed.xml`** — RSS of every change the mirror has noticed.
 
@@ -179,5 +184,13 @@ there's no client-side JavaScript that a fetch-only checker would miss.
   there before driving to a course.
 - Mirrored announcement pages have their inline `<script>`/`<style>` stripped and
   relative links rewritten back to the origin.
+- On the roster, "waiting" means signed up but not yet paid — every waiting row
+  carries `Paid Tournament: No`. Registration state is reported as
+  `registered` / `waiting` / `absent` / **`unknown`**; the last is deliberately
+  distinct, since claiming "you are not signed up" from a missing snapshot
+  would assert a falsehood about the thing you most need to trust.
+- Page links omit `.html`: Cloudflare Pages 308s to the extensionless form, so
+  linking to the file name would put a redirect on every click and every
+  scheduled fetch.
 - Scheduled workflows on GitHub are disabled after 60 days without repo
   activity. The data commits keep this one alive on their own.

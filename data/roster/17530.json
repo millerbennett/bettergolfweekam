@@ -1,0 +1,1173 @@
+{
+  "tid": "17530",
+  "available": true,
+  "total_slots": 96,
+  "filled_slots": 47,
+  "open_slots": 49,
+  "sold_out": false,
+  "filled_by_flight": {
+    "Champ": "5",
+    "A": "12",
+    "B": "9",
+    "C": "13",
+    "D": "8"
+  },
+  "waiting_by_flight": {
+    "Champ": "10",
+    "A": "16",
+    "B": "18",
+    "C": "23",
+    "D": "28"
+  },
+  "total_waiting": 95,
+  "registered": [
+    {
+      "player_id": "44155",
+      "name": "Bordley, Terrance",
+      "flight": "Champ",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "50569",
+      "name": "Devine, Ben",
+      "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "63458",
+      "name": "Fleming, Derionne",
+      "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "30703",
+      "name": "Goulet, Michael",
+      "flight": "Champ",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "60074",
+      "name": "McMahon, Michael",
+      "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57627",
+      "name": "Brown, Garrett",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "45490",
+      "name": "Crowley, Craig",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "53005",
+      "name": "Ferrell, Matt",
+      "flight": "A",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "34083",
+      "name": "Hatley, Wes",
+      "flight": "A",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "26488",
+      "name": "Huff, Jeremy",
+      "flight": "A",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56547",
+      "name": "Jones, Terran",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "11241",
+      "name": "Marshall, Donny",
+      "flight": "A",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "32091",
+      "name": "Middleton, Tim",
+      "flight": "A",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56574",
+      "name": "Patterson, Bryan",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "33583",
+      "name": "Rapp, Joe",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "50358",
+      "name": "Rosenfield, Chuck",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "10689",
+      "name": "Sullins, Ron",
+      "flight": "A",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "34012",
+      "name": "Arnold, JA",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "45420",
+      "name": "Bryars, Kevin",
+      "flight": "B",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56458",
+      "name": "Distler, Eric",
+      "flight": "B",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "28567",
+      "name": "Gafford, Hayden",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "45919",
+      "name": "Gomez, Jose",
+      "flight": "B",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "55665",
+      "name": "Hawkins, Kevin",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "45234",
+      "name": "Lawson, Travis",
+      "flight": "B",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "51002",
+      "name": "Miller, Bennett",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56519",
+      "name": "Taormina, Harry",
+      "flight": "B",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "49718",
+      "name": "Beaufort, Dre",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "3309",
+      "name": "Boyer, Stan",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61923",
+      "name": "Emerson, Danny",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "45721",
+      "name": "Fitzsimmons, Tom",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "18247",
+      "name": "Franklin, Cephas",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "60102",
+      "name": "Frye, John",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "55920",
+      "name": "Giles, Alex",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "48932",
+      "name": "Horn, John",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "49530",
+      "name": "Lorenz, Aaron",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "31967",
+      "name": "Shugart, Dave",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "48076",
+      "name": "Thompson, Jay",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56591",
+      "name": "Thompson, Zak",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56836",
+      "name": "Williams, Jeffreys",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "28157",
+      "name": "Enzor, Wayne",
+      "flight": "D",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "13562",
+      "name": "Faggert, David",
+      "flight": "D",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "34317",
+      "name": "Gray, Willie",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "49241",
+      "name": "Hancock, Dawn",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57302",
+      "name": "Miller, Keith",
+      "flight": "D",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "48823",
+      "name": "Norwood, Richard",
+      "flight": "D",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "24248",
+      "name": "Sawyer, Thompson",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "40768",
+      "name": "Taylor, Nick",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    }
+  ],
+  "waiting": [
+    {
+      "player_id": "15098",
+      "name": "Clary, Adam",
+      "flight": "Champ",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61591",
+      "name": "Dillard, Jacari",
+      "flight": "Champ",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61591",
+      "name": "Dillard, Jacari",
+      "flight": "Champ",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61591",
+      "name": "Dillard, Jacari",
+      "flight": "Champ",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "52692",
+      "name": "Lawson, Christopher",
+      "flight": "Champ",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56488",
+      "name": "Lewis, William",
+      "flight": "Champ",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "6762",
+      "name": "Martinez, Marty",
+      "flight": "Champ",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "62452",
+      "name": "Medlin, Ryan",
+      "flight": "Champ",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "38082",
+      "name": "Strader, Wes",
+      "flight": "Champ",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "43926",
+      "name": "Wiggins, Kelvin",
+      "flight": "Champ",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "30678",
+      "name": "Carreon, Fredy",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "10721",
+      "name": "Layne, Brian",
+      "flight": "A",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "19726",
+      "name": "Lederer, John",
+      "flight": "A",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "17316",
+      "name": "Martin, Mike",
+      "flight": "A",
+      "tour": "Central North Carolina",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "35911",
+      "name": "Martinez, AJ",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "60804",
+      "name": "Matthews, Gabe",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61393",
+      "name": "Matthews, Luke",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "4409",
+      "name": "Neverve, Robin",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "26343",
+      "name": "Phelps, Tim",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "33463",
+      "name": "Pritt, Donnie",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61655",
+      "name": "Pruismann, Joseph",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57420",
+      "name": "Queen, Matt",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57127",
+      "name": "Shoemaker, James",
+      "flight": "A",
+      "tour": "Central North Carolina",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "63018",
+      "name": "Sigers, David",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "48960",
+      "name": "Taylor, Matthew",
+      "flight": "A",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "58990",
+      "name": "Wright, Chris",
+      "flight": "A",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "41197",
+      "name": "Abernathy, Stephen",
+      "flight": "B",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61565",
+      "name": "Anderson, Bradley",
+      "flight": "B",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "60253",
+      "name": "Begg, Glenn",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "49689",
+      "name": "Cacioppo, Shawn",
+      "flight": "B",
+      "tour": "Central North Carolina",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "52931",
+      "name": "Clark, Jesse",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "28413",
+      "name": "Cozart, Brien",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "55443",
+      "name": "Grenell, Tom",
+      "flight": "B",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "59178",
+      "name": "Lee, Gary",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "48801",
+      "name": "LeMense, Thomas",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61779",
+      "name": "Minier, Michael",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "64047",
+      "name": "Pittman, Zac",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "11397",
+      "name": "Redmond, Sean",
+      "flight": "B",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57933",
+      "name": "Richardson, Trey",
+      "flight": "B",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "25707",
+      "name": "Shackleford, Dallas",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61792",
+      "name": "Stone, Robert",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "14587",
+      "name": "VanSickle, Timothy",
+      "flight": "B",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "55069",
+      "name": "Woodell, Allen",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "49368",
+      "name": "Woodhead, Tim",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "63164",
+      "name": "Basilan, Ruel",
+      "flight": "C",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "11254",
+      "name": "Bruce, Darrell",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "11947",
+      "name": "Bullock, Thomas",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "64099",
+      "name": "Carrick, Russell",
+      "flight": "C",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "43339",
+      "name": "Claytor, Roger",
+      "flight": "C",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57807",
+      "name": "Davidson, Richie",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "60037",
+      "name": "Foxworth, Tyler",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "29997",
+      "name": "Hale, Mike",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "62601",
+      "name": "Haynes, Derek",
+      "flight": "C",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "54112",
+      "name": "Honeycutt, Jonathan",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "63745",
+      "name": "Jordan, Jason",
+      "flight": "C",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "59782",
+      "name": "Joyner, Neal",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56712",
+      "name": "Lewis, Glenn",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "10179",
+      "name": "Lingo, James",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57473",
+      "name": "Lyne, Mike",
+      "flight": "C",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "24290",
+      "name": "Martinez, Pattina",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "54638",
+      "name": "Mccall, Bill",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "58227",
+      "name": "Rinaldi, Aaron",
+      "flight": "C",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "24621",
+      "name": "Sherron, Jason",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "10761",
+      "name": "Smith, Patrick",
+      "flight": "C",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "9117",
+      "name": "Thompson, Vince",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "45362",
+      "name": "Toler, Blaine",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "21019",
+      "name": "Wilson, Nick",
+      "flight": "C",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "36913",
+      "name": "Barfield, Miles",
+      "flight": "D",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57622",
+      "name": "Bass, Daniel",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "34277",
+      "name": "Branch, Garry",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "53960",
+      "name": "Davis, Eric",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "10959",
+      "name": "Dollar, Jim",
+      "flight": "D",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "60305",
+      "name": "Ford, Ashodd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "49929",
+      "name": "Graves, Will",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56706",
+      "name": "Gwinn, Kenny",
+      "flight": "D",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "53294",
+      "name": "Lott, Jeremy",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "37686",
+      "name": "Moore, James",
+      "flight": "D",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "62419",
+      "name": "Oldland, Del",
+      "flight": "D",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56684",
+      "name": "Parr, Todd",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57125",
+      "name": "Shoemaker, Tia",
+      "flight": "D",
+      "tour": "Central North Carolina",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "49117",
+      "name": "Smith, Kevin",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "60375",
+      "name": "Spencer, Daniel",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "62933",
+      "name": "Walker, Chris",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "4249",
+      "name": "Wilkes, Landon",
+      "flight": "D",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "35826",
+      "name": "Williams, Jimmie",
+      "flight": "D",
+      "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "3401",
+      "name": "Williams, Rat",
+      "flight": "D",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    }
+  ],
+  "event": {
+    "tid": "17530",
+    "date": "2026-08-15",
+    "name": "The Players Cup (DC Metro, Eastern, Richmond, Tidewater)",
+    "course": "Occano Golf Course",
+    "start_time": "9:00",
+    "start_type": "Shotgun",
+    "is_major": true
+  },
+  "fetched_at": "2026-07-26T19:57:38+00:00"
+}

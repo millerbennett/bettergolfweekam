@@ -19,6 +19,7 @@ from build.render import Site, flight_short
 from scraper import sources, store
 from tests.test_parsers import CFG, FakeFetcher, fixture
 
+LATER_TID = "17639"
 TIMEZONE = "America/New_York"
 # Must match how Site derives its own "today", or this drifts a day out on a
 # UTC CI runner in the evening and the live-event assertions go flaky.
@@ -75,7 +76,8 @@ def site(tmp_path, monkeypatch):
 
     # A future event too, so "next up" has somewhere to point after today.
     later = {**EVENT, "tid": "17639", "name": "DC Metro Open Championship",
-             "date": (TODAY + timedelta(days=13)).isoformat(), "is_major": True}
+             "date": (TODAY + timedelta(days=13)).isoformat(), "is_major": True,
+             "course": "Rock Harbor (Rock)"}
 
     write("schedule.json", {"season": 2026, "events": [EVENT, later]})
     write("standings.json", standings)
@@ -85,6 +87,11 @@ def site(tmp_path, monkeypatch):
     write("meta.json", {"last_run": "2026-07-26T19:00:00+00:00"})
     write(f"live/{TID}.json", live)
     write(f"pairings/{TID}.json", pairings)
+
+    # The upcoming major: a real field the configured player is NOT in.
+    roster = sources.fetch_roster(FakeFetcher(fixture("roster.html")), CFG, later["tid"])
+    roster["event"] = later
+    write(f"roster/{later['tid']}.json", roster)
 
     site = Site(SITE_CFG, "https://example.invalid")
     site.build()
@@ -144,6 +151,35 @@ def test_status_json_reports_my_points_position(site):
     assert status["my_standing"]["flight"] == "B"
     assert status["my_standing"]["position"] == "1"
     assert "Leading B by" in status["my_standing"]["note"]
+
+
+def test_event_page_lists_the_field_and_waiting_list(site):
+    """The signal worth having early: an entry deadline you have not met."""
+    _, public = site
+    page = read(public, f"t/{LATER_TID}.html")
+    assert "Devine, Ben" in page          # registered
+    assert "Rosen, Jason" in page         # waiting list
+    assert "not signed up" in page
+    assert "8/80" in page and "72" in page
+
+
+def test_missing_roster_reads_as_unknown_not_absent(site):
+    """Today's event has no roster snapshot.
+
+    Reporting "you are not signed up" from absent data would assert a
+    falsehood about the exact thing the reader needs to trust.
+    """
+    _, public = site
+    status = json.loads(read(public, "status.json"))
+    assert status["next_event"]["my_registration"] == "unknown"
+    assert status["next_event"]["field"] is None
+    assert "NOT SIGNED UP" not in read(public, "digest.txt")
+
+
+def test_event_without_roster_data_omits_the_field_section(site):
+    """Today's event has no roster file; the section must not render empty."""
+    _, public = site
+    assert "<h2>Field</h2>" not in read(public, f"t/{TID}.html")
 
 
 def test_every_event_gets_a_page(site):

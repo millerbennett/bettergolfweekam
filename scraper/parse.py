@@ -82,6 +82,23 @@ def find_table(page: str, *, css_class: str | None = None, table_id: str | None 
     return page[match.end(): end if end != -1 else len(page)]
 
 
+def find_all_tables(page: str, *, css_class: str | None = None) -> list[str]:
+    """Inner HTML of every matching table, in document order.
+
+    The roster page stacks four of them (capacity, registered, waiting summary,
+    waiting list) under the same class, so callers classify by header content.
+    """
+    pattern = (
+        r"""<table[^>]*class=['"][^'"]*%s[^'"]*['"][^>]*>""" % re.escape(css_class)
+        if css_class else r"<table\b[^>]*>"
+    )
+    tables = []
+    for match in re.finditer(pattern, page, re.I):
+        end = page.find("</table>", match.end())
+        tables.append(page[match.end(): end if end != -1 else len(page)])
+    return tables
+
+
 def sectioned_table(table_html: str) -> tuple[list[str], list[dict]]:
     """Parse a table whose rows are grouped under colspan section headings.
 
