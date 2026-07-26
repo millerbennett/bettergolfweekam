@@ -21,6 +21,10 @@ care about.
 It also exists so a scheduled assistant check (ChatGPT tasks, a cron job, an RSS
 reader) can watch the tour for you — see [For scheduled checks](#for-scheduled-checks).
 
+> **Changing this project?** [`ARCHITECTURE.md`](ARCHITECTURE.md) is the full
+> handoff doc: upstream quirks, data formats, the crawl planner, CI/CD, design
+> decisions, and the list of hard-won bugs not to reintroduce.
+
 ## What it mirrors
 
 | Upstream page | Method | Lands in |
