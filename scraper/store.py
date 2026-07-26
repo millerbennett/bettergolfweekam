@@ -41,23 +41,29 @@ def write_json(rel: str, payload) -> None:
 
 
 def save_snapshot(rel: str, payload: dict) -> bool:
-    """Write `payload` stamped with fetched_at. Returns True if content changed.
+    """Write `payload` if it differs from what's on disk. True if it changed.
 
-    fetched_at is excluded from the comparison so an unchanged page does not
-    churn a commit (and therefore does not burn a Cloudflare Pages deploy).
+    When nothing changed the file is left byte-for-byte alone, deliberately:
+    rewriting it with a fresh timestamp would show up as a git diff, and the
+    workflow gates its commit and its Cloudflare deploy on exactly that diff.
+    Bumping the stamp on every poll therefore produced a commit and a deploy
+    every run, whether or not the tour had published anything.
+
+    So `fetched_at` here means "when this content last changed", not "when we
+    last looked". Last-looked lives in state.json, which is gitignored and
+    persisted through the Actions cache precisely so it can churn freely.
     """
     previous = read_json(rel) or {}
     stamped = dict(payload)
     stamped["fetched_at"] = now_utc().isoformat(timespec="seconds")
 
-    comparable = {k: v for k, v in stamped.items() if k != "fetched_at"}
-    prior = {k: v for k, v in previous.items() if k != "fetched_at"}
-    changed = comparable != prior
-    if not changed and previous:
-        # Keep the freshness stamp current without rewriting the body.
-        stamped = {**previous, "fetched_at": stamped["fetched_at"]}
+    if previous:
+        comparable = {k: v for k, v in stamped.items() if k != "fetched_at"}
+        prior = {k: v for k, v in previous.items() if k != "fetched_at"}
+        if comparable == prior:
+            return False
     write_json(rel, stamped)
-    return changed
+    return True
 
 
 # --------------------------------------------------------------------------
