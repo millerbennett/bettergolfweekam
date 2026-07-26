@@ -97,7 +97,7 @@
       <li><span>{{ me_standing.Birdies }}</span>birdies</li>
       <li><span>${{ me_standing.Earnings }}</span>earnings</li>
     </ul>
-    {% if me_gap %}<p class="sub">{{ me_gap }}</p>{% endif %}
+    {% if me_gap %}<p class="stat-note">{{ me_gap }}</p>{% endif %}
     <p><a class="button" href="{{ url('me.html') }}">Full detail →</a></p>
   {% else %}
     <p class="notice">No {{ season }} standings row found for player {{ cfg.player.id }}.</p>

@@ -17,8 +17,8 @@
   --line: #1d2a22;
   --line-2: #2a3a30;
   --ink: #e8f4ec;
-  --ink-2: #b9cec1;
-  --muted: #7d9488;
+  --ink-2: #ccdcd2;
+  --muted: #9cb3a5;
 
   --accent: #8bff5e;                        /* electric lime */
   --accent-ink: #a5ff80;
@@ -52,7 +52,7 @@
     --line-2: #c4d3c9;
     --ink: #0a120d;
     --ink-2: #2e4137;
-    --muted: #5e7266;
+    --muted: #4b5d53;
 
     --accent: #0f7a2e;
     --accent-ink: #0b6626;
@@ -157,6 +157,11 @@ a { color: var(--accent-ink); text-underline-offset: 3px; }
   border-bottom: 2px solid transparent;
 }
 .topbar nav a:hover { color: var(--accent-ink); border-bottom-color: var(--line-2); }
+/* Smallest phones: shave the gaps so all six tabs fit rather than making
+   the reader discover that the bar scrolls. */
+@media (max-width: 374px) {
+  .topbar nav a { padding: 0 6px; letter-spacing: .01em; }
+}
 .topbar nav a.active {
   color: var(--accent-ink);
   border-bottom-color: var(--accent);
@@ -174,7 +179,7 @@ footer {
   margin: 0 auto;
   padding: 20px max(14px, env(safe-area-inset-left)) 44px;
   color: var(--muted);
-  font-size: .78rem;
+  font-size: .82rem;
 }
 footer p { margin: 8px 0; }
 footer a { display: inline-block; padding: 5px 2px; }
@@ -225,7 +230,7 @@ footer a { display: inline-block; padding: 5px 2px; }
 h1 { font-size: 1.28rem; font-weight: 800; }
 h2 { font-size: 1.1rem; font-weight: 800; }
 h3 {
-  font-size: .68rem;
+  font-size: .74rem;
   margin: 20px 0 8px;
   color: var(--muted);
   text-transform: uppercase;
@@ -244,16 +249,19 @@ h3 {
 @keyframes pulse { 50% { opacity: .3; transform: scale(.82); } }
 @media (prefers-reduced-motion: reduce) { .dot { animation: none; } }
 
-.sub { color: var(--muted); margin: 3px 0; font-size: .88rem; }
+.sub { color: var(--muted); margin: 3px 0; font-size: .93rem; }
 .sub.label {
   margin-top: 16px;
-  font-size: .64rem;
+  font-size: .71rem;
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   font-weight: 800;
 }
-.detail { color: var(--muted); font-size: .83rem; }
-.notice { color: var(--muted); font-size: .88rem; margin: 10px 0; }
+.detail { color: var(--muted); font-size: .87rem; }
+/* A conclusion drawn from the data ("Leading B by 963 points") is a fact,
+   not a caption — caption grey buried it under the stat tiles. */
+.stat-note { color: var(--ink-2); font-size: .95rem; margin: 12px 0 0; }
+.notice { color: var(--muted); font-size: .93rem; margin: 10px 0; }
 .event-title { font-size: 1.35rem; font-weight: 800; margin: 12px 0 2px; letter-spacing: -.025em; }
 /* Prose, not data - mono made the long form wrap badly. Numbers stay tabular. */
 .countdown {
@@ -314,9 +322,9 @@ h3 {
 .tag {
   display: inline-block;
   font-style: normal;
-  font-size: .62rem;
+  font-size: .68rem;
   font-weight: 800;
-  letter-spacing: .11em;
+  letter-spacing: .09em;
   text-transform: uppercase;
   padding: 4px 8px;
   border-radius: 5px;
@@ -335,7 +343,7 @@ h3 {
 
 .major {
   display: inline-block;
-  font-size: .59rem;
+  font-size: .67rem;
   font-weight: 800;
   letter-spacing: .12em;
   padding: 3px 7px;
@@ -429,7 +437,7 @@ h3 {
   border-radius: var(--radius-sm);
   padding: 10px 11px 10px 13px;
   color: var(--muted);
-  font-size: .61rem;
+  font-size: .67rem;
   text-transform: uppercase;
   letter-spacing: .12em;
   font-weight: 800;
@@ -503,10 +511,10 @@ h3 {
 .ev-date b { font-family: var(--mono); font-size: 1.12rem; font-weight: 700; letter-spacing: -.04em; }
 .ev-date i {
   font-style: normal;
-  font-size: .56rem;
+  font-size: .68rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: .1em;
   color: var(--muted);
   margin-top: 2px;
 }
@@ -531,12 +539,12 @@ h3 {
 .ev-meta {
   display: block;
   color: var(--muted);
-  font-size: .79rem;
+  font-size: .84rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.ev-facts { display: flex; align-items: center; gap: 7px; margin-top: 3px; font-family: var(--mono); font-size: .73rem; }
+.ev-facts { display: flex; align-items: center; gap: 7px; margin-top: 3px; font-family: var(--mono); font-size: .78rem; }
 .ev-facts > span { overflow: hidden; text-overflow: ellipsis; }
 
 @media (max-width: 430px) {
@@ -566,9 +574,9 @@ table.data th {
   top: 0;
   background: var(--surface);
   color: var(--muted);
-  font-size: .61rem;
+  font-size: .67rem;
   text-transform: uppercase;
-  letter-spacing: .13em;
+  letter-spacing: .11em;
   font-weight: 800;
   border-bottom-color: var(--line-2);
 }
@@ -658,12 +666,12 @@ table.board td:first-child { width: 3.2rem; }
 .feed a { font-weight: 650; text-decoration: none; }
 .feed a:hover { text-decoration: underline; }
 .feed .detail { grid-column: 2; }
-.feed time { grid-column: 2; color: var(--muted); font-size: .72rem; font-family: var(--mono); }
+.feed time { grid-column: 2; color: var(--muted); font-size: .78rem; font-family: var(--mono); }
 
 .kind {
-  font-size: .57rem;
+  font-size: .66rem;
   text-transform: uppercase;
-  letter-spacing: .13em;
+  letter-spacing: .1em;
   font-weight: 800;
   padding: 4px 7px;
   border-radius: 4px;

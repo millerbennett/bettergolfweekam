@@ -15,7 +15,7 @@
       <li><span>{{ me_standing.Eagles }}</span>eagles</li>
       <li><span>${{ me_standing.Earnings }}</span>earnings</li>
     </ul>
-    {% if me_gap %}<p class="notice">{{ me_gap }}</p>{% endif %}
+    {% if me_gap %}<p class="stat-note">{{ me_gap }}</p>{% endif %}
   {% else %}
     <p class="notice">No standings row found for player {{ cfg.player.id }} in {{ season }}.</p>
   {% endif %}
