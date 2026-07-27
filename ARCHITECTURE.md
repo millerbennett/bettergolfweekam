@@ -277,7 +277,7 @@ round flips to `complete` when the last scorekeeper submits.
 | `/schedule` | Grouped: happening today → coming up → played (newest first) |
 | `/standings` | Points race, your row highlighted |
 | `/p/` | Group overview — one row per player |
-| `/p/<slug>` | A player's dashboard: standing, next event, and a season timeline showing where they stand on every event (played / entered / waitlist / not entered) |
+| `/p/<slug>` | A player's dashboard: standing, next event in full, then the rest of the season and their played events — same today/upcoming/played priority as `/schedule` |
 | `/p/<slug>/digest.txt`, `/p/<slug>/status.json` | That player's machine-readable view |
 | `/me` | Alias for the primary player, kept for old bookmarks |
 | `/feed` | Change feed |
@@ -407,8 +407,7 @@ Six players are tracked. The split that keeps this cheap:
 
 The group table is ordered by flight (Champ down to D) then points within
 each — flights are handicap bands, so a cross-flight points ranking would not
-be a real contest. A ★ marks a player leading their flight outright, which is
-distinct from merely being first in this group. Each flight has its own colour
+be a real contest. Each flight has its own colour
 token (`--f-champ` … `--f-d`); all ten badge combinations were checked against
 WCAG AA, worst case 5.54:1.
 

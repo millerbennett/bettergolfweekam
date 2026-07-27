@@ -406,6 +406,38 @@ def test_players_without_a_standings_row_sort_last(site, tmp_path, monkeypatch):
         assert min(unscored) > max(i for i, r in enumerate(rows) if r["points"])
 
 
+def test_player_timeline_leads_with_what_is_coming(site):
+    """Same priority as /schedule: today, then upcoming, then history."""
+    _, public = site
+    page = read(public, f"p/{PLAYER['slug']}/index.html")
+    assert page.index("Next event") < page.index("Played")
+    if "Rest of the season" in page:
+        assert page.index("Rest of the season") < page.index("Played")
+
+
+def test_player_timeline_does_not_repeat_the_next_event(site):
+    """It is already shown in full above the list."""
+    site_obj, _ = site
+    timeline = site_obj.player_timeline(PLAYER)
+    upcoming_tids = [e["tid"] for e in timeline["upcoming"]]
+    assert site_obj.next_event["tid"] not in upcoming_tids
+
+
+def test_played_events_are_newest_first(site):
+    site_obj, _ = site
+    dates = [e["date"] for e in site_obj.player_timeline(PLAYER)["played"]]
+    assert dates == sorted(dates, reverse=True)
+
+
+def test_group_table_is_plain_navigation(site):
+    """No row fill or star: on a table of links they out-shouted the links."""
+    _, public = site
+    page = read(public, "p/index.html")
+    assert "★" not in page
+    assert 'class="mine"' not in page
+    assert 'class="flt flt-b"' in page      # colour tags stay
+
+
 def test_group_index_lists_everyone(site):
     _, public = site
     page = read(public, "p/index.html")

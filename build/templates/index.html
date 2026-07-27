@@ -78,8 +78,8 @@
     </tr></thead>
     <tbody>
     {% for p in group %}
-      <tr{% if p.flight_leader %} class="mine"{% endif %}>
-        <td><a class="{{ 'leader' if p.flight_leader }}" href="{{ url('p/' ~ p.slug ~ '/index.html') }}">{{ p.display }}</a></td>
+      <tr>
+        <td><a href="{{ url('p/' ~ p.slug ~ '/index.html') }}">{{ p.display }}</a></td>
         <td>{% if p.flight %}<span class="flt flt-{{ p.flight | lower }}">{{ p.flight }}</span>{% else %}—{% endif %}</td>
         <td class="num">{{ p.position or '—' }}</td>
         <td class="num">{{ p.points or '—' }}</td>
@@ -89,7 +89,6 @@
     </tbody>
   </table>
   </div>
-  <p class="sub">★ leads their flight.</p>
 </section>
 
 <section class="card">

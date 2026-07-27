@@ -85,16 +85,17 @@
   {% endif %}
 </section>
 
-<section class="card">
-  <h2>{{ season }} schedule</h2>
+{% macro timeline_rows(rows, dim=false) %}
   <ul class="tl">
-  {% for e in season_schedule %}
-    <li class="{{ 'dim' if e.status in ('missed', 'unknown') }}">
+  {% for e in rows %}
+    <li class="{{ 'dim' if dim and e.status in ('missed', 'unknown') }}">
       <span class="when">{{ e.date | day_month }}</span>
       <span class="what">
         <a href="{{ url("t/" ~ e.tid) }}">{{ e.name }}</a>
-        {% if e.is_major %}<span class="major">MAJOR</span>{% endif %}
-        <span class="where">{{ e.course }}{% if e.tee_time %} · off {{ e.tee_time }}{% endif %}</span>
+        <span class="where">
+          {% if e.is_major %}<em class="tag tag-major">Major</em>{% endif %}
+          <span>{{ e.course }}{% if e.tee_time %} · off {{ e.tee_time }}{% endif %}</span>
+        </span>
       </span>
       <span>
         {% if e.status == 'played' %}
@@ -113,7 +114,28 @@
     </li>
   {% endfor %}
   </ul>
+{% endmacro %}
+
+{% if timeline.today %}
+<section class="card card-live">
+  <h2 class="eyebrow"><span class="dot"></span>Today</h2>
+  {{ timeline_rows(timeline.today) }}
 </section>
+{% endif %}
+
+{% if timeline.upcoming %}
+<section class="card">
+  <h2>Rest of the season</h2>
+  {{ timeline_rows(timeline.upcoming) }}
+</section>
+{% endif %}
+
+{% if timeline.played %}
+<section class="card">
+  <h2>Played</h2>
+  {{ timeline_rows(timeline.played, dim=true) }}
+</section>
+{% endif %}
 
 <section class="card">
   <h2>For a scheduled check</h2>

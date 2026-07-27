@@ -401,8 +401,6 @@ class Site:
                 "position": standing.get("Position") if standing else None,
                 "points": standing.get("Points") if standing else None,
                 "events": standing.get("Tournaments") if standing else None,
-                # Leading their flight outright, not merely first in this group.
-                "flight_leader": bool(standing and str(standing.get("Position")) == "1"),
                 "today": today and {"total": today["total"], "thru": today["thru"],
                                     "to_par": today["to_par"], "position": today["position"]},
             })
@@ -443,6 +441,22 @@ class Site:
                         "tee_time": tee["tee_time"] if tee else None})
         return out
 
+    def player_timeline(self, player: dict) -> dict:
+        """A player's season split by what they'd look for first.
+
+        Same priority as the schedule page: today, then what's coming, then
+        history newest-first.
+        """
+        rows = self.player_schedule(player)
+        upcoming = [e for e in rows if not e["is_past"] and not e["is_today"]]
+        return {
+            "today": [e for e in rows if e["is_today"]],
+            # The first upcoming event is already shown in full above, so the
+            # list picks up after it rather than repeating it.
+            "upcoming": upcoming[1:],
+            "played": list(reversed([e for e in rows if e["is_past"]])),
+        }
+
     def render_player(self, player: dict, rel: str, base: str) -> None:
         """A player's dashboard plus their own digest.txt and status.json."""
         next_event = self.next_event
@@ -456,9 +470,9 @@ class Site:
             next_pairings=self.pairings.get(next_event["tid"]) if next_event else None,
             next_roster=self.rosters.get(next_event["tid"]) if next_event else None,
             my_roster_status=self.my_roster_status(player, next_event["tid"]) if next_event else "unknown",
+            timeline=self.player_timeline(player),
             my_tee_time=tee_time, my_group=group,
             me_standing=standing, me_gap=self.my_gap(player),
-            season_schedule=self.player_schedule(player),
         )
         prefix = f"{base}/" if base else ""
         self._write(f"{prefix}status.json", json.dumps(self.status(player), indent=2) + "\n")

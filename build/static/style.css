@@ -386,17 +386,10 @@ h3 {
 .flt-c     { background: var(--f-c-bg);     color: var(--f-c);     border-color: transparent; }
 .flt-d     { background: var(--f-d-bg);     color: var(--f-d);     border-color: transparent; }
 
-/* Leading their flight outright. A crown rather than the accent fill, so it
-   stays distinct from "this is you". */
-.leader::after {
-  content: " ★";
-  color: var(--f-champ);
-  font-size: .9em;
-}
-
 /* Per-player season timeline. */
 .tl { list-style: none; margin: 12px 0 0; padding: 0; }
 .tl li {
+  position: relative;
   display: grid;
   grid-template-columns: 3.2rem minmax(0, 1fr) auto;
   gap: 10px;
@@ -407,6 +400,10 @@ h3 {
 .tl li:last-child { border-bottom: 0; }
 .tl .when { font-family: var(--mono); font-size: .78rem; color: var(--muted); }
 .tl .what { min-width: 0; }
+.tl li:hover { background: var(--surface-2); }
+/* Only one link per row, so the name stretches its hit area over the whole
+   row - a 24px inline link is not a tap target on a phone. */
+.tl .what > a::after { content: ""; position: absolute; inset: 0; }
 /* One line per event: names run long and were wrapping to three, which made
    row heights lurch the same way the schedule list once did. */
 .tl .what > a {
@@ -420,8 +417,21 @@ h3 {
   vertical-align: bottom;
 }
 .tl .what a:hover { text-decoration: underline; }
-.tl .where { display: block; color: var(--muted); font-size: .8rem;
-             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tl .where {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: .8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 2px;
+}
+/* The course name is what may run long, not the badge beside it - so the
+   badge holds its size and the name gets the ellipsis. */
+.tl .where > .tag { flex: 0 0 auto; }
+.tl .where > span { overflow: hidden; text-overflow: ellipsis; }
+.tl li > span:last-child .where { display: block; margin-top: 3px; }
 .tl li.dim { opacity: .5; }
 .tl li.dim:hover { opacity: 1; }
 
