@@ -428,6 +428,18 @@ def test_page_links_omit_the_html_extension(site):
         assert any(h.rstrip("/").endswith("schedule") for h in internal)
 
 
+def test_player_links_point_at_the_directory_not_the_index(site):
+    """Pages serves p/x/index.html at p/x/ and 308s p/x/index.
+
+    Linking to the index file name put a redirect on every click through to a
+    player page.
+    """
+    _, public = site
+    for page in ("index.html", "p/index.html"):
+        assert "/index\"" not in read(public, page)
+    assert f'href="p/{BUDDY["slug"]}/"' in read(public, "index.html")
+
+
 def test_index_links_to_itself_as_root(site):
     _, public = site
     assert 'href="./"' in read(public, "index.html")

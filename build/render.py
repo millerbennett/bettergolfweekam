@@ -437,6 +437,10 @@ class Site:
             target = target.lstrip("/").removesuffix(".html")
             if target == "index":
                 return prefix or "./"
+            # A directory index: Pages serves it at the directory itself and
+            # 308s anything else, so `p/x/index` must become `p/x/`.
+            if target.endswith("/index"):
+                return prefix + target[: -len("index")]
             return prefix + target
 
         self._write(
