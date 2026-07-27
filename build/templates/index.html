@@ -10,7 +10,7 @@
   {% else %}
     <h1>Today's round — final</h1>
     <p class="sub">{{ today_board.event.name }} · {{ today_board.event.course }}</p>
-    <p class="sub">All {{ today_board.players }} cards in. Official results post separately.</p>
+    <p class="sub">All {{ today_board.players }} cards in.</p>
   {% endif %}
 
   {% for flight in today_board.flights %}
@@ -43,8 +43,8 @@
     <p class="countdown">{{ next_event.date | pretty_date }} · {{ next_event.start_time }} {{ next_event.start_type }}
        <span class="pill">{{ next_event.date | days_away }}</span></p>
     {% if next_event.rounds %}
-      <p class="sub">{{ next_event.rounds | length + 1 }} rounds
-         through {{ next_event.end_date | pretty_date }} · one entry covers all of them</p>
+      <p class="sub">{{ next_event.rounds | length + 1 }} rounds through
+         {{ next_event.end_date | pretty_date }}</p>
     {% endif %}
 
     {% if next_roster and next_roster.available %}
@@ -59,7 +59,7 @@
     {% if next_pairings and next_pairings.published %}
       <p class="sub">Tee times are posted.</p>
     {% else %}
-      <p class="notice">Tee times not posted yet. They usually drop 1–2 days before.</p>
+      <p class="notice">Tee times not posted yet — they usually drop 1–2 days before.</p>
     {% endif %}
     <p class="cta-row">
       {% if next_event.registration_open and next_event.register_url %}
@@ -109,7 +109,7 @@
     {% endfor %}
   </ol>
   {% else %}
-  <p class="notice">Nothing recorded yet — the feed fills in as the mirror sees changes.</p>
+  <p class="notice">Nothing yet.</p>
   {% endif %}
 </section>
 

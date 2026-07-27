@@ -33,8 +33,7 @@
     </ul>
     {% if me_gap %}<p class="stat-note">{{ me_gap }}</p>{% endif %}
   {% else %}
-    <p class="notice">No {{ season }} points-race row yet for player {{ me.id }} —
-       that appears once they've played an event.</p>
+    <p class="notice">Not in the {{ season }} points race yet.</p>
   {% endif %}
 </section>
 
@@ -49,8 +48,8 @@
     <p class="countdown">{{ next_event.date | pretty_date }} · {{ next_event.start_time }} {{ next_event.start_type }}
        <span class="pill">{{ next_event.date | days_away }}</span></p>
     {% if next_event.rounds %}
-      <p class="sub">{{ next_event.rounds | length + 1 }} rounds
-         through {{ next_event.end_date | pretty_date }} · one entry covers all of them</p>
+      <p class="sub">{{ next_event.rounds | length + 1 }} rounds through
+         {{ next_event.end_date | pretty_date }}</p>
     {% endif %}
 
     {% if next_roster and next_roster.available %}
@@ -143,7 +142,6 @@
 
 <section class="card">
   <h2>For a scheduled check</h2>
-  <p class="sub">Machine-readable, updated with the mirror.</p>
   <div class="chips">
     <a class="chip" href="{{ rel }}p/{{ me.slug }}/digest.txt">digest.txt</a>
     <a class="chip" href="{{ rel }}p/{{ me.slug }}/status.json">status.json</a>

@@ -9,7 +9,7 @@
   <p class="countdown">{{ event.date | pretty_date }} · {{ event.start_time }} {{ event.start_type }}
      <span class="pill">{{ event.date | days_away }}</span></p>
   {% if siblings %}
-  <p class="sub label">{{ siblings | length }}-round event · one entry covers all rounds</p>
+  <p class="sub label">{{ siblings | length }} rounds</p>
   <div class="chips">
     {% for r in siblings %}
       {% if r.tid == event.tid %}
@@ -42,8 +42,7 @@
     <p class="sub">{{ live.still_out }} of {{ live.players }} still on the course.</p>
   {% else %}
     <h2>Livescore board</h2>
-    <p class="sub">All cards in, as scored on the day.
-       Official results may differ once posted.</p>
+    <p class="sub">Unofficial — as scored on the day.</p>
   {% endif %}
   {% for flight in live.flights %}
     <h3>{{ flight.name }}</h3>
@@ -125,8 +124,7 @@
 {% if siblings and event.tid != head.tid %}
 <section class="card">
   <h2>Field</h2>
-  <p class="sub">Entry and the field are on
-     <a href="{{ url("t/" ~ head.tid) }}">round 1</a> — one entry covers both days.</p>
+  <p class="sub">On <a href="{{ url("t/" ~ head.tid) }}">round 1</a>.</p>
 </section>
 {% endif %}
 
