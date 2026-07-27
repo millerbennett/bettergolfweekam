@@ -548,7 +548,7 @@ class Site:
         tee_time, group = self.my_pairing(player, next_event["tid"] if next_event else None)
         standing = self.my_standing(player)
         self._render(
-            "player.html", rel, nav="players", me=player,
+            "player.html", rel, nav="now", me=player,
             today_board=self.today_board,
             me_today=self.me_on_board(player, self.today_board),
             next_event=next_event,
@@ -658,8 +658,6 @@ class Site:
                      standings=self.standings, columns=columns)
 
         self._render("feed.html", "feed.html", changes=self.changes)
-        self._render("players.html", "p/index.html",
-                     group=self.group_summary(), nav="players")
 
         # ---- per player: three small artifacts each -----------------------
         for player in self.players:

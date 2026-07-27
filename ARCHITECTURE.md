@@ -136,8 +136,8 @@ scraper/
   crawl.py     Crawler: the planner + change detection
 build/
   render.py    Site: derived views, page rendering, digest/status/RSS
-  templates/   jinja2 (base, index, schedule, standings, players, player,
-               feed, event, info, info_page, 404)
+  templates/   jinja2 (base, index, schedule, standings, player, feed,
+               event, info, info_page, 404)
   static/      style.css, _headers
 data/          committed JSON snapshots (see §6)
 tests/         fixtures/ = real captured pages; 112 tests
@@ -276,7 +276,6 @@ round flips to `complete` when the last scorekeeper submits.
 | `/` | index.html — today's board, next up, your season, feed, recent results |
 | `/schedule` | Grouped: happening today → coming up → played (newest first) |
 | `/standings` | Points race, your row highlighted |
-| `/p/` | Group overview — one row per player |
 | `/p/<slug>` | A player's dashboard: standing, next event in full, then the rest of the season and their played events — same today/upcoming/played priority as `/schedule` |
 | `/p/<slug>/digest.txt`, `/p/<slug>/status.json` | That player's machine-readable view |
 | `/me` | Alias for the primary player, kept for old bookmarks |
@@ -398,12 +397,13 @@ that it *should* fail.
 Six players are tracked. The split that keeps this cheap:
 
 - **Shared pages, rendered once**: `/`, `/schedule`, `/standings`, `/feed`,
-  `/t/<tid>` × 21, `/info/*`. These highlight *everyone* in the group via
+  `/t/<tid>` × 21, `/info/*`. The home page doubles as the group view - there
+  is no separate index, which would have been the same table twice. These
+  highlight *everyone* in the group via
   `group_ids` (id match) and `group_names` (name match, for the livescore board
   and skins where ids don't exist).
 - **Per player, 3 small artifacts**: `/p/<slug>/index.html`, `digest.txt`,
-  `status.json`. So seven players = 39 shared + 21 personal + 1 group index,
-  not 39 × 7.
+  `status.json`. So seven players = 25 shared + 21 personal, not 46 × 7.
 
 The group table is ordered by flight (Champ down to D) then points within
 each — flights are handicap bands, so a cross-flight points ranking would not

@@ -430,12 +430,19 @@ def test_played_events_are_newest_first(site):
 
 
 def test_group_table_is_plain_navigation(site):
-    """No row fill or star: on a table of links they out-shouted the links."""
+    """No row fill or star in the group table: on a table whose only job is
+    linking to a player, they out-shouted the links.
+
+    The leaderboard on the same page still marks group members - that is a
+    scoreboard, where picking your people out is the point.
+    """
+    import re
     _, public = site
-    page = read(public, "p/index.html")
-    assert "★" not in page
-    assert 'class="mine"' not in page
-    assert 'class="flt flt-b"' in page      # colour tags stay
+    page = read(public, "index.html")
+    table = re.search(r'<table class="data named".*?</table>', page, re.S).group(0)
+    assert "★" not in table
+    assert 'class="mine"' not in table
+    assert 'class="flt flt-b"' in table      # colour tags stay
 
 
 def test_multiday_registration_comes_from_round_one(site):
@@ -455,11 +462,13 @@ def test_multiday_registration_comes_from_round_one(site):
     assert day1["rounds"] == [day2]
 
 
-def test_group_index_lists_everyone(site):
+def test_home_page_lists_the_whole_group(site):
+    """The home page is the group view - there is no separate index."""
     _, public = site
-    page = read(public, "p/index.html")
+    page = read(public, "index.html")
     assert "Bennett Miller" in page and "Stephen Okoba" in page
-    assert f"p/{BUDDY['slug']}" in page
+    assert f"p/{BUDDY['slug']}/" in page
+    assert not (public / "p" / "index.html").exists()
 
 
 def test_feed_entries_name_the_player_rather_than_saying_you():
@@ -504,8 +513,7 @@ def test_player_links_point_at_the_directory_not_the_index(site):
     player page.
     """
     _, public = site
-    for page in ("index.html", "p/index.html"):
-        assert "/index\"" not in read(public, page)
+    assert "/index\"" not in read(public, "index.html")
     assert f'href="p/{BUDDY["slug"]}/"' in read(public, "index.html")
 
 
