@@ -114,6 +114,11 @@ def _first_last(name: str) -> str:
     return f"{first} {last}".strip() if first else last
 
 
+# Strongest flight first. Anything unrecognised - including a player with no
+# standings row yet - sorts after all of these.
+FLIGHT_ORDER = {"Champ": 0, "A": 1, "B": 2, "C": 3, "D": 4}
+
+
 def flight_short(name: str) -> str:
     """'\"B\" Flight (9.0-13.9 Handicap)' -> 'B'."""
     match = re.match(r'\s*"?([A-Za-z]+)"?\s*Flight', name or "")
@@ -363,9 +368,14 @@ class Site:
         return "Scheduled", "idle"
 
     def group_summary(self) -> list[dict]:
-        """One row per configured player, for the group overview.
+        """One row per configured player, ordered by season points.
 
         Deliberately cheap: everything here already exists in the snapshots.
+
+        Grouped by flight (Champ down to D), then by points within each -
+        flights are handicap bands, so comparing points across them is not
+        like-for-like. Anyone without a standings row yet sorts last rather
+        than as zero.
         """
         board = self.today_board
         rows = []
@@ -384,6 +394,14 @@ class Site:
                 "today": today and {"total": today["total"], "thru": today["thru"],
                                     "to_par": today["to_par"], "position": today["position"]},
             })
+        def by_flight_then_points(row: dict) -> tuple:
+            rank = FLIGHT_ORDER.get(row["flight"], len(FLIGHT_ORDER))
+            points = _points({"Points": row["points"]}) if row["points"] else None
+            # Ascending flight rank, then points descending, then name so ties
+            # are stable rather than dependent on config order.
+            return (rank, -(points or 0), row["display"])
+
+        rows.sort(key=by_flight_then_points)
         return rows
 
     def render_player(self, player: dict, rel: str, base: str) -> None:

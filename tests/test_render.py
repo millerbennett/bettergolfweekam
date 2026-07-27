@@ -386,6 +386,26 @@ def test_shared_pages_highlight_every_group_member(site):
     assert len(rows) >= 2, "expected a highlighted row per group member"
 
 
+def test_group_is_ordered_by_flight_then_points(site):
+    """Champ down to D, points descending inside each — flights are handicap
+    bands, so comparing points across them isn't like-for-like."""
+    from build.render import FLIGHT_ORDER
+    site_obj, _ = site
+    rows = [r for r in site_obj.group_summary() if r["points"]]
+    keys = [(FLIGHT_ORDER.get(r["flight"], 99), -float(r["points"])) for r in rows]
+    assert keys == sorted(keys)
+
+
+def test_players_without_a_standings_row_sort_last(site, tmp_path, monkeypatch):
+    """A new member has no points yet — they should trail, not read as zero
+    ahead of someone who simply hasn't been parsed."""
+    site_obj, _ = site
+    rows = site_obj.group_summary()
+    unscored = [i for i, r in enumerate(rows) if not r["points"]]
+    if unscored:
+        assert min(unscored) > max(i for i, r in enumerate(rows) if r["points"])
+
+
 def test_group_index_lists_everyone(site):
     _, public = site
     page = read(public, "p/index.html")
