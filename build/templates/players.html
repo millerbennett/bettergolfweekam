@@ -3,23 +3,22 @@
 {% block content %}
 <section class="card">
   <h1>The group</h1>
-  <p class="sub">{{ group | length }} players tracked. Each has their own page,
-     plus a <code>digest.txt</code> a scheduled check can read.</p>
+  <p class="sub">{{ group | length }} players · ★ leads their flight</p>
   <div class="scroll">
   <table class="data named">
     <thead><tr>
       <th>Player</th><th>Flight</th><th class="num">Pos</th>
-      <th class="num">Points</th><th class="num c-tournaments">Events</th><th>Today</th>
+      <th class="num">Points</th><th class="num c-tournaments">Events</th><th class="c-today">Today</th>
     </tr></thead>
     <tbody>
     {% for p in group %}
-      <tr{% if p.primary %} class="mine"{% endif %}>
-        <td><a href="{{ url('p/' ~ p.slug ~ '/index.html') }}">{{ p.display }}</a></td>
-        <td>{{ p.flight or '—' }}</td>
+      <tr{% if p.flight_leader %} class="mine"{% endif %}>
+        <td><a class="{{ 'leader' if p.flight_leader }}" href="{{ url('p/' ~ p.slug ~ '/index.html') }}">{{ p.display }}</a></td>
+        <td>{% if p.flight %}<span class="flt flt-{{ p.flight | lower }}">{{ p.flight }}</span>{% else %}—{% endif %}</td>
         <td class="num">{{ p.position or '—' }}</td>
         <td class="num">{{ p.points or '—' }}</td>
         <td class="num c-tournaments">{{ p.events or '—' }}</td>
-        <td>{% if p.today %}{{ p.today.total }} ({{ p.today.to_par }}) thru {{ p.today.thru }}{% else %}—{% endif %}</td>
+        <td class="c-today">{% if p.today %}{{ p.today.total }} ({{ p.today.to_par }}) thru {{ p.today.thru }}{% else %}—{% endif %}</td>
       </tr>
     {% endfor %}
     </tbody>

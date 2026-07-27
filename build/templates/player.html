@@ -86,35 +86,38 @@
 </section>
 
 <section class="card">
-  <h2>{{ season }} card</h2>
-  {% if my_results %}
-  <div class="scroll">
-  <table class="data">
-    <thead><tr><th>Date</th><th>Event</th><th>Flight</th><th class="num">Pos</th><th class="num">Score</th><th class="num">Points</th><th class="num c-earnings">$</th></tr></thead>
-    <tbody>
-    {% for r in my_results %}
-      <tr>
-        <td class="nowrap">{{ r.event.date | short_date }}</td>
-        <td><a href="{{ url("t/" ~ r.event.tid) }}">{{ r.event.name }}</a></td>
-        <td>{{ r.flight_short }}</td>
-        <td class="num">{{ r.Position }}</td>
-        <td class="num">{{ r.Score }}</td>
-        <td class="num">{{ r.Points }}</td>
-        <td class="num c-earnings">{{ r.Earnings }}</td>
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
-  </div>
-  {% else %}
-  <p class="notice">No posted results yet this season.</p>
-  {% endif %}
+  <h2>{{ season }} schedule</h2>
+  <ul class="tl">
+  {% for e in season_schedule %}
+    <li class="{{ 'dim' if e.status in ('missed', 'unknown') }}">
+      <span class="when">{{ e.date | day_month }}</span>
+      <span class="what">
+        <a href="{{ url("t/" ~ e.tid) }}">{{ e.name }}</a>
+        {% if e.is_major %}<span class="major">MAJOR</span>{% endif %}
+        <span class="where">{{ e.course }}{% if e.tee_time %} · off {{ e.tee_time }}{% endif %}</span>
+      </span>
+      <span>
+        {% if e.status == 'played' %}
+          <em class="tag tag-done">{{ e.result.Position }} · {{ e.result.Score }}</em>
+          <span class="where">{{ e.result.Points }} pts{% if e.result.Earnings and e.result.Earnings != '0' %} · ${{ e.result.Earnings }}{% endif %}</span>
+        {% elif e.status == 'registered' %}
+          <em class="tag tag-you">Entered</em>
+        {% elif e.status == 'waiting' %}
+          <em class="tag tag-wait">Waitlist</em>
+        {% elif e.status == 'absent' %}
+          <em class="tag tag-full">Not entered</em>
+        {% elif e.status == 'missed' %}
+          <em class="tag">Did not play</em>
+        {% endif %}
+      </span>
+    </li>
+  {% endfor %}
+  </ul>
 </section>
 
 <section class="card">
   <h2>For a scheduled check</h2>
-  <p class="sub">Point a ChatGPT task at either of these — they're plain files,
-     rendered fresh on every update, and specific to this player.</p>
+  <p class="sub">Machine-readable, updated with the mirror.</p>
   <div class="chips">
     <a class="chip" href="{{ rel }}p/{{ me.slug }}/digest.txt">digest.txt</a>
     <a class="chip" href="{{ rel }}p/{{ me.slug }}/status.json">status.json</a>

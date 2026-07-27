@@ -3,8 +3,6 @@
 {% block content %}
 <section class="card">
   <h1>{{ standings.season }} points race</h1>
-  <p class="sub">Your group is highlighted. Narrow screens show position, name and
-     points — rotate or widen for the full breakdown.</p>
   {% for flight in standings.flights %}
     <h3>{{ flight.name }}</h3>
     <div class="scroll">

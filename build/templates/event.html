@@ -142,8 +142,7 @@
 {% if skins and skins.games %}
 <section class="card">
   <h2>Skins &amp; CTP</h2>
-  <p class="sub">Only holes that were won are listed. A hole with no name was
-     tied or halved and rolls into the pot.</p>
+  <p class="sub">A hole with no name was tied and rolls into the pot.</p>
   <div class="groups">
   {% for game in skins.games %}
     {% set won = game.holes | selectattr('player') | list %}

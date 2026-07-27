@@ -277,7 +277,7 @@ round flips to `complete` when the last scorekeeper submits.
 | `/schedule` | Grouped: happening today → coming up → played (newest first) |
 | `/standings` | Points race, your row highlighted |
 | `/p/` | Group overview — one row per player |
-| `/p/<slug>` | A player's dashboard |
+| `/p/<slug>` | A player's dashboard: standing, next event, and a season timeline showing where they stand on every event (played / entered / waitlist / not entered) |
 | `/p/<slug>/digest.txt`, `/p/<slug>/status.json` | That player's machine-readable view |
 | `/me` | Alias for the primary player, kept for old bookmarks |
 | `/feed` | Change feed |
@@ -402,8 +402,15 @@ Six players are tracked. The split that keeps this cheap:
   `group_ids` (id match) and `group_names` (name match, for the livescore board
   and skins where ids don't exist).
 - **Per player, 3 small artifacts**: `/p/<slug>/index.html`, `digest.txt`,
-  `status.json`. So six players = 39 shared + 18 personal + 1 group index,
-  not 39 × 6.
+  `status.json`. So seven players = 39 shared + 21 personal + 1 group index,
+  not 39 × 7.
+
+The group table is ordered by flight (Champ down to D) then points within
+each — flights are handicap bands, so a cross-flight points ranking would not
+be a real contest. A ★ marks a player leading their flight outright, which is
+distinct from merely being first in this group. Each flight has its own colour
+token (`--f-champ` … `--f-d`); all ten badge combinations were checked against
+WCAG AA, worst case 5.54:1.
 
 Why not a copy of every page per player: 21 event pages × N people is a lot of
 duplication for cosmetic highlighting, and it destroys shareable URLs — "look
@@ -446,7 +453,11 @@ A test asserts no first-person feed text survives in `crawl.py`.
    character — invisible in an editor, and the pattern silently matched
    nothing. Found only by dumping the compiled pattern. If a regex
    inexplicably matches nothing, check for control bytes.
-6. **Contrast measured against the wrong backdrop.** Cards use a gradient, so
+6. **A CSS hex escape ate the next character.** `content: " \2605"` for a star
+   rendered as `°5` — the escape consumed digits greedily. Literal characters
+   are used instead; this project has now been bitten three times by escapes
+   passing through a layer that rewrote them.
+7. **Contrast measured against the wrong backdrop.** Cards use a gradient, so
    hand-checking palette pairs against `--surface` was wrong. Measure by
    rendering twice (once with glyphs transparent) and sampling real pixels.
 

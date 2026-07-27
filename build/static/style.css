@@ -37,6 +37,14 @@
   --radius-sm: 10px;
   --tap: 44px;
   --grid: rgba(160, 255, 190, .035);
+
+  /* One hue per flight. Deliberately not the lime accent, which already means
+     "this is you" - a flight badge is a category, not a highlight. */
+  --f-champ: #ffd166;  --f-champ-bg: #362a0d;
+  --f-a:     #7cc4ff;  --f-a-bg:     #0f2436;
+  --f-b:     #c9a2ff;  --f-b-bg:     #241a38;
+  --f-c:     #5fe0c8;  --f-c-bg:     #0d2b28;
+  --f-d:     #ff9e7a;  --f-d-bg:     #33190f;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
           "Liberation Mono", monospace;
 }
@@ -67,6 +75,12 @@
     --cyan: #0b6a86;
     --cyan-dim: #ddf0f7;
     --grid: rgba(10, 60, 30, .045);
+
+    --f-champ: #7a5600;  --f-champ-bg: #fbf0d3;
+    --f-a:     #14588c;  --f-a-bg:     #ddeefb;
+    --f-b:     #5a3796;  --f-b-bg:     #ece3fb;
+    --f-c:     #0a6b5c;  --f-c-bg:     #d8f4ef;
+    --f-d:     #9c3d18;  --f-d-bg:     #fde8df;
   }
 }
 
@@ -351,6 +365,66 @@ h3 {
   vertical-align: 2px;
 }
 
+/* Flight badge — a small category chip used in group and schedule tables. */
+.flt {
+  display: inline-block;
+  min-width: 2.4em;
+  text-align: center;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: var(--surface-3);
+  color: var(--muted);
+  border: 1px solid var(--line-2);
+}
+.flt-champ { background: var(--f-champ-bg); color: var(--f-champ); border-color: transparent; }
+.flt-a     { background: var(--f-a-bg);     color: var(--f-a);     border-color: transparent; }
+.flt-b     { background: var(--f-b-bg);     color: var(--f-b);     border-color: transparent; }
+.flt-c     { background: var(--f-c-bg);     color: var(--f-c);     border-color: transparent; }
+.flt-d     { background: var(--f-d-bg);     color: var(--f-d);     border-color: transparent; }
+
+/* Leading their flight outright. A crown rather than the accent fill, so it
+   stays distinct from "this is you". */
+.leader::after {
+  content: " ★";
+  color: var(--f-champ);
+  font-size: .9em;
+}
+
+/* Per-player season timeline. */
+.tl { list-style: none; margin: 12px 0 0; padding: 0; }
+.tl li {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+.tl li:last-child { border-bottom: 0; }
+.tl .when { font-family: var(--mono); font-size: .78rem; color: var(--muted); }
+.tl .what { min-width: 0; }
+/* One line per event: names run long and were wrapping to three, which made
+   row heights lurch the same way the schedule list once did. */
+.tl .what > a {
+  display: inline-block;
+  max-width: 100%;
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+.tl .what a:hover { text-decoration: underline; }
+.tl .where { display: block; color: var(--muted); font-size: .8rem;
+             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tl li.dim { opacity: .5; }
+.tl li.dim:hover { opacity: 1; }
+
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 9px; }
 .chip {
   display: inline-flex;
@@ -618,6 +692,21 @@ table.board td:first-child { width: 3.2rem; }
   .c-id, .c-home-tour, .c-tour, .c-eagles, .c-birdies,
   .c-event-index, .c-earnings, .c-detail, .c-tournaments { display: none; }
 }
+/* Small phones: the group table's live column is empty except on event days,
+   and standings still ran a few pixels wide. Trim rather than scroll. */
+@media (max-width: 480px) {
+  .c-today { display: none; }
+}
+@media (max-width: 400px) {
+  table.data th, table.data td { padding-right: 6px; }
+  table.data { font-size: .81rem; }
+  /* Standings names are the longest cell on the narrowest screen; wrapping
+     one is better than scrolling the whole table. */
+  table.data .c-name { white-space: normal; min-width: 6.5rem; }
+}
+/* The timeline's right column holds a tag plus an optional points line. */
+.tl li > span:last-child { text-align: right; }
+.tl li > span:last-child .where { margin-top: 3px; }
 @media (max-width: 700px) {
   table.data th, table.data td { padding-top: 12px; padding-bottom: 12px; }
   table.data td:has(a) { padding-top: 0; padding-bottom: 0; }

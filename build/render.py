@@ -61,6 +61,15 @@ def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-") or "x"
 
 
+def day_month(iso: str) -> str:
+    """'2026-03-22' -> 'Mar 22'. No weekday: it wrapped the column."""
+    try:
+        d = date.fromisoformat(iso)
+    except (TypeError, ValueError):
+        return iso or ""
+    return f"{d.strftime('%b')} {d.day}"
+
+
 def short_date(iso: str) -> str:
     try:
         d = date.fromisoformat(iso)
@@ -180,6 +189,7 @@ class Site:
             ago=ago,
             day_num=day_num,
             month_abbr=month_abbr,
+            day_month=day_month,
             slug=slug,
             first_last=_first_last,
         )
@@ -391,6 +401,8 @@ class Site:
                 "position": standing.get("Position") if standing else None,
                 "points": standing.get("Points") if standing else None,
                 "events": standing.get("Tournaments") if standing else None,
+                # Leading their flight outright, not merely first in this group.
+                "flight_leader": bool(standing and str(standing.get("Position")) == "1"),
                 "today": today and {"total": today["total"], "thru": today["thru"],
                                     "to_par": today["to_par"], "position": today["position"]},
             })
@@ -404,14 +416,38 @@ class Site:
         rows.sort(key=by_flight_then_points)
         return rows
 
+    def player_schedule(self, player: dict) -> list[dict]:
+        """The season from one player's point of view.
+
+        Combines three snapshots per event: results say whether they played,
+        rosters say whether they are entered, pairings give a tee time. Where
+        no roster has been crawled yet the status is `unknown` rather than
+        "not entered" - claiming they aren't signed up from missing data would
+        be asserting a falsehood about the thing they'd check this for.
+        """
+        out = []
+        for event in self.events:
+            tid = event["tid"]
+            result = self.my_result(player, tid)
+            roster = self.rosters.get(tid)
+            status = "unknown"
+            if result:
+                status = "played"
+            elif (self.results.get(tid) or {}).get("posted"):
+                status = "missed"          # results are in, they aren't on them
+            elif roster and roster.get("available"):
+                status = self.my_roster_status(player, tid)
+            # A tee time is only worth showing while it is still ahead of you.
+            tee, _ = self.my_pairing(player, tid) if not event["is_past"] else (None, [])
+            out.append({**event, "status": status, "result": result,
+                        "tee_time": tee["tee_time"] if tee else None})
+        return out
+
     def render_player(self, player: dict, rel: str, base: str) -> None:
         """A player's dashboard plus their own digest.txt and status.json."""
         next_event = self.next_event
         tee_time, group = self.my_pairing(player, next_event["tid"] if next_event else None)
         standing = self.my_standing(player)
-        card = [{**e["me"], "event": e["event"]}
-                for e in self.played_results(player) if e["me"]]
-
         self._render(
             "player.html", rel, nav="players", me=player,
             today_board=self.today_board,
@@ -422,7 +458,7 @@ class Site:
             my_roster_status=self.my_roster_status(player, next_event["tid"]) if next_event else "unknown",
             my_tee_time=tee_time, my_group=group,
             me_standing=standing, me_gap=self.my_gap(player),
-            my_results=card,
+            season_schedule=self.player_schedule(player),
         )
         prefix = f"{base}/" if base else ""
         self._write(f"{prefix}status.json", json.dumps(self.status(player), indent=2) + "\n")
