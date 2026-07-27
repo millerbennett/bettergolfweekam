@@ -451,6 +451,44 @@ def test_skins_won_lookup_names_the_hole_and_value():
 
 
 # --------------------------------------------------------------------------
+# Multi-day events
+# --------------------------------------------------------------------------
+
+def _sched():
+    from build.render import _link_rounds
+    data = sources.fetch_schedule(FakeFetcher(fixture("schedule.html")), CFG)
+    _link_rounds(data["events"])
+    return data["events"]
+
+
+def test_two_day_events_are_linked_as_rounds():
+    """Five events run over two days: same name, consecutive, second day
+    carries no entry fee because one entry covers both."""
+    heads = [e for e in _sched() if e["rounds"]]
+    assert len(heads) == 5
+    assert all(len(h["rounds"]) == 1 for h in heads)
+    names = {h["name"] for h in heads}
+    assert "DC Metro Masters" in names
+    assert any("Players Cup" in n for n in names)
+
+
+def test_the_combo_weekend_is_not_merged():
+    """Apr 17/18/19 are consecutive too, but are three differently-named
+    events each separately priced and entered. Dates alone would merge them."""
+    combo = [e for e in _sched() if e["date"].startswith("2026-04-1")
+             and e["date"] >= "2026-04-17"]
+    assert len(combo) == 3
+    assert all(not e["round_of"] and not e["rounds"] for e in combo)
+
+
+def test_every_round_keeps_its_own_tournament_id():
+    """Each day has its own leaderboard upstream, so it keeps its own page."""
+    for head in [e for e in _sched() if e["rounds"]]:
+        tids = {head["tid"], *(r["tid"] for r in head["rounds"])}
+        assert len(tids) == len(head["rounds"]) + 1
+
+
+# --------------------------------------------------------------------------
 # Change feed
 # --------------------------------------------------------------------------
 

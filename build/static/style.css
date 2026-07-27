@@ -455,6 +455,9 @@ h3 {
   box-shadow: 0 0 22px -8px var(--accent-glow);
 }
 .chip::after { content: " ↗"; font-size: .76em; opacity: .55; margin-left: 5px; }
+/* Round switcher: these are internal, so no external-link arrow. */
+.chip-here::after, .chip-in::after { content: none; }
+.chip-here { border-color: var(--accent); color: var(--accent-ink); background: var(--accent-dim); }
 
 .button {
   display: inline-flex;

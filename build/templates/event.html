@@ -8,6 +8,18 @@
   <p class="sub">{{ event.course }}</p>
   <p class="countdown">{{ event.date | pretty_date }} · {{ event.start_time }} {{ event.start_type }}
      <span class="pill">{{ event.date | days_away }}</span></p>
+  {% if siblings %}
+  <p class="sub label">{{ siblings | length }}-round event · one entry covers all rounds</p>
+  <div class="chips">
+    {% for r in siblings %}
+      {% if r.tid == event.tid %}
+        <span class="chip chip-here">Round {{ loop.index }} · {{ r.date | day_month }}</span>
+      {% else %}
+        <a class="chip chip-in" href="{{ url("t/" ~ r.tid) }}">Round {{ loop.index }} · {{ r.date | day_month }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
   {% if event.cost and event.cost != '$' %}<p class="sub">Entry {{ event.cost }}</p>{% endif %}
   {% if event.registration_open and event.register_url and my_roster_status != 'registered' %}
     <p><a class="button" target="_blank" rel="noopener" href="{{ event.register_url }}">
@@ -51,7 +63,7 @@
 </section>
 {% endif %}
 
-{% if roster and roster.available %}
+{% if roster and roster.available and (not siblings or event.tid == head.tid) %}
 <section class="card">
   <h2>Field</h2>
   {% if entered %}
@@ -107,6 +119,14 @@
     </tbody>
   </table></div>
   {% endif %}
+</section>
+{% endif %}
+
+{% if siblings and event.tid != head.tid %}
+<section class="card">
+  <h2>Field</h2>
+  <p class="sub">Entry and the field are on
+     <a href="{{ url("t/" ~ head.tid) }}">round 1</a> — one entry covers both days.</p>
 </section>
 {% endif %}
 

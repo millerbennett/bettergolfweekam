@@ -61,6 +61,17 @@ def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-") or "x"
 
 
+def date_range(start: str, end: str) -> str:
+    """'2026-08-15','2026-08-16' -> 'Aug 15-16'; spans months if needed."""
+    try:
+        a, b = date.fromisoformat(start), date.fromisoformat(end)
+    except (TypeError, ValueError):
+        return day_month(start)
+    if a.month == b.month:
+        return f"{a.strftime('%b')} {a.day}-{b.day}"
+    return f"{a.strftime('%b')} {a.day} - {b.strftime('%b')} {b.day}"
+
+
 def day_month(iso: str) -> str:
     """'2026-03-22' -> 'Mar 22'. No weekday: it wrapped the column."""
     try:
@@ -123,6 +134,41 @@ def _first_last(name: str) -> str:
     return f"{first} {last}".strip() if first else last
 
 
+def _link_rounds(events: list[dict]) -> None:
+    """Mark the extra days of a multi-day event as rounds of the first.
+
+    Five events on the DC schedule run over two days. They share a name, sit
+    on consecutive dates, and the later day carries no entry fee and no
+    register link, because one entry covers both rounds.
+
+    All three signals are required. Dates alone would wrongly merge the
+    Old Dominion combo weekend, where three differently-named events run on
+    consecutive days and each is separately priced and entered.
+
+    Each day keeps its own page: the tee times, live board, results and skins
+    are all per-round. This only changes how they are listed.
+    """
+    for i, event in enumerate(events):
+        event.setdefault("rounds", [])
+        event.setdefault("round_of", None)
+        event.setdefault("round_no", 1)
+        if i == 0:
+            continue
+        prev = events[i - 1]
+        try:
+            consecutive = (date.fromisoformat(event["date"])
+                           - date.fromisoformat(prev["date"])).days == 1
+        except (TypeError, ValueError):
+            continue
+        priced = (event.get("cost") or "").strip().strip("$").strip()
+        if not (consecutive and event["name"] == prev["name"] and not priced):
+            continue
+        head = prev["round_of"] or prev
+        event["round_of"] = head
+        event["round_no"] = len(head["rounds"]) + 2
+        head["rounds"].append(event)
+
+
 # Strongest flight first. Anything unrecognised - including a player with no
 # standings row yet - sorts after all of these.
 FLIGHT_ORDER = {"Champ": 0, "A": 1, "B": 2, "C": 3, "D": 4}
@@ -170,6 +216,18 @@ class Site:
             event["is_past"] = delta < 0
             event["is_today"] = delta == 0
 
+        _link_rounds(self.events)
+        for event in self.events:
+            if not event["rounds"]:
+                continue
+            # A two-day event is not history until its last round is, and it
+            # is "today" on either day - otherwise it would drop into Played
+            # on the morning of round two.
+            last = event["rounds"][-1]
+            event["end_date"] = last["date"]
+            event["is_past"] = last["is_past"]
+            event["is_today"] = event["is_today"] or any(r["is_today"] for r in event["rounds"])
+
         self.pairings = {e["tid"]: read_json(f"pairings/{e['tid']}.json") for e in self.events}
         self.rosters = {e["tid"]: read_json(f"roster/{e['tid']}.json") for e in self.events}
         self.skins = {e["tid"]: read_json(f"skins/{e['tid']}.json") for e in self.events}
@@ -190,6 +248,7 @@ class Site:
             day_num=day_num,
             month_abbr=month_abbr,
             day_month=day_month,
+            date_range=date_range,
             slug=slug,
             first_last=_first_last,
         )
@@ -361,7 +420,15 @@ class Site:
         return out
 
     def event_status(self, event: dict) -> tuple[str, str]:
-        """(label, kind) for the status pill. kind drives its colour."""
+        """(label, kind) for the status pill. kind drives its colour.
+
+        For a two-day event this reads across both rounds, so the pill tracks
+        whichever round is furthest along.
+        """
+        for extra in reversed(event.get("rounds", [])):
+            if (self.results.get(extra["tid"]) or {}).get("posted")                or (self.live.get(extra["tid"]) or {}).get("live"):
+                event = extra
+                break
         tid = event["tid"]
         if event.get("is_today") and (self.live.get(tid) or {}).get("live"):
             return "Live", "live"
@@ -425,18 +492,36 @@ class Site:
         """
         out = []
         for event in self.events:
-            tid = event["tid"]
-            result = self.my_result(player, tid)
-            roster = self.rosters.get(tid)
+            days = [event, *event["rounds"]]
+
+            # Registration lives on round one - a later round's roster is
+            # always empty, which read as "not entered" for an event the
+            # player had in fact entered.
+            roster = self.rosters.get(event["tid"])
+            # Points and earnings land on the final round, so that is the
+            # event's outcome. Earlier rounds post a score but zero points.
+            result = next((self.my_result(player, d["tid"]) for d in reversed(days)
+                           if self.my_result(player, d["tid"])), None)
+            posted = any((self.results.get(d["tid"]) or {}).get("posted") for d in days)
+
             status = "unknown"
             if result:
                 status = "played"
-            elif (self.results.get(tid) or {}).get("posted"):
-                status = "missed"          # results are in, they aren't on them
+            elif posted:
+                status = "missed"
             elif roster and roster.get("available"):
-                status = self.my_roster_status(player, tid)
-            # A tee time is only worth showing while it is still ahead of you.
-            tee, _ = self.my_pairing(player, tid) if not event["is_past"] else (None, [])
+                status = self.my_roster_status(player, event["tid"])
+
+            # A tee time is only worth showing while it is still ahead of you;
+            # for a two-day event, the next round that has one.
+            tee = None
+            for day in days:
+                if day["is_past"]:
+                    continue
+                found, _ = self.my_pairing(player, day["tid"])
+                if found:
+                    tee = found
+                    break
             out.append({**event, "status": status, "result": result,
                         "tee_time": tee["tee_time"] if tee else None})
         return out
@@ -447,7 +532,7 @@ class Site:
         Same priority as the schedule page: today, then what's coming, then
         history newest-first.
         """
-        rows = self.player_schedule(player)
+        rows = [e for e in self.player_schedule(player) if not e["round_of"]]
         upcoming = [e for e in rows if not e["is_past"] and not e["is_today"]]
         return {
             "today": [e for e in rows if e["is_today"]],
@@ -516,6 +601,7 @@ class Site:
             self.env.get_template(template).render(
                 cfg=self.cfg,
                 season=self.season,
+                date_range=date_range,
                 group_ids=self.group_ids,
                 group_names=self.group_names,
                 players=self.players,
@@ -559,9 +645,11 @@ class Site:
         # then history newest-first - rather than one flat chronological list.
         self._render(
             "schedule.html", "schedule.html",
-            today=[e for e in self.events if e["is_today"]],
-            upcoming=[e for e in self.events if not e["is_past"] and not e["is_today"]],
-            past=list(reversed([e for e in self.events if e["is_past"]])),
+            today=[e for e in self.events if e["is_today"] and not e["round_of"]],
+            upcoming=[e for e in self.events
+                      if not e["is_past"] and not e["is_today"] and not e["round_of"]],
+            past=list(reversed([e for e in self.events
+                                if e["is_past"] and not e["round_of"]])),
             events=self.events,
         )
 
@@ -594,8 +682,11 @@ class Site:
             results = self.results.get(tid) or {}
             if results.get("columns"):
                 results = {**results, "columns": [c for c in results["columns"] if c != "Detail"]}
+            head = event["round_of"] or event
+            siblings = [head, *head["rounds"]] if head["rounds"] else []
             self._render("event.html", f"t/{tid}.html", nav="schedule",
-                         event=event, pairings=pairings,
+                         event=event, siblings=siblings, head=head,
+                         pairings=pairings,
                          results=results, live=self.live.get(tid),
                          roster=self.rosters.get(tid),
                          skins=self.skins.get(tid),

@@ -438,6 +438,23 @@ def test_group_table_is_plain_navigation(site):
     assert 'class="flt flt-b"' in page      # colour tags stay
 
 
+def test_multiday_registration_comes_from_round_one(site):
+    """A later round's roster is always empty upstream, because registration
+    happens once. Reading it per-round showed "not entered" for an event the
+    player had entered."""
+    from build.render import _link_rounds
+    day1 = {**EVENT, "tid": "17639", "date": "2026-08-08", "name": "Two Day Open",
+            "cost": "$275"}
+    day2 = {**EVENT, "tid": "17640", "date": "2026-08-09", "name": "Two Day Open",
+            "cost": "$"}
+    events = [day1, day2]
+    for e in events:
+        e["is_past"] = e["is_today"] = False
+    _link_rounds(events)
+    assert day2["round_of"] is day1
+    assert day1["rounds"] == [day2]
+
+
 def test_group_index_lists_everyone(site):
     _, public = site
     page = read(public, "p/index.html")

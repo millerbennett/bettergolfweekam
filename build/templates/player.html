@@ -48,6 +48,10 @@
     <p class="sub">{{ next_event.course }}</p>
     <p class="countdown">{{ next_event.date | pretty_date }} · {{ next_event.start_time }} {{ next_event.start_type }}
        <span class="pill">{{ next_event.date | days_away }}</span></p>
+    {% if next_event.rounds %}
+      <p class="sub">{{ next_event.rounds | length + 1 }} rounds
+         through {{ next_event.end_date | pretty_date }} · one entry covers all of them</p>
+    {% endif %}
 
     {% if next_roster and next_roster.available %}
       <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'warn' }}">
@@ -89,12 +93,12 @@
   <ul class="tl">
   {% for e in rows %}
     <li class="{{ 'dim' if dim and e.status in ('missed', 'unknown') }}">
-      <span class="when">{{ e.date | day_month }}</span>
+      <span class="when">{% if e.rounds %}{{ date_range(e.date, e.end_date) }}{% else %}{{ e.date | day_month }}{% endif %}</span>
       <span class="what">
         <a href="{{ url("t/" ~ e.tid) }}">{{ e.name }}</a>
         <span class="where">
           {% if e.is_major %}<em class="tag tag-major">Major</em>{% endif %}
-          <span>{{ e.course }}{% if e.tee_time %} · off {{ e.tee_time }}{% endif %}</span>
+          <span>{{ e.course }}{% if e.rounds %} · {{ e.rounds | length + 1 }} rounds{% endif %}{% if e.tee_time %} · off {{ e.tee_time }}{% endif %}</span>
         </span>
       </span>
       <span>

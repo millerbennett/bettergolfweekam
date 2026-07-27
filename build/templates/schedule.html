@@ -5,7 +5,11 @@
 <li class="ev{{ ' ev-dim' if dim }}{{ ' ev-live' if e.status_kind == 'live' }}">
   <div class="ev-hit">
     <span class="ev-date">
-      <b>{{ e.date | day_num }}</b>
+      {% if e.rounds %}
+        <b>{{ e.date | day_num }}–{{ e.end_date | day_num }}</b>
+      {% else %}
+        <b>{{ e.date | day_num }}</b>
+      {% endif %}
       <i>{{ e.date | month_abbr }}</i>
     </span>
     <span class="ev-main">
@@ -13,7 +17,7 @@
       <span class="ev-meta">{{ e.course }}</span>
       <span class="ev-meta ev-facts">
         {% if e.is_major %}<em class="tag tag-major">Major</em>{% endif %}
-        <span>{{ e.start_time }} {{ e.start_type }}{% if e.cost and e.cost != '$' %} · {{ e.cost }}{% endif %}</span>
+        <span>{{ e.start_time }} {{ e.start_type }}{% if e.cost and e.cost != '$' %} · {{ e.cost }}{% endif %}{% if e.rounds %} · {{ e.rounds | length + 1 }} rounds{% endif %}</span>
       </span>
     </span>
     <span class="ev-end">

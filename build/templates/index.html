@@ -42,6 +42,10 @@
     <p class="sub">{{ next_event.course }}</p>
     <p class="countdown">{{ next_event.date | pretty_date }} · {{ next_event.start_time }} {{ next_event.start_type }}
        <span class="pill">{{ next_event.date | days_away }}</span></p>
+    {% if next_event.rounds %}
+      <p class="sub">{{ next_event.rounds | length + 1 }} rounds
+         through {{ next_event.end_date | pretty_date }} · one entry covers all of them</p>
+    {% endif %}
 
     {% if next_roster and next_roster.available %}
       <p class="sub">Field: {{ next_roster.filled_slots }}/{{ next_roster.total_slots }} filled ·

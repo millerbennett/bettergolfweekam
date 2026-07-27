@@ -423,6 +423,35 @@ change at all, and `crawl.py` stays O(1) in player count for requests.
 
 A test asserts no first-person feed text survives in `crawl.py`.
 
+## 11c. Multi-day events
+
+Five events on the DC schedule run over two days. Upstream they are two rows
+with two tournament ids, and each day genuinely has its own tee sheet,
+leaderboard, skins and results — so **each round keeps its own `/t/<tid>`
+page**. Only the *lists* merge them.
+
+Detection needs all three signals, checked in `_link_rounds`:
+
+1. identical event name,
+2. consecutive dates,
+3. the later day carries no entry fee.
+
+Dates alone are not enough: the Old Dominion combo weekend (Apr 17/18/19) is
+three consecutive, differently-named events, each separately priced and
+entered, and must stay separate.
+
+Two upstream facts drive how a merged event is summarised:
+
+- **Registration is on round one.** A later round's roster is always empty
+  (0 registered, 0 waiting), so reading it per-round reported "not entered"
+  for an event the player had in fact entered.
+- **Points and earnings land on the final round.** Memorial round 1 posts a
+  score with 0.00 points; round 2 posts 900 points and $275. So the last
+  round carries the event outcome.
+
+A merged event is also only "past" once its *last* round is, and is "today"
+on either day — otherwise it dropped into Played on the morning of round two.
+
 ## 12. Design decisions worth not re-litigating
 
 | Decision | Why |
@@ -436,6 +465,7 @@ A test asserts no first-person feed text survives in `crawl.py`.
 | Fixtures assert real values | A redesign must fail loudly, not render an empty site. |
 | Shared pages + small per-player artifacts | Per-player copies of everything destroy shareable URLs for cosmetic gain. |
 | Personal facts computed at render, not crawl | Keeps the crawler O(1) in player count and the feed unambiguous. |
+| Multi-day events merge in lists only | Each round has a real leaderboard upstream, so each keeps a page. |
 
 ---
 
