@@ -160,7 +160,6 @@ public/        generated, gitignored
 | `players[].id` | Golfer id — matches roster/results/standings/pairings |
 | `players[].name` | `"Last, First"`, **exact**. The live board and skins have no ids, so this is the only way to find someone there. |
 | `players[].slug` | URL segment: `/p/<slug>` |
-| `players[].primary` | Whose view is served at the root `/digest.txt`, `/status.json`, `/me` |
 | `crawl_delay_seconds` | 10, per upstream robots.txt. Don't lower it. |
 | `content_pages` | Fallback list only — pages are normally auto-discovered |
 
@@ -278,11 +277,11 @@ round flips to `complete` when the last scorekeeper submits.
 | `/standings` | Points race, your row highlighted |
 | `/p/<slug>` | A player's dashboard: standing, next event in full, then the rest of the season and their played events — same today/upcoming/played priority as `/schedule` |
 | `/p/<slug>/digest.txt`, `/p/<slug>/status.json` | That player's machine-readable view |
-| `/me` | Alias for the primary player, kept for old bookmarks |
 | `/feed` | Change feed |
 | `/info`, `/info/<id>` | Mirrored announcement pages |
 | `/t/<tid>` | Event: field, tee times, live board, skins, results |
-| `/status.json`, `/digest.txt`, `/feed.xml` | Machine-readable |
+| `/status.json`, `/digest.txt` | Group-level: what's happening on the tour, plus every player's standing and a link to their own briefing |
+| `/feed.xml` | RSS of the change feed |
 | `/404.html`, `/robots.txt`, `/_headers` | Infra |
 
 ### Two rendering rules that are easy to break
@@ -403,7 +402,12 @@ Six players are tracked. The split that keeps this cheap:
   `group_ids` (id match) and `group_names` (name match, for the livescore board
   and skins where ids don't exist).
 - **Per player, 3 small artifacts**: `/p/<slug>/index.html`, `digest.txt`,
-  `status.json`. So seven players = 25 shared + 21 personal, not 46 × 7.
+  `status.json`. So seven players = 24 shared + 21 personal, not 45 × 7.
+
+The root `/digest.txt` and `/status.json` are **group-level** — they answer
+"what is happening on the tour" and list everyone's standing. A player asking
+"where do I stand" reads `/p/<slug>/digest.txt`. Neither is a copy of the
+other, and there is no per-player alias at the root.
 
 The group table is ordered by flight (Champ down to D) then points within
 each — flights are handicap bands, so a cross-flight points ranking would not

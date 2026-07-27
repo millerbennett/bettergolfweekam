@@ -7,13 +7,12 @@
   "season": null,
   "timezone": "America/New_York",
   "base_url": "https://www.amateurgolftour.net",
-  "_players_note": "name must match the upstream 'Last, First' spelling exactly - the livescore board and skins have no ids and match on name. primary drives /me, /digest.txt and /status.json.",
+  "_players_note": "name must match the upstream 'Last, First' spelling exactly - the livescore board and skins have no ids and match on name. Each player gets /p/<slug>/ plus their own digest.txt and status.json.",
   "players": [
     {
       "slug": "bennett-miller",
       "id": "51002",
-      "name": "Miller, Bennett",
-      "primary": true
+      "name": "Miller, Bennett"
     },
     {
       "slug": "ben-devine",

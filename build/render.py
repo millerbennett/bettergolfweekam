@@ -195,7 +195,6 @@ class Site:
         self.now = datetime.now(self.tz)
         self.today = self.now.date()
         self.players = [dict(x) for x in cfg["players"]]
-        self.primary = next((x for x in self.players if x.get("primary")), self.players[0])
         # Shared pages mark everyone in the group; a personal page marks its
         # own player more strongly. Ids cover every table except the livescore
         # board and skins, which carry names only.
@@ -463,7 +462,6 @@ class Site:
                 "slug": player["slug"],
                 "name": player["name"],
                 "display": _first_last(player["name"]),
-                "primary": bool(player.get("primary")),
                 "flight": standing["flight_short"] if standing else None,
                 "position": standing.get("Position") if standing else None,
                 "points": standing.get("Points") if standing else None,
@@ -571,8 +569,8 @@ class Site:
         path.write_text(text, encoding="utf-8")
 
     NAV_FOR = {
-        "index.html": "now", "schedule.html": "schedule", "standings.html": "points",
-        "me.html": "players", "feed.html": "updates", "info.html": "info",
+        "index.html": "now", "schedule.html": "schedule",
+        "standings.html": "points", "feed.html": "updates", "info.html": "info",
     }
 
     def _render(self, template: str, rel: str, **ctx) -> None:
@@ -663,10 +661,6 @@ class Site:
         for player in self.players:
             self.render_player(player, f"p/{player['slug']}/index.html",
                                f"p/{player['slug']}")
-            if player is self.primary:
-                # Keep the original URLs working: an existing scheduled check
-                # is pointed at /digest.txt, and /me is a bookmark.
-                self.render_player(player, "me.html", "")
         self._render("404.html", "404.html")
 
         for event in self.events:
@@ -701,13 +695,167 @@ class Site:
             self._render("info_page.html", f"info/{page['id']}.html", nav="info", page=page)
         self._render("info.html", "info.html", pages=pages)
 
-        # Root status.json / digest.txt belong to the primary player and are
-        # written by render_player, so an existing scheduled check keeps working.
+        # The root artifacts describe the tour, not one person - per-player
+        # views live at /p/<slug>/.
+        self._write("status.json", json.dumps(self.group_status(), indent=2) + "\n")
+        self._write("digest.txt", self.group_digest())
         self._write("feed.xml", self.rss())
         self._write("robots.txt", "User-agent: *\nAllow: /\n")
         log.info("rendered %d pages into %s", len(list(PUBLIC.rglob("*.html"))), PUBLIC)
 
     # -- machine-readable summaries --------------------------------------
+
+    def group_status(self) -> dict:
+        """The tour's state, for the whole group.
+
+        Per-player views are at /p/<slug>/status.json; this one answers "what
+        is happening" rather than "where do I stand".
+        """
+        next_event = self.next_event
+        board = self.live_now
+        payload = {
+            "generated_at": self.now.isoformat(timespec="seconds"),
+            "tour": self.cfg["tour_name"],
+            "season": self.season,
+            "site": self.site_url,
+            "players": [
+                {"name": _first_last(row["name"]), "flight": row["flight"],
+                 "position": row["position"], "points": row["points"],
+                 "events_played": row["events"],
+                 "url": f"{self.site_url}/p/{row['slug']}/",
+                 "digest": f"{self.site_url}/p/{row['slug']}/digest.txt"}
+                for row in self.group_summary()
+            ],
+            "live": None,
+            "next_event": None,
+            "recent_changes": self.changes[:10],
+            "source_last_checked": self.meta.get("last_run"),
+        }
+
+        if board:
+            payload["live"] = {
+                "event": board.get("event", {}).get("name"),
+                "course": board.get("event", {}).get("course"),
+                "status": board.get("status"),
+                "still_on_course": board.get("still_out"),
+                "players": board.get("players"),
+                "leaders": [
+                    {"flight": f["name"], "leader": f["rows"][0]["name"],
+                     "total": f["rows"][0]["total"], "thru": f["rows"][0]["thru"]}
+                    for f in board.get("flights", []) if f.get("rows")
+                ],
+                "group": [
+                    {"name": _first_last(p["name"]), **{
+                        k: v for k, v in (self.me_on_board(p, board) or {}).items()
+                        if k in ("position", "total", "thru", "to_par", "flight")}}
+                    for p in self.players if self.me_on_board(p, board)
+                ],
+            }
+
+        if next_event:
+            roster = self.rosters.get(next_event["tid"]) or {}
+            payload["next_event"] = {
+                "tid": next_event["tid"],
+                "name": next_event["name"],
+                "course": next_event["course"],
+                "date": next_event["date"],
+                "end_date": next_event.get("end_date"),
+                "rounds": len(next_event["rounds"]) + 1,
+                "days_away": self._delta(next_event["date"]),
+                "start": f"{next_event['start_time']} {next_event['start_type']}".strip(),
+                "cost": next_event["cost"],
+                "is_major": next_event["is_major"],
+                "url": f"{self.site_url}/t/{next_event['tid']}",
+                "upstream": self.upstream(next_event["tid"]),
+                "tee_times_posted": bool(
+                    (self.pairings.get(next_event["tid"]) or {}).get("published")
+                ),
+                "field": roster.get("available") and {
+                    "filled": roster.get("filled_slots"), "total": roster.get("total_slots"),
+                    "open": roster.get("open_slots"), "waiting": roster.get("total_waiting"),
+                    "sold_out": roster.get("sold_out"),
+                } or None,
+                "group_entered": [
+                    {"name": _first_last(p["name"]),
+                     "status": self.my_roster_status(p, next_event["tid"])}
+                    for p in self.players
+                    if self.my_roster_status(p, next_event["tid"]) in ("registered", "waiting")
+                ],
+            }
+        return payload
+
+    def group_digest(self) -> str:
+        """Plain-text tour briefing. Per-player ones are at /p/<slug>/."""
+        s = self.group_status()
+        lines = [
+            f"{self.cfg['site_title']} - status as of "
+            f"{self.now.strftime('%b %d, %Y %I:%M %p %Z')}",
+            "",
+        ]
+
+        if s["live"]:
+            live = s["live"]
+            lines.append(f"LIVE NOW: {live['event']} at {live['course']}")
+            lines.append(f"  {live['still_on_course']} of {live['players']} "
+                         f"still on the course.")
+            for row in live["group"]:
+                lines.append(f"  {row['name']}: {row.get('total')} ({row.get('to_par')}) "
+                             f"thru {row.get('thru')}, {row.get('position')} in "
+                             f"{row.get('flight')}")
+            for leader in live["leaders"]:
+                lines.append(f"  {leader['flight']}: {leader['leader']} "
+                             f"{leader['total']} thru {leader['thru']}")
+            lines.append("")
+
+        event = s["next_event"]
+        if event:
+            lines.append(f"NEXT EVENT: {event['name']}{' (MAJOR)' if event['is_major'] else ''}")
+            lines.append(f"  {event['course']}")
+            span = pretty_date(event["date"])
+            if event["rounds"] > 1:
+                span += f" through {pretty_date(event['end_date'])} ({event['rounds']} rounds)"
+            lines.append(f"  {span} - {event['start']} ({event['days_away']} days away)")
+            lines.append(f"  Entry {event['cost']}")
+            if event["field"]:
+                f = event["field"]
+                lines.append(f"  Field: {f['filled']}/{f['total']} filled, {f['open']} open, "
+                             f"{f['waiting']} waiting{' - SOLD OUT' if f['sold_out'] else ''}")
+            if event["group_entered"]:
+                entered = ", ".join(f"{g['name']}"
+                                    f"{' (waitlist)' if g['status'] == 'waiting' else ''}"
+                                    for g in event["group_entered"])
+                lines.append(f"  In the field: {entered}")
+            else:
+                lines.append("  Nobody from the group is entered.")
+            lines.append(f"  TEE TIMES: {'posted' if event['tee_times_posted'] else 'not posted yet'}")
+            lines.append(f"  {event['url']}")
+            lines.append("")
+
+        if s["players"]:
+            lines.append("POINTS RACE:")
+            for p in s["players"]:
+                if p["position"]:
+                    lines.append(f"  {(p['flight'] or '-'):<6} #{p['position']:<4} "
+                                 f"{p['name']:<18} {p['points']} pts "
+                                 f"({p['events_played']} events)")
+                else:
+                    lines.append(f"  {'-':<6} {'':<5} {p['name']:<18} not ranked yet")
+            lines.append("")
+
+        if s["recent_changes"]:
+            lines.append("RECENT CHANGES:")
+            for change in s["recent_changes"]:
+                stamp = change["ts"][:16].replace("T", " ")
+                detail = f" - {change['detail']}" if change["detail"] else ""
+                lines.append(f"  [{stamp}Z] {change['title']}{detail}")
+            lines.append("")
+
+        lines.append("Per-player briefings:")
+        for p in s["players"]:
+            lines.append(f"  {p['name']:<18} {p['digest']}")
+        lines.append("")
+        lines.append(f"Full mirror: {self.site_url}/")
+        return "\n".join(lines) + "\n"
 
     def status(self, player: dict) -> dict:
         """Compact JSON snapshot, shaped for a scheduled ChatGPT check."""

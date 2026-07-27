@@ -173,7 +173,7 @@ def test_status_json_reports_the_live_round(live_site):
 
 def test_status_json_omits_live_once_the_round_is_over(site):
     _, public = site
-    status = json.loads(read(public, "status.json"))
+    status = json.loads(read(public, f"p/{PLAYER['slug']}/status.json"))
     assert status["live"] is None
     assert status["last_round"]["me"]["total"] == "87"
 
@@ -187,14 +187,14 @@ def test_digest_leads_with_the_live_round(live_site):
 
 def test_digest_does_not_claim_live_after_the_last_putt(site):
     _, public = site
-    digest = read(public, "digest.txt")
+    digest = read(public, f"p/{PLAYER['slug']}/digest.txt")
     assert "LIVE NOW" not in digest
     assert "LAST ROUND" in digest
 
 
 def test_status_json_reports_my_tee_time(site):
     _, public = site
-    status = json.loads(read(public, "status.json"))
+    status = json.loads(read(public, f"p/{PLAYER['slug']}/status.json"))
     tee = status["next_event"]["my_tee_time"]
     assert status["next_event"]["tee_times_posted"] is True
     assert tee is not None
@@ -204,7 +204,7 @@ def test_status_json_reports_my_tee_time(site):
 
 def test_status_json_reports_my_points_position(site):
     _, public = site
-    status = json.loads(read(public, "status.json"))
+    status = json.loads(read(public, f"p/{PLAYER['slug']}/status.json"))
     assert status["my_standing"]["flight"] == "B"
     assert status["my_standing"]["position"] == "1"
     assert "Leading B by" in status["my_standing"]["note"]
@@ -228,10 +228,10 @@ def test_missing_roster_reads_as_unknown_not_absent(site):
     falsehood about the exact thing the reader needs to trust.
     """
     _, public = site
-    status = json.loads(read(public, "status.json"))
+    status = json.loads(read(public, f"p/{PLAYER['slug']}/status.json"))
     assert status["next_event"]["my_registration"] == "unknown"
     assert status["next_event"]["field"] is None
-    assert "NOT SIGNED UP" not in read(public, "digest.txt")
+    assert "NOT SIGNED UP" not in read(public, f"p/{PLAYER['slug']}/digest.txt")
 
 
 def test_event_without_roster_data_omits_the_field_section(site):
@@ -363,12 +363,17 @@ def test_per_player_artifacts_describe_that_player(site):
     assert "Stephen Okoba" in read(public, f"p/{BUDDY['slug']}/digest.txt")
 
 
-def test_root_digest_and_status_still_belong_to_the_primary(site):
-    """An existing scheduled check points at /digest.txt — don't break it."""
+def test_root_artifacts_describe_the_group_not_one_player(site):
+    """The root answers "what is happening"; /p/<slug>/ answers "where do I
+    stand". Neither should be a copy of the other."""
     _, public = site
-    assert json.loads(read(public, "status.json"))["player"]["id"] == PLAYER["id"]
-    assert "Bennett Miller" in read(public, "digest.txt")
-    assert read(public, "me.html")            # legacy bookmark still resolves
+    status = json.loads(read(public, "status.json"))
+    assert "player" not in status
+    assert {p["name"] for p in status["players"]} == {"Bennett Miller", "Stephen Okoba"}
+    digest = read(public, "digest.txt")
+    assert "POINTS RACE:" in digest
+    assert "Bennett Miller" in digest and "Stephen Okoba" in digest
+    assert not (public / "me.html").exists()
 
 
 def test_event_pages_are_shared_not_duplicated_per_player(site):
@@ -498,7 +503,7 @@ def test_page_links_omit_the_html_extension(site):
     """
     import re
     _, public = site
-    for name in ("index.html", f"t/{TID}.html", "me.html"):
+    for name in ("index.html", f"t/{TID}.html", f"p/{PLAYER['slug']}/index.html"):
         page = read(public, name)
         internal = re.findall(r'href="(?!https?:|data:|mailto:)([^"]+)"', page)
         offenders = [h for h in internal if h.endswith(".html")]

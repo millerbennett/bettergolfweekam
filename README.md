@@ -210,8 +210,6 @@ Edit `players` in `config.json`. One entry per person:
   someone there. A typo means their scores silently never highlight.
 - `id` appears in the [standings table](https://amateurgolftour.net/dc_tour_pages/Standings.aspx).
 - `slug` is the URL: `/p/<slug>`.
-- `primary` marks whose view is served at the root `/digest.txt`, `/status.json`
-  and `/me` — so an existing scheduled check keeps working.
 
 Adding a player costs no extra crawling: every scrape already pulls the whole
 tour, so it only changes what gets rendered.
@@ -251,8 +249,12 @@ without parsing HTML:
 - **`/p/<slug>/digest.txt`** — a plain-text briefing for one player: next
   event, whether they're registered, how full the field is, whether tee times
   are out, their tee time and playing partners, points position, last result,
-  recent changes. Cheapest thing to read. `/digest.txt` is the primary player's.
+  recent changes. Cheapest thing to read. Point each person's scheduled check
+  at their own.
 - **`/p/<slug>/status.json`** — the same information structured.
+- **`/digest.txt`, `/status.json`** — group-level: what's happening on the
+  tour, who from the group is entered in the next event, and everyone's
+  standing.
 - **`/feed.xml`** — RSS of every change the mirror has noticed.
 
 A ChatGPT scheduled task prompt that works well:
