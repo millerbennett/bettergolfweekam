@@ -20,6 +20,16 @@
   Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
 
+# Per-player equivalents. Each buddy points their own scheduled check here, so
+# these need the same content-type and no-stale-cache treatment as the root.
+/p/*/digest.txt
+  Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/p/*/status.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
 /feed.xml
   Content-Type: application/rss+xml; charset=utf-8
   Access-Control-Allow-Origin: *

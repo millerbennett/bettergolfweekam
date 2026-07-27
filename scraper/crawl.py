@@ -52,6 +52,11 @@ class Crawler:
         self.changes = load_changes()
         self.today = local_today(cfg)
         self.fresh = cfg["freshness"]
+        # The feed is shared by everyone, so entries name the player rather than
+        # saying "you". Personal facts are deliberately NOT change-detected here
+        # any more - the renderer states them fresh from the snapshots on every
+        # build, so adding a player needs no crawler change at all.
+        self.players = cfg["players"]
         self.changed = False
         self.errors: list[str] = []
 
@@ -143,18 +148,17 @@ class Crawler:
         if not self.save("standings.json", payload, "standings"):
             return
 
-        me = self.cfg["player"]["id"]
-        before = _find_player_standing(previous, me)
-        after = _find_player_standing(payload, me)
-        if after and before and (before.get("Position"), before.get("Points")) != (
-            after.get("Position"), after.get("Points")
-        ):
-            record_change(self.changes, "standings", "Your points race position updated",
-                          f"{after.get('flight', '')}: #{before.get('Position')} "
-                          f"({before.get('Points')} pts) -> #{after.get('Position')} "
-                          f"({after.get('Points')} pts)", "/me.html")
-        else:
-            record_change(self.changes, "standings", "Points race updated", "", "/standings.html")
+        moved = []
+        for person in self.players:
+            before = _find_player_standing(previous, person["id"])
+            after = _find_player_standing(payload, person["id"])
+            if after and before and (before.get("Position"), before.get("Points")) != (
+                after.get("Position"), after.get("Points")
+            ):
+                moved.append(f"{_display(person['name'])} #{before.get('Position')}"
+                             f" -> #{after.get('Position')} ({after.get('Points')} pts)")
+        record_change(self.changes, "standings", "Points race updated",
+                      "; ".join(moved), "/standings.html")
 
     def crawl_pairings(self, event: dict) -> None:
         tid = event["tid"]
@@ -167,11 +171,13 @@ class Crawler:
             return
 
         if payload["published"] and not previous.get("published"):
-            mine = _find_player_pairing(payload, self.cfg["player"]["id"])
+            ours = [(person, _find_player_pairing(payload, person["id"]))
+                    for person in self.players]
+            ours = [(person, tee) for person, tee in ours if tee]
             detail = f"{len(payload['groups'])} groups posted"
-            if mine:
-                detail = (f"You are off {mine['tee_time']} from hole "
-                          f"{mine['starting_hole']} ({mine['group'].strip()})")
+            if ours:
+                detail = ", ".join(f"{_display(person['name'])} {tee['tee_time']}"
+                                   for person, tee in ours)
             record_change(self.changes, "teetimes", f"Tee times posted: {self.event_label(event)}",
                           detail, f"/t/{tid}.html")
         elif payload["published"]:
@@ -189,11 +195,13 @@ class Crawler:
             return
 
         if payload["posted"] and not previous.get("posted"):
-            mine = _find_player_result(payload, self.cfg["player"]["id"])
-            detail = ""
-            if mine:
-                detail = (f"You finished {mine.get('Position')} in {mine.get('flight', '')} "
-                          f"({mine.get('Score')}, {mine.get('Points')} pts)")
+            scored = []
+            for person in self.players:
+                row = _find_player_result(payload, person["id"])
+                if row:
+                    scored.append(f"{_display(person['name'])} {row.get('Position')}"
+                                  f" ({row.get('Score')}, {row.get('Points')} pts)")
+            detail = ", ".join(scored)
             record_change(self.changes, "results", f"Results posted: {self.event_label(event)}",
                           detail, f"/t/{tid}.html")
         elif payload["posted"]:
@@ -211,15 +219,18 @@ class Crawler:
         if not previous:
             return  # first sighting is not news
 
-        was, now = _roster_status(previous, self.cfg["player"]["id"]), \
-            _roster_status(payload, self.cfg["player"]["id"])
-        if was != now:
+        for person in self.players:
+            was = _roster_status(previous, person["id"])
+            now = _roster_status(payload, person["id"])
+            if was == now:
+                continue
             wording = {
-                "registered": "You are registered (paid) for",
-                "waiting": "You are on the waiting list for",
-                "absent": "You are no longer listed for",
+                "registered": "registered (paid) for",
+                "waiting": "joined the waiting list for",
+                "absent": "is no longer listed for",
             }[now]
-            record_change(self.changes, "roster", f"{wording} {self.event_label(event)}",
+            record_change(self.changes, "roster",
+                          f"{_display(person['name'])} {wording} {self.event_label(event)}",
                           f"{payload['filled_slots']} of {payload['total_slots']} slots filled, "
                           f"{payload['total_waiting']} waiting", f"/t/{tid}.html")
 
@@ -258,12 +269,12 @@ class Crawler:
         if not self.save(rel, payload, f"skins:{tid}") or not previous:
             return
 
-        me = self.cfg["player"]["name"]
-        won_before = _skins_won(previous, me)
-        won_now = _skins_won(payload, me)
-        for hole in won_now - won_before:
-            record_change(self.changes, "skins", f"You won a skin: {self.event_label(event)}",
-                          hole, f"/t/{tid}.html")
+        for person in self.players:
+            fresh = _skins_won(payload, person["name"]) - _skins_won(previous, person["name"])
+            for hole in fresh:
+                record_change(self.changes, "skins",
+                              f"{_display(person['name'])} won a skin: "
+                              f"{self.event_label(event)}", hole, f"/t/{tid}.html")
 
     def content_pages(self) -> list[dict]:
         """Info pages to mirror, discovered from the tour's nav when possible.
@@ -427,6 +438,12 @@ def _find_player_result(payload: dict, player_id: str) -> dict | None:
             if row.get("ID") == player_id:
                 return {**row, "flight": flight["name"]}
     return None
+
+
+def _display(name: str) -> str:
+    """'Miller, Bennett' -> 'Bennett Miller', for feed entries."""
+    last, _, first = (name or "").partition(", ")
+    return f"{first} {last}".strip() if first else last
 
 
 def _skins_won(payload: dict, player_name: str) -> set[str]:

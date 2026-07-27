@@ -3,7 +3,7 @@
 {% block content %}
 <section class="card">
   <h1>{{ standings.season }} points race</h1>
-  <p class="sub">Your row is highlighted. Narrow screens show position, name and
+  <p class="sub">Your group is highlighted. Narrow screens show position, name and
      points — rotate or widen for the full breakdown.</p>
   {% for flight in standings.flights %}
     <h3>{{ flight.name }}</h3>
@@ -14,7 +14,7 @@
       </tr></thead>
       <tbody>
       {% for row in flight.rows %}
-        <tr{% if row.ID == cfg.player.id %} class="mine"{% endif %}>
+        <tr{% if row.ID in group_ids %} class="mine"{% endif %}>
           {% for col in columns %}<td class="c-{{ col | slug }}">{{ row[col] }}</td>{% endfor %}
         </tr>
       {% endfor %}

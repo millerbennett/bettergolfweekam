@@ -7,15 +7,41 @@
   "season": null,
   "timezone": "America/New_York",
   "base_url": "https://www.amateurgolftour.net",
-
-  "player": {
-    "id": "51002",
-    "name": "Miller, Bennett",
-    "flight": "B"
-  },
-
+  "_players_note": "name must match the upstream 'Last, First' spelling exactly - the livescore board and skins have no ids and match on name. primary drives /me, /digest.txt and /status.json.",
+  "players": [
+    {
+      "slug": "bennett-miller",
+      "id": "51002",
+      "name": "Miller, Bennett",
+      "primary": true
+    },
+    {
+      "slug": "ben-devine",
+      "id": "50569",
+      "name": "Devine, Ben"
+    },
+    {
+      "slug": "larry-thomas",
+      "id": "57759",
+      "name": "Thomas, Larry"
+    },
+    {
+      "slug": "max-shapiro",
+      "id": "49827",
+      "name": "Shapiro, Max"
+    },
+    {
+      "slug": "stephen-okoba",
+      "id": "36058",
+      "name": "Okoba, Stephen"
+    },
+    {
+      "slug": "thomas-lemense",
+      "id": "48801",
+      "name": "LeMense, Thomas"
+    }
+  ],
   "crawl_delay_seconds": 10,
-
   "freshness": {
     "schedule_hours": 12,
     "standings_hours": 12,
@@ -30,17 +56,46 @@
     "roster_window_days": 45,
     "roster_hours": 6
   },
-
   "content_pages": [
-    { "id": 5755, "title": "Tour Director's Welcome" },
-    { "id": 5744, "title": "About The Tour" },
-    { "id": 5747, "title": "Tournament Rules" },
-    { "id": 5746, "title": "Things Players Should Know" },
-    { "id": 5748, "title": "Tournament Prize Payouts" },
-    { "id": 5749, "title": "Tournament Cash Games" },
-    { "id": 5757, "title": "2026 Hole-N-One Challenge" },
-    { "id": 5762, "title": "Weather Policy" },
-    { "id": 5763, "title": "Refund Policy" },
-    { "id": 5846, "title": "Tournament Info" }
+    {
+      "id": 5755,
+      "title": "Tour Director's Welcome"
+    },
+    {
+      "id": 5744,
+      "title": "About The Tour"
+    },
+    {
+      "id": 5747,
+      "title": "Tournament Rules"
+    },
+    {
+      "id": 5746,
+      "title": "Things Players Should Know"
+    },
+    {
+      "id": 5748,
+      "title": "Tournament Prize Payouts"
+    },
+    {
+      "id": 5749,
+      "title": "Tournament Cash Games"
+    },
+    {
+      "id": 5757,
+      "title": "2026 Hole-N-One Challenge"
+    },
+    {
+      "id": 5762,
+      "title": "Weather Policy"
+    },
+    {
+      "id": 5763,
+      "title": "Refund Policy"
+    },
+    {
+      "id": 5846,
+      "title": "Tournament Info"
+    }
   ]
 }

@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}{{ me.name | first_last }} — {{ cfg.site_title }}{% endblock %}
+{% block description %}Tee time, live score and season standing for {{ me.name | first_last }} on the {{ cfg.tour_name }} Golfweek Amateur Tour.{% endblock %}
+{% block content %}
+
+{% if me_today %}
+<section class="card card-live">
+  {% if today_board.status == 'in_progress' %}
+    <h1 class="eyebrow"><span class="dot"></span>{{ me.name | first_last }} — playing now</h1>
+  {% else %}
+    <h1>{{ me.name | first_last }} — today's round</h1>
+  {% endif %}
+  <p class="sub">{{ today_board.event.name }} · {{ today_board.event.course }}</p>
+  <p class="highlight"><strong>{{ me_today.total }}</strong> ({{ me_today.to_par }})
+     thru {{ me_today.thru }} — position <strong>{{ me_today.position }}</strong>
+     in {{ me_today.flight }}</p>
+  <p><a class="button button-ghost" href="{{ url("t/" ~ today_board.tid) }}">Full board →</a></p>
+</section>
+{% endif %}
+
+<section class="card">
+  <h1>{{ me.name | first_last }}</h1>
+  <p class="sub">Player {{ me.id }}{% if me_standing %} · {{ me_standing.flight }}{% endif %}</p>
+  {% if me_standing %}
+    <p class="big">#{{ me_standing.Position }} <span class="sub">in {{ me_standing.flight_short }} flight</span></p>
+    <ul class="stats">
+      <li><span>{{ me_standing.Points }}</span>points</li>
+      <li><span>{{ me_standing.Tournaments }}</span>events</li>
+      <li><span>{{ me_standing.Handicap }}</span>index</li>
+      <li><span>{{ me_standing.Birdies }}</span>birdies</li>
+      <li><span>{{ me_standing.Eagles }}</span>eagles</li>
+      <li><span>${{ me_standing.Earnings }}</span>earnings</li>
+    </ul>
+    {% if me_gap %}<p class="stat-note">{{ me_gap }}</p>{% endif %}
+  {% else %}
+    <p class="notice">No {{ season }} points-race row yet for player {{ me.id }} —
+       that appears once they've played an event.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>Next event</h2>
+  {% if next_event %}
+    <p class="event-title">
+      {% if next_event.is_major %}<span class="major">MAJOR</span>{% endif %}
+      {{ next_event.name }}
+    </p>
+    <p class="sub">{{ next_event.course }}</p>
+    <p class="countdown">{{ next_event.date | pretty_date }} · {{ next_event.start_time }} {{ next_event.start_type }}
+       <span class="pill">{{ next_event.date | days_away }}</span></p>
+
+    {% if next_roster and next_roster.available %}
+      <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'warn' }}">
+        {% if my_roster_status == 'registered' %}Registered and paid.
+        {% elif my_roster_status == 'waiting' %}On the waiting list — signed up, not yet paid.
+        {% elif my_roster_status == 'absent' %}<strong>Not signed up.</strong>
+        {% endif %}
+        <span class="detail">{{ next_roster.filled_slots }}/{{ next_roster.total_slots }} filled ·
+          {{ next_roster.open_slots }} open · {{ next_roster.total_waiting }} waiting</span>
+      </p>
+    {% endif %}
+
+    {% if my_tee_time %}
+      <p class="highlight">Tee time <strong>{{ my_tee_time.tee_time }}</strong>
+         off hole {{ my_tee_time.starting_hole }} ({{ my_tee_time.group }})</p>
+      <p class="sub">Playing with:
+        {% for p in my_group if p.player_id != me.id %}{{ p.name }} ({{ p.flight }}){% if not loop.last %}, {% endif %}{% else %}—{% endfor %}
+      </p>
+    {% elif next_pairings and next_pairings.published %}
+      <p class="notice">Tee times are posted, but not on the pairing sheet.</p>
+    {% else %}
+      <p class="notice">Tee times not posted yet.</p>
+    {% endif %}
+
+    <p class="cta-row">
+      {% if next_event.registration_open and next_event.register_url and my_roster_status != 'registered' %}
+        <a class="button" target="_blank" rel="noopener" href="{{ next_event.register_url }}">
+          {{ "Pay for your spot" if my_roster_status == 'waiting' else "Register" }} ↗
+        </a>
+      {% endif %}
+      <a class="button button-ghost" href="{{ url("t/" ~ next_event.tid) }}">Event page →</a>
+    </p>
+  {% else %}
+    <p class="notice">No further events on the {{ season }} schedule.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>{{ season }} card</h2>
+  {% if my_results %}
+  <div class="scroll">
+  <table class="data">
+    <thead><tr><th>Date</th><th>Event</th><th>Flight</th><th class="num">Pos</th><th class="num">Score</th><th class="num">Points</th><th class="num c-earnings">$</th></tr></thead>
+    <tbody>
+    {% for r in my_results %}
+      <tr>
+        <td class="nowrap">{{ r.event.date | short_date }}</td>
+        <td><a href="{{ url("t/" ~ r.event.tid) }}">{{ r.event.name }}</a></td>
+        <td>{{ r.flight_short }}</td>
+        <td class="num">{{ r.Position }}</td>
+        <td class="num">{{ r.Score }}</td>
+        <td class="num">{{ r.Points }}</td>
+        <td class="num c-earnings">{{ r.Earnings }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% else %}
+  <p class="notice">No posted results yet this season.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>For a scheduled check</h2>
+  <p class="sub">Point a ChatGPT task at either of these — they're plain files,
+     rendered fresh on every update, and specific to this player.</p>
+  <div class="chips">
+    <a class="chip" href="{{ rel }}p/{{ me.slug }}/digest.txt">digest.txt</a>
+    <a class="chip" href="{{ rel }}p/{{ me.slug }}/status.json">status.json</a>
+  </div>
+</section>
+
+{% endblock %}

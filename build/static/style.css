@@ -589,7 +589,11 @@ table.data .c-id, table.data .c-event-index {
   font-family: var(--mono);
   font-variant-numeric: tabular-nums;
 }
+/* The first column is usually a position, so mono keeps it aligned. Tables
+   whose first column is a name opt out with .named. */
 table.data td:first-child { color: var(--muted); font-family: var(--mono); }
+table.data.named td:first-child { font-family: inherit; color: inherit; }
+table.data.named td, table.data.named th { font-variant-numeric: tabular-nums; }
 table.data tbody tr:hover { background: var(--surface-2); }
 
 table.data tr.mine, table.data tr.mine:hover {

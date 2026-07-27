@@ -13,19 +13,13 @@
     <p class="sub">All {{ today_board.players }} cards in. Official results post separately.</p>
   {% endif %}
 
-  {% if me_today %}
-  <p class="highlight">You: <strong>{{ me_today.total }}</strong> ({{ me_today.to_par }})
-     thru {{ me_today.thru }} — position <strong>{{ me_today.position }}</strong>
-     in {{ me_today.flight }}</p>
-  {% endif %}
-
   {% for flight in today_board.flights %}
   <h3>{{ flight.name }}</h3>
   <div class="scroll"><table class="data board">
     <thead><tr><th>Pos</th><th>Player</th><th class="num">Total</th><th class="num">Thru</th><th class="num">To par</th></tr></thead>
     <tbody>
     {% for row in flight.rows %}
-      <tr{% if row.name == cfg.player.name %} class="mine"{% endif %}>
+      <tr{% if row.name in group_names %} class="mine"{% endif %}>
         <td>{{ row.position }}</td><td>{{ row.name }}</td>
         <td class="num">{{ row.total }}</td><td class="num">{{ row.thru }}</td>
         <td class="num">{{ row.to_par }}</td>
@@ -50,34 +44,22 @@
        <span class="pill">{{ next_event.date | days_away }}</span></p>
 
     {% if next_roster and next_roster.available %}
-      <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'warn' }}">
-        {% if my_roster_status == 'registered' %}Registered and paid.
-        {% elif my_roster_status == 'waiting' %}On the waiting list — signed up, not yet paid.
-        {% elif my_roster_status == 'absent' %}<strong>You are not signed up.</strong>
-        {% endif %}
-        <span class="detail">{{ next_roster.filled_slots }}/{{ next_roster.total_slots }} filled ·
-          {{ next_roster.open_slots }} open · {{ next_roster.total_waiting }} waiting</span>
-      </p>
+      <p class="sub">Field: {{ next_roster.filled_slots }}/{{ next_roster.total_slots }} filled ·
+         {{ next_roster.open_slots }} open · {{ next_roster.total_waiting }} waiting</p>
+    {% endif %}
+    {% if next_event.entered %}
+      <p class="highlight">In the field:
+        {% for n in next_event.entered %}{{ n | first_last }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
     {% endif %}
 
-    {% if my_tee_time %}
-      <p class="highlight">Your tee time: <strong>{{ my_tee_time.tee_time }}</strong>
-         off hole {{ my_tee_time.starting_hole }} ({{ my_tee_time.group }})</p>
-      <p class="sub">Playing with:
-        {% for p in my_group if p.player_id != cfg.player.id %}{{ p.name }} ({{ p.flight }}){% if not loop.last %}, {% endif %}{% else %}—{% endfor %}
-      </p>
-    {% elif next_pairings and next_pairings.published %}
-      <p class="notice">Tee times are posted, but you are not on the pairing sheet.</p>
+    {% if next_pairings and next_pairings.published %}
+      <p class="sub">Tee times are posted.</p>
     {% else %}
-      <p class="notice">Tee times not posted yet. They usually drop 1–2 days before.
-         This mirror checks every {{ cfg.freshness.pairings_minutes }} minutes in the
-         {{ cfg.freshness.pairings_window_days }} days beforehand.</p>
+      <p class="notice">Tee times not posted yet. They usually drop 1–2 days before.</p>
     {% endif %}
     <p class="cta-row">
-      {% if next_event.registration_open and next_event.register_url and my_roster_status != 'registered' %}
-        <a class="button" target="_blank" rel="noopener" href="{{ next_event.register_url }}">
-          {{ "Pay for your spot" if my_roster_status == 'waiting' else "Register" }} ↗
-        </a>
+      {% if next_event.registration_open and next_event.register_url %}
+        <a class="button" target="_blank" rel="noopener" href="{{ next_event.register_url }}">Register ↗</a>
       {% endif %}
       <a class="button button-ghost" href="{{ url("t/" ~ next_event.tid) }}">Event page →</a>
     </p>
@@ -87,21 +69,27 @@
 </section>
 
 <section class="card">
-  <h1>Your season</h1>
-  {% if me_standing %}
-    <p class="big">#{{ me_standing.Position }} <span class="sub">in {{ me_standing.flight_short }} flight</span></p>
-    <ul class="stats">
-      <li><span>{{ me_standing.Points }}</span>points</li>
-      <li><span>{{ me_standing.Tournaments }}</span>events</li>
-      <li><span>{{ me_standing.Handicap }}</span>index</li>
-      <li><span>{{ me_standing.Birdies }}</span>birdies</li>
-      <li><span>${{ me_standing.Earnings }}</span>earnings</li>
-    </ul>
-    {% if me_gap %}<p class="stat-note">{{ me_gap }}</p>{% endif %}
-    <p><a class="button" href="{{ url('me.html') }}">Full detail →</a></p>
-  {% else %}
-    <p class="notice">No {{ season }} standings row found for player {{ cfg.player.id }}.</p>
-  {% endif %}
+  <h1>The group</h1>
+  <div class="scroll">
+  <table class="data named">
+    <thead><tr>
+      <th>Player</th><th>Flight</th><th class="num">Pos</th>
+      <th class="num">Points</th><th>Today</th>
+    </tr></thead>
+    <tbody>
+    {% for p in group %}
+      <tr{% if p.primary %} class="mine"{% endif %}>
+        <td><a href="{{ url('p/' ~ p.slug ~ '/index.html') }}">{{ p.display }}</a></td>
+        <td>{{ p.flight or '—' }}</td>
+        <td class="num">{{ p.position or '—' }}</td>
+        <td class="num">{{ p.points or '—' }}</td>
+        <td>{% if p.today %}{{ p.today.total }} thru {{ p.today.thru }}{% else %}—{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="sub">Tap a name for their tee time, card and scheduled-check feed.</p>
 </section>
 
 <section class="card">
@@ -128,8 +116,7 @@
   <ul class="plain">
     {% for r in recent_results %}
     <li><a href="{{ url("t/" ~ r.event.tid) }}">{{ r.event.date | pretty_date }} — {{ r.event.name }}</a>
-        {% if r.me %}<span class="detail">you: {{ r.me.Position }} in {{ r.me.flight_short }},
-        {{ r.me.Score }} ({{ r.me.Points }} pts)</span>{% endif %}</li>
+        <span class="detail">{{ r.event.course }}</span></li>
     {% endfor %}
   </ul>
   {% else %}

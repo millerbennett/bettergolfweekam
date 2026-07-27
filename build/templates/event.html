@@ -39,7 +39,7 @@
       <thead><tr><th>Pos</th><th>Player</th><th class="num">Total</th><th class="num">Thru</th><th class="num">To par</th></tr></thead>
       <tbody>
       {% for row in flight.rows %}
-        <tr{% if row.name == cfg.player.name %} class="mine"{% endif %}>
+        <tr{% if row.name in group_names %} class="mine"{% endif %}>
           <td>{{ row.position }}</td><td>{{ row.name }}</td>
           <td class="num">{{ row.total }}</td><td class="num">{{ row.thru }}</td>
           <td class="num">{{ row.to_par }}</td>
@@ -54,15 +54,12 @@
 {% if roster and roster.available %}
 <section class="card">
   <h2>Field</h2>
-  <p class="{{ 'highlight' if my_roster_status in ('registered', 'waiting') else 'warn' }}">
-    {% if my_roster_status == 'registered' %}
-      You are <strong>registered and paid</strong> for this event.
-    {% elif my_roster_status == 'waiting' %}
-      You are on the <strong>waiting list</strong> — signed up but not yet paid.
-    {% elif my_roster_status == 'absent' %}
-      You are <strong>not signed up</strong> for this event.
-    {% endif %}
-  </p>
+  {% if entered %}
+  <p class="highlight">In the field:
+    {% for n in entered %}<strong>{{ n | first_last }}</strong>{% if not loop.last %}, {% endif %}{% endfor %}</p>
+  {% else %}
+  <p class="warn">Nobody from the group is signed up for this event.</p>
+  {% endif %}
 
   <ul class="stats">
     <li><span>{{ roster.filled_slots }}/{{ roster.total_slots }}</span>slots filled</li>
@@ -85,7 +82,7 @@
     <thead><tr><th class="c-id">ID</th><th>Player</th><th>Flight</th><th class="c-tour">Home tour</th></tr></thead>
     <tbody>
     {% for p in roster.registered %}
-      <tr{% if p.player_id == cfg.player.id %} class="mine"{% endif %}>
+      <tr{% if p.player_id in group_ids %} class="mine"{% endif %}>
         <td class="c-id">{{ p.player_id }}</td><td>{{ p.name }}</td>
         <td>{{ p.flight }}</td><td class="c-tour">{{ p.tour }}</td>
       </tr>
@@ -102,7 +99,7 @@
     <thead><tr><th class="c-id">ID</th><th>Player</th><th>Flight</th><th class="c-tour">Home tour</th></tr></thead>
     <tbody>
     {% for p in roster.waiting %}
-      <tr{% if p.player_id == cfg.player.id %} class="mine"{% endif %}>
+      <tr{% if p.player_id in group_ids %} class="mine"{% endif %}>
         <td class="c-id">{{ p.player_id }}</td><td>{{ p.name }}</td>
         <td>{{ p.flight }}</td><td class="c-tour">{{ p.tour }}</td>
       </tr>
@@ -126,7 +123,7 @@
         </div>
         <ul>
         {% for p in group.players %}
-          <li{% if p.player_id == cfg.player.id %} class="mine"{% endif %}>{{ p.name }}
+          <li{% if p.player_id in group_ids %} class="mine"{% endif %}>{{ p.name }}
              <span class="detail">{{ p.flight }}</span></li>
         {% endfor %}
         </ul>
@@ -150,12 +147,12 @@
   <div class="groups">
   {% for game in skins.games %}
     {% set won = game.holes | selectattr('player') | list %}
-    <div class="group{% if won | selectattr('player', 'equalto', cfg.player.name) | list %} mine{% endif %}">
+    <div class="group{% if won | selectattr('player', 'in', group_names) | list %} mine{% endif %}">
       <div class="group-head"><strong>{{ game.title }}</strong></div>
       {% if won %}
       <ul>
       {% for h in won %}
-        <li{% if h.player == cfg.player.name %} class="mine"{% endif %}>
+        <li{% if h.player in group_names %} class="mine"{% endif %}>
           Hole {{ h.hole }} — {{ h.player }}
           <span class="detail">{{ h.type }} ({{ h.score }}){% if h.paid_out == 'Yes' %} · paid{% endif %}</span>
         </li>
@@ -185,7 +182,7 @@
         <thead><tr>{% for col in results.columns %}<th class="c-{{ col | slug }}">{{ col }}</th>{% endfor %}</tr></thead>
         <tbody>
         {% for row in flight.rows %}
-          <tr{% if row.ID == cfg.player.id %} class="mine"{% endif %}>
+          <tr{% if row.ID in group_ids %} class="mine"{% endif %}>
             {% for col in results.columns %}<td class="c-{{ col | slug }}">{{ row[col] }}</td>{% endfor %}
           </tr>
         {% endfor %}

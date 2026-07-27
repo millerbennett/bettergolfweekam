@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}The group — {{ cfg.site_title }}{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>The group</h1>
+  <p class="sub">{{ group | length }} players tracked. Each has their own page,
+     plus a <code>digest.txt</code> a scheduled check can read.</p>
+  <div class="scroll">
+  <table class="data named">
+    <thead><tr>
+      <th>Player</th><th>Flight</th><th class="num">Pos</th>
+      <th class="num">Points</th><th class="num c-tournaments">Events</th><th>Today</th>
+    </tr></thead>
+    <tbody>
+    {% for p in group %}
+      <tr{% if p.primary %} class="mine"{% endif %}>
+        <td><a href="{{ url('p/' ~ p.slug ~ '/index.html') }}">{{ p.display }}</a></td>
+        <td>{{ p.flight or '—' }}</td>
+        <td class="num">{{ p.position or '—' }}</td>
+        <td class="num">{{ p.points or '—' }}</td>
+        <td class="num c-tournaments">{{ p.events or '—' }}</td>
+        <td>{% if p.today %}{{ p.today.total }} ({{ p.today.to_par }}) thru {{ p.today.thru }}{% else %}—{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endblock %}

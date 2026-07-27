@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 from datetime import datetime, timedelta
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import pytest
@@ -26,14 +27,18 @@ TIMEZONE = "America/New_York"
 TODAY = datetime.now(ZoneInfo(TIMEZONE)).date()
 TID = "17602"
 
-PLAYER = {"id": "51002", "name": "Miller, Bennett", "flight": "B"}
+PLAYER = {"slug": "bennett-miller", "id": "51002", "name": "Miller, Bennett",
+          "primary": True}
+# A second, real player from the same fixtures — enough to prove shared pages
+# mark the whole group while personal artifacts stay per-player.
+BUDDY = {"slug": "stephen-okoba", "id": "36058", "name": "Okoba, Stephen"}
 
 SITE_CFG = {
     **CFG,
     "tour_short": "DC Metro",
     "site_title": "DC Metro Golfweek Am Tour",
     "timezone": TIMEZONE,
-    "player": PLAYER,
+    "players": [PLAYER, BUDDY],
     "freshness": {"pairings_minutes": 45, "pairings_window_days": 5},
     "content_pages": [],
 }
@@ -211,8 +216,9 @@ def test_event_page_lists_the_field_and_waiting_list(site):
     page = read(public, f"t/{LATER_TID}.html")
     assert "Devine, Ben" in page          # registered
     assert "Rosen, Jason" in page         # waiting list
-    assert "not signed up" in page
     assert "8/80" in page and "72" in page
+    # Okoba is on this fixture's waiting list, so the group callout names him.
+    assert "In the field" in page and "Stephen Okoba" in page
 
 
 def test_missing_roster_reads_as_unknown_not_absent(site):
@@ -252,7 +258,7 @@ def test_finished_round_is_reported_before_official_results(site):
     site_obj, _ = site
     board = site_obj.latest_board
     assert board is not None
-    me = site_obj.me_on_board(board)
+    me = site_obj.me_on_board(PLAYER, board)
     assert me["total"] == "87" and me["position"] == "1" and me["flight"] == "B"
 
 
@@ -330,6 +336,68 @@ def test_schedule_row_keeps_two_independent_links(site):
     assert 'class="ev-name stretch"' in page
     assert 'class="btn-mini"' in page
     assert "<a class=\"ev-hit\"" not in page
+
+
+# --------------------------------------------------------------------------
+# Multi-player
+# --------------------------------------------------------------------------
+
+def test_each_player_gets_their_own_three_artifacts(site):
+    _, public = site
+    for p in (PLAYER, BUDDY):
+        base = public / "p" / p["slug"]
+        assert (base / "index.html").exists(), p["slug"]
+        assert (base / "digest.txt").exists(), p["slug"]
+        assert (base / "status.json").exists(), p["slug"]
+
+
+def test_per_player_artifacts_describe_that_player(site):
+    _, public = site
+    mine = json.loads(read(public, f"p/{PLAYER['slug']}/status.json"))
+    theirs = json.loads(read(public, f"p/{BUDDY['slug']}/status.json"))
+    assert mine["player"]["id"] == PLAYER["id"]
+    assert theirs["player"]["id"] == BUDDY["id"]
+    # Same flight, different standing — proves these aren't the same file.
+    assert mine["my_standing"]["position"] != theirs["my_standing"]["position"]
+    assert "Bennett Miller" in read(public, f"p/{PLAYER['slug']}/digest.txt")
+    assert "Stephen Okoba" in read(public, f"p/{BUDDY['slug']}/digest.txt")
+
+
+def test_root_digest_and_status_still_belong_to_the_primary(site):
+    """An existing scheduled check points at /digest.txt — don't break it."""
+    _, public = site
+    assert json.loads(read(public, "status.json"))["player"]["id"] == PLAYER["id"]
+    assert "Bennett Miller" in read(public, "digest.txt")
+    assert read(public, "me.html")            # legacy bookmark still resolves
+
+
+def test_event_pages_are_shared_not_duplicated_per_player(site):
+    """21 events x N players would be pages for cosmetic highlighting."""
+    _, public = site
+    assert not (public / "p" / PLAYER["slug"] / "t").exists()
+    assert (public / "t" / f"{TID}.html").exists()
+
+
+def test_shared_pages_highlight_every_group_member(site):
+    """Standings marks the whole group, not just the primary."""
+    _, public = site
+    page = read(public, "standings.html")
+    rows = [line for line in page.splitlines() if 'class="mine"' in line]
+    assert len(rows) >= 2, "expected a highlighted row per group member"
+
+
+def test_group_index_lists_everyone(site):
+    _, public = site
+    page = read(public, "p/index.html")
+    assert "Bennett Miller" in page and "Stephen Okoba" in page
+    assert f"p/{BUDDY['slug']}" in page
+
+
+def test_feed_entries_name_the_player_rather_than_saying_you():
+    """The feed is shared, so "you" would be ambiguous with six readers."""
+    src = (Path(__file__).parent.parent / "scraper" / "crawl.py").read_text(encoding="utf-8")
+    for phrase in ('"You are off', '"You won a skin', 'You finished', 'Your points race'):
+        assert phrase not in src, f"first-person feed text left in crawl.py: {phrase}"
 
 
 def test_every_event_gets_a_page(site):

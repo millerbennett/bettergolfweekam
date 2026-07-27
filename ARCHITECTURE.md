@@ -3,7 +3,7 @@
 Everything needed to pick this project up cold. `README.md` is the short
 version for someone using it; this is the long version for someone changing it.
 
-Written 2026-07-26 against commit `5256cd6`.
+Written 2026-07-26, last updated for the multi-player change.
 
 ---
 
@@ -15,13 +15,14 @@ rendered as a static site.
 
 Three jobs, in priority order:
 
-1. **Tell me my tee time** without navigating an ASP.NET dropdown on a phone.
+1. **Tell a player their tee time** without navigating an ASP.NET dropdown on
+   a phone.
 2. **Be readable by a scheduled assistant** (ChatGPT tasks), which is why every
    page is pre-rendered server-side and why `digest.txt` exists.
 3. **Cost nothing** — inside the GitHub Actions and Cloudflare Pages free tiers.
 
 Non-goals: writing anything back upstream, replacing the tour's site, serving
-anyone but the configured player.
+players outside the configured tour.
 
 ---
 
@@ -122,7 +123,7 @@ reads `data/` only, which is why the render smoke test in CI works offline.
 ## 4. Repo layout
 
 ```
-config.json              tour, player, freshness thresholds
+config.json              tour, players[], freshness thresholds
 scraper/
   net.py       Fetcher: 10s crawl delay, retries, __VIEWSTATE/form helpers,
                per-run form-page cache
@@ -135,11 +136,11 @@ scraper/
   crawl.py     Crawler: the planner + change detection
 build/
   render.py    Site: derived views, page rendering, digest/status/RSS
-  templates/   jinja2 (base, index, schedule, standings, me, feed, event,
-               info, info_page, 404)
+  templates/   jinja2 (base, index, schedule, standings, players, player,
+               feed, event, info, info_page, 404)
   static/      style.css, _headers
 data/          committed JSON snapshots (see §6)
-tests/         fixtures/ = real captured pages; 105 tests
+tests/         fixtures/ = real captured pages; 112 tests
 public/        generated, gitignored
 ```
 
@@ -155,9 +156,11 @@ public/        generated, gitignored
 | `season` | **`null` = follow the site.** A number pins an old season. |
 | `timezone` | Drives "today"; must be the tour's local zone |
 | `base_url` | Origin |
-| `player.id` | Golfer id — matches roster/results/standings/pairings |
-| `player.name` | `"Last, First"`, **exact**. The live board and skins have no ids, so this is the only way to find you there. |
-| `player.flight` | Display only; real flight is derived from data |
+| `players[]` | One entry per tracked player: `{slug, id, name, primary?}` |
+| `players[].id` | Golfer id — matches roster/results/standings/pairings |
+| `players[].name` | `"Last, First"`, **exact**. The live board and skins have no ids, so this is the only way to find someone there. |
+| `players[].slug` | URL segment: `/p/<slug>` |
+| `players[].primary` | Whose view is served at the root `/digest.txt`, `/status.json`, `/me` |
 | `crawl_delay_seconds` | 10, per upstream robots.txt. Don't lower it. |
 | `content_pages` | Fallback list only — pages are normally auto-discovered |
 
@@ -273,7 +276,10 @@ round flips to `complete` when the last scorekeeper submits.
 | `/` | index.html — today's board, next up, your season, feed, recent results |
 | `/schedule` | Grouped: happening today → coming up → played (newest first) |
 | `/standings` | Points race, your row highlighted |
-| `/me` | Your season card |
+| `/p/` | Group overview — one row per player |
+| `/p/<slug>` | A player's dashboard |
+| `/p/<slug>/digest.txt`, `/p/<slug>/status.json` | That player's machine-readable view |
+| `/me` | Alias for the primary player, kept for old bookmarks |
 | `/feed` | Change feed |
 | `/info`, `/info/<id>` | Mirrored announcement pages |
 | `/t/<tid>` | Event: field, tee times, live board, skins, results |
@@ -304,7 +310,7 @@ up"* asserts a falsehood about the thing the reader most needs to trust.
 
 | Workflow | Trigger | Does |
 |---|---|---|
-| `ci.yml` | push / PR | 105 tests + render smoke test |
+| `ci.yml` | push / PR | 112 tests + render smoke test |
 | `update.yml` | cron `*/20 10-23 * * *` and `25 8 * * *`; dispatch | Crawl → commit → render → deploy (gated) |
 | `deploy.yml` | push touching `build/**` or `config.json` | Render + deploy (no crawling) |
 
@@ -346,7 +352,7 @@ python -m scraper.crawl --mode auto      # or daily / live / full, plus --force
 python -m build.render                   # writes public/
 python -m http.server -d public 8000
 
-python -m pytest tests/ -q               # 105 tests, no network
+python -m pytest tests/ -q               # 112 tests, no network
 python -m pyflakes scraper/ build/ tests/
 ```
 
@@ -358,7 +364,8 @@ Linux.
 - `test_parsers.py` — parsers against **real captured pages** in
   `tests/fixtures/`. These assert real values, so an upstream redesign fails CI
   instead of silently producing empty tables.
-- `test_render.py` — renders a synthetic `data/` dir into a temp dir.
+- `test_render.py` — renders a synthetic `data/` dir into a temp dir, with two
+  real players configured so the shared-vs-personal split is covered.
 - `test_store.py` — the snapshot-write rule.
 
 Two fixtures are synthetic and labelled as such: `leaderboard_live.html` (the
@@ -386,6 +393,30 @@ that it *should* fail.
 
 ---
 
+## 11b. Multi-player model
+
+Six players are tracked. The split that keeps this cheap:
+
+- **Shared pages, rendered once**: `/`, `/schedule`, `/standings`, `/feed`,
+  `/t/<tid>` × 21, `/info/*`. These highlight *everyone* in the group via
+  `group_ids` (id match) and `group_names` (name match, for the livescore board
+  and skins where ids don't exist).
+- **Per player, 3 small artifacts**: `/p/<slug>/index.html`, `digest.txt`,
+  `status.json`. So six players = 39 shared + 18 personal + 1 group index,
+  not 39 × 6.
+
+Why not a copy of every page per player: 21 event pages × N people is a lot of
+duplication for cosmetic highlighting, and it destroys shareable URLs — "look
+at this event page" would have N different answers.
+
+**The change feed is shared, so entries name the player** ("Ben Devine won a
+skin") rather than saying "you". Personal facts are deliberately *not*
+change-detected in the crawler any more — the renderer states them fresh from
+the snapshots on every build. That means adding a player needs no crawler
+change at all, and `crawl.py` stays O(1) in player count for requests.
+
+A test asserts no first-person feed text survives in `crawl.py`.
+
 ## 12. Design decisions worth not re-litigating
 
 | Decision | Why |
@@ -397,6 +428,8 @@ that it *should* fail.
 | Season auto-detected | Otherwise this needs an edit every January. |
 | Content pages discovered | Some ids are season-specific (`2026 Hole-N-One Challenge`). |
 | Fixtures assert real values | A redesign must fail loudly, not render an empty site. |
+| Shared pages + small per-player artifacts | Per-player copies of everything destroy shareable URLs for cosmetic gain. |
+| Personal facts computed at render, not crawl | Keeps the crawler O(1) in player count and the feed unambiguous. |
 
 ---
 
@@ -429,20 +462,19 @@ that it *should* fail.
 | Cron stopped firing | 60-day inactivity — check the heartbeat is committing |
 | CI red on parser tests | Upstream markup changed; re-capture fixtures |
 | Crawl raises "refusing to overwrite" | Empty-parse guard did its job. Investigate upstream. |
-| Tee times never appear | Check `player.name` matches upstream spelling exactly |
+| One player never highlights | Their `name` doesn't match the upstream spelling exactly |
 | Everything empty after a January | Season detection failed; check `season_dd` still marks `selected` |
 
 ---
 
 ## 15. Known gaps / possible future work
 
-- **Single player.** The whole data layer is already player-neutral — every
-  scrape pulls the full tour — so multi-player is a rendering concern, not a
-  scraping one. Roughly an afternoon: thread a player through ~12 functions,
-  render per-player `digest.txt`/`status.json`, neutralise the change feed
-  (personal facts belong in render, not crawl), parameterise the tests.
 - **Live board matches players by name**, not id — the one place ids don't
-  exist. Duplicate names would double-highlight.
+  exist. Duplicate names would double-highlight, and a misspelled config name
+  fails silently rather than loudly.
+- **No cross-tour support.** Every player must be on the configured tour.
+  A buddy on Richmond or Tidewater needs a second crawl, which is the one
+  change here that costs real time rather than milliseconds.
 - **`live_window_hours`** in config is unused.
 - **No historical season browsing** — old seasons are fetchable by pinning
   `season`, but the site only renders the current one. Old event files linger

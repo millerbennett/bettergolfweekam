@@ -194,17 +194,27 @@ npx wrangler pages project create bettergolfweekam --production-branch main
 Run the *Update mirror* workflow manually once with mode `full` to backfill the
 season, or run it locally and commit `data/`.
 
-### 4. Point it at you
+### 4. Point it at your group
 
-Edit `config.json`:
+Edit `players` in `config.json`. One entry per person:
 
 ```json
-"player": { "id": "51002", "name": "Miller, Bennett", "flight": "B" }
+"players": [
+  { "slug": "bennett-miller", "id": "51002", "name": "Miller, Bennett", "primary": true },
+  { "slug": "ben-devine",     "id": "50569", "name": "Devine, Ben" }
+]
 ```
 
-The `name` must match the upstream `"Last, First"` spelling exactly — the live
-leaderboard identifies players by name, not id. Your id appears in the
-[standings table](https://amateurgolftour.net/dc_tour_pages/Standings.aspx).
+- `name` must match the upstream `"Last, First"` spelling **exactly** — the live
+  leaderboard and skins board carry no ids, so name is the only way to find
+  someone there. A typo means their scores silently never highlight.
+- `id` appears in the [standings table](https://amateurgolftour.net/dc_tour_pages/Standings.aspx).
+- `slug` is the URL: `/p/<slug>`.
+- `primary` marks whose view is served at the root `/digest.txt`, `/status.json`
+  and `/me` — so an existing scheduled check keeps working.
+
+Adding a player costs no extra crawling: every scrape already pulls the whole
+tour, so it only changes what gets rendered.
 
 To mirror a different tour, change `tour_slug` and `tour_name` and refresh
 `content_pages` with that tour's `readContent.aspx` ids.
@@ -238,11 +248,11 @@ scorekeeper submits rather than when the last putt drops.
 Three endpoints exist specifically so an assistant or script can watch the tour
 without parsing HTML:
 
-- **`/digest.txt`** — a plain-text briefing: next event, whether you're
-  registered, how full the field is, whether tee times are out, your tee time
-  and playing partners, your points position, last result, recent changes.
-  Cheapest thing to read.
-- **`/status.json`** — the same information structured.
+- **`/p/<slug>/digest.txt`** — a plain-text briefing for one player: next
+  event, whether they're registered, how full the field is, whether tee times
+  are out, their tee time and playing partners, points position, last result,
+  recent changes. Cheapest thing to read. `/digest.txt` is the primary player's.
+- **`/p/<slug>/status.json`** — the same information structured.
 - **`/feed.xml`** — RSS of every change the mirror has noticed.
 
 A ChatGPT scheduled task prompt that works well:

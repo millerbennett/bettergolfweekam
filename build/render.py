@@ -108,6 +108,12 @@ def _points(row: dict) -> float | None:
         return None
 
 
+def _first_last(name: str) -> str:
+    """'Miller, Bennett' -> 'Bennett Miller' for display."""
+    last, _, first = (name or "").partition(", ")
+    return f"{first} {last}".strip() if first else last
+
+
 def flight_short(name: str) -> str:
     """'\"B\" Flight (9.0-13.9 Handicap)' -> 'B'."""
     match = re.match(r'\s*"?([A-Za-z]+)"?\s*Flight', name or "")
@@ -128,7 +134,13 @@ class Site:
         self.tz = ZoneInfo(cfg["timezone"])
         self.now = datetime.now(self.tz)
         self.today = self.now.date()
-        self.player_id = cfg["player"]["id"]
+        self.players = [dict(x) for x in cfg["players"]]
+        self.primary = next((x for x in self.players if x.get("primary")), self.players[0])
+        # Shared pages mark everyone in the group; a personal page marks its
+        # own player more strongly. Ids cover every table except the livescore
+        # board and skins, which carry names only.
+        self.group_ids = {x["id"] for x in self.players}
+        self.group_names = {x["name"] for x in self.players}
 
         self.schedule = read_json("schedule.json", default={"events": []}) or {"events": []}
         self.standings = read_json("standings.json", default={"flights": []}) or {"flights": []}
@@ -164,6 +176,7 @@ class Site:
             day_num=day_num,
             month_abbr=month_abbr,
             slug=slug,
+            first_last=_first_last,
         )
 
     def upstream(self, tid: str) -> dict:
@@ -227,14 +240,14 @@ class Site:
         ]
         return max(played, key=lambda p: p[0])[1] if played else None
 
-    def my_standing(self) -> dict | None:
+    def my_standing(self, player: dict) -> dict | None:
         for flight in self.standings.get("flights", []):
             for row in flight.get("rows", []):
-                if row.get("ID") == self.player_id:
+                if row.get("ID") == player["id"]:
                     return {**row, "flight": flight["name"], "flight_short": flight_short(flight["name"])}
         return None
 
-    def my_gap(self) -> str:
+    def my_gap(self, player: dict) -> str:
         """How far ahead of / behind the next player in my flight I am.
 
         Points arrive as upstream text, so every conversion is guarded - a
@@ -242,7 +255,7 @@ class Site:
         """
         for flight in self.standings.get("flights", []):
             rows = flight.get("rows", [])
-            index = next((i for i, r in enumerate(rows) if r.get("ID") == self.player_id), None)
+            index = next((i for i, r in enumerate(rows) if r.get("ID") == player["id"]), None)
             if index is None:
                 continue
             mine = _points(rows[index])
@@ -264,11 +277,11 @@ class Site:
                         f"over {below.get('Name')}.")
         return ""
 
-    def my_pairing(self, tid: str | None) -> tuple[dict | None, list]:
+    def my_pairing(self, player: dict, tid: str | None) -> tuple[dict | None, list]:
         data = self.pairings.get(tid) if tid else None
         if not data or not data.get("published"):
             return None, []
-        mine = next((p for p in data["players"] if p.get("player_id") == self.player_id), None)
+        mine = next((p for p in data["players"] if p.get("player_id") == player["id"]), None)
         if not mine:
             return None, []
         group = next(
@@ -278,7 +291,7 @@ class Site:
         )
         return mine, group
 
-    def my_roster_status(self, tid: str | None) -> str:
+    def my_roster_status(self, player: dict, tid: str | None) -> str:
         """registered / waiting / absent / unknown for the configured player.
 
         "unknown" is deliberately distinct from "absent": with no roster
@@ -288,13 +301,13 @@ class Site:
         data = self.rosters.get(tid) if tid else None
         if not data or not data.get("available"):
             return "unknown"
-        if any(p.get("player_id") == self.player_id for p in data.get("registered", [])):
+        if any(p.get("player_id") == player["id"] for p in data.get("registered", [])):
             return "registered"
-        if any(p.get("player_id") == self.player_id for p in data.get("waiting", [])):
+        if any(p.get("player_id") == player["id"] for p in data.get("waiting", [])):
             return "waiting"
         return "absent"
 
-    def me_on_board(self, board: dict | None) -> dict | None:
+    def me_on_board(self, player: dict, board: dict | None) -> dict | None:
         """Find the configured player on a livescore board.
 
         Matched by name: the board carries no player ids.
@@ -303,31 +316,32 @@ class Site:
             return None
         for flight in board.get("flights", []):
             for row in flight.get("rows", []):
-                if row.get("name") == self.cfg["player"]["name"]:
+                if row.get("name") == player["name"]:
                     # Board sections are named "B Flight Leaderboard"; the
                     # bare flight letter is what reads well in a summary.
                     return {**row, "flight": flight_short(flight["name"])}
         return None
 
-    def my_live(self) -> dict | None:
-        return self.me_on_board(self.live_now)
+    def my_live(self, player: dict) -> dict | None:
+        return self.me_on_board(player, self.live_now)
 
-    def my_result(self, tid: str) -> dict | None:
+    def my_result(self, player: dict, tid: str) -> dict | None:
         data = self.results.get(tid)
         if not data or not data.get("posted"):
             return None
         for flight in data.get("flights", []):
             for row in flight.get("rows", []):
-                if row.get("ID") == self.player_id:
+                if row.get("ID") == player["id"]:
                     return {**row, "flight": flight["name"], "flight_short": flight_short(flight["name"])}
         return None
 
-    def played_results(self) -> list[dict]:
+    def played_results(self, player: dict | None = None) -> list[dict]:
         out = []
         for event in self.events:
             data = self.results.get(event["tid"])
             if data and data.get("posted"):
-                out.append({"event": event, "me": self.my_result(event["tid"])})
+                out.append({"event": event,
+                            "me": self.my_result(player, event["tid"]) if player else None})
         out.sort(key=lambda r: r["event"]["date"], reverse=True)
         return out
 
@@ -348,6 +362,54 @@ class Site:
             return "Register", "open"
         return "Scheduled", "idle"
 
+    def group_summary(self) -> list[dict]:
+        """One row per configured player, for the group overview.
+
+        Deliberately cheap: everything here already exists in the snapshots.
+        """
+        board = self.today_board
+        rows = []
+        for player in self.players:
+            standing = self.my_standing(player)
+            today = self.me_on_board(player, board)
+            rows.append({
+                "slug": player["slug"],
+                "name": player["name"],
+                "display": _first_last(player["name"]),
+                "primary": bool(player.get("primary")),
+                "flight": standing["flight_short"] if standing else None,
+                "position": standing.get("Position") if standing else None,
+                "points": standing.get("Points") if standing else None,
+                "events": standing.get("Tournaments") if standing else None,
+                "today": today and {"total": today["total"], "thru": today["thru"],
+                                    "to_par": today["to_par"], "position": today["position"]},
+            })
+        return rows
+
+    def render_player(self, player: dict, rel: str, base: str) -> None:
+        """A player's dashboard plus their own digest.txt and status.json."""
+        next_event = self.next_event
+        tee_time, group = self.my_pairing(player, next_event["tid"] if next_event else None)
+        standing = self.my_standing(player)
+        card = [{**e["me"], "event": e["event"]}
+                for e in self.played_results(player) if e["me"]]
+
+        self._render(
+            "player.html", rel, nav="players", me=player,
+            today_board=self.today_board,
+            me_today=self.me_on_board(player, self.today_board),
+            next_event=next_event,
+            next_pairings=self.pairings.get(next_event["tid"]) if next_event else None,
+            next_roster=self.rosters.get(next_event["tid"]) if next_event else None,
+            my_roster_status=self.my_roster_status(player, next_event["tid"]) if next_event else "unknown",
+            my_tee_time=tee_time, my_group=group,
+            me_standing=standing, me_gap=self.my_gap(player),
+            my_results=card,
+        )
+        prefix = f"{base}/" if base else ""
+        self._write(f"{prefix}status.json", json.dumps(self.status(player), indent=2) + "\n")
+        self._write(f"{prefix}digest.txt", self.digest(player))
+
     # -- writing ---------------------------------------------------------
 
     def _write(self, rel: str, text: str) -> None:
@@ -357,7 +419,7 @@ class Site:
 
     NAV_FOR = {
         "index.html": "now", "schedule.html": "schedule", "standings.html": "points",
-        "me.html": "me", "feed.html": "updates", "info.html": "info",
+        "me.html": "players", "feed.html": "updates", "info.html": "info",
     }
 
     def _render(self, template: str, rel: str, **ctx) -> None:
@@ -382,6 +444,9 @@ class Site:
             self.env.get_template(template).render(
                 cfg=self.cfg,
                 season=self.season,
+                group_ids=self.group_ids,
+                group_names=self.group_names,
+                players=self.players,
                 nav=ctx.pop("nav", None) or self.NAV_FOR.get(rel),
                 rel=prefix,
                 url=url,
@@ -398,30 +463,25 @@ class Site:
         shutil.copytree(HERE / "static", PUBLIC, dirs_exist_ok=True)
 
         next_event = self.next_event
-        my_tee_time, my_group = self.my_pairing(next_event["tid"] if next_event else None)
-        me_standing = self.my_standing()
 
+        # ---- shared pages: one copy, marking everyone in the group --------
         self._render(
             "index.html", "index.html",
-            live=self.live_now,
             today_board=self.today_board,
-            me_today=self.me_on_board(self.today_board),
-            me_live=self.my_live(),
             next_event=next_event,
             next_pairings=self.pairings.get(next_event["tid"]) if next_event else None,
             next_roster=self.rosters.get(next_event["tid"]) if next_event else None,
-            my_roster_status=self.my_roster_status(next_event["tid"] if next_event else None),
-            my_tee_time=my_tee_time,
-            my_group=my_group,
-            me_standing=me_standing,
-            me_gap=self.my_gap(),
+            group=self.group_summary(),
             changes=self.changes,
             recent_results=self.played_results()[:5],
         )
 
         for event in self.events:
             event["status"], event["status_kind"] = self.event_status(event)
-            event["my_registration"] = self.my_roster_status(event["tid"])
+            event["entered"] = [
+                x["name"] for x in self.players
+                if self.my_roster_status(x, event["tid"]) in ("registered", "waiting")
+            ]
 
         # Ordered by what you'd look for: in progress, then what's coming,
         # then history newest-first - rather than one flat chronological list.
@@ -437,16 +497,18 @@ class Site:
         self._render("standings.html", "standings.html",
                      standings=self.standings, columns=columns)
 
-        my_results = []
-        for entry in self.played_results():
-            if entry["me"]:
-                my_results.append({**entry["me"], "event": entry["event"]})
-        self._render("me.html", "me.html",
-                     me_standing=me_standing, me_gap=self.my_gap(),
-                     next_event=next_event, my_tee_time=my_tee_time, my_group=my_group,
-                     my_results=my_results)
-
         self._render("feed.html", "feed.html", changes=self.changes)
+        self._render("players.html", "p/index.html",
+                     group=self.group_summary(), nav="players")
+
+        # ---- per player: three small artifacts each -----------------------
+        for player in self.players:
+            self.render_player(player, f"p/{player['slug']}/index.html",
+                               f"p/{player['slug']}")
+            if player is self.primary:
+                # Keep the original URLs working: an existing scheduled check
+                # is pointed at /digest.txt, and /me is a bookmark.
+                self.render_player(player, "me.html", "")
         self._render("404.html", "404.html")
 
         for event in self.events:
@@ -455,7 +517,7 @@ class Site:
             if pairings and pairings.get("groups"):
                 for group in pairings["groups"]:
                     group["has_me"] = any(
-                        p.get("player_id") == self.player_id for p in group["players"]
+                        p.get("player_id") in self.group_ids for p in group["players"]
                     )
             results = self.results.get(tid) or {}
             if results.get("columns"):
@@ -465,7 +527,7 @@ class Site:
                          results=results, live=self.live.get(tid),
                          roster=self.rosters.get(tid),
                          skins=self.skins.get(tid),
-                         my_roster_status=self.my_roster_status(tid))
+                         entered=event.get("entered", []))
 
         index = read_json("content_index.json") or {}
         pages = []
@@ -478,29 +540,29 @@ class Site:
             self._render("info_page.html", f"info/{page['id']}.html", nav="info", page=page)
         self._render("info.html", "info.html", pages=pages)
 
-        self._write("status.json", json.dumps(self.status(), indent=2) + "\n")
-        self._write("digest.txt", self.digest())
+        # Root status.json / digest.txt belong to the primary player and are
+        # written by render_player, so an existing scheduled check keeps working.
         self._write("feed.xml", self.rss())
         self._write("robots.txt", "User-agent: *\nAllow: /\n")
         log.info("rendered %d pages into %s", len(list(PUBLIC.rglob("*.html"))), PUBLIC)
 
     # -- machine-readable summaries --------------------------------------
 
-    def status(self) -> dict:
+    def status(self, player: dict) -> dict:
         """Compact JSON snapshot, shaped for a scheduled ChatGPT check."""
         next_event = self.next_event
-        my_tee_time, my_group = self.my_pairing(next_event["tid"] if next_event else None)
-        me_standing = self.my_standing()
+        my_tee_time, my_group = self.my_pairing(player, next_event["tid"] if next_event else None)
+        me_standing = self.my_standing(player)
         board = self.live_now
-        me_live = self.my_live()
-        last = self.played_results()[:1]
+        me_live = self.my_live(player)
+        last = self.played_results(player)[:1]
 
         payload = {
             "generated_at": self.now.isoformat(timespec="seconds"),
             "tour": self.cfg["tour_name"],
             "season": self.season,
             "site": self.site_url,
-            "player": {"id": self.player_id, "name": self.cfg["player"]["name"]},
+            "player": {"id": player["id"], "name": player["name"], "slug": player["slug"]},
             "live": None,
             "next_event": None,
             "my_standing": None,
@@ -544,7 +606,7 @@ class Site:
                 "tee_times_posted": bool(
                     (self.pairings.get(next_event["tid"]) or {}).get("published")
                 ),
-                "my_registration": self.my_roster_status(next_event["tid"]),
+                "my_registration": self.my_roster_status(player, next_event["tid"]),
                 "field": (lambda r: r and {
                     "filled": r.get("filled_slots"),
                     "total": r.get("total_slots"),
@@ -557,7 +619,7 @@ class Site:
                     "starting_hole": my_tee_time["starting_hole"],
                     "group": my_tee_time["group"].strip(),
                     "playing_with": [
-                        p["name"] for p in my_group if p["player_id"] != self.player_id
+                        p["name"] for p in my_group if p["player_id"] != player["id"]
                     ],
                 },
             }
@@ -569,12 +631,12 @@ class Site:
                 "points": me_standing.get("Points"),
                 "events_played": me_standing.get("Tournaments"),
                 "handicap": me_standing.get("Handicap"),
-                "note": self.my_gap(),
+                "note": self.my_gap(player),
             }
 
         board = self.latest_board
         if board and not self.live_now:
-            me = self.me_on_board(board)
+            me = self.me_on_board(player, board)
             posted = (self.results.get(board.get("tid")) or {}).get("posted")
             if not posted:
                 payload["last_round"] = {
@@ -600,11 +662,11 @@ class Site:
             }
         return payload
 
-    def digest(self) -> str:
+    def digest(self, player: dict) -> str:
         """Plain-text briefing - the cheapest thing for an assistant to read."""
-        s = self.status()
+        s = self.status(player)
         lines = [
-            f"{self.cfg['site_title']} - status as of "
+            f"{self.cfg['site_title']} - {_first_last(player['name'])} - status as of "
             f"{self.now.strftime('%b %d, %Y %I:%M %p %Z')}",
             "",
         ]
