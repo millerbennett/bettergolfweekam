@@ -2,24 +2,24 @@
   "tid": "17639",
   "available": true,
   "total_slots": 80,
-  "filled_slots": 8,
-  "open_slots": 72,
+  "filled_slots": 10,
+  "open_slots": 70,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "1",
-    "A": "1",
-    "B": "0",
+    "A": "2",
+    "B": "1",
     "C": "4",
     "D": "2"
   },
   "waiting_by_flight": {
     "Champ": "0",
-    "A": "2",
-    "B": "4",
-    "C": "7",
+    "A": "1",
+    "B": "3",
+    "C": "8",
     "D": "5"
   },
-  "total_waiting": 18,
+  "total_waiting": 17,
   "registered": [
     {
       "player_id": "50569",
@@ -33,6 +33,22 @@
       "player_id": "33583",
       "name": "Rapp, Joe",
       "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "32766",
+      "name": "Rosen, Jason",
+      "flight": "A",
+      "tour": "Chicago, IL",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "36058",
+      "name": "Okoba, Stephen",
+      "flight": "B",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "Yes"
@@ -88,14 +104,6 @@
   ],
   "waiting": [
     {
-      "player_id": "32766",
-      "name": "Rosen, Jason",
-      "flight": "A",
-      "tour": "Chicago, IL",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "57759",
       "name": "Thomas, Larry",
       "flight": "A",
@@ -122,14 +130,6 @@
     {
       "player_id": "28567",
       "name": "Gafford, Hayden",
-      "flight": "B",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "36058",
-      "name": "Okoba, Stephen",
       "flight": "B",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -170,6 +170,14 @@
     {
       "player_id": "62012",
       "name": "Rowe, Denise",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "44256",
+      "name": "Silver, Josh",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -241,5 +249,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-07-26T20:53:26+00:00"
+  "fetched_at": "2026-07-27T11:46:52+00:00"
 }
