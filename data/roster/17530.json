@@ -13,13 +13,13 @@
     "D": "8"
   },
   "waiting_by_flight": {
-    "Champ": "10",
+    "Champ": "11",
     "A": "16",
-    "B": "18",
-    "C": "23",
+    "B": "19",
+    "C": "24",
     "D": "28"
   },
-  "total_waiting": 95,
+  "total_waiting": 98,
   "registered": [
     {
       "player_id": "44155",
@@ -432,6 +432,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "59930",
+      "name": "Gregory, Andrew",
+      "flight": "Champ",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "52692",
       "name": "Lawson, Christopher",
       "flight": "Champ",
@@ -736,6 +744,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "33816",
+      "name": "Woodard, James",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "55069",
       "name": "Woodell, Allen",
       "flight": "B",
@@ -756,6 +772,14 @@
       "name": "Basilan, Ruel",
       "flight": "C",
       "tour": "Richmond",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "25809",
+      "name": "Briggs, James",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "No"
     },
@@ -1169,5 +1193,5 @@
     "start_type": "Shotgun",
     "is_major": true
   },
-  "fetched_at": "2026-07-26T20:53:46+00:00"
+  "fetched_at": "2026-07-28T10:55:42+00:00"
 }

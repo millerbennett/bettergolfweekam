@@ -15,11 +15,11 @@
   "waiting_by_flight": {
     "Champ": "2",
     "A": "2",
-    "B": "5",
+    "B": "6",
     "C": "3",
     "D": "4"
   },
-  "total_waiting": 16,
+  "total_waiting": 17,
   "registered": [
     {
       "player_id": "18247",
@@ -98,6 +98,14 @@
     {
       "player_id": "61979",
       "name": "Doster, Malcolm",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "51002",
+      "name": "Miller, Bennett",
       "flight": "B",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -193,5 +201,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-07-26T20:54:06+00:00"
+  "fetched_at": "2026-07-28T10:56:02+00:00"
 }
