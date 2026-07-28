@@ -2,29 +2,37 @@
   "tid": "17639",
   "available": true,
   "total_slots": 80,
-  "filled_slots": 10,
-  "open_slots": 70,
+  "filled_slots": 13,
+  "open_slots": 67,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "1",
-    "A": "2",
-    "B": "1",
-    "C": "4",
+    "A": "3",
+    "B": "2",
+    "C": "5",
     "D": "2"
   },
   "waiting_by_flight": {
     "Champ": "0",
     "A": "1",
-    "B": "4",
-    "C": "10",
+    "B": "3",
+    "C": "9",
     "D": "5"
   },
-  "total_waiting": 20,
+  "total_waiting": 18,
   "registered": [
     {
       "player_id": "50569",
       "name": "Devine, Ben",
       "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "57627",
+      "name": "Brown, Garrett",
+      "flight": "A",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "Yes"
@@ -42,6 +50,14 @@
       "name": "Rosen, Jason",
       "flight": "A",
       "tour": "Chicago, IL",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "51002",
+      "name": "Miller, Bennett",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "Yes"
     },
@@ -80,6 +96,14 @@
     {
       "player_id": "34091",
       "name": "Sams, Darin",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "31967",
+      "name": "Shugart, Dave",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -136,14 +160,6 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "51002",
-      "name": "Miller, Bennett",
-      "flight": "B",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "49718",
       "name": "Beaufort, Dre",
       "flight": "C",
@@ -178,14 +194,6 @@
     {
       "player_id": "62012",
       "name": "Rowe, Denise",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "31967",
-      "name": "Shugart, Dave",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -273,5 +281,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-07-28T10:55:22+00:00"
+  "fetched_at": "2026-07-28T17:46:18+00:00"
 }
