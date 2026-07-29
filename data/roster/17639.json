@@ -16,10 +16,10 @@
     "Champ": "0",
     "A": "1",
     "B": "3",
-    "C": "9",
+    "C": "10",
     "D": "5"
   },
-  "total_waiting": 18,
+  "total_waiting": 19,
   "registered": [
     {
       "player_id": "50569",
@@ -168,6 +168,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "51392",
+      "name": "Devine, Ron",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "43242",
       "name": "Hines, Dan",
       "flight": "C",
@@ -281,5 +289,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-07-28T17:46:18+00:00"
+  "fetched_at": "2026-07-29T10:59:29+00:00"
 }
