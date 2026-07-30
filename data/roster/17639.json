@@ -2,24 +2,24 @@
   "tid": "17639",
   "available": true,
   "total_slots": 80,
-  "filled_slots": 13,
-  "open_slots": 67,
+  "filled_slots": 14,
+  "open_slots": 66,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "1",
     "A": "3",
     "B": "2",
-    "C": "5",
+    "C": "6",
     "D": "2"
   },
   "waiting_by_flight": {
     "Champ": "0",
     "A": "1",
     "B": "3",
-    "C": "10",
+    "C": "9",
     "D": "5"
   },
-  "total_waiting": 19,
+  "total_waiting": 18,
   "registered": [
     {
       "player_id": "50569",
@@ -72,6 +72,14 @@
     {
       "player_id": "44153",
       "name": "Bunner, Gil",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "51392",
+      "name": "Devine, Ron",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -164,14 +172,6 @@
       "name": "Beaufort, Dre",
       "flight": "C",
       "tour": "Tidewater, VA",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "51392",
-      "name": "Devine, Ron",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "No"
     },
@@ -289,5 +289,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-07-29T10:59:29+00:00"
+  "fetched_at": "2026-07-30T10:36:16+00:00"
 }
