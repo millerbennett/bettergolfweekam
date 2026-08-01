@@ -2,24 +2,24 @@
   "tid": "17639",
   "available": true,
   "total_slots": 80,
-  "filled_slots": 18,
-  "open_slots": 62,
+  "filled_slots": 21,
+  "open_slots": 59,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "1",
-    "A": "5",
+    "A": "6",
     "B": "2",
-    "C": "7",
+    "C": "9",
     "D": "3"
   },
   "waiting_by_flight": {
     "Champ": "0",
-    "A": "1",
+    "A": "0",
     "B": "3",
     "C": "9",
     "D": "6"
   },
-  "total_waiting": 19,
+  "total_waiting": 18,
   "registered": [
     {
       "player_id": "50569",
@@ -70,6 +70,14 @@
       "paid_tournament": "Yes"
     },
     {
+      "player_id": "57759",
+      "name": "Thomas, Larry",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
       "player_id": "51002",
       "name": "Miller, Bennett",
       "flight": "B",
@@ -102,6 +110,14 @@
       "paid_tournament": "Yes"
     },
     {
+      "player_id": "39286",
+      "name": "Dixon, Alvin",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
       "player_id": "43876",
       "name": "Dyson, Emile",
       "flight": "C",
@@ -112,6 +128,14 @@
     {
       "player_id": "18247",
       "name": "Franklin, Cephas",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "53865",
+      "name": "Kelliher, John",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -168,14 +192,6 @@
   ],
   "waiting": [
     {
-      "player_id": "57759",
-      "name": "Thomas, Larry",
-      "flight": "A",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "33880",
       "name": "Cheeks, LC",
       "flight": "B",
@@ -208,6 +224,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "27933",
+      "name": "Brown, Franklin",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "43242",
       "name": "Hines, Dan",
       "flight": "C",
@@ -218,14 +242,6 @@
     {
       "player_id": "48932",
       "name": "Horn, John",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "53865",
-      "name": "Kelliher, John",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -329,5 +345,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-07-31T17:47:21+00:00"
+  "fetched_at": "2026-07-31T23:59:39+00:00"
 }
