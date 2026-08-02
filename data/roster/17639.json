@@ -234,7 +234,7 @@
       "name": "Wright, Danny",
       "flight": "C",
       "tour": "Washington, DC Metro",
-      "paid_member": "No",
+      "paid_member": "Yes",
       "paid_tournament": "Yes"
     },
     {
@@ -369,5 +369,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-02T10:12:20+00:00"
+  "fetched_at": "2026-08-02T16:32:19+00:00"
 }
