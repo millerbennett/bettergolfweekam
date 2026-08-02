@@ -193,8 +193,8 @@
       "cost": "$275",
       "is_major": true,
       "course_url": "http://www.rockharborgolf.com",
-      "register_url": "https://www.amateurgolftour.net/register/tournamentReg.aspx?tournament=17639",
-      "registration_open": true
+      "register_url": null,
+      "registration_open": false
     },
     {
       "tid": "17640",
@@ -275,5 +275,5 @@
       "registration_open": false
     }
   ],
-  "fetched_at": "2026-07-26T20:53:16+00:00"
+  "fetched_at": "2026-08-02T14:01:43+00:00"
 }
