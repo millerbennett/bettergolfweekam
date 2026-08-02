@@ -14,12 +14,12 @@
   },
   "waiting_by_flight": {
     "Champ": "12",
-    "A": "17",
-    "B": "20",
-    "C": "25",
+    "A": "18",
+    "B": "21",
+    "C": "27",
     "D": "28"
   },
-  "total_waiting": 102,
+  "total_waiting": 106,
   "registered": [
     {
       "player_id": "44155",
@@ -496,6 +496,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "60544",
+      "name": "Beauchamp, Justin",
+      "flight": "A",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "30678",
       "name": "Carreon, Fredy",
       "flight": "A",
@@ -720,6 +728,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "62361",
+      "name": "Phillips, Connor",
+      "flight": "B",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "64047",
       "name": "Pittman, Zac",
       "flight": "B",
@@ -840,6 +856,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "11253",
+      "name": "Cowen, Roger",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "57807",
       "name": "Davidson, Richie",
       "flight": "C",
@@ -858,6 +882,14 @@
     {
       "player_id": "29997",
       "name": "Hale, Mike",
+      "flight": "C",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56656",
+      "name": "Harris, Roe",
       "flight": "C",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
@@ -1225,5 +1257,5 @@
     "start_type": "Shotgun",
     "is_major": true
   },
-  "fetched_at": "2026-08-02T16:32:39+00:00"
+  "fetched_at": "2026-08-02T23:15:06+00:00"
 }

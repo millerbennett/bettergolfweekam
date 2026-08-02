@@ -2,24 +2,24 @@
   "tid": "17639",
   "available": true,
   "total_slots": 36,
-  "filled_slots": 33,
-  "open_slots": 3,
+  "filled_slots": 35,
+  "open_slots": 1,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "1",
     "A": "6",
     "B": "5",
-    "C": "15",
+    "C": "17",
     "D": "6"
   },
   "waiting_by_flight": {
     "Champ": "0",
     "A": "0",
     "B": "0",
-    "C": "6",
+    "C": "4",
     "D": "3"
   },
-  "total_waiting": 9,
+  "total_waiting": 7,
   "registered": [
     {
       "player_id": "50569",
@@ -166,6 +166,14 @@
       "paid_tournament": "Yes"
     },
     {
+      "player_id": "43242",
+      "name": "Hines, Dan",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
       "player_id": "53865",
       "name": "Kelliher, John",
       "flight": "C",
@@ -200,6 +208,14 @@
     {
       "player_id": "39448",
       "name": "Simmons, Titus",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "53732",
+      "name": "Taplin, Maurice",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -296,14 +312,6 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "43242",
-      "name": "Hines, Dan",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "48932",
       "name": "Horn, John",
       "flight": "C",
@@ -322,14 +330,6 @@
     {
       "player_id": "62012",
       "name": "Rowe, Denise",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "53732",
-      "name": "Taplin, Maurice",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -369,5 +369,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-02T16:32:19+00:00"
+  "fetched_at": "2026-08-02T23:14:46+00:00"
 }
