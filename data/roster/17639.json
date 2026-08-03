@@ -2,24 +2,24 @@
   "tid": "17639",
   "available": true,
   "total_slots": 36,
-  "filled_slots": 35,
-  "open_slots": 1,
-  "sold_out": false,
+  "filled_slots": 36,
+  "open_slots": null,
+  "sold_out": null,
   "filled_by_flight": {
     "Champ": "1",
     "A": "6",
     "B": "5",
     "C": "17",
-    "D": "6"
+    "D": "7"
   },
   "waiting_by_flight": {
     "Champ": "0",
     "A": "0",
     "B": "0",
-    "C": "4",
-    "D": "3"
+    "C": "0",
+    "D": "0"
   },
-  "total_waiting": 7,
+  "total_waiting": 0,
   "registered": [
     {
       "player_id": "50569",
@@ -300,66 +300,17 @@
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "Yes"
-    }
-  ],
-  "waiting": [
-    {
-      "player_id": "49718",
-      "name": "Beaufort, Dre",
-      "flight": "C",
-      "tour": "Tidewater, VA",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
     },
     {
-      "player_id": "48932",
-      "name": "Horn, John",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "57473",
-      "name": "Lyne, Mike",
-      "flight": "C",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "62012",
-      "name": "Rowe, Denise",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "17744",
-      "name": "Alexander, Sal",
-      "flight": "D",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "49871",
-      "name": "Cycyk, John",
-      "flight": "D",
-      "tour": "Eastern NC",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "57302",
-      "name": "Miller, Keith",
+      "player_id": "49406",
+      "name": "Thomas, Carlos",
       "flight": "D",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     }
   ],
+  "waiting": [],
   "event": {
     "tid": "17639",
     "date": "2026-08-08",
@@ -369,5 +320,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-02T23:14:46+00:00"
+  "fetched_at": "2026-08-03T11:52:27+00:00"
 }
