@@ -2,24 +2,24 @@
   "tid": "17641",
   "available": true,
   "total_slots": 80,
-  "filled_slots": 4,
-  "open_slots": 76,
+  "filled_slots": 5,
+  "open_slots": 75,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "0",
     "A": "0",
     "B": "0",
     "C": "2",
-    "D": "2"
+    "D": "3"
   },
   "waiting_by_flight": {
     "Champ": "2",
     "A": "3",
     "B": "6",
     "C": "4",
-    "D": "4"
+    "D": "3"
   },
-  "total_waiting": 19,
+  "total_waiting": 18,
   "registered": [
     {
       "player_id": "18247",
@@ -33,6 +33,14 @@
       "player_id": "48076",
       "name": "Thompson, Jay",
       "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "63399",
+      "name": "Coleman, LaMont",
+      "flight": "D",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "Yes"
@@ -176,14 +184,6 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "49871",
-      "name": "Cycyk, John",
-      "flight": "D",
-      "tour": "Eastern NC",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "21524",
       "name": "Mutzabaugh, Ken",
       "flight": "D",
@@ -217,5 +217,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-03T19:25:28+00:00"
+  "fetched_at": "2026-08-04T18:26:22+00:00"
 }

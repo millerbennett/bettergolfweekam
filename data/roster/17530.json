@@ -13,13 +13,13 @@
     "D": "8"
   },
   "waiting_by_flight": {
-    "Champ": "12",
-    "A": "18",
+    "Champ": "13",
+    "A": "19",
     "B": "22",
     "C": "27",
     "D": "28"
   },
-  "total_waiting": 107,
+  "total_waiting": 109,
   "registered": [
     {
       "player_id": "44155",
@@ -440,6 +440,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "63876",
+      "name": "Koicuba, Tyler",
+      "flight": "Champ",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "52692",
       "name": "Lawson, Christopher",
       "flight": "Champ",
@@ -570,6 +578,14 @@
     {
       "player_id": "26343",
       "name": "Phelps, Tim",
+      "flight": "A",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "63266",
+      "name": "Powell, Tyler",
       "flight": "A",
       "tour": "Eastern NC",
       "paid_member": "Yes",
@@ -1265,5 +1281,5 @@
     "start_type": "Shotgun",
     "is_major": true
   },
-  "fetched_at": "2026-08-03T19:25:08+00:00"
+  "fetched_at": "2026-08-04T18:26:02+00:00"
 }
