@@ -1,0 +1,181 @@
+{
+  "tid": "17597",
+  "available": true,
+  "total_slots": 64,
+  "filled_slots": 4,
+  "open_slots": 60,
+  "sold_out": false,
+  "filled_by_flight": {
+    "Champ": "0",
+    "A": "0",
+    "B": "0",
+    "C": "1",
+    "D": "3"
+  },
+  "waiting_by_flight": {
+    "Champ": "2",
+    "A": "1",
+    "B": "5",
+    "C": "3",
+    "D": "3"
+  },
+  "total_waiting": 14,
+  "registered": [
+    {
+      "player_id": "18247",
+      "name": "Franklin, Cephas",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "62036",
+      "name": "Benzing, Laurie",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "49241",
+      "name": "Hancock, Dawn",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "24248",
+      "name": "Sawyer, Thompson",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    }
+  ],
+  "waiting": [
+    {
+      "player_id": "50569",
+      "name": "Devine, Ben",
+      "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61569",
+      "name": "Kelley, Josh",
+      "flight": "Champ",
+      "tour": "Atlanta, GA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "57759",
+      "name": "Thomas, Larry",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "61979",
+      "name": "Doster, Malcolm",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "48801",
+      "name": "LeMense, Thomas",
+      "flight": "B",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "36058",
+      "name": "Okoba, Stephen",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "36058",
+      "name": "Okoba, Stephen",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "49827",
+      "name": "Shapiro, Max",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "48932",
+      "name": "Horn, John",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "62012",
+      "name": "Rowe, Denise",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "56591",
+      "name": "Thompson, Zak",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "21524",
+      "name": "Mutzabaugh, Ken",
+      "flight": "D",
+      "tour": "Atlanta, GA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "26388",
+      "name": "Phillips, David",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "59398",
+      "name": "Swiderski, Casey",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    }
+  ],
+  "event": {
+    "tid": "17597",
+    "date": "2026-09-19",
+    "name": "DC Metro Tour Championship",
+    "course": "Penn National Golf Club (Iron Forge)",
+    "start_time": "9:30",
+    "start_type": "Straight Tee",
+    "is_major": true
+  },
+  "fetched_at": "2026-08-05T10:57:51+00:00"
+}
