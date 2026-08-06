@@ -1,0 +1,35 @@
+{
+  "tid": "17598",
+  "available": true,
+  "total_slots": 64,
+  "filled_slots": 0,
+  "open_slots": 64,
+  "sold_out": false,
+  "filled_by_flight": {
+    "Champ": "0",
+    "A": "0",
+    "B": "0",
+    "C": "0",
+    "D": "0"
+  },
+  "waiting_by_flight": {
+    "Champ": "0",
+    "A": "0",
+    "B": "0",
+    "C": "0",
+    "D": "0"
+  },
+  "total_waiting": 0,
+  "registered": [],
+  "waiting": [],
+  "event": {
+    "tid": "17598",
+    "date": "2026-09-20",
+    "name": "DC Metro Tour Championship",
+    "course": "Penn National Golf Club (Founders)",
+    "start_time": "9:35",
+    "start_type": "Straight Tee",
+    "is_major": true
+  },
+  "fetched_at": "2026-08-06T10:59:36+00:00"
+}
