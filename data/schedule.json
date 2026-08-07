@@ -187,7 +187,7 @@
       "tid": "17639",
       "date": "2026-08-08",
       "name": "DC Metro Open Championship",
-      "course": "Rock Harbor (Rock)",
+      "course": "Rock Harbor (Boulder)",
       "start_time": "9:00",
       "start_type": "Straight Tee",
       "cost": "$275",
@@ -200,7 +200,7 @@
       "tid": "17640",
       "date": "2026-08-09",
       "name": "DC Metro Open Championship",
-      "course": "Rock Harbor (Boulder)",
+      "course": "Rock Harbor (Rock)",
       "start_time": "9:00",
       "start_type": "Straight Tee",
       "cost": "$",
@@ -275,5 +275,5 @@
       "registration_open": false
     }
   ],
-  "fetched_at": "2026-08-02T14:01:43+00:00"
+  "fetched_at": "2026-08-07T00:17:33+00:00"
 }
