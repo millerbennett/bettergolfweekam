@@ -2,28 +2,36 @@
   "tid": "17641",
   "available": true,
   "total_slots": 80,
-  "filled_slots": 5,
-  "open_slots": 75,
+  "filled_slots": 6,
+  "open_slots": 74,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "0",
     "A": "0",
     "B": "0",
-    "C": "2",
+    "C": "3",
     "D": "3"
   },
   "waiting_by_flight": {
     "Champ": "2",
     "A": "3",
     "B": "6",
-    "C": "4",
+    "C": "3",
     "D": "3"
   },
-  "total_waiting": 18,
+  "total_waiting": 17,
   "registered": [
     {
       "player_id": "18247",
       "name": "Franklin, Cephas",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "62012",
+      "name": "Rowe, Denise",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -160,14 +168,6 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "62012",
-      "name": "Rowe, Denise",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "56591",
       "name": "Thompson, Zak",
       "flight": "C",
@@ -217,5 +217,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-04T18:26:22+00:00"
+  "fetched_at": "2026-08-07T09:29:26+00:00"
 }
