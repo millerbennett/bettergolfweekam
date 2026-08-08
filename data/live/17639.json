@@ -83,23 +83,23 @@
           "display": "Gafford, Hayden - Washington, DC Metro - B",
           "total": "",
           "thru": "",
-          "to_par": "75"
+          "to_par": "84"
         },
         {
-          "position": "T3",
-          "name": "Upright, Don",
-          "display": "Upright, Don - Washington, DC Metro - B",
-          "total": "",
-          "thru": "",
-          "to_par": "80"
-        },
-        {
-          "position": "T3",
+          "position": "3",
           "name": "Cheeks, LC",
           "display": "Cheeks, LC - Washington, DC Metro - B",
           "total": "",
           "thru": "",
-          "to_par": "80"
+          "to_par": "88"
+        },
+        {
+          "position": "4",
+          "name": "Upright, Don",
+          "display": "Upright, Don - Washington, DC Metro - B",
+          "total": "",
+          "thru": "",
+          "to_par": "90"
         },
         {
           "position": "5",
@@ -107,7 +107,7 @@
           "display": "Okoba, Stephen - Washington, DC Metro - B",
           "total": "",
           "thru": "",
-          "to_par": "84"
+          "to_par": "94"
         }
       ]
     },
@@ -120,55 +120,55 @@
           "display": "Shugart, Dave - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "65"
+          "to_par": "81"
         },
         {
           "position": "2",
-          "name": "Silver, Josh",
-          "display": "Silver, Josh - Washington, DC Metro - C",
-          "total": "",
-          "thru": "",
-          "to_par": "62"
-        },
-        {
-          "position": "3",
-          "name": "Kelliher, John",
-          "display": "Kelliher, John - Washington, DC Metro - C",
-          "total": "",
-          "thru": "",
-          "to_par": "63"
-        },
-        {
-          "position": "T4",
           "name": "Hines, Dan",
           "display": "Hines, Dan - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "68"
+          "to_par": "82"
         },
         {
-          "position": "T4",
-          "name": "Thompson, Zak",
-          "display": "Thompson, Zak - Washington, DC Metro - C",
+          "position": "T3",
+          "name": "Silver, Josh",
+          "display": "Silver, Josh - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "77"
+          "to_par": "81"
         },
         {
-          "position": "6",
+          "position": "T3",
           "name": "Tyrrell, Milton",
           "display": "Tyrrell, Milton - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "78"
+          "to_par": "89"
         },
         {
-          "position": "7",
+          "position": "T5",
+          "name": "Kelliher, John",
+          "display": "Kelliher, John - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "82"
+        },
+        {
+          "position": "T5",
           "name": "Thompson, Jay",
           "display": "Thompson, Jay - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "74"
+          "to_par": "90"
+        },
+        {
+          "position": "T5",
+          "name": "Thompson, Zak",
+          "display": "Thompson, Zak - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "90"
         },
         {
           "position": "T8",
@@ -176,63 +176,63 @@
           "display": "Brown, Franklin - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "64"
+          "to_par": "75"
         },
         {
           "position": "T8",
-          "name": "Sams, Darin",
-          "display": "Sams, Darin - Washington, DC Metro - C",
-          "total": "",
-          "thru": "",
-          "to_par": "80"
-        },
-        {
-          "position": "T10",
-          "name": "Wright, Danny",
-          "display": "Wright, Danny - Washington, DC Metro - C",
-          "total": "",
-          "thru": "",
-          "to_par": "70"
-        },
-        {
-          "position": "T10",
-          "name": "Dixon, Alvin",
-          "display": "Dixon, Alvin - Washington, DC Metro - C",
-          "total": "",
-          "thru": "",
-          "to_par": "74"
-        },
-        {
-          "position": "T10",
           "name": "Franklin, Cephas",
           "display": "Franklin, Cephas - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "83"
+          "to_par": "92"
         },
         {
-          "position": "13",
+          "position": "10",
+          "name": "Sams, Darin",
+          "display": "Sams, Darin - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "93"
+        },
+        {
+          "position": "11",
           "name": "Simmons, Titus",
           "display": "Simmons, Titus - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "79"
+          "to_par": "95"
         },
         {
-          "position": "14",
+          "position": "T12",
+          "name": "Dixon, Alvin",
+          "display": "Dixon, Alvin - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "92"
+        },
+        {
+          "position": "T12",
           "name": "Devine, Ron",
           "display": "Devine, Ron - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "80"
+          "to_par": "97"
         },
         {
-          "position": "15",
+          "position": "T14",
+          "name": "Wright, Danny",
+          "display": "Wright, Danny - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "92"
+        },
+        {
+          "position": "T14",
           "name": "Bunner, Gil",
           "display": "Bunner, Gil - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "86"
+          "to_par": "100"
         },
         {
           "position": "16",
@@ -240,7 +240,7 @@
           "display": "Dyson, Emile - Washington, DC Metro - C",
           "total": "",
           "thru": "",
-          "to_par": "117"
+          "to_par": "144"
         }
       ]
     },
@@ -253,47 +253,47 @@
           "display": "Thomas, Carlos - Tidewater, VA - D",
           "total": "",
           "thru": "",
-          "to_par": "60"
+          "to_par": "79"
         },
         {
           "position": "2",
-          "name": "Lewis, Jerald",
-          "display": "Lewis, Jerald - Washington, DC Metro - D",
-          "total": "",
-          "thru": "",
-          "to_par": "64"
-        },
-        {
-          "position": "T3",
           "name": "Hancock, Dawn",
           "display": "Hancock, Dawn - Washington, DC Metro - D",
           "total": "",
           "thru": "",
-          "to_par": "67"
+          "to_par": "75"
         },
         {
-          "position": "T3",
-          "name": "Jones, Carlton",
-          "display": "Jones, Carlton - Washington, DC Metro - D",
+          "position": "3",
+          "name": "Lewis, Jerald",
+          "display": "Lewis, Jerald - Washington, DC Metro - D",
           "total": "",
           "thru": "",
-          "to_par": "70"
+          "to_par": "76"
         },
         {
-          "position": "T5",
+          "position": "T4",
           "name": "Swiderski, Casey",
           "display": "Swiderski, Casey - Washington, DC Metro - D",
           "total": "",
           "thru": "",
-          "to_par": "71"
+          "to_par": "93"
         },
         {
-          "position": "T5",
+          "position": "T4",
           "name": "Benzing, Laurie",
           "display": "Benzing, Laurie - Washington, DC Metro - D",
           "total": "",
           "thru": "",
-          "to_par": "71"
+          "to_par": "93"
+        },
+        {
+          "position": "T4",
+          "name": "Jones, Carlton",
+          "display": "Jones, Carlton - Washington, DC Metro - D",
+          "total": "",
+          "thru": "",
+          "to_par": "93"
         },
         {
           "position": "7",
@@ -301,7 +301,7 @@
           "display": "Taylor, Nick - Washington, DC Metro - D",
           "total": "",
           "thru": "",
-          "to_par": "70"
+          "to_par": "82"
         }
       ]
     }
@@ -316,5 +316,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T18:00:56+00:00"
+  "fetched_at": "2026-08-08T19:01:49+00:00"
 }
