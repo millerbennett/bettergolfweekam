@@ -4,38 +4,97 @@
   "games": [
     {
       "title": "Super Skins(Birdie Or Better)",
-      "holes": [],
+      "holes": [
+        {
+          "hole": "1",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "2",
+          "player": "Tyrrell, Milton",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "3",
+          "player": "",
+          "score": "",
+          "type": "3 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "4",
+          "player": "Cuff, Mike",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
       "summary": {
         "Total Players": "30",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$300",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
+        "Total Skins": "2",
+        "Each Skin Value": "$150"
       }
     },
     {
       "title": "Skins: B Flight(Birdie Or Better)",
-      "holes": [],
+      "holes": [
+        {
+          "hole": "1",
+          "player": "Okoba, Stephen",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
       "summary": {
         "Total Players": "4",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$40",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
+        "Total Skins": "1",
+        "Each Skin Value": "$40"
       }
     },
     {
       "title": "Skins: C Flight(Birdie Or Better)",
-      "holes": [],
+      "holes": [
+        {
+          "hole": "1",
+          "player": "Thompson, Zak",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "2",
+          "player": "Tyrrell, Milton",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "3",
+          "player": "Tyrrell, Milton",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
       "summary": {
         "Total Players": "14",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$140",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
+        "Total Skins": "3",
+        "Each Skin Value": "$46"
       }
     },
     {
@@ -52,14 +111,29 @@
     },
     {
       "title": "Skins: Champ - A (Birdie Or Better)",
-      "holes": [],
+      "holes": [
+        {
+          "hole": "3",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "4",
+          "player": "Cuff, Mike",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
       "summary": {
         "Total Players": "6",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$60",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
+        "Total Skins": "1",
+        "Each Skin Value": "$60"
       }
     },
     {
@@ -82,5 +156,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T13:30:58+00:00"
+  "fetched_at": "2026-08-08T14:15:40+00:00"
 }
