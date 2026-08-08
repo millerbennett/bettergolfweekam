@@ -86,7 +86,7 @@
           "hole": "16",
           "player": "",
           "score": "",
-          "type": "3 x Birdie",
+          "type": "4 x Birdie",
           "paid_out": ""
         },
         {
@@ -211,6 +211,13 @@
           "score": "4",
           "type": "Birdie",
           "paid_out": "No"
+        },
+        {
+          "hole": "16",
+          "player": "Jones, Carlton",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
         }
       ],
       "summary": {
@@ -218,8 +225,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$70",
         "Total Skins Pot": "$130",
-        "Total Skins": "1",
-        "Each Skin Value": "$130"
+        "Total Skins": "2",
+        "Each Skin Value": "$65"
       }
     },
     {
@@ -311,5 +318,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T18:01:06+00:00"
+  "fetched_at": "2026-08-08T20:23:35+00:00"
 }
