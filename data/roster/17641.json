@@ -16,10 +16,10 @@
     "Champ": "2",
     "A": "3",
     "B": "6",
-    "C": "3",
+    "C": "4",
     "D": "3"
   },
-  "total_waiting": 17,
+  "total_waiting": 18,
   "registered": [
     {
       "player_id": "18247",
@@ -160,6 +160,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "44153",
+      "name": "Bunner, Gil",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "48932",
       "name": "Horn, John",
       "flight": "C",
@@ -217,5 +225,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-07T09:29:26+00:00"
+  "fetched_at": "2026-08-08T15:25:20+00:00"
 }

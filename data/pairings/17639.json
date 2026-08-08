@@ -49,15 +49,6 @@
       "tee_time": "09:10 AM"
     },
     {
-      "player_id": "32766",
-      "name": "Rosen, Jason",
-      "tour": "Chicago, IL",
-      "flight": "A",
-      "starting_hole": "1",
-      "group": "Group 2",
-      "tee_time": "09:10 AM"
-    },
-    {
       "player_id": "57759",
       "name": "Thomas, Larry",
       "tour": "Washington, DC Metro",
@@ -195,15 +186,6 @@
     {
       "player_id": "43242",
       "name": "Hines, Dan",
-      "tour": "Washington, DC Metro",
-      "flight": "C",
-      "starting_hole": "1",
-      "group": "Group 6",
-      "tee_time": "09:50 AM"
-    },
-    {
-      "player_id": "53732",
-      "name": "Taplin, Maurice",
       "tour": "Washington, DC Metro",
       "flight": "C",
       "starting_hole": "1",
@@ -387,15 +369,6 @@
           "tee_time": "09:10 AM"
         },
         {
-          "player_id": "32766",
-          "name": "Rosen, Jason",
-          "tour": "Chicago, IL",
-          "flight": "A",
-          "starting_hole": "1",
-          "group": "Group 2",
-          "tee_time": "09:10 AM"
-        },
-        {
           "player_id": "57759",
           "name": "Thomas, Larry",
           "tour": "Washington, DC Metro",
@@ -568,15 +541,6 @@
           "tee_time": "09:50 AM"
         },
         {
-          "player_id": "53732",
-          "name": "Taplin, Maurice",
-          "tour": "Washington, DC Metro",
-          "flight": "C",
-          "starting_hole": "1",
-          "group": "Group 6",
-          "tee_time": "09:50 AM"
-        },
-        {
           "player_id": "39286",
           "name": "Dixon, Alvin",
           "tour": "Washington, DC Metro",
@@ -726,5 +690,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-07T15:11:22+00:00"
+  "fetched_at": "2026-08-08T15:24:30+00:00"
 }
