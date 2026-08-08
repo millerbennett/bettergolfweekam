@@ -52,7 +52,7 @@
           "player": "Thomas, Carlos",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "11",
@@ -210,14 +210,14 @@
           "player": "Thomas, Carlos",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "16",
           "player": "Jones, Carlton",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -318,5 +318,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T20:23:35+00:00"
+  "fetched_at": "2026-08-08T21:50:11+00:00"
 }

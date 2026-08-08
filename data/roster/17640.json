@@ -2,15 +2,15 @@
   "tid": "17640",
   "available": true,
   "total_slots": 34,
-  "filled_slots": 0,
-  "open_slots": 34,
+  "filled_slots": 33,
+  "open_slots": 1,
   "sold_out": false,
   "filled_by_flight": {
-    "Champ": "0",
-    "A": "0",
-    "B": "0",
-    "C": "0",
-    "D": "0"
+    "Champ": "1",
+    "A": "5",
+    "B": "5",
+    "C": "15",
+    "D": "7"
   },
   "waiting_by_flight": {
     "Champ": "0",
@@ -20,7 +20,272 @@
     "D": "0"
   },
   "total_waiting": 0,
-  "registered": [],
+  "registered": [
+    {
+      "player_id": "50569",
+      "name": "Devine, Ben",
+      "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "57627",
+      "name": "Brown, Garrett",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "42200",
+      "name": "Cuff, Mike",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "47443",
+      "name": "Facello, Scott",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "33583",
+      "name": "Rapp, Joe",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "57759",
+      "name": "Thomas, Larry",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "33880",
+      "name": "Cheeks, LC",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "28567",
+      "name": "Gafford, Hayden",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "51002",
+      "name": "Miller, Bennett",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "36058",
+      "name": "Okoba, Stephen",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "30990",
+      "name": "Upright, Don",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "27933",
+      "name": "Brown, Franklin",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "44153",
+      "name": "Bunner, Gil",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "51392",
+      "name": "Devine, Ron",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "39286",
+      "name": "Dixon, Alvin",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "18247",
+      "name": "Franklin, Cephas",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "43242",
+      "name": "Hines, Dan",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "53865",
+      "name": "Kelliher, John",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "34091",
+      "name": "Sams, Darin",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "31967",
+      "name": "Shugart, Dave",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "44256",
+      "name": "Silver, Josh",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "39448",
+      "name": "Simmons, Titus",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "48076",
+      "name": "Thompson, Jay",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "56591",
+      "name": "Thompson, Zak",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "34010",
+      "name": "Tyrrell, Milton",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "44771",
+      "name": "Wright, Danny",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "62036",
+      "name": "Benzing, Laurie",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "49241",
+      "name": "Hancock, Dawn",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "61575",
+      "name": "Jones, Carlton",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "39276",
+      "name": "Lewis, Jerald",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "59398",
+      "name": "Swiderski, Casey",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "40768",
+      "name": "Taylor, Nick",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "49406",
+      "name": "Thomas, Carlos",
+      "flight": "D",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    }
+  ],
   "waiting": [],
   "event": {
     "tid": "17640",
@@ -31,5 +296,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T15:24:50+00:00"
+  "fetched_at": "2026-08-08T21:49:01+00:00"
 }
