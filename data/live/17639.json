@@ -277,15 +277,7 @@
           "display": "Swiderski, Casey - Washington, DC Metro - D",
           "total": "",
           "thru": "",
-          "to_par": "93"
-        },
-        {
-          "position": "T4",
-          "name": "Benzing, Laurie",
-          "display": "Benzing, Laurie - Washington, DC Metro - D",
-          "total": "",
-          "thru": "",
-          "to_par": "93"
+          "to_par": "89"
         },
         {
           "position": "T4",
@@ -293,7 +285,15 @@
           "display": "Jones, Carlton - Washington, DC Metro - D",
           "total": "",
           "thru": "",
-          "to_par": "93"
+          "to_par": "89"
+        },
+        {
+          "position": "6",
+          "name": "Benzing, Laurie",
+          "display": "Benzing, Laurie - Washington, DC Metro - D",
+          "total": "",
+          "thru": "",
+          "to_par": "92"
         },
         {
           "position": "7",
@@ -316,5 +316,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T19:01:49+00:00"
+  "fetched_at": "2026-08-08T19:46:51+00:00"
 }
