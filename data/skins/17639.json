@@ -1,0 +1,86 @@
+{
+  "tid": "17639",
+  "available": true,
+  "games": [
+    {
+      "title": "Super Skins(Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "14",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$140",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "Skins: B Flight(Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "3",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$30",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "Skins: C Flight(Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "7",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$70",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "Skins D Flight(Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "2",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$70",
+        "Total Skins Pot": "$90",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "Skins: Champ - A (Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "3",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$30",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "CTP: Champ - A - B - C - D",
+      "holes": [],
+      "summary": {
+        "Total Players": "11",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total CTP Pot": "$110"
+      }
+    }
+  ],
+  "event": {
+    "tid": "17639",
+    "date": "2026-08-08",
+    "name": "DC Metro Open Championship",
+    "course": "Rock Harbor (Boulder)",
+    "start_time": "9:00",
+    "start_type": "Straight Tee",
+    "is_major": true
+  },
+  "fetched_at": "2026-08-08T10:27:44+00:00"
+}
