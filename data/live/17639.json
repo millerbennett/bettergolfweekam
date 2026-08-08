@@ -1,13 +1,311 @@
 {
   "available": true,
-  "live": false,
-  "status": "not_started",
-  "players": 0,
+  "live": true,
+  "status": "in_progress",
+  "players": 34,
   "still_out": 0,
   "finished": 0,
   "tournament": "DC Metro Open Championship Rock Harbor (Boulder)",
   "date": "08/08/2026",
-  "flights": [],
+  "flights": [
+    {
+      "name": "Champ Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Devine, Ben",
+          "display": "Devine, Ben - Washington, DC Metro - Champ",
+          "total": "",
+          "thru": "",
+          "to_par": "8"
+        }
+      ]
+    },
+    {
+      "name": "A Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Thomas, Larry",
+          "display": "Thomas, Larry - Washington, DC Metro - A",
+          "total": "",
+          "thru": "",
+          "to_par": "4"
+        },
+        {
+          "position": "T1",
+          "name": "Brown, Garrett",
+          "display": "Brown, Garrett - Washington, DC Metro - A",
+          "total": "",
+          "thru": "",
+          "to_par": "7"
+        },
+        {
+          "position": "T3",
+          "name": "Cuff, Mike",
+          "display": "Cuff, Mike - Washington, DC Metro - A",
+          "total": "",
+          "thru": "",
+          "to_par": "5"
+        },
+        {
+          "position": "T3",
+          "name": "Rapp, Joe",
+          "display": "Rapp, Joe - Washington, DC Metro - A",
+          "total": "",
+          "thru": "",
+          "to_par": "8"
+        },
+        {
+          "position": "T3",
+          "name": "Facello, Scott",
+          "display": "Facello, Scott - Washington, DC Metro - A",
+          "total": "",
+          "thru": "",
+          "to_par": "8"
+        }
+      ]
+    },
+    {
+      "name": "B Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Cheeks, LC",
+          "display": "Cheeks, LC - Washington, DC Metro - B",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Gafford, Hayden",
+          "display": "Gafford, Hayden - Washington, DC Metro - B",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Upright, Don",
+          "display": "Upright, Don - Washington, DC Metro - B",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Okoba, Stephen",
+          "display": "Okoba, Stephen - Washington, DC Metro - B",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Miller, Bennett",
+          "display": "Miller, Bennett - Washington, DC Metro - B",
+          "total": "",
+          "thru": "",
+          "to_par": "4"
+        }
+      ]
+    },
+    {
+      "name": "C Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Devine, Ron",
+          "display": "Devine, Ron - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Kelliher, John",
+          "display": "Kelliher, John - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Thompson, Zak",
+          "display": "Thompson, Zak - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Thompson, Jay",
+          "display": "Thompson, Jay - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Dixon, Alvin",
+          "display": "Dixon, Alvin - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Simmons, Titus",
+          "display": "Simmons, Titus - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Hines, Dan",
+          "display": "Hines, Dan - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Dyson, Emile",
+          "display": "Dyson, Emile - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Bunner, Gil",
+          "display": "Bunner, Gil - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Silver, Josh",
+          "display": "Silver, Josh - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Wright, Danny",
+          "display": "Wright, Danny - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Shugart, Dave",
+          "display": "Shugart, Dave - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Franklin, Cephas",
+          "display": "Franklin, Cephas - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Brown, Franklin",
+          "display": "Brown, Franklin - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Tyrrell, Milton",
+          "display": "Tyrrell, Milton - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Sams, Darin",
+          "display": "Sams, Darin - Washington, DC Metro - C",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        }
+      ]
+    },
+    {
+      "name": "D Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Taylor, Nick",
+          "display": "Taylor, Nick - Washington, DC Metro - D",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Lewis, Jerald",
+          "display": "Lewis, Jerald - Washington, DC Metro - D",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Hancock, Dawn",
+          "display": "Hancock, Dawn - Washington, DC Metro - D",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Thomas, Carlos",
+          "display": "Thomas, Carlos - Tidewater, VA - D",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Swiderski, Casey",
+          "display": "Swiderski, Casey - Washington, DC Metro - D",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Jones, Carlton",
+          "display": "Jones, Carlton - Washington, DC Metro - D",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        },
+        {
+          "position": "T1",
+          "name": "Benzing, Laurie",
+          "display": "Benzing, Laurie - Washington, DC Metro - D",
+          "total": "",
+          "thru": "",
+          "to_par": "0"
+        }
+      ]
+    }
+  ],
   "tid": "17639",
   "event": {
     "tid": "17639",
@@ -18,5 +316,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T10:27:34+00:00"
+  "fetched_at": "2026-08-08T13:30:49+00:00"
 }
