@@ -42,10 +42,24 @@
         },
         {
           "hole": "8",
-          "player": "Rapp, Joe",
-          "score": "2",
-          "type": "Birdie",
-          "paid_out": "No"
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "11",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "12",
+          "player": "",
+          "score": "",
+          "type": "3 x Birdie",
+          "paid_out": ""
         }
       ],
       "summary": {
@@ -53,8 +67,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$300",
-        "Total Skins": "3",
-        "Each Skin Value": "$100"
+        "Total Skins": "2",
+        "Each Skin Value": "$150"
       }
     },
     {
@@ -73,6 +87,13 @@
           "score": "3",
           "type": "Birdie",
           "paid_out": "No"
+        },
+        {
+          "hole": "11",
+          "player": "Upright, Don",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
         }
       ],
       "summary": {
@@ -80,8 +101,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$40",
-        "Total Skins": "2",
-        "Each Skin Value": "$20"
+        "Total Skins": "3",
+        "Each Skin Value": "$13"
       }
     },
     {
@@ -107,6 +128,13 @@
           "score": "3",
           "type": "Birdie",
           "paid_out": "No"
+        },
+        {
+          "hole": "8",
+          "player": "Silver, Josh",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
         }
       ],
       "summary": {
@@ -114,8 +142,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$140",
-        "Total Skins": "3",
-        "Each Skin Value": "$46"
+        "Total Skins": "4",
+        "Each Skin Value": "$35"
       }
     },
     {
@@ -160,6 +188,13 @@
           "score": "2",
           "type": "Birdie",
           "paid_out": "No"
+        },
+        {
+          "hole": "12",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
         }
       ],
       "summary": {
@@ -191,5 +226,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T15:26:00+00:00"
+  "fetched_at": "2026-08-08T16:43:58+00:00"
 }
