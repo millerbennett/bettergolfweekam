@@ -17,7 +17,7 @@
           "player": "Tyrrell, Milton",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "3",
@@ -73,14 +73,14 @@
           "player": "Shugart, Dave",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "15",
           "player": "Cuff, Mike",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "16",
@@ -94,7 +94,7 @@
           "player": "Thomas, Larry",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -162,14 +162,14 @@
           "player": "Tyrrell, Milton",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "3",
           "player": "Tyrrell, Milton",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "8",
@@ -190,7 +190,7 @@
           "player": "Shugart, Dave",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -244,21 +244,21 @@
           "player": "Cuff, Mike",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "7",
           "player": "Facello, Scott",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "8",
           "player": "Rapp, Joe",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "12",
@@ -272,7 +272,7 @@
           "player": "Cuff, Mike",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "16",
@@ -286,7 +286,7 @@
           "player": "Thomas, Larry",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -318,5 +318,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T21:50:11+00:00"
+  "fetched_at": "2026-08-08T22:23:40+00:00"
 }
