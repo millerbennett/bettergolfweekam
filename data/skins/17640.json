@@ -4,14 +4,22 @@
   "games": [
     {
       "title": "Super Skins(Birdie Or Better)",
-      "holes": [],
+      "holes": [
+        {
+          "hole": "1",
+          "player": "Silver, Josh",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
       "summary": {
         "Total Players": "30",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$300",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
+        "Total Skins": "1",
+        "Each Skin Value": "$300"
       }
     },
     {
@@ -34,5 +42,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-09T11:48:23+00:00"
+  "fetched_at": "2026-08-09T13:46:37+00:00"
 }
