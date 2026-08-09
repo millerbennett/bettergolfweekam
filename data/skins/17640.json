@@ -67,6 +67,13 @@
           "score": "4",
           "type": "Birdie",
           "paid_out": "No"
+        },
+        {
+          "hole": "16",
+          "player": "Rapp, Joe",
+          "score": "2",
+          "type": "Eagle",
+          "paid_out": "No"
         }
       ],
       "summary": {
@@ -74,8 +81,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$300",
-        "Total Skins": "4",
-        "Each Skin Value": "$75"
+        "Total Skins": "5",
+        "Each Skin Value": "$60"
       }
     },
     {
@@ -182,7 +189,7 @@
           "player": "Swiderski, Casey",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -224,6 +231,13 @@
           "score": "4",
           "type": "Birdie",
           "paid_out": "No"
+        },
+        {
+          "hole": "16",
+          "player": "Rapp, Joe",
+          "score": "2",
+          "type": "Eagle",
+          "paid_out": "No"
         }
       ],
       "summary": {
@@ -231,8 +245,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$60",
-        "Total Skins": "4",
-        "Each Skin Value": "$15"
+        "Total Skins": "5",
+        "Each Skin Value": "$12"
       }
     },
     {
@@ -255,5 +269,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-09T18:33:46+00:00"
+  "fetched_at": "2026-08-09T19:18:40+00:00"
 }
