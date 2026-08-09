@@ -17,7 +17,7 @@
           "player": "Devine, Ben",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "5",
@@ -45,14 +45,14 @@
           "player": "Miller, Bennett",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "11",
           "player": "Silver, Josh",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "12",
@@ -66,14 +66,14 @@
           "player": "Gafford, Hayden",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "16",
           "player": "Rapp, Joe",
           "score": "2",
           "type": "Eagle",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -100,14 +100,14 @@
           "player": "Gafford, Hayden",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "15",
           "player": "Gafford, Hayden",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -148,21 +148,21 @@
           "player": "Bunner, Gil",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "11",
           "player": "Silver, Josh",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "12",
           "player": "Bunner, Gil",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -209,35 +209,35 @@
           "player": "Cuff, Mike",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "3",
           "player": "Devine, Ben",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "5",
           "player": "Brown, Garrett",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "8",
           "player": "Cuff, Mike",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "16",
           "player": "Rapp, Joe",
           "score": "2",
           "type": "Eagle",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -269,5 +269,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-09T19:18:40+00:00"
+  "fetched_at": "2026-08-09T19:51:49+00:00"
 }
