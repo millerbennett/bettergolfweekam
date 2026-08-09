@@ -7,8 +7,36 @@
       "holes": [
         {
           "hole": "1",
-          "player": "Silver, Josh",
-          "score": "3",
+          "player": "",
+          "score": "",
+          "type": "3 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "5",
+          "player": "",
+          "score": "",
+          "type": "3 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "7",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "8",
+          "player": "Bunner, Gil",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "12",
+          "player": "Bunner, Gil",
+          "score": "4",
           "type": "Birdie",
           "paid_out": "No"
         }
@@ -18,8 +46,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$300",
-        "Total Skins": "1",
-        "Each Skin Value": "$300"
+        "Total Skins": "2",
+        "Each Skin Value": "$150"
       }
     },
     {
@@ -42,5 +70,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-09T13:46:37+00:00"
+  "fetched_at": "2026-08-09T15:51:14+00:00"
 }
