@@ -31,7 +31,7 @@
           "player": "Cuff, Mike",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "7",
@@ -318,5 +318,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-08T23:01:37+00:00"
+  "fetched_at": "2026-08-09T11:48:03+00:00"
 }
