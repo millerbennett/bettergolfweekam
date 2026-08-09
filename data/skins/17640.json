@@ -60,6 +60,13 @@
           "score": "",
           "type": "2 x Birdie",
           "paid_out": ""
+        },
+        {
+          "hole": "15",
+          "player": "Gafford, Hayden",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
         }
       ],
       "summary": {
@@ -67,18 +74,175 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$300",
+        "Total Skins": "4",
+        "Each Skin Value": "$75"
+      }
+    },
+    {
+      "title": "Skins: B Flight(Birdie Or Better)",
+      "holes": [
+        {
+          "hole": "5",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "12",
+          "player": "Gafford, Hayden",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "15",
+          "player": "Gafford, Hayden",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
+      "summary": {
+        "Total Players": "4",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$40",
+        "Total Skins": "2",
+        "Each Skin Value": "$20"
+      }
+    },
+    {
+      "title": "Skins: C Flight(Birdie Or Better)",
+      "holes": [
+        {
+          "hole": "1",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "5",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "7",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "8",
+          "player": "Bunner, Gil",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "11",
+          "player": "Silver, Josh",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "12",
+          "player": "Bunner, Gil",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
+      "summary": {
+        "Total Players": "14",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$140",
         "Total Skins": "3",
-        "Each Skin Value": "$100"
+        "Each Skin Value": "$46"
+      }
+    },
+    {
+      "title": "Skins D Flight(Birdie Or Better)",
+      "holes": [
+        {
+          "hole": "5",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "15",
+          "player": "Swiderski, Casey",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
+      "summary": {
+        "Total Players": "7",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$70",
+        "Total Skins": "1",
+        "Each Skin Value": "$70"
+      }
+    },
+    {
+      "title": "Skins: Champ - A (Birdie Or Better)",
+      "holes": [
+        {
+          "hole": "1",
+          "player": "Cuff, Mike",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "3",
+          "player": "Devine, Ben",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "5",
+          "player": "Brown, Garrett",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "8",
+          "player": "Cuff, Mike",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
+      "summary": {
+        "Total Players": "6",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$60",
+        "Total Skins": "4",
+        "Each Skin Value": "$15"
       }
     },
     {
       "title": "CTP: Champ - A - B - C - D",
       "holes": [],
       "summary": {
-        "Total Players": "33",
+        "Total Players": "31",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
-        "Total CTP Pot": "$330"
+        "Total CTP Pot": "$310"
       }
     }
   ],
@@ -91,5 +255,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-09T17:50:11+00:00"
+  "fetched_at": "2026-08-09T18:33:46+00:00"
 }
