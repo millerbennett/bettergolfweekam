@@ -17,9 +17,9 @@
     "A": "20",
     "B": "22",
     "C": "29",
-    "D": "28"
+    "D": "29"
   },
-  "total_waiting": 112,
+  "total_waiting": 113,
   "registered": [
     {
       "player_id": "44155",
@@ -1136,6 +1136,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "29063",
+      "name": "Hughes, Willie",
+      "flight": "D",
+      "tour": "Tidewater, VA",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "53294",
       "name": "Lott, Jeremy",
       "flight": "D",
@@ -1305,5 +1313,5 @@
     "start_type": "Shotgun",
     "is_major": true
   },
-  "fetched_at": "2026-08-07T00:18:22+00:00"
+  "fetched_at": "2026-08-10T09:53:53+00:00"
 }

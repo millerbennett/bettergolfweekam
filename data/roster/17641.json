@@ -16,10 +16,10 @@
     "Champ": "2",
     "A": "3",
     "B": "6",
-    "C": "4",
+    "C": "5",
     "D": "3"
   },
-  "total_waiting": 18,
+  "total_waiting": 19,
   "registered": [
     {
       "player_id": "18247",
@@ -176,6 +176,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "44256",
+      "name": "Silver, Josh",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "56591",
       "name": "Thompson, Zak",
       "flight": "C",
@@ -225,5 +233,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-08T15:25:20+00:00"
+  "fetched_at": "2026-08-10T09:54:13+00:00"
 }
