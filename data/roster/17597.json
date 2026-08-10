@@ -16,10 +16,10 @@
     "Champ": "2",
     "A": "1",
     "B": "5",
-    "C": "3",
+    "C": "4",
     "D": "3"
   },
-  "total_waiting": 14,
+  "total_waiting": 15,
   "registered": [
     {
       "player_id": "18247",
@@ -120,6 +120,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "3309",
+      "name": "Boyer, Stan",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "48932",
       "name": "Horn, John",
       "flight": "C",
@@ -177,5 +185,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-10T15:56:34+00:00"
+  "fetched_at": "2026-08-10T22:17:42+00:00"
 }

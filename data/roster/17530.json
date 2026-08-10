@@ -9,8 +9,8 @@
     "Champ": "5",
     "A": "12",
     "B": "9",
-    "C": "13",
-    "D": "8"
+    "C": "14",
+    "D": "7"
   },
   "waiting_by_flight": {
     "Champ": "12",
@@ -310,6 +310,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "40768",
+      "name": "Taylor, Nick",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "48076",
       "name": "Thompson, Jay",
       "flight": "C",
@@ -384,14 +392,6 @@
     {
       "player_id": "24248",
       "name": "Sawyer, Thompson",
-      "flight": "D",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "40768",
-      "name": "Taylor, Nick",
       "flight": "D",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -1217,5 +1217,5 @@
     "start_type": "Shotgun",
     "is_major": true
   },
-  "fetched_at": "2026-08-10T15:56:05+00:00"
+  "fetched_at": "2026-08-10T22:17:13+00:00"
 }
