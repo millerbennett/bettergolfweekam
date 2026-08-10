@@ -1,6 +1,6 @@
 {
   "tid": "17640",
-  "posted": false,
+  "posted": true,
   "columns": [
     "Position",
     "ID",
@@ -13,7 +13,429 @@
     "Eagles",
     "Event Index"
   ],
-  "flights": [],
+  "flights": [
+    {
+      "name": "Championship Flight (0-3.9 Handicap)",
+      "rows": [
+        {
+          "Position": "1",
+          "ID": "50569",
+          "Name": "Devine, Ben",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "81",
+          "Points": "900.00",
+          "Earnings": "175",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "5.8"
+        }
+      ]
+    },
+    {
+      "name": "\"A\" Flight (4.0-8.9 Handicap)",
+      "rows": [
+        {
+          "Position": "1",
+          "ID": "57627",
+          "Name": "Brown, Garrett",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "81",
+          "Points": "900.00",
+          "Earnings": "275",
+          "Birdies": "2",
+          "Eagles": "0",
+          "Event Index": "7.1"
+        },
+        {
+          "Position": "2",
+          "ID": "42200",
+          "Name": "Cuff, Mike",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "80",
+          "Points": "550.00",
+          "Earnings": "50",
+          "Birdies": "2",
+          "Eagles": "0",
+          "Event Index": "6.3"
+        },
+        {
+          "Position": "3",
+          "ID": "47443",
+          "Name": "Facello, Scott",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "85",
+          "Points": "450.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "10.4"
+        },
+        {
+          "Position": "4",
+          "ID": "57759",
+          "Name": "Thomas, Larry",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "87",
+          "Points": "340.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "12"
+        },
+        {
+          "Position": "4",
+          "ID": "33583",
+          "Name": "Rapp, Joe",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "91",
+          "Points": "340.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "1",
+          "Event Index": "15.3"
+        }
+      ]
+    },
+    {
+      "name": "\"B\" Flight (9.0-13.9 Handicap)",
+      "rows": [
+        {
+          "Position": "1",
+          "ID": "28567",
+          "Name": "Gafford, Hayden",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "80",
+          "Points": "900.00",
+          "Earnings": "275",
+          "Birdies": "3",
+          "Eagles": "0",
+          "Event Index": "6.3"
+        },
+        {
+          "Position": "2",
+          "ID": "51002",
+          "Name": "Miller, Bennett",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "91",
+          "Points": "550.00",
+          "Earnings": "50",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "15.3"
+        },
+        {
+          "Position": "3",
+          "ID": "30990",
+          "Name": "Upright, Don",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "91",
+          "Points": "450.00",
+          "Earnings": "0",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "15.3"
+        },
+        {
+          "Position": "4",
+          "ID": "33880",
+          "Name": "Cheeks, LC",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "94",
+          "Points": "350.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "17.8"
+        },
+        {
+          "Position": "5",
+          "ID": "36058",
+          "Name": "Okoba, Stephen",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "92",
+          "Points": "330.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "16.2"
+        }
+      ]
+    },
+    {
+      "name": "\"C\" Flight (14.0-18.9 Handicap)",
+      "rows": [
+        {
+          "Position": "1",
+          "ID": "34010",
+          "Name": "Tyrrell, Milton",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "89",
+          "Points": "900.00",
+          "Earnings": "275",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "14.8"
+        },
+        {
+          "Position": "2",
+          "ID": "44256",
+          "Name": "Silver, Josh",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "88",
+          "Points": "500.00",
+          "Earnings": "150",
+          "Birdies": "3",
+          "Eagles": "0",
+          "Event Index": "14"
+        },
+        {
+          "Position": "2",
+          "ID": "56591",
+          "Name": "Thompson, Zak",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "89",
+          "Points": "500.00",
+          "Earnings": "90",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "14.8"
+        },
+        {
+          "Position": "4",
+          "ID": "48076",
+          "Name": "Thompson, Jay",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "96",
+          "Points": "340.00",
+          "Earnings": "50",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "20.7"
+        },
+        {
+          "Position": "4",
+          "ID": "31967",
+          "Name": "Shugart, Dave",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "98",
+          "Points": "340.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "22.3"
+        },
+        {
+          "Position": "6",
+          "ID": "18247",
+          "Name": "Franklin, Cephas",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "95",
+          "Points": "290.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "19.8"
+        },
+        {
+          "Position": "6",
+          "ID": "34091",
+          "Name": "Sams, Darin",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "94",
+          "Points": "290.00",
+          "Earnings": "0",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "19"
+        },
+        {
+          "Position": "6",
+          "ID": "44153",
+          "Name": "Bunner, Gil",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "87",
+          "Points": "290.00",
+          "Earnings": "0",
+          "Birdies": "2",
+          "Eagles": "0",
+          "Event Index": "13.1"
+        },
+        {
+          "Position": "9",
+          "ID": "53865",
+          "Name": "Kelliher, John",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "97",
+          "Points": "250.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "21.5"
+        },
+        {
+          "Position": "10",
+          "ID": "43242",
+          "Name": "Hines, Dan",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "102",
+          "Points": "230.00",
+          "Earnings": "0",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "25.7"
+        },
+        {
+          "Position": "11",
+          "ID": "39286",
+          "Name": "Dixon, Alvin",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "94",
+          "Points": "190.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "19"
+        },
+        {
+          "Position": "11",
+          "ID": "51392",
+          "Name": "Devine, Ron",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "94",
+          "Points": "190.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "19"
+        },
+        {
+          "Position": "13",
+          "ID": "39448",
+          "Name": "Simmons, Titus",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "97",
+          "Points": "170.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "21.5"
+        },
+        {
+          "Position": "14",
+          "ID": "27933",
+          "Name": "Brown, Franklin",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "98",
+          "Points": "160.00",
+          "Earnings": "0",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "22.3"
+        },
+        {
+          "Position": "15",
+          "ID": "44771",
+          "Name": "Wright, Danny",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "102",
+          "Points": "150.00",
+          "Earnings": "0",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "25.7"
+        }
+      ]
+    },
+    {
+      "name": "\"D\" Flight (19.0 and Greater Handicap)",
+      "rows": [
+        {
+          "Position": "1",
+          "ID": "49406",
+          "Name": "Thomas, Carlos",
+          "Home Tour": "Tidewater, VA",
+          "Score": "92",
+          "Points": "0.00",
+          "Earnings": "275",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "18.5"
+        },
+        {
+          "Position": "2",
+          "ID": "40768",
+          "Name": "Taylor, Nick",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "87",
+          "Points": "550.00",
+          "Earnings": "75",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "14.2"
+        },
+        {
+          "Position": "3",
+          "ID": "49241",
+          "Name": "Hancock, Dawn",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "94",
+          "Points": "400.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "28.1"
+        },
+        {
+          "Position": "3",
+          "ID": "59398",
+          "Name": "Swiderski, Casey",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "98",
+          "Points": "400.00",
+          "Earnings": "0",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Event Index": "32"
+        },
+        {
+          "Position": "5",
+          "ID": "61575",
+          "Name": "Jones, Carlton",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "98",
+          "Points": "330.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "23.7"
+        },
+        {
+          "Position": "6",
+          "ID": "39276",
+          "Name": "Lewis, Jerald",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "99",
+          "Points": "310.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "24.6"
+        },
+        {
+          "Position": "7",
+          "ID": "62036",
+          "Name": "Benzing, Laurie",
+          "Home Tour": "Washington, DC Metro",
+          "Score": "104",
+          "Points": "290.00",
+          "Earnings": "0",
+          "Birdies": "0",
+          "Eagles": "0",
+          "Event Index": "37.8"
+        }
+      ]
+    }
+  ],
   "event": {
     "tid": "17640",
     "date": "2026-08-09",
@@ -23,5 +445,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-09T09:09:00+00:00"
+  "fetched_at": "2026-08-10T19:52:38+00:00"
 }
