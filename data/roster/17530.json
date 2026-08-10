@@ -13,13 +13,13 @@
     "D": "8"
   },
   "waiting_by_flight": {
-    "Champ": "13",
-    "A": "20",
+    "Champ": "12",
+    "A": "18",
     "B": "22",
     "C": "29",
-    "D": "29"
+    "D": "20"
   },
-  "total_waiting": 113,
+  "total_waiting": 101,
   "registered": [
     {
       "player_id": "44155",
@@ -27,7 +27,7 @@
       "flight": "Champ",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "50569",
@@ -51,7 +51,7 @@
       "flight": "Champ",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "60074",
@@ -83,7 +83,7 @@
       "flight": "A",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "34083",
@@ -91,7 +91,7 @@
       "flight": "A",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "26488",
@@ -99,7 +99,7 @@
       "flight": "A",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "56547",
@@ -115,7 +115,7 @@
       "flight": "A",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "32091",
@@ -123,7 +123,7 @@
       "flight": "A",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "56574",
@@ -155,7 +155,7 @@
       "flight": "A",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "34012",
@@ -379,7 +379,7 @@
       "flight": "D",
       "tour": "Tidewater, VA",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "24248",
@@ -402,22 +402,6 @@
     {
       "player_id": "15098",
       "name": "Clary, Adam",
-      "flight": "Champ",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "61591",
-      "name": "Dillard, Jacari",
-      "flight": "Champ",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "61591",
-      "name": "Dillard, Jacari",
       "flight": "Champ",
       "tour": "Richmond",
       "paid_member": "Yes",
@@ -472,6 +456,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "59874",
+      "name": "McDaniel, Chase",
+      "flight": "Champ",
+      "tour": "Eastern NC",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "62452",
       "name": "Medlin, Ryan",
       "flight": "Champ",
@@ -500,22 +492,6 @@
       "name": "Wiik, Alexander",
       "flight": "Champ",
       "tour": "Eastern NC",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "48564",
-      "name": "Alingig, Bords",
-      "flight": "A",
-      "tour": "Tidewater, VA",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "60544",
-      "name": "Beauchamp, Justin",
-      "flight": "A",
-      "tour": "Tidewater, VA",
       "paid_member": "Yes",
       "paid_tournament": "No"
     },
@@ -1176,78 +1152,6 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "56684",
-      "name": "Parr, Todd",
-      "flight": "D",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "56684",
-      "name": "Parr, Todd",
-      "flight": "D",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "56684",
-      "name": "Parr, Todd",
-      "flight": "D",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "56684",
-      "name": "Parr, Todd",
-      "flight": "D",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "56684",
-      "name": "Parr, Todd",
-      "flight": "D",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "56684",
-      "name": "Parr, Todd",
-      "flight": "D",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "56684",
-      "name": "Parr, Todd",
-      "flight": "D",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "56684",
-      "name": "Parr, Todd",
-      "flight": "D",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "56684",
-      "name": "Parr, Todd",
-      "flight": "D",
-      "tour": "Richmond",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "57125",
       "name": "Shoemaker, Tia",
       "flight": "D",
@@ -1313,5 +1217,5 @@
     "start_type": "Shotgun",
     "is_major": true
   },
-  "fetched_at": "2026-08-10T09:53:53+00:00"
+  "fetched_at": "2026-08-10T15:56:05+00:00"
 }

@@ -1,9 +1,9 @@
 {
   "tid": "17597",
   "available": true,
-  "total_slots": 64,
+  "total_slots": 44,
   "filled_slots": 4,
-  "open_slots": 60,
+  "open_slots": 40,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "0",
@@ -177,5 +177,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-05T10:57:51+00:00"
+  "fetched_at": "2026-08-10T15:56:34+00:00"
 }
