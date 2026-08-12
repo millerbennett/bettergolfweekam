@@ -210,24 +210,11 @@
       "registration_open": false
     },
     {
-      "tid": "17530",
+      "tid": "17531",
       "date": "2026-08-15",
       "name": "The Players Cup (DC Metro, Eastern, Richmond, Tidewater)",
       "course": "Occano Golf Course",
-      "start_time": "9:00",
-      "start_type": "Shotgun",
-      "cost": "$175",
-      "is_major": true,
-      "course_url": "http://www.occano.com/golf",
-      "register_url": "https://www.amateurgolftour.net/register/tournamentReg.aspx?tournament=17530",
-      "registration_open": true
-    },
-    {
-      "tid": "17531",
-      "date": "2026-08-16",
-      "name": "The Players Cup (DC Metro, Eastern, Richmond, Tidewater)",
-      "course": "Occano Golf Course",
-      "start_time": "9:00",
+      "start_time": "8:30",
       "start_type": "Shotgun",
       "cost": "$",
       "is_major": true,
@@ -275,5 +262,5 @@
       "registration_open": false
     }
   ],
-  "fetched_at": "2026-08-11T21:26:55+00:00"
+  "fetched_at": "2026-08-12T22:22:06+00:00"
 }
