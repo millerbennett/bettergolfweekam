@@ -217,7 +217,7 @@
       "start_time": "8:30",
       "start_type": "Shotgun",
       "cost": "$",
-      "is_major": true,
+      "is_major": false,
       "course_url": "http://www.occano.com/golf",
       "register_url": null,
       "registration_open": false
@@ -262,5 +262,5 @@
       "registration_open": false
     }
   ],
-  "fetched_at": "2026-08-12T22:22:06+00:00"
+  "fetched_at": "2026-08-14T23:41:30+00:00"
 }
