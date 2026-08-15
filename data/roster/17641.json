@@ -2,24 +2,24 @@
   "tid": "17641",
   "available": true,
   "total_slots": 48,
-  "filled_slots": 15,
-  "open_slots": 33,
+  "filled_slots": 23,
+  "open_slots": 25,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "3",
-    "A": "3",
-    "B": "0",
-    "C": "5",
-    "D": "4"
+    "A": "6",
+    "B": "3",
+    "C": "6",
+    "D": "5"
   },
   "waiting_by_flight": {
     "Champ": "1",
-    "A": "4",
-    "B": "9",
+    "A": "1",
+    "B": "6",
     "C": "3",
     "D": "3"
   },
-  "total_waiting": 20,
+  "total_waiting": 14,
   "registered": [
     {
       "player_id": "64430",
@@ -43,6 +43,22 @@
       "flight": "Champ",
       "tour": "Washington, DC Metro",
       "paid_member": "No",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "57627",
+      "name": "Brown, Garrett",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "24327",
+      "name": "Bryant, Jimmy",
+      "flight": "A",
+      "tour": "Dallas- Fort Worth, TX",
+      "paid_member": "Yes",
       "paid_tournament": "Yes"
     },
     {
@@ -70,6 +86,38 @@
       "paid_tournament": "Yes"
     },
     {
+      "player_id": "56574",
+      "name": "Patterson, Bryan",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "48927",
+      "name": "Fasaye, Manny",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "19369",
+      "name": "Rashid, Rafiq",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "15859",
+      "name": "Young, George",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
       "player_id": "44153",
       "name": "Bunner, Gil",
       "flight": "C",
@@ -80,6 +128,14 @@
     {
       "player_id": "18247",
       "name": "Franklin, Cephas",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "55920",
+      "name": "Giles, Alex",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -105,6 +161,14 @@
       "player_id": "48076",
       "name": "Thompson, Jay",
       "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "34277",
+      "name": "Branch, Garry",
+      "flight": "D",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "Yes"
@@ -152,30 +216,6 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "57627",
-      "name": "Brown, Garrett",
-      "flight": "A",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "24327",
-      "name": "Bryant, Jimmy",
-      "flight": "A",
-      "tour": "Dallas- Fort Worth, TX",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "56574",
-      "name": "Patterson, Bryan",
-      "flight": "A",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "57759",
       "name": "Thomas, Larry",
       "flight": "A",
@@ -194,14 +234,6 @@
     {
       "player_id": "61979",
       "name": "Doster, Malcolm",
-      "flight": "B",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "48927",
-      "name": "Fasaye, Manny",
       "flight": "B",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -232,24 +264,8 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "19369",
-      "name": "Rashid, Rafiq",
-      "flight": "B",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "49827",
       "name": "Shapiro, Max",
-      "flight": "B",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "15859",
-      "name": "Young, George",
       "flight": "B",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -313,5 +329,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-15T15:16:06+00:00"
+  "fetched_at": "2026-08-15T21:16:25+00:00"
 }
