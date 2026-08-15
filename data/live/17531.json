@@ -1,0 +1,22 @@
+{
+  "available": true,
+  "live": false,
+  "status": "not_started",
+  "players": 0,
+  "still_out": 0,
+  "finished": 0,
+  "tournament": "The Players Cup (DC Metro, Eastern, Richmond, Tidewater) Occano Golf Course",
+  "date": "08/15/2026",
+  "flights": [],
+  "tid": "17531",
+  "event": {
+    "tid": "17531",
+    "date": "2026-08-15",
+    "name": "The Players Cup (DC Metro, Eastern, Richmond, Tidewater)",
+    "course": "Occano Golf Course",
+    "start_time": "8:30",
+    "start_type": "Shotgun",
+    "is_major": false
+  },
+  "fetched_at": "2026-08-15T10:17:44+00:00"
+}
