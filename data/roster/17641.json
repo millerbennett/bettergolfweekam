@@ -2,25 +2,41 @@
   "tid": "17641",
   "available": true,
   "total_slots": 48,
-  "filled_slots": 11,
-  "open_slots": 37,
+  "filled_slots": 15,
+  "open_slots": 33,
   "sold_out": false,
   "filled_by_flight": {
-    "Champ": "1",
-    "A": "2",
+    "Champ": "3",
+    "A": "3",
     "B": "0",
     "C": "5",
-    "D": "3"
-  },
-  "waiting_by_flight": {
-    "Champ": "2",
-    "A": "4",
-    "B": "8",
-    "C": "3",
     "D": "4"
   },
-  "total_waiting": 21,
+  "waiting_by_flight": {
+    "Champ": "1",
+    "A": "4",
+    "B": "9",
+    "C": "3",
+    "D": "3"
+  },
+  "total_waiting": 20,
   "registered": [
+    {
+      "player_id": "64430",
+      "name": "Bossom, Landon",
+      "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "50569",
+      "name": "Devine, Ben",
+      "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
     {
       "player_id": "52356",
       "name": "Schembri, Adam",
@@ -40,6 +56,14 @@
     {
       "player_id": "56547",
       "name": "Jones, Terran",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "36380",
+      "name": "Ogletree, Steve",
       "flight": "A",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -102,6 +126,14 @@
       "paid_tournament": "Yes"
     },
     {
+      "player_id": "21524",
+      "name": "Mutzabaugh, Ken",
+      "flight": "D",
+      "tour": "Atlanta, GA",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
       "player_id": "24248",
       "name": "Sawyer, Thompson",
       "flight": "D",
@@ -112,14 +144,6 @@
   ],
   "waiting": [
     {
-      "player_id": "50569",
-      "name": "Devine, Ben",
-      "flight": "Champ",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "61569",
       "name": "Kelley, Josh",
       "flight": "Champ",
@@ -128,18 +152,18 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "24327",
-      "name": "Bryant, Jimmy",
+      "player_id": "57627",
+      "name": "Brown, Garrett",
       "flight": "A",
-      "tour": "Dallas- Fort Worth, TX",
+      "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "No"
     },
     {
-      "player_id": "36380",
-      "name": "Ogletree, Steve",
+      "player_id": "24327",
+      "name": "Bryant, Jimmy",
       "flight": "A",
-      "tour": "Washington, DC Metro",
+      "tour": "Dallas- Fort Worth, TX",
       "paid_member": "Yes",
       "paid_tournament": "No"
     },
@@ -170,6 +194,14 @@
     {
       "player_id": "61979",
       "name": "Doster, Malcolm",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "48927",
+      "name": "Fasaye, Manny",
       "flight": "B",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -256,14 +288,6 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "21524",
-      "name": "Mutzabaugh, Ken",
-      "flight": "D",
-      "tour": "Atlanta, GA",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "26388",
       "name": "Phillips, David",
       "flight": "D",
@@ -289,5 +313,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-15T08:50:55+00:00"
+  "fetched_at": "2026-08-15T15:16:06+00:00"
 }
