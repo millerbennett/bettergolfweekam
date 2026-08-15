@@ -14,12 +14,12 @@
   },
   "waiting_by_flight": {
     "Champ": "2",
-    "A": "3",
+    "A": "4",
     "B": "8",
     "C": "3",
     "D": "4"
   },
-  "total_waiting": 20,
+  "total_waiting": 21,
   "registered": [
     {
       "player_id": "52356",
@@ -132,6 +132,14 @@
       "name": "Bryant, Jimmy",
       "flight": "A",
       "tour": "Dallas- Fort Worth, TX",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "36380",
+      "name": "Ogletree, Steve",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "No"
     },
@@ -281,5 +289,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-13T23:21:46+00:00"
+  "fetched_at": "2026-08-15T08:50:55+00:00"
 }
