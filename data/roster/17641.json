@@ -2,24 +2,24 @@
   "tid": "17641",
   "available": true,
   "total_slots": 40,
-  "filled_slots": 37,
-  "open_slots": 3,
+  "filled_slots": 38,
+  "open_slots": 2,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "4",
     "A": "7",
-    "B": "8",
+    "B": "9",
     "C": "11",
     "D": "7"
   },
   "waiting_by_flight": {
     "Champ": "0",
     "A": "0",
-    "B": "1",
+    "B": "0",
     "C": "0",
     "D": "1"
   },
-  "total_waiting": 2,
+  "total_waiting": 1,
   "registered": [
     {
       "player_id": "64430",
@@ -136,6 +136,14 @@
     {
       "player_id": "48927",
       "name": "Fasaye, Manny",
+      "flight": "B",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "55665",
+      "name": "Hawkins, Kevin",
       "flight": "B",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -320,14 +328,6 @@
   ],
   "waiting": [
     {
-      "player_id": "55665",
-      "name": "Hawkins, Kevin",
-      "flight": "B",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "61575",
       "name": "Jones, Carlton",
       "flight": "D",
@@ -345,5 +345,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-17T15:21:58+00:00"
+  "fetched_at": "2026-08-17T21:30:33+00:00"
 }
