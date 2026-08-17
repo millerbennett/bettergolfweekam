@@ -13,13 +13,13 @@
     "D": "3"
   },
   "waiting_by_flight": {
-    "Champ": "2",
+    "Champ": "3",
     "A": "2",
     "B": "5",
     "C": "5",
     "D": "3"
   },
-  "total_waiting": 17,
+  "total_waiting": 18,
   "registered": [
     {
       "player_id": "18247",
@@ -69,6 +69,14 @@
       "flight": "Champ",
       "tour": "Atlanta, GA",
       "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "64439",
+      "name": "LoBianco, Joey",
+      "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "No",
       "paid_tournament": "No"
     },
     {
@@ -201,5 +209,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-11T23:21:51+00:00"
+  "fetched_at": "2026-08-17T09:05:42+00:00"
 }
