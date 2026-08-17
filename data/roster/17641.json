@@ -2,14 +2,14 @@
   "tid": "17641",
   "available": true,
   "total_slots": 40,
-  "filled_slots": 35,
-  "open_slots": 5,
+  "filled_slots": 37,
+  "open_slots": 3,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "4",
-    "A": "6",
+    "A": "7",
     "B": "8",
-    "C": "10",
+    "C": "11",
     "D": "7"
   },
   "waiting_by_flight": {
@@ -42,7 +42,7 @@
       "name": "LoBianco, Joey",
       "flight": "Champ",
       "tour": "Washington, DC Metro",
-      "paid_member": "No",
+      "paid_member": "Yes",
       "paid_tournament": "Yes"
     },
     {
@@ -66,6 +66,14 @@
       "name": "Bryant, Jimmy",
       "flight": "A",
       "tour": "Dallas- Fort Worth, TX",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "30678",
+      "name": "Carreon, Fredy",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "Yes"
     },
@@ -206,6 +214,14 @@
       "paid_tournament": "Yes"
     },
     {
+      "player_id": "23550",
+      "name": "Hall, Don",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
       "player_id": "48932",
       "name": "Horn, John",
       "flight": "C",
@@ -329,5 +345,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-17T09:05:32+00:00"
+  "fetched_at": "2026-08-17T15:21:58+00:00"
 }
