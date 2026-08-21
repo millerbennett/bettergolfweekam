@@ -193,15 +193,6 @@
       "tee_time": "11:42 AM"
     },
     {
-      "player_id": "19369",
-      "name": "Rashid, Rafiq",
-      "tour": "Washington, DC Metro",
-      "flight": "B",
-      "starting_hole": "1",
-      "group": "Group 6",
-      "tee_time": "11:42 AM"
-    },
-    {
       "player_id": "51002",
       "name": "Miller, Bennett",
       "tour": "Washington, DC Metro",
@@ -577,15 +568,6 @@
           "tee_time": "11:42 AM"
         },
         {
-          "player_id": "19369",
-          "name": "Rashid, Rafiq",
-          "tour": "Washington, DC Metro",
-          "flight": "B",
-          "starting_hole": "1",
-          "group": "Group 6",
-          "tee_time": "11:42 AM"
-        },
-        {
           "player_id": "51002",
           "name": "Miller, Bennett",
           "tour": "Washington, DC Metro",
@@ -769,5 +751,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-19T15:30:01+00:00"
+  "fetched_at": "2026-08-21T16:02:10+00:00"
 }
