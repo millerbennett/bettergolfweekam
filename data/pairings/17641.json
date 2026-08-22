@@ -130,15 +130,6 @@
       "tee_time": "11:26 AM"
     },
     {
-      "player_id": "44153",
-      "name": "Bunner, Gil",
-      "tour": "Washington, DC Metro",
-      "flight": "C",
-      "starting_hole": "1",
-      "group": "Group 4",
-      "tee_time": "11:26 AM"
-    },
-    {
       "player_id": "48076",
       "name": "Thompson, Jay",
       "tour": "Washington, DC Metro",
@@ -491,15 +482,6 @@
           "tee_time": "11:26 AM"
         },
         {
-          "player_id": "44153",
-          "name": "Bunner, Gil",
-          "tour": "Washington, DC Metro",
-          "flight": "C",
-          "starting_hole": "1",
-          "group": "Group 4",
-          "tee_time": "11:26 AM"
-        },
-        {
           "player_id": "48076",
           "name": "Thompson, Jay",
           "tour": "Washington, DC Metro",
@@ -751,5 +733,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-21T16:02:10+00:00"
+  "fetched_at": "2026-08-22T16:17:55+00:00"
 }
