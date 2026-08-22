@@ -63,10 +63,10 @@
         },
         {
           "hole": "15",
-          "player": "Devine, Ron",
-          "score": "3",
-          "type": "Birdie",
-          "paid_out": "No"
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
         },
         {
           "hole": "16",
@@ -88,8 +88,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$310",
-        "Total Skins": "7",
-        "Each Skin Value": "$44"
+        "Total Skins": "6",
+        "Each Skin Value": "$51"
       }
     },
     {
@@ -155,6 +155,13 @@
           "score": "2",
           "type": "Birdie",
           "paid_out": "No"
+        },
+        {
+          "hole": "15",
+          "player": "Coleman, LaMont",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
         }
       ],
       "summary": {
@@ -162,8 +169,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$60",
-        "Total Skins": "1",
-        "Each Skin Value": "$60"
+        "Total Skins": "2",
+        "Each Skin Value": "$30"
       }
     },
     {
@@ -174,21 +181,21 @@
           "player": "Ogletree, Steve",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "6",
           "player": "Crowley, Craig",
           "score": "3",
           "type": "Eagle",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "9",
           "player": "Devine, Ben",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "10",
@@ -248,5 +255,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T20:17:00+00:00"
+  "fetched_at": "2026-08-22T20:43:21+00:00"
 }
