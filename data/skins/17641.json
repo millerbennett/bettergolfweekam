@@ -6,10 +6,10 @@
       "title": "Super Skins(Birdie Or Better)",
       "holes": [],
       "summary": {
-        "Total Players": "11",
+        "Total Players": "15",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
-        "Total Skins Pot": "$110",
+        "Total Skins Pot": "$150",
         "Total Skins": "0",
         "Each Skin Value": "$∞"
       }
@@ -42,18 +42,6 @@
       "title": "Skins D Flight(Birdie Or Better)",
       "holes": [],
       "summary": {
-        "Total Players": "1",
-        "Game Buy In": "$10",
-        "Rollover/Additional": "$0",
-        "Total Skins Pot": "$10",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
-      }
-    },
-    {
-      "title": "Skins: Champ - A (Birdie Or Better)",
-      "holes": [],
-      "summary": {
         "Total Players": "3",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
@@ -63,13 +51,25 @@
       }
     },
     {
+      "title": "Skins: Champ - A (Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "5",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$50",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
       "title": "CTP: Champ - A - B - C - D",
       "holes": [],
       "summary": {
-        "Total Players": "12",
+        "Total Players": "17",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
-        "Total CTP Pot": "$120"
+        "Total CTP Pot": "$170"
       }
     }
   ],
@@ -82,5 +82,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T10:18:02+00:00"
+  "fetched_at": "2026-08-22T14:16:28+00:00"
 }
