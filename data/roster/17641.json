@@ -50,7 +50,7 @@
       "name": "Schembri, Adam",
       "flight": "Champ",
       "tour": "Washington, DC Metro",
-      "paid_member": "No",
+      "paid_member": "Yes",
       "paid_tournament": "Yes"
     },
     {
@@ -320,5 +320,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T08:53:17+00:00"
+  "fetched_at": "2026-08-22T15:15:35+00:00"
 }
