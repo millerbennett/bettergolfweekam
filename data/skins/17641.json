@@ -35,10 +35,10 @@
         },
         {
           "hole": "10",
-          "player": "Devine, Ben",
-          "score": "4",
-          "type": "Birdie",
-          "paid_out": "No"
+          "player": "",
+          "score": "",
+          "type": "3 x Birdie",
+          "paid_out": ""
         }
       ],
       "summary": {
@@ -46,8 +46,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$310",
-        "Total Skins": "4",
-        "Each Skin Value": "$77"
+        "Total Skins": "3",
+        "Each Skin Value": "$103"
       }
     },
     {
@@ -120,10 +120,10 @@
         },
         {
           "hole": "10",
-          "player": "Devine, Ben",
-          "score": "4",
-          "type": "Birdie",
-          "paid_out": "No"
+          "player": "",
+          "score": "",
+          "type": "3 x Birdie",
+          "paid_out": ""
         }
       ],
       "summary": {
@@ -131,8 +131,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$110",
-        "Total Skins": "4",
-        "Each Skin Value": "$27"
+        "Total Skins": "3",
+        "Each Skin Value": "$36"
       }
     },
     {
@@ -155,5 +155,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T17:40:02+00:00"
+  "fetched_at": "2026-08-22T17:57:22+00:00"
 }
