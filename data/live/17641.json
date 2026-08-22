@@ -3,8 +3,8 @@
   "live": true,
   "status": "in_progress",
   "players": 36,
-  "still_out": 25,
-  "finished": 11,
+  "still_out": 21,
+  "finished": 15,
   "tournament": "DC Metro Players Championship Musket Ridge Golf Club",
   "date": "08/22/2026",
   "flights": [
@@ -57,31 +57,23 @@
           "to_par": "+ 5"
         },
         {
-          "position": "2",
-          "name": "Crowley, Craig",
-          "display": "Crowley, Craig - Washington, DC Metro - A",
-          "total": "73",
-          "thru": "16",
-          "to_par": "+ 8"
-        },
-        {
-          "position": "3",
+          "position": "T2",
           "name": "Brown, Garrett",
           "display": "Brown, Garrett - Washington, DC Metro - A",
-          "total": "75",
-          "thru": "16",
+          "total": "82",
+          "thru": "18",
           "to_par": "+ 10"
         },
         {
-          "position": "4",
-          "name": "Carreon, Fredy",
-          "display": "Carreon, Fredy - Washington, DC Metro - A",
-          "total": "76",
-          "thru": "16",
-          "to_par": "+ 11"
+          "position": "T2",
+          "name": "Crowley, Craig",
+          "display": "Crowley, Craig - Washington, DC Metro - A",
+          "total": "82",
+          "thru": "18",
+          "to_par": "+ 10"
         },
         {
-          "position": "T5",
+          "position": "T4",
           "name": "Patterson, Bryan",
           "display": "Patterson, Bryan - Washington, DC Metro - A",
           "total": "85",
@@ -89,9 +81,17 @@
           "to_par": "+ 13"
         },
         {
-          "position": "T5",
+          "position": "T4",
           "name": "Jones, Terran",
           "display": "Jones, Terran - Washington, DC Metro - A",
+          "total": "85",
+          "thru": "18",
+          "to_par": "+ 13"
+        },
+        {
+          "position": "T4",
+          "name": "Carreon, Fredy",
+          "display": "Carreon, Fredy - Washington, DC Metro - A",
           "total": "85",
           "thru": "18",
           "to_par": "+ 13"
@@ -113,65 +113,65 @@
           "position": "1",
           "name": "Bryars, Kevin",
           "display": "Bryars, Kevin - Tidewater, VA - B",
-          "total": "73",
-          "thru": "16",
+          "total": "80",
+          "thru": "18",
           "to_par": "+ 8"
         },
         {
           "position": "2",
           "name": "Doster, Malcolm",
           "display": "Doster, Malcolm - Washington, DC Metro - B",
-          "total": "71",
-          "thru": "15",
+          "total": "75",
+          "thru": "16",
           "to_par": "+ 10"
         },
         {
           "position": "3",
           "name": "Miller, Bennett",
           "display": "Miller, Bennett - Washington, DC Metro - B",
-          "total": "68",
-          "thru": "14",
+          "total": "72",
+          "thru": "15",
           "to_par": "+ 11"
         },
         {
           "position": "4",
           "name": "Okoba, Stephen",
           "display": "Okoba, Stephen - Washington, DC Metro - B",
-          "total": "73",
-          "thru": "15",
-          "to_par": "+ 12"
+          "total": "78",
+          "thru": "16",
+          "to_par": "+ 13"
         },
         {
-          "position": "5",
+          "position": "T5",
           "name": "Young, George",
           "display": "Young, George - Washington, DC Metro - B",
-          "total": "71",
-          "thru": "14",
-          "to_par": "+ 14"
-        },
-        {
-          "position": "6",
-          "name": "Cheeks, LC",
-          "display": "Cheeks, LC - Washington, DC Metro - B",
           "total": "76",
           "thru": "15",
+          "to_par": "+ 15"
+        },
+        {
+          "position": "T5",
+          "name": "Cheeks, LC",
+          "display": "Cheeks, LC - Washington, DC Metro - B",
+          "total": "80",
+          "thru": "16",
           "to_par": "+ 15"
         },
         {
           "position": "7",
           "name": "Hawkins, Kevin",
           "display": "Hawkins, Kevin - Washington, DC Metro - B",
-          "total": "77",
-          "thru": "15",
+          "total": "81",
+          "thru": "16",
           "to_par": "+ 16"
         },
         {
           "position": "8",
           "name": "Fasaye, Manny",
           "display": "Fasaye, Manny - Washington, DC Metro - B",
-          "total": "75",
-          "thru": "14",
-          "to_par": "+ 18"
+          "total": "80",
+          "thru": "15",
+          "to_par": "+ 19"
         }
       ]
     },
@@ -182,52 +182,52 @@
           "position": "1",
           "name": "Giles, Alex",
           "display": "Giles, Alex - Washington, DC Metro - C",
-          "total": "61",
-          "thru": "13",
-          "to_par": "+ 8"
+          "total": "70",
+          "thru": "15",
+          "to_par": "+ 9"
         },
         {
           "position": "2",
           "name": "Tyrrell, Milton",
           "display": "Tyrrell, Milton - Washington, DC Metro - C",
-          "total": "64",
-          "thru": "13",
-          "to_par": "+ 11"
+          "total": "74",
+          "thru": "15",
+          "to_par": "+ 13"
         },
         {
           "position": "T3",
-          "name": "Silver, Josh",
-          "display": "Silver, Josh - Washington, DC Metro - C",
-          "total": "68",
-          "thru": "13",
-          "to_par": "+ 15"
+          "name": "Hall, Don",
+          "display": "Hall, Don - Washington, DC Metro - C",
+          "total": "79",
+          "thru": "15",
+          "to_par": "+ 18"
         },
         {
           "position": "T3",
           "name": "Brown, Franklin",
           "display": "Brown, Franklin - Washington, DC Metro - C",
-          "total": "68",
-          "thru": "13",
-          "to_par": "+ 15"
-        },
-        {
-          "position": "T5",
-          "name": "Hall, Don",
-          "display": "Hall, Don - Washington, DC Metro - C",
-          "total": "71",
-          "thru": "13",
+          "total": "75",
+          "thru": "14",
           "to_par": "+ 18"
         },
         {
           "position": "T5",
           "name": "Rowe, Denise",
           "display": "Rowe, Denise - Washington, DC Metro - C",
-          "total": "71",
-          "thru": "13",
-          "to_par": "+ 18"
+          "total": "76",
+          "thru": "14",
+          "to_par": "+ 19"
         },
         {
-          "position": "7",
+          "position": "T5",
+          "name": "Silver, Josh",
+          "display": "Silver, Josh - Washington, DC Metro - C",
+          "total": "80",
+          "thru": "15",
+          "to_par": "+ 19"
+        },
+        {
+          "position": "T5",
           "name": "Franklin, Cephas",
           "display": "Franklin, Cephas - Washington, DC Metro - C",
           "total": "91",
@@ -238,8 +238,8 @@
           "position": "8",
           "name": "Devine, Ron",
           "display": "Devine, Ron - Washington, DC Metro - C",
-          "total": "73",
-          "thru": "13",
+          "total": "77",
+          "thru": "14",
           "to_par": "+ 20"
         },
         {
@@ -267,57 +267,57 @@
           "position": "1",
           "name": "Coleman, LaMont",
           "display": "Coleman, LaMont - Washington, DC Metro - D",
-          "total": "65",
-          "thru": "12",
-          "to_par": "+ 15"
-        },
-        {
-          "position": "2",
-          "name": "Spittle, Will",
-          "display": "Spittle, Will - Tidewater, VA - D",
-          "total": "66",
-          "thru": "12",
+          "total": "69",
+          "thru": "13",
           "to_par": "+ 16"
         },
         {
-          "position": "3",
+          "position": "T2",
           "name": "O'Neill, Jim",
           "display": "O'Neill, Jim - Tidewater, VA - D",
-          "total": "68",
-          "thru": "12",
-          "to_par": "+ 18"
+          "total": "76",
+          "thru": "14",
+          "to_par": "+ 19"
         },
         {
-          "position": "T4",
-          "name": "Mutzabaugh, Ken",
-          "display": "Mutzabaugh, Ken - Atlanta, GA - D",
-          "total": "71",
-          "thru": "12",
-          "to_par": "+ 21"
+          "position": "T2",
+          "name": "Spittle, Will",
+          "display": "Spittle, Will - Tidewater, VA - D",
+          "total": "76",
+          "thru": "14",
+          "to_par": "+ 19"
         },
         {
-          "position": "T4",
+          "position": "4",
+          "name": "Lewis, Lenny",
+          "display": "Lewis, Lenny - Washington, DC Metro - D",
+          "total": "75",
+          "thru": "13",
+          "to_par": "+ 22"
+        },
+        {
+          "position": "5",
           "name": "Branch, Garry",
           "display": "Branch, Garry - Washington, DC Metro - D",
-          "total": "71",
-          "thru": "12",
-          "to_par": "+ 21"
+          "total": "76",
+          "thru": "13",
+          "to_par": "+ 23"
         },
         {
           "position": "6",
-          "name": "Lewis, Lenny",
-          "display": "Lewis, Lenny - Washington, DC Metro - D",
-          "total": "72",
-          "thru": "12",
-          "to_par": "+ 22"
+          "name": "Mutzabaugh, Ken",
+          "display": "Mutzabaugh, Ken - Atlanta, GA - D",
+          "total": "81",
+          "thru": "14",
+          "to_par": "+ 24"
         },
         {
           "position": "7",
           "name": "Hancock, Dawn",
           "display": "Hancock, Dawn - Washington, DC Metro - D",
-          "total": "76",
-          "thru": "12",
-          "to_par": "+ 26"
+          "total": "81",
+          "thru": "13",
+          "to_par": "+ 28"
         }
       ]
     }
@@ -332,5 +332,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T19:54:57+00:00"
+  "fetched_at": "2026-08-22T20:16:50+00:00"
 }
