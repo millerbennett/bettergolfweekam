@@ -3,7 +3,7 @@
   "live": true,
   "status": "in_progress",
   "players": 36,
-  "still_out": 0,
+  "still_out": 11,
   "finished": 0,
   "tournament": "DC Metro Players Championship Musket Ridge Golf Club",
   "date": "08/22/2026",
@@ -15,33 +15,33 @@
           "position": "1",
           "name": "Devine, Ben",
           "display": "Devine, Ben - Washington, DC Metro - Champ",
-          "total": "0",
-          "thru": "0",
+          "total": "7",
+          "thru": "2",
           "to_par": "Even"
         },
         {
-          "position": "T1",
+          "position": "2",
           "name": "Schembri, Adam",
           "display": "Schembri, Adam - Washington, DC Metro - Champ",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
+          "total": "8",
+          "thru": "2",
+          "to_par": "+ 1"
         },
         {
-          "position": "T1",
+          "position": "T3",
           "name": "Bossom, Landon",
           "display": "Bossom, Landon - Washington, DC Metro - Champ",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
+          "total": "9",
+          "thru": "2",
+          "to_par": "+ 2"
         },
         {
-          "position": "T1",
+          "position": "T3",
           "name": "LoBianco, Joey",
           "display": "LoBianco, Joey - Washington, DC Metro - Champ",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
+          "total": "9",
+          "thru": "2",
+          "to_par": "+ 2"
         }
       ]
     },
@@ -50,32 +50,8 @@
       "rows": [
         {
           "position": "1",
-          "name": "Jones, Terran",
-          "display": "Jones, Terran - Washington, DC Metro - A",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
-        },
-        {
-          "position": "T1",
-          "name": "Patterson, Bryan",
-          "display": "Patterson, Bryan - Washington, DC Metro - A",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
-        },
-        {
-          "position": "T1",
           "name": "Brown, Garrett",
           "display": "Brown, Garrett - Washington, DC Metro - A",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
-        },
-        {
-          "position": "T1",
-          "name": "Bryant, Jimmy",
-          "display": "Bryant, Jimmy - Dallas- Fort Worth, TX - A",
           "total": "0",
           "thru": "0",
           "to_par": "Even"
@@ -90,19 +66,43 @@
         },
         {
           "position": "T1",
-          "name": "Ogletree, Steve",
-          "display": "Ogletree, Steve - Washington, DC Metro - A",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
-        },
-        {
-          "position": "T1",
           "name": "Crowley, Craig",
           "display": "Crowley, Craig - Washington, DC Metro - A",
           "total": "0",
           "thru": "0",
           "to_par": "Even"
+        },
+        {
+          "position": "4",
+          "name": "Ogletree, Steve",
+          "display": "Ogletree, Steve - Washington, DC Metro - A",
+          "total": "5",
+          "thru": "1",
+          "to_par": "+ 1"
+        },
+        {
+          "position": "5",
+          "name": "Patterson, Bryan",
+          "display": "Patterson, Bryan - Washington, DC Metro - A",
+          "total": "6",
+          "thru": "1",
+          "to_par": "+ 2"
+        },
+        {
+          "position": "T6",
+          "name": "Jones, Terran",
+          "display": "Jones, Terran - Washington, DC Metro - A",
+          "total": "7",
+          "thru": "1",
+          "to_par": "+ 3"
+        },
+        {
+          "position": "T6",
+          "name": "Bryant, Jimmy",
+          "display": "Bryant, Jimmy - Dallas- Fort Worth, TX - A",
+          "total": "7",
+          "thru": "1",
+          "to_par": "+ 3"
         }
       ]
     },
@@ -111,8 +111,8 @@
       "rows": [
         {
           "position": "1",
-          "name": "Okoba, Stephen",
-          "display": "Okoba, Stephen - Washington, DC Metro - B",
+          "name": "Young, George",
+          "display": "Young, George - Washington, DC Metro - B",
           "total": "0",
           "thru": "0",
           "to_par": "Even"
@@ -127,8 +127,8 @@
         },
         {
           "position": "T1",
-          "name": "Young, George",
-          "display": "Young, George - Washington, DC Metro - B",
+          "name": "Okoba, Stephen",
+          "display": "Okoba, Stephen - Washington, DC Metro - B",
           "total": "0",
           "thru": "0",
           "to_par": "Even"
@@ -180,22 +180,6 @@
       "rows": [
         {
           "position": "1",
-          "name": "Horn, John",
-          "display": "Horn, John - Washington, DC Metro - C",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
-        },
-        {
-          "position": "T1",
-          "name": "Thompson, Jay",
-          "display": "Thompson, Jay - Washington, DC Metro - C",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
-        },
-        {
-          "position": "T1",
           "name": "Devine, Ron",
           "display": "Devine, Ron - Washington, DC Metro - C",
           "total": "0",
@@ -220,16 +204,16 @@
         },
         {
           "position": "T1",
-          "name": "Franklin, Cephas",
-          "display": "Franklin, Cephas - Washington, DC Metro - C",
+          "name": "Hall, Don",
+          "display": "Hall, Don - Washington, DC Metro - C",
           "total": "0",
           "thru": "0",
           "to_par": "Even"
         },
         {
           "position": "T1",
-          "name": "Brown, Franklin",
-          "display": "Brown, Franklin - Washington, DC Metro - C",
+          "name": "Silver, Josh",
+          "display": "Silver, Josh - Washington, DC Metro - C",
           "total": "0",
           "thru": "0",
           "to_par": "Even"
@@ -244,19 +228,35 @@
         },
         {
           "position": "T1",
-          "name": "Hall, Don",
-          "display": "Hall, Don - Washington, DC Metro - C",
+          "name": "Brown, Franklin",
+          "display": "Brown, Franklin - Washington, DC Metro - C",
           "total": "0",
           "thru": "0",
           "to_par": "Even"
         },
         {
-          "position": "T1",
-          "name": "Silver, Josh",
-          "display": "Silver, Josh - Washington, DC Metro - C",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
+          "position": "T8",
+          "name": "Franklin, Cephas",
+          "display": "Franklin, Cephas - Washington, DC Metro - C",
+          "total": "5",
+          "thru": "1",
+          "to_par": "+ 1"
+        },
+        {
+          "position": "T8",
+          "name": "Horn, John",
+          "display": "Horn, John - Washington, DC Metro - C",
+          "total": "5",
+          "thru": "1",
+          "to_par": "+ 1"
+        },
+        {
+          "position": "10",
+          "name": "Thompson, Jay",
+          "display": "Thompson, Jay - Washington, DC Metro - C",
+          "total": "6",
+          "thru": "1",
+          "to_par": "+ 2"
         }
       ]
     },
@@ -265,6 +265,38 @@
       "rows": [
         {
           "position": "1",
+          "name": "Hancock, Dawn",
+          "display": "Hancock, Dawn - Washington, DC Metro - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Coleman, LaMont",
+          "display": "Coleman, LaMont - Washington, DC Metro - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Mutzabaugh, Ken",
+          "display": "Mutzabaugh, Ken - Atlanta, GA - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Branch, Garry",
+          "display": "Branch, Garry - Washington, DC Metro - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
           "name": "Lewis, Lenny",
           "display": "Lewis, Lenny - Washington, DC Metro - D",
           "total": "0",
@@ -286,38 +318,6 @@
           "total": "0",
           "thru": "0",
           "to_par": "Even"
-        },
-        {
-          "position": "T1",
-          "name": "Branch, Garry",
-          "display": "Branch, Garry - Washington, DC Metro - D",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
-        },
-        {
-          "position": "T1",
-          "name": "Mutzabaugh, Ken",
-          "display": "Mutzabaugh, Ken - Atlanta, GA - D",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
-        },
-        {
-          "position": "T1",
-          "name": "Coleman, LaMont",
-          "display": "Coleman, LaMont - Washington, DC Metro - D",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
-        },
-        {
-          "position": "T1",
-          "name": "Hancock, Dawn",
-          "display": "Hancock, Dawn - Washington, DC Metro - D",
-          "total": "0",
-          "thru": "0",
-          "to_par": "Even"
         }
       ]
     }
@@ -332,5 +332,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T13:46:41+00:00"
+  "fetched_at": "2026-08-22T15:38:37+00:00"
 }
