@@ -17,14 +17,14 @@
           "player": "Ogletree, Steve",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "6",
           "player": "Crowley, Craig",
           "score": "3",
           "type": "Eagle",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "8",
@@ -38,7 +38,7 @@
           "player": "Devine, Ben",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "10",
@@ -59,7 +59,7 @@
           "player": "Hawkins, Kevin",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "15",
@@ -80,7 +80,7 @@
           "player": "Ogletree, Steve",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -154,14 +154,14 @@
           "player": "Coleman, LaMont",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "15",
           "player": "Coleman, LaMont",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -255,5 +255,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T21:17:33+00:00"
+  "fetched_at": "2026-08-22T21:40:47+00:00"
 }

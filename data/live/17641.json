@@ -1,10 +1,10 @@
 {
   "available": true,
   "live": true,
-  "status": "in_progress",
+  "status": "complete",
   "players": 36,
-  "still_out": 4,
-  "finished": 32,
+  "still_out": 0,
+  "finished": 36,
   "tournament": "DC Metro Players Championship Musket Ridge Golf Club",
   "date": "08/22/2026",
   "flights": [
@@ -267,9 +267,9 @@
           "position": "1",
           "name": "Coleman, LaMont",
           "display": "Coleman, LaMont - Washington, DC Metro - D",
-          "total": "85",
-          "thru": "17",
-          "to_par": "+ 17"
+          "total": "90",
+          "thru": "18",
+          "to_par": "+ 18"
         },
         {
           "position": "2",
@@ -280,28 +280,28 @@
           "to_par": "+ 22"
         },
         {
-          "position": "T3",
-          "name": "Lewis, Lenny",
-          "display": "Lewis, Lenny - Washington, DC Metro - D",
-          "total": "94",
-          "thru": "17",
-          "to_par": "+ 26"
-        },
-        {
-          "position": "T3",
-          "name": "Branch, Garry",
-          "display": "Branch, Garry - Washington, DC Metro - D",
-          "total": "94",
-          "thru": "17",
-          "to_par": "+ 26"
-        },
-        {
-          "position": "5",
+          "position": "3",
           "name": "O'Neill, Jim",
           "display": "O'Neill, Jim - Tidewater, VA - D",
           "total": "99",
           "thru": "18",
           "to_par": "+ 27"
+        },
+        {
+          "position": "4",
+          "name": "Branch, Garry",
+          "display": "Branch, Garry - Washington, DC Metro - D",
+          "total": "100",
+          "thru": "18",
+          "to_par": "+ 28"
+        },
+        {
+          "position": "5",
+          "name": "Lewis, Lenny",
+          "display": "Lewis, Lenny - Washington, DC Metro - D",
+          "total": "101",
+          "thru": "18",
+          "to_par": "+ 29"
         },
         {
           "position": "6",
@@ -315,9 +315,9 @@
           "position": "7",
           "name": "Hancock, Dawn",
           "display": "Hancock, Dawn - Washington, DC Metro - D",
-          "total": "103",
-          "thru": "17",
-          "to_par": "+ 35"
+          "total": "109",
+          "thru": "18",
+          "to_par": "+ 37"
         }
       ]
     }
@@ -332,5 +332,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T21:17:23+00:00"
+  "fetched_at": "2026-08-22T21:40:37+00:00"
 }
