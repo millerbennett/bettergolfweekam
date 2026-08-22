@@ -107,14 +107,14 @@
           "player": "Hawkins, Kevin",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "16",
           "player": "Young, George",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -134,7 +134,7 @@
           "player": "Devine, Ron",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -216,7 +216,7 @@
           "player": "Patterson, Bryan",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "17",
@@ -255,5 +255,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T20:43:21+00:00"
+  "fetched_at": "2026-08-22T21:17:33+00:00"
 }
