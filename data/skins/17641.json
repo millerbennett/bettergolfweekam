@@ -37,7 +37,14 @@
           "hole": "10",
           "player": "",
           "score": "",
-          "type": "3 x Birdie",
+          "type": "5 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "12",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
           "paid_out": ""
         }
       ],
@@ -122,7 +129,14 @@
           "hole": "10",
           "player": "",
           "score": "",
-          "type": "3 x Birdie",
+          "type": "5 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "12",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
           "paid_out": ""
         }
       ],
@@ -155,5 +169,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T17:57:22+00:00"
+  "fetched_at": "2026-08-22T18:31:48+00:00"
 }
