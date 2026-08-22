@@ -1,0 +1,22 @@
+{
+  "available": true,
+  "live": false,
+  "status": "not_started",
+  "players": 0,
+  "still_out": 0,
+  "finished": 0,
+  "tournament": "DC Metro Players Championship Musket Ridge Golf Club",
+  "date": "08/22/2026",
+  "flights": [],
+  "tid": "17641",
+  "event": {
+    "tid": "17641",
+    "date": "2026-08-22",
+    "name": "DC Metro Players Championship",
+    "course": "Musket Ridge Golf Club",
+    "start_time": "11:00",
+    "start_type": "Straight Tee",
+    "is_major": false
+  },
+  "fetched_at": "2026-08-22T10:17:52+00:00"
+}
