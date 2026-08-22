@@ -1,13 +1,327 @@
 {
   "available": true,
-  "live": false,
-  "status": "not_started",
-  "players": 0,
+  "live": true,
+  "status": "in_progress",
+  "players": 36,
   "still_out": 0,
   "finished": 0,
   "tournament": "DC Metro Players Championship Musket Ridge Golf Club",
   "date": "08/22/2026",
-  "flights": [],
+  "flights": [
+    {
+      "name": "Champ Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Devine, Ben",
+          "display": "Devine, Ben - Washington, DC Metro - Champ",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Schembri, Adam",
+          "display": "Schembri, Adam - Washington, DC Metro - Champ",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Bossom, Landon",
+          "display": "Bossom, Landon - Washington, DC Metro - Champ",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "LoBianco, Joey",
+          "display": "LoBianco, Joey - Washington, DC Metro - Champ",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        }
+      ]
+    },
+    {
+      "name": "A Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Jones, Terran",
+          "display": "Jones, Terran - Washington, DC Metro - A",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Patterson, Bryan",
+          "display": "Patterson, Bryan - Washington, DC Metro - A",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Brown, Garrett",
+          "display": "Brown, Garrett - Washington, DC Metro - A",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Bryant, Jimmy",
+          "display": "Bryant, Jimmy - Dallas- Fort Worth, TX - A",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Carreon, Fredy",
+          "display": "Carreon, Fredy - Washington, DC Metro - A",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Ogletree, Steve",
+          "display": "Ogletree, Steve - Washington, DC Metro - A",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Crowley, Craig",
+          "display": "Crowley, Craig - Washington, DC Metro - A",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        }
+      ]
+    },
+    {
+      "name": "B Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Okoba, Stephen",
+          "display": "Okoba, Stephen - Washington, DC Metro - B",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Cheeks, LC",
+          "display": "Cheeks, LC - Washington, DC Metro - B",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Young, George",
+          "display": "Young, George - Washington, DC Metro - B",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Doster, Malcolm",
+          "display": "Doster, Malcolm - Washington, DC Metro - B",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Hawkins, Kevin",
+          "display": "Hawkins, Kevin - Washington, DC Metro - B",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Miller, Bennett",
+          "display": "Miller, Bennett - Washington, DC Metro - B",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Bryars, Kevin",
+          "display": "Bryars, Kevin - Tidewater, VA - B",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Fasaye, Manny",
+          "display": "Fasaye, Manny - Washington, DC Metro - B",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        }
+      ]
+    },
+    {
+      "name": "C Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Horn, John",
+          "display": "Horn, John - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Thompson, Jay",
+          "display": "Thompson, Jay - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Devine, Ron",
+          "display": "Devine, Ron - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Giles, Alex",
+          "display": "Giles, Alex - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Rowe, Denise",
+          "display": "Rowe, Denise - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Franklin, Cephas",
+          "display": "Franklin, Cephas - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Brown, Franklin",
+          "display": "Brown, Franklin - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Tyrrell, Milton",
+          "display": "Tyrrell, Milton - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Hall, Don",
+          "display": "Hall, Don - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Silver, Josh",
+          "display": "Silver, Josh - Washington, DC Metro - C",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        }
+      ]
+    },
+    {
+      "name": "D Flight Leaderboard",
+      "rows": [
+        {
+          "position": "1",
+          "name": "Lewis, Lenny",
+          "display": "Lewis, Lenny - Washington, DC Metro - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "O'Neill, Jim",
+          "display": "O'Neill, Jim - Tidewater, VA - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Spittle, Will",
+          "display": "Spittle, Will - Tidewater, VA - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Branch, Garry",
+          "display": "Branch, Garry - Washington, DC Metro - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Mutzabaugh, Ken",
+          "display": "Mutzabaugh, Ken - Atlanta, GA - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Coleman, LaMont",
+          "display": "Coleman, LaMont - Washington, DC Metro - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        },
+        {
+          "position": "T1",
+          "name": "Hancock, Dawn",
+          "display": "Hancock, Dawn - Washington, DC Metro - D",
+          "total": "0",
+          "thru": "0",
+          "to_par": "Even"
+        }
+      ]
+    }
+  ],
   "tid": "17641",
   "event": {
     "tid": "17641",
@@ -18,5 +332,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T10:17:52+00:00"
+  "fetched_at": "2026-08-22T13:46:41+00:00"
 }
