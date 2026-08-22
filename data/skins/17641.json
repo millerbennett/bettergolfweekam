@@ -27,6 +27,13 @@
           "paid_out": "No"
         },
         {
+          "hole": "8",
+          "player": "Coleman, LaMont",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
           "hole": "9",
           "player": "Devine, Ben",
           "score": "4",
@@ -44,7 +51,7 @@
           "hole": "12",
           "player": "",
           "score": "",
-          "type": "2 x Birdie",
+          "type": "3 x Birdie",
           "paid_out": ""
         }
       ],
@@ -53,8 +60,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$310",
-        "Total Skins": "3",
-        "Each Skin Value": "$103"
+        "Total Skins": "4",
+        "Each Skin Value": "$77"
       }
     },
     {
@@ -91,14 +98,22 @@
     },
     {
       "title": "Skins D Flight(Birdie Or Better)",
-      "holes": [],
+      "holes": [
+        {
+          "hole": "8",
+          "player": "Coleman, LaMont",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
       "summary": {
         "Total Players": "6",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$60",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
+        "Total Skins": "1",
+        "Each Skin Value": "$60"
       }
     },
     {
@@ -136,7 +151,7 @@
           "hole": "12",
           "player": "",
           "score": "",
-          "type": "2 x Birdie",
+          "type": "3 x Birdie",
           "paid_out": ""
         }
       ],
@@ -169,5 +184,5 @@
     "start_type": "Straight Tee",
     "is_major": false
   },
-  "fetched_at": "2026-08-22T18:31:48+00:00"
+  "fetched_at": "2026-08-22T19:01:20+00:00"
 }
