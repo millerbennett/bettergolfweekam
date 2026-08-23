@@ -16,10 +16,10 @@
     "Champ": "3",
     "A": "2",
     "B": "5",
-    "C": "7",
+    "C": "8",
     "D": "3"
   },
-  "total_waiting": 20,
+  "total_waiting": 21,
   "registered": [
     {
       "player_id": "18247",
@@ -152,6 +152,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "55920",
+      "name": "Giles, Alex",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "48932",
       "name": "Horn, John",
       "flight": "C",
@@ -225,5 +233,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-23T08:53:53+00:00"
+  "fetched_at": "2026-08-23T21:39:35+00:00"
 }
