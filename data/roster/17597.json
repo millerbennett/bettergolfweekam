@@ -133,7 +133,7 @@
       "flight": "B",
       "tour": "Eastern NC",
       "paid_member": "Yes",
-      "paid_tournament": "No"
+      "paid_tournament": "Yes"
     },
     {
       "player_id": "36058",
@@ -265,5 +265,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-27T19:09:44+00:00"
+  "fetched_at": "2026-08-28T20:15:50+00:00"
 }
