@@ -2,11 +2,11 @@
   "tid": "17597",
   "available": true,
   "total_slots": 44,
-  "filled_slots": 9,
-  "open_slots": 35,
+  "filled_slots": 10,
+  "open_slots": 34,
   "sold_out": false,
   "filled_by_flight": {
-    "Champ": "1",
+    "Champ": "2",
     "A": "0",
     "B": "1",
     "C": "3",
@@ -21,6 +21,14 @@
   },
   "total_waiting": 20,
   "registered": [
+    {
+      "player_id": "64430",
+      "name": "Bossom, Landon",
+      "flight": "Champ",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
     {
       "player_id": "50569",
       "name": "Devine, Ben",
@@ -265,5 +273,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-08-29T03:11:22+00:00"
+  "fetched_at": "2026-08-30T13:51:47+00:00"
 }
