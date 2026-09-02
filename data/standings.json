@@ -765,6 +765,18 @@
         },
         {
           "Position": "10",
+          "ID": "25809",
+          "Name": "Briggs, James",
+          "Points": "1577",
+          "Handicap": "16.2",
+          "Birdies": "3",
+          "Eagles": "0",
+          "Earnings": "245",
+          "Tournaments": "10",
+          "Detail": "Detail"
+        },
+        {
+          "Position": "11",
           "ID": "40768",
           "Name": "Taylor, Nick",
           "Points": "1541.2",
@@ -773,18 +785,6 @@
           "Eagles": "0",
           "Earnings": "370",
           "Tournaments": "7",
-          "Detail": "Detail"
-        },
-        {
-          "Position": "11",
-          "ID": "25809",
-          "Name": "Briggs, James",
-          "Points": "1491",
-          "Handicap": "16.2",
-          "Birdies": "3",
-          "Eagles": "0",
-          "Earnings": "245",
-          "Tournaments": "10",
           "Detail": "Detail"
         },
         {
@@ -1215,5 +1215,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-08-31T16:14:33+00:00"
+  "fetched_at": "2026-09-02T12:50:57+00:00"
 }
