@@ -2,24 +2,24 @@
   "tid": "17597",
   "available": true,
   "total_slots": 44,
-  "filled_slots": 11,
-  "open_slots": 33,
+  "filled_slots": 13,
+  "open_slots": 31,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "2",
     "A": "1",
     "B": "1",
-    "C": "3",
-    "D": "4"
+    "C": "4",
+    "D": "5"
   },
   "waiting_by_flight": {
     "Champ": "2",
     "A": "2",
     "B": "4",
-    "C": "7",
-    "D": "4"
+    "C": "6",
+    "D": "3"
   },
-  "total_waiting": 19,
+  "total_waiting": 17,
   "registered": [
     {
       "player_id": "64430",
@@ -78,6 +78,14 @@
       "paid_tournament": "Yes"
     },
     {
+      "player_id": "56591",
+      "name": "Thompson, Zak",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
       "player_id": "62036",
       "name": "Benzing, Laurie",
       "flight": "D",
@@ -98,6 +106,14 @@
       "name": "Mutzabaugh, Ken",
       "flight": "D",
       "tour": "Atlanta, GA",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "26388",
+      "name": "Phillips, David",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
       "paid_member": "Yes",
       "paid_tournament": "Yes"
     },
@@ -216,14 +232,6 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "56591",
-      "name": "Thompson, Zak",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "44771",
       "name": "Wright, Danny",
       "flight": "C",
@@ -234,14 +242,6 @@
     {
       "player_id": "39276",
       "name": "Lewis, Jerald",
-      "flight": "D",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "26388",
-      "name": "Phillips, David",
       "flight": "D",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -273,5 +273,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-01T13:34:01+00:00"
+  "fetched_at": "2026-09-05T11:53:06+00:00"
 }
