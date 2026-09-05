@@ -14,12 +14,12 @@
   },
   "waiting_by_flight": {
     "Champ": "2",
-    "A": "2",
+    "A": "3",
     "B": "4",
-    "C": "6",
+    "C": "7",
     "D": "3"
   },
-  "total_waiting": 17,
+  "total_waiting": 19,
   "registered": [
     {
       "player_id": "64430",
@@ -152,6 +152,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "50358",
+      "name": "Rosenfield, Chuck",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "57759",
       "name": "Thomas, Larry",
       "flight": "A",
@@ -240,6 +248,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "59333",
+      "name": "Zheng, Meixian",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "No",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "39276",
       "name": "Lewis, Jerald",
       "flight": "D",
@@ -273,5 +289,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-05T11:53:06+00:00"
+  "fetched_at": "2026-09-05T18:21:08+00:00"
 }
