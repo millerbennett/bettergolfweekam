@@ -450,12 +450,12 @@
           "Position": "3",
           "ID": "33880",
           "Name": "Cheeks, LC",
-          "Points": "2799.54",
-          "Handicap": "13.4",
-          "Birdies": "10",
+          "Points": "2867.54",
+          "Handicap": "13.2",
+          "Birdies": "11",
           "Eagles": "0",
           "Earnings": "185",
-          "Tournaments": "20",
+          "Tournaments": "21",
           "Detail": "Detail"
         },
         {
@@ -921,22 +921,22 @@
         },
         {
           "Position": "23",
-          "ID": "28447",
-          "Name": "Lilly, Jason",
-          "Points": "305",
-          "Handicap": "20",
-          "Birdies": "2",
+          "ID": "44771",
+          "Name": "Wright, Danny",
+          "Points": "314",
+          "Handicap": "22.8",
+          "Birdies": "3",
           "Eagles": "0",
           "Earnings": "0",
-          "Tournaments": "3",
+          "Tournaments": "4",
           "Detail": "Detail"
         },
         {
           "Position": "24",
-          "ID": "44771",
-          "Name": "Wright, Danny",
-          "Points": "254",
-          "Handicap": "23.2",
+          "ID": "28447",
+          "Name": "Lilly, Jason",
+          "Points": "305",
+          "Handicap": "20",
           "Birdies": "2",
           "Eagles": "0",
           "Earnings": "0",
@@ -1215,5 +1215,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-09-02T12:50:57+00:00"
+  "fetched_at": "2026-09-07T00:20:01+00:00"
 }
