@@ -472,6 +472,18 @@
         },
         {
           "Position": "5",
+          "ID": "61979",
+          "Name": "Doster, Malcolm",
+          "Points": "1945.5",
+          "Handicap": "12.5",
+          "Birdies": "13",
+          "Eagles": "0",
+          "Earnings": "175",
+          "Tournaments": "14",
+          "Detail": "Detail"
+        },
+        {
+          "Position": "6",
           "ID": "49827",
           "Name": "Shapiro, Max",
           "Points": "1915",
@@ -483,7 +495,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "6",
+          "Position": "7",
           "ID": "55665",
           "Name": "Hawkins, Kevin",
           "Points": "1882.42",
@@ -492,18 +504,6 @@
           "Eagles": "0",
           "Earnings": "25",
           "Tournaments": "13",
-          "Detail": "Detail"
-        },
-        {
-          "Position": "7",
-          "ID": "61979",
-          "Name": "Doster, Malcolm",
-          "Points": "1865.5",
-          "Handicap": "13.3",
-          "Birdies": "11",
-          "Eagles": "0",
-          "Earnings": "175",
-          "Tournaments": "12",
           "Detail": "Detail"
         },
         {
@@ -1215,5 +1215,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-09-07T00:20:01+00:00"
+  "fetched_at": "2026-09-08T12:56:49+00:00"
 }
