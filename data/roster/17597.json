@@ -17,9 +17,9 @@
     "A": "1",
     "B": "2",
     "C": "6",
-    "D": "3"
+    "D": "4"
   },
-  "total_waiting": 14,
+  "total_waiting": 15,
   "registered": [
     {
       "player_id": "64430",
@@ -264,6 +264,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "34277",
+      "name": "Branch, Garry",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "39276",
       "name": "Lewis, Jerald",
       "flight": "D",
@@ -297,5 +305,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-07T14:19:45+00:00"
+  "fetched_at": "2026-09-08T20:45:47+00:00"
 }
