@@ -44,12 +44,12 @@
           "Position": "3",
           "ID": "44590",
           "Name": "Simmons, Josh",
-          "Points": "515",
-          "Handicap": "4.6",
-          "Birdies": "5",
+          "Points": "705",
+          "Handicap": "3.9",
+          "Birdies": "9",
           "Eagles": "1",
           "Earnings": "0",
-          "Tournaments": "3",
+          "Tournaments": "5",
           "Detail": "Detail"
         },
         {
@@ -684,11 +684,11 @@
           "ID": "18247",
           "Name": "Franklin, Cephas",
           "Points": "2999.83",
-          "Handicap": "17.9",
+          "Handicap": "18.6",
           "Birdies": "7",
           "Eagles": "0",
           "Earnings": "120",
-          "Tournaments": "21",
+          "Tournaments": "23",
           "Detail": "Detail"
         },
         {
@@ -744,15 +744,27 @@
           "ID": "39448",
           "Name": "Simmons, Titus",
           "Points": "1850.67",
-          "Handicap": "18.9",
+          "Handicap": "18.4",
           "Birdies": "5",
           "Eagles": "0",
           "Earnings": "90",
-          "Tournaments": "15",
+          "Tournaments": "17",
           "Detail": "Detail"
         },
         {
           "Position": "9",
+          "ID": "25809",
+          "Name": "Briggs, James",
+          "Points": "1827",
+          "Handicap": "16.3",
+          "Birdies": "4",
+          "Eagles": "0",
+          "Earnings": "245",
+          "Tournaments": "12",
+          "Detail": "Detail"
+        },
+        {
+          "Position": "10",
           "ID": "27933",
           "Name": "Brown, Franklin",
           "Points": "1636.4",
@@ -761,18 +773,6 @@
           "Eagles": "0",
           "Earnings": "75",
           "Tournaments": "16",
-          "Detail": "Detail"
-        },
-        {
-          "Position": "10",
-          "ID": "25809",
-          "Name": "Briggs, James",
-          "Points": "1577",
-          "Handicap": "16.2",
-          "Birdies": "3",
-          "Eagles": "0",
-          "Earnings": "245",
-          "Tournaments": "10",
           "Detail": "Detail"
         },
         {
@@ -839,12 +839,12 @@
           "Position": "16",
           "ID": "62012",
           "Name": "Rowe, Denise",
-          "Points": "800",
-          "Handicap": "20.3",
-          "Birdies": "1",
+          "Points": "970",
+          "Handicap": "19.9",
+          "Birdies": "2",
           "Eagles": "0",
           "Earnings": "0",
-          "Tournaments": "6",
+          "Tournaments": "8",
           "Detail": "Detail"
         },
         {
@@ -1024,12 +1024,12 @@
           "Position": "2",
           "ID": "59398",
           "Name": "Swiderski, Casey",
-          "Points": "1915",
-          "Handicap": "21.9",
-          "Birdies": "2",
+          "Points": "2075",
+          "Handicap": "21.8",
+          "Birdies": "3",
           "Eagles": "0",
           "Earnings": "860",
-          "Tournaments": "6",
+          "Tournaments": "8",
           "Detail": "Detail"
         },
         {
@@ -1108,24 +1108,24 @@
           "Position": "9",
           "ID": "34277",
           "Name": "Branch, Garry",
-          "Points": "1120",
-          "Handicap": "21.1",
+          "Points": "1390",
+          "Handicap": "20.9",
           "Birdies": "1",
           "Eagles": "0",
           "Earnings": "0",
-          "Tournaments": "8",
+          "Tournaments": "10",
           "Detail": "Detail"
         },
         {
           "Position": "10",
           "ID": "62036",
           "Name": "Benzing, Laurie",
-          "Points": "870",
-          "Handicap": "25.7",
+          "Points": "962",
+          "Handicap": "26",
           "Birdies": "1",
           "Eagles": "0",
           "Earnings": "40",
-          "Tournaments": "6",
+          "Tournaments": "8",
           "Detail": "Detail"
         },
         {
@@ -1215,5 +1215,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-09-08T12:56:49+00:00"
+  "fetched_at": "2026-09-09T01:16:28+00:00"
 }
