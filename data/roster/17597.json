@@ -14,12 +14,12 @@
   },
   "waiting_by_flight": {
     "Champ": "2",
-    "A": "1",
+    "A": "2",
     "B": "2",
     "C": "6",
     "D": "4"
   },
-  "total_waiting": 15,
+  "total_waiting": 16,
   "registered": [
     {
       "player_id": "64430",
@@ -192,6 +192,14 @@
       "paid_tournament": "No"
     },
     {
+      "player_id": "45490",
+      "name": "Crowley, Craig",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
       "player_id": "57759",
       "name": "Thomas, Larry",
       "flight": "A",
@@ -305,5 +313,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-08T20:45:47+00:00"
+  "fetched_at": "2026-09-09T13:02:02+00:00"
 }
