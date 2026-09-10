@@ -2,24 +2,24 @@
   "tid": "17597",
   "available": true,
   "total_slots": 44,
-  "filled_slots": 21,
-  "open_slots": 23,
+  "filled_slots": 27,
+  "open_slots": 17,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "2",
-    "A": "4",
+    "A": "5",
     "B": "3",
-    "C": "7",
-    "D": "5"
+    "C": "10",
+    "D": "7"
   },
   "waiting_by_flight": {
     "Champ": "2",
     "A": "1",
     "B": "3",
-    "C": "5",
-    "D": "4"
+    "C": "4",
+    "D": "2"
   },
-  "total_waiting": 15,
+  "total_waiting": 12,
   "registered": [
     {
       "player_id": "64430",
@@ -56,6 +56,14 @@
     {
       "player_id": "56547",
       "name": "Jones, Terran",
+      "flight": "A",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "33583",
+      "name": "Rapp, Joe",
       "flight": "A",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -102,8 +110,24 @@
       "paid_tournament": "Yes"
     },
     {
+      "player_id": "25809",
+      "name": "Briggs, James",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
       "player_id": "27933",
       "name": "Brown, Franklin",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "39286",
+      "name": "Dixon, Alvin",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -120,6 +144,14 @@
     {
       "player_id": "55920",
       "name": "Giles, Alex",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "48932",
+      "name": "Horn, John",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -166,6 +198,14 @@
       "paid_tournament": "Yes"
     },
     {
+      "player_id": "39276",
+      "name": "Lewis, Jerald",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
       "player_id": "21524",
       "name": "Mutzabaugh, Ken",
       "flight": "D",
@@ -184,6 +224,14 @@
     {
       "player_id": "24248",
       "name": "Sawyer, Thompson",
+      "flight": "D",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "59398",
+      "name": "Swiderski, Casey",
       "flight": "D",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -240,24 +288,16 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "39286",
-      "name": "Dixon, Alvin",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "48932",
-      "name": "Horn, John",
-      "flight": "C",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "44256",
       "name": "Silver, Josh",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "No"
+    },
+    {
+      "player_id": "34010",
+      "name": "Tyrrell, Milton",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -288,22 +328,6 @@
       "paid_tournament": "No"
     },
     {
-      "player_id": "39276",
-      "name": "Lewis, Jerald",
-      "flight": "D",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
-      "player_id": "59398",
-      "name": "Swiderski, Casey",
-      "flight": "D",
-      "tour": "Washington, DC Metro",
-      "paid_member": "Yes",
-      "paid_tournament": "No"
-    },
-    {
       "player_id": "49406",
       "name": "Thomas, Carlos",
       "flight": "D",
@@ -321,5 +345,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-09T20:19:33+00:00"
+  "fetched_at": "2026-09-10T12:58:51+00:00"
 }
