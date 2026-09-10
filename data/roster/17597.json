@@ -2,14 +2,14 @@
   "tid": "17597",
   "available": true,
   "total_slots": 44,
-  "filled_slots": 27,
-  "open_slots": 17,
+  "filled_slots": 28,
+  "open_slots": 16,
   "sold_out": false,
   "filled_by_flight": {
     "Champ": "2",
     "A": "5",
     "B": "3",
-    "C": "10",
+    "C": "11",
     "D": "7"
   },
   "waiting_by_flight": {
@@ -168,6 +168,14 @@
     {
       "player_id": "34091",
       "name": "Sams, Darin",
+      "flight": "C",
+      "tour": "Washington, DC Metro",
+      "paid_member": "Yes",
+      "paid_tournament": "Yes"
+    },
+    {
+      "player_id": "48076",
+      "name": "Thompson, Jay",
       "flight": "C",
       "tour": "Washington, DC Metro",
       "paid_member": "Yes",
@@ -345,5 +353,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-10T12:58:51+00:00"
+  "fetched_at": "2026-09-10T20:21:43+00:00"
 }
