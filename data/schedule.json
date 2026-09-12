@@ -245,8 +245,8 @@
       "cost": "$320",
       "is_major": true,
       "course_url": "http://www.penngolf.com",
-      "register_url": "https://www.amateurgolftour.net/register/tournamentReg.aspx?tournament=17597",
-      "registration_open": true
+      "register_url": null,
+      "registration_open": false
     },
     {
       "tid": "17598",
@@ -262,5 +262,5 @@
       "registration_open": false
     }
   ],
-  "fetched_at": "2026-08-16T11:54:31+00:00"
+  "fetched_at": "2026-09-12T12:14:35+00:00"
 }
