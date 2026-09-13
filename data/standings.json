@@ -239,6 +239,18 @@
         },
         {
           "Position": "6",
+          "ID": "33583",
+          "Name": "Rapp, Joe",
+          "Points": "1638.8",
+          "Handicap": "10.9",
+          "Birdies": "7",
+          "Eagles": "1",
+          "Earnings": "200",
+          "Tournaments": "11",
+          "Detail": "Detail"
+        },
+        {
+          "Position": "7",
           "ID": "56574",
           "Name": "Patterson, Bryan",
           "Points": "1625",
@@ -250,7 +262,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "7",
+          "Position": "8",
           "ID": "57759",
           "Name": "Thomas, Larry",
           "Points": "1608.97",
@@ -262,7 +274,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "8",
+          "Position": "9",
           "ID": "30678",
           "Name": "Carreon, Fredy",
           "Points": "1607",
@@ -271,18 +283,6 @@
           "Eagles": "0",
           "Earnings": "255",
           "Tournaments": "9",
-          "Detail": "Detail"
-        },
-        {
-          "Position": "9",
-          "ID": "33583",
-          "Name": "Rapp, Joe",
-          "Points": "1606",
-          "Handicap": "10.5",
-          "Birdies": "6",
-          "Eagles": "1",
-          "Earnings": "200",
-          "Tournaments": "10",
           "Detail": "Detail"
         },
         {
@@ -801,6 +801,18 @@
         },
         {
           "Position": "13",
+          "ID": "44153",
+          "Name": "Bunner, Gil",
+          "Points": "1190",
+          "Handicap": "15.2",
+          "Birdies": "3",
+          "Eagles": "0",
+          "Earnings": "75",
+          "Tournaments": "8",
+          "Detail": "Detail"
+        },
+        {
+          "Position": "14",
           "ID": "31967",
           "Name": "Shugart, Dave",
           "Points": "1167.5",
@@ -809,18 +821,6 @@
           "Eagles": "0",
           "Earnings": "40",
           "Tournaments": "8",
-          "Detail": "Detail"
-        },
-        {
-          "Position": "14",
-          "ID": "44153",
-          "Name": "Bunner, Gil",
-          "Points": "1010",
-          "Handicap": "14.9",
-          "Birdies": "3",
-          "Eagles": "0",
-          "Earnings": "0",
-          "Tournaments": "7",
           "Detail": "Detail"
         },
         {
@@ -1215,5 +1215,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-09-09T01:16:28+00:00"
+  "fetched_at": "2026-09-13T01:04:47+00:00"
 }
