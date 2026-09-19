@@ -37,15 +37,43 @@
           "hole": "11",
           "player": "",
           "score": "",
-          "type": "2 x Birdie",
+          "type": "4 x Birdie",
           "paid_out": ""
         },
         {
           "hole": "12",
-          "player": "Bossom, Landon",
-          "score": "3",
+          "player": "",
+          "score": "",
+          "type": "4 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "14",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "15",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "16",
+          "player": "LeMense, Thomas",
+          "score": "2",
           "type": "Birdie",
           "paid_out": "No"
+        },
+        {
+          "hole": "17",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
         }
       ],
       "summary": {
@@ -59,14 +87,22 @@
     },
     {
       "title": "Skins: B Flight(Birdie Or Better)",
-      "holes": [],
+      "holes": [
+        {
+          "hole": "16",
+          "player": "LeMense, Thomas",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
       "summary": {
         "Total Players": "2",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$20",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
+        "Total Skins": "1",
+        "Each Skin Value": "$20"
       }
     },
     {
@@ -85,6 +121,20 @@
           "score": "",
           "type": "2 x Birdie",
           "paid_out": ""
+        },
+        {
+          "hole": "11",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "12",
+          "player": "Brown, Franklin",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
         }
       ],
       "summary": {
@@ -92,20 +142,28 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$160",
-        "Total Skins": "1",
-        "Each Skin Value": "$160"
+        "Total Skins": "2",
+        "Each Skin Value": "$80"
       }
     },
     {
       "title": "Skins D Flight(Birdie Or Better)",
-      "holes": [],
+      "holes": [
+        {
+          "hole": "11",
+          "player": "Swiderski, Casey",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
       "summary": {
         "Total Players": "8",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$80",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
+        "Total Skins": "1",
+        "Each Skin Value": "$80"
       }
     },
     {
@@ -134,10 +192,31 @@
         },
         {
           "hole": "12",
-          "player": "Bossom, Landon",
-          "score": "3",
-          "type": "Birdie",
-          "paid_out": "No"
+          "player": "",
+          "score": "",
+          "type": "3 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "14",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "15",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "17",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
         }
       ],
       "summary": {
@@ -145,8 +224,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$90",
-        "Total Skins": "3",
-        "Each Skin Value": "$30"
+        "Total Skins": "2",
+        "Each Skin Value": "$45"
       }
     },
     {
@@ -169,5 +248,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-19T16:48:55+00:00"
+  "fetched_at": "2026-09-19T19:08:33+00:00"
 }
