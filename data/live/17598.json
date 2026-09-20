@@ -13,35 +13,35 @@
       "rows": [
         {
           "position": "1",
-          "name": "LoBianco, Joey",
-          "display": "LoBianco, Joey - Washington, DC Metro - Champ",
-          "total": "",
-          "thru": "",
-          "to_par": "75"
-        },
-        {
-          "position": "T2",
           "name": "Bossom, Landon",
           "display": "Bossom, Landon - Washington, DC Metro - Champ",
-          "total": "",
+          "total": "29",
           "thru": "",
-          "to_par": "76"
+          "to_par": "105"
         },
         {
-          "position": "T2",
+          "position": "2",
+          "name": "LoBianco, Joey",
+          "display": "LoBianco, Joey - Washington, DC Metro - Champ",
+          "total": "31",
+          "thru": "",
+          "to_par": "106"
+        },
+        {
+          "position": "3",
           "name": "Bostic, Tony",
           "display": "Bostic, Tony - Washington, DC Metro - Champ",
-          "total": "",
+          "total": "31",
           "thru": "",
-          "to_par": "76"
+          "to_par": "107"
         },
         {
           "position": "4",
           "name": "Devine, Ben",
           "display": "Devine, Ben - Washington, DC Metro - Champ",
-          "total": "",
+          "total": "32",
           "thru": "",
-          "to_par": "82"
+          "to_par": "114"
         }
       ]
     },
@@ -50,51 +50,51 @@
       "rows": [
         {
           "position": "1",
-          "name": "Rosenfield, Chuck",
-          "display": "Rosenfield, Chuck - Washington, DC Metro - A",
-          "total": "",
-          "thru": "",
-          "to_par": "78"
-        },
-        {
-          "position": "2",
           "name": "Ogletree, Steve",
           "display": "Ogletree, Steve - Washington, DC Metro - A",
-          "total": "",
+          "total": "37",
           "thru": "",
-          "to_par": "81"
+          "to_par": "118"
         },
         {
-          "position": "3",
+          "position": "T1",
+          "name": "Rosenfield, Chuck",
+          "display": "Rosenfield, Chuck - Washington, DC Metro - A",
+          "total": "40",
+          "thru": "",
+          "to_par": "118"
+        },
+        {
+          "position": "T3",
           "name": "Rapp, Joe",
           "display": "Rapp, Joe - Washington, DC Metro - A",
-          "total": "",
+          "total": "40",
           "thru": "",
-          "to_par": "83"
+          "to_par": "123"
         },
         {
-          "position": "T4",
+          "position": "T3",
           "name": "Crowley, Craig",
           "display": "Crowley, Craig - Washington, DC Metro - A",
-          "total": "",
+          "total": "54",
           "thru": "",
-          "to_par": "85"
+          "to_par": "139"
         },
         {
-          "position": "T4",
+          "position": "5",
           "name": "Gibert, Keith",
           "display": "Gibert, Keith - Washington, DC Metro - A",
-          "total": "",
+          "total": "62",
           "thru": "",
-          "to_par": "85"
+          "to_par": "147"
         },
         {
           "position": "6",
           "name": "Jones, Terran",
           "display": "Jones, Terran - Washington, DC Metro - A",
-          "total": "",
+          "total": "61",
           "thru": "",
-          "to_par": "89"
+          "to_par": "150"
         }
       ]
     },
@@ -105,33 +105,33 @@
           "position": "1",
           "name": "Miller, Bennett",
           "display": "Miller, Bennett - Washington, DC Metro - B",
-          "total": "",
+          "total": "40",
           "thru": "",
-          "to_par": "82"
+          "to_par": "122"
         },
         {
           "position": "2",
-          "name": "Okoba, Stephen",
-          "display": "Okoba, Stephen - Washington, DC Metro - B",
-          "total": "",
+          "name": "LeMense, Thomas",
+          "display": "LeMense, Thomas - Eastern NC - B",
+          "total": "39",
           "thru": "",
-          "to_par": "88"
+          "to_par": "130"
         },
         {
           "position": "3",
-          "name": "LeMense, Thomas",
-          "display": "LeMense, Thomas - Eastern NC - B",
-          "total": "",
+          "name": "Okoba, Stephen",
+          "display": "Okoba, Stephen - Washington, DC Metro - B",
+          "total": "43",
           "thru": "",
-          "to_par": "91"
+          "to_par": "131"
         },
         {
           "position": "4",
           "name": "Cheeks, LC",
           "display": "Cheeks, LC - Washington, DC Metro - B",
-          "total": "",
+          "total": "39",
           "thru": "",
-          "to_par": "95"
+          "to_par": "134"
         }
       ]
     },
@@ -140,123 +140,123 @@
       "rows": [
         {
           "position": "1",
-          "name": "Rowe, Denise",
-          "display": "Rowe, Denise - Washington, DC Metro - C",
-          "total": "",
+          "name": "Boyer, Stan",
+          "display": "Boyer, Stan - Washington, DC Metro - C",
+          "total": "42",
           "thru": "",
-          "to_par": "84"
+          "to_par": "127"
         },
         {
           "position": "2",
-          "name": "Boyer, Stan",
-          "display": "Boyer, Stan - Washington, DC Metro - C",
-          "total": "",
+          "name": "Rowe, Denise",
+          "display": "Rowe, Denise - Washington, DC Metro - C",
+          "total": "46",
           "thru": "",
-          "to_par": "85"
+          "to_par": "130"
         },
         {
           "position": "3",
-          "name": "Tyrrell, Milton",
-          "display": "Tyrrell, Milton - Washington, DC Metro - C",
-          "total": "",
+          "name": "Thompson, Zak",
+          "display": "Thompson, Zak - Washington, DC Metro - C",
+          "total": "42",
           "thru": "",
-          "to_par": "86"
+          "to_par": "132"
         },
         {
           "position": "4",
-          "name": "Thompson, Zak",
-          "display": "Thompson, Zak - Washington, DC Metro - C",
-          "total": "",
+          "name": "Tyrrell, Milton",
+          "display": "Tyrrell, Milton - Washington, DC Metro - C",
+          "total": "47",
           "thru": "",
-          "to_par": "90"
+          "to_par": "133"
         },
         {
           "position": "5",
           "name": "Silver, Josh",
           "display": "Silver, Josh - Washington, DC Metro - C",
-          "total": "",
+          "total": "58",
           "thru": "",
-          "to_par": "91"
+          "to_par": "149"
         },
         {
           "position": "6",
-          "name": "Simmons, Titus",
-          "display": "Simmons, Titus - Washington, DC Metro - C",
-          "total": "5",
+          "name": "Thompson, Jay",
+          "display": "Thompson, Jay - Washington, DC Metro - C",
+          "total": "60",
           "thru": "",
-          "to_par": "96"
+          "to_par": "155"
         },
         {
-          "position": "7",
+          "position": "T7",
           "name": "Dixon, Alvin",
           "display": "Dixon, Alvin - Washington, DC Metro - C",
-          "total": "",
+          "total": "60",
           "thru": "",
-          "to_par": "93"
+          "to_par": "153"
         },
         {
-          "position": "T8",
+          "position": "T7",
           "name": "Briggs, James",
           "display": "Briggs, James - Washington, DC Metro - C",
-          "total": "",
+          "total": "62",
           "thru": "",
-          "to_par": "94"
+          "to_par": "156"
         },
         {
-          "position": "T8",
+          "position": "9",
           "name": "Hall, Don",
           "display": "Hall, Don - Washington, DC Metro - C",
-          "total": "",
+          "total": "63",
           "thru": "",
-          "to_par": "94"
+          "to_par": "157"
         },
         {
           "position": "T10",
           "name": "Brown, Franklin",
           "display": "Brown, Franklin - Washington, DC Metro - C",
-          "total": "",
+          "total": "67",
           "thru": "",
-          "to_par": "95"
+          "to_par": "162"
         },
         {
           "position": "T10",
-          "name": "Thompson, Jay",
-          "display": "Thompson, Jay - Washington, DC Metro - C",
-          "total": "",
+          "name": "Sams, Darin",
+          "display": "Sams, Darin - Washington, DC Metro - C",
+          "total": "75",
           "thru": "",
-          "to_par": "95"
+          "to_par": "171"
         },
         {
           "position": "T10",
-          "name": "Dimond, Royal",
-          "display": "Dimond, Royal - Washington, DC Metro - C",
-          "total": "",
+          "name": "Simmons, Titus",
+          "display": "Simmons, Titus - Washington, DC Metro - C",
+          "total": "80",
           "thru": "",
-          "to_par": "95"
+          "to_par": "171"
         },
         {
           "position": "13",
-          "name": "Sams, Darin",
-          "display": "Sams, Darin - Washington, DC Metro - C",
-          "total": "6",
+          "name": "Dimond, Royal",
+          "display": "Dimond, Royal - Washington, DC Metro - C",
+          "total": "72",
           "thru": "",
-          "to_par": "102"
+          "to_par": "167"
         },
         {
           "position": "14",
           "name": "Horn, John",
           "display": "Horn, John - Washington, DC Metro - C",
-          "total": "5",
+          "total": "78",
           "thru": "",
-          "to_par": "104"
+          "to_par": "177"
         },
         {
           "position": "15",
           "name": "Franklin, Cephas",
           "display": "Franklin, Cephas - Washington, DC Metro - C",
-          "total": "6",
+          "total": "89",
           "thru": "",
-          "to_par": "108"
+          "to_par": "191"
         },
         {
           "position": "16",
@@ -273,67 +273,67 @@
       "rows": [
         {
           "position": "1",
-          "name": "Swiderski, Casey",
-          "display": "Swiderski, Casey - Washington, DC Metro - D",
-          "total": "",
-          "thru": "",
-          "to_par": "89"
-        },
-        {
-          "position": "T1",
           "name": "Hancock, Dawn",
           "display": "Hancock, Dawn - Washington, DC Metro - D",
-          "total": "",
+          "total": "46",
           "thru": "",
-          "to_par": "89"
+          "to_par": "135"
+        },
+        {
+          "position": "2",
+          "name": "Swiderski, Casey",
+          "display": "Swiderski, Casey - Washington, DC Metro - D",
+          "total": "47",
+          "thru": "",
+          "to_par": "136"
         },
         {
           "position": "3",
           "name": "Benzing, Laurie",
           "display": "Benzing, Laurie - Washington, DC Metro - D",
-          "total": "",
+          "total": "47",
           "thru": "",
-          "to_par": "98"
+          "to_par": "145"
         },
         {
-          "position": "T4",
+          "position": "4",
           "name": "Alexander, Sal",
           "display": "Alexander, Sal - Washington, DC Metro - D",
-          "total": "",
+          "total": "47",
           "thru": "",
-          "to_par": "99"
+          "to_par": "146"
         },
         {
-          "position": "T4",
-          "name": "Mutzabaugh, Ken",
-          "display": "Mutzabaugh, Ken - Atlanta, GA - D",
-          "total": "",
-          "thru": "",
-          "to_par": "99"
-        },
-        {
-          "position": "6",
+          "position": "T5",
           "name": "Branch, Garry",
           "display": "Branch, Garry - Washington, DC Metro - D",
-          "total": "",
+          "total": "67",
           "thru": "",
-          "to_par": "100"
+          "to_par": "167"
+        },
+        {
+          "position": "T5",
+          "name": "Mutzabaugh, Ken",
+          "display": "Mutzabaugh, Ken - Atlanta, GA - D",
+          "total": "68",
+          "thru": "",
+          "to_par": "167"
         },
         {
           "position": "7",
           "name": "Phillips, David",
           "display": "Phillips, David - Washington, DC Metro - D",
-          "total": "",
+          "total": "73",
           "thru": "",
-          "to_par": "103"
+          "to_par": "176"
         },
         {
           "position": "8",
           "name": "Lewis, Jerald",
           "display": "Lewis, Jerald - Washington, DC Metro - D",
-          "total": "",
+          "total": "71",
           "thru": "",
-          "to_par": "106"
+          "to_par": "177"
         }
       ]
     }
@@ -348,5 +348,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-20T13:54:29+00:00"
+  "fetched_at": "2026-09-20T17:15:53+00:00"
 }
