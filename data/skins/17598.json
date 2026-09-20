@@ -1,0 +1,86 @@
+{
+  "tid": "17598",
+  "available": true,
+  "games": [
+    {
+      "title": "Super Skins(Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "30",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$300",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "Skins: B Flight(Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "2",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$20",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "Skins: C Flight(Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "16",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$160",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "Skins D Flight(Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "8",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$80",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "Skins: Champ - A (Birdie Or Better)",
+      "holes": [],
+      "summary": {
+        "Total Players": "9",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total Skins Pot": "$90",
+        "Total Skins": "0",
+        "Each Skin Value": "$∞"
+      }
+    },
+    {
+      "title": "CTP: Champ - A - B - C - D",
+      "holes": [],
+      "summary": {
+        "Total Players": "35",
+        "Game Buy In": "$10",
+        "Rollover/Additional": "$0",
+        "Total CTP Pot": "$350"
+      }
+    }
+  ],
+  "event": {
+    "tid": "17598",
+    "date": "2026-09-20",
+    "name": "DC Metro Tour Championship",
+    "course": "Penn National Golf Club (Founders)",
+    "start_time": "9:35",
+    "start_type": "Straight Tee",
+    "is_major": true
+  },
+  "fetched_at": "2026-09-20T13:54:39+00:00"
+}
