@@ -60,6 +60,13 @@
           "score": "3",
           "type": "Eagle",
           "paid_out": "No"
+        },
+        {
+          "hole": "17",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
         }
       ],
       "summary": {
@@ -79,7 +86,7 @@
           "player": "LeMense, Thomas",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         }
       ],
       "summary": {
@@ -99,7 +106,7 @@
           "player": "Rowe, Denise",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "7",
@@ -145,7 +152,7 @@
           "player": "Crowley, Craig",
           "score": "4",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "4",
@@ -166,7 +173,7 @@
           "player": "Bossom, Landon",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "10",
@@ -180,21 +187,28 @@
           "player": "Bostic, Tony",
           "score": "3",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "13",
           "player": "Devine, Ben",
           "score": "2",
           "type": "Birdie",
-          "paid_out": "No"
+          "paid_out": "Yes"
         },
         {
           "hole": "14",
           "player": "Rapp, Joe",
           "score": "3",
           "type": "Eagle",
-          "paid_out": "No"
+          "paid_out": "Yes"
+        },
+        {
+          "hole": "17",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
         }
       ],
       "summary": {
@@ -226,5 +240,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-20T19:30:13+00:00"
+  "fetched_at": "2026-09-20T21:48:29+00:00"
 }
