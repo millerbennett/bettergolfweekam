@@ -27,9 +27,23 @@
           "paid_out": ""
         },
         {
+          "hole": "9",
+          "player": "Bossom, Landon",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
           "hole": "10",
-          "player": "Jones, Terran",
-          "score": "4",
+          "player": "",
+          "score": "",
+          "type": "2 x Birdie",
+          "paid_out": ""
+        },
+        {
+          "hole": "11",
+          "player": "Bostic, Tony",
+          "score": "3",
           "type": "Birdie",
           "paid_out": "No"
         },
@@ -37,8 +51,15 @@
           "hole": "13",
           "player": "",
           "score": "",
-          "type": "2 x Birdie",
+          "type": "3 x Birdie",
           "paid_out": ""
+        },
+        {
+          "hole": "14",
+          "player": "Rapp, Joe",
+          "score": "3",
+          "type": "Eagle",
+          "paid_out": "No"
         }
       ],
       "summary": {
@@ -46,20 +67,28 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$300",
-        "Total Skins": "2",
-        "Each Skin Value": "$150"
+        "Total Skins": "4",
+        "Each Skin Value": "$75"
       }
     },
     {
       "title": "Skins: B Flight(Birdie Or Better)",
-      "holes": [],
+      "holes": [
+        {
+          "hole": "10",
+          "player": "LeMense, Thomas",
+          "score": "4",
+          "type": "Birdie",
+          "paid_out": "No"
+        }
+      ],
       "summary": {
         "Total Players": "2",
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$20",
-        "Total Skins": "0",
-        "Each Skin Value": "$∞"
+        "Total Skins": "1",
+        "Each Skin Value": "$20"
       }
     },
     {
@@ -133,10 +162,38 @@
           "paid_out": ""
         },
         {
+          "hole": "9",
+          "player": "Bossom, Landon",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
           "hole": "10",
           "player": "Jones, Terran",
           "score": "4",
           "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "11",
+          "player": "Bostic, Tony",
+          "score": "3",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "13",
+          "player": "Devine, Ben",
+          "score": "2",
+          "type": "Birdie",
+          "paid_out": "No"
+        },
+        {
+          "hole": "14",
+          "player": "Rapp, Joe",
+          "score": "3",
+          "type": "Eagle",
           "paid_out": "No"
         }
       ],
@@ -145,8 +202,8 @@
         "Game Buy In": "$10",
         "Rollover/Additional": "$0",
         "Total Skins Pot": "$90",
-        "Total Skins": "2",
-        "Each Skin Value": "$45"
+        "Total Skins": "6",
+        "Each Skin Value": "$15"
       }
     },
     {
@@ -169,5 +226,5 @@
     "start_type": "Straight Tee",
     "is_major": true
   },
-  "fetched_at": "2026-09-20T17:16:03+00:00"
+  "fetched_at": "2026-09-20T19:30:13+00:00"
 }
