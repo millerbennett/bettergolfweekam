@@ -532,6 +532,18 @@
         },
         {
           "Position": "9",
+          "ID": "23550",
+          "Name": "Hall, Don",
+          "Points": "951.67",
+          "Handicap": "21.6",
+          "Birdies": "1",
+          "Eagles": "0",
+          "Earnings": "0",
+          "Tournaments": "8",
+          "Detail": "Detail"
+        },
+        {
+          "Position": "10",
           "ID": "34012",
           "Name": "Arnold, JA",
           "Points": "918.5",
@@ -543,7 +555,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "10",
+          "Position": "11",
           "ID": "51338",
           "Name": "Furlow, Craig",
           "Points": "910.67",
@@ -555,7 +567,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "11",
+          "Position": "12",
           "ID": "30990",
           "Name": "Upright, Don",
           "Points": "770",
@@ -567,7 +579,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "12",
+          "Position": "13",
           "ID": "19369",
           "Name": "Rashid, Rafiq",
           "Points": "676.67",
@@ -579,7 +591,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "13",
+          "Position": "14",
           "ID": "56491",
           "Name": "Choi, Thomas",
           "Points": "390",
@@ -591,7 +603,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "14",
+          "Position": "15",
           "ID": "48927",
           "Name": "Fasaye, Manny",
           "Points": "385",
@@ -603,7 +615,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "15",
+          "Position": "16",
           "ID": "54362",
           "Name": "Ammons, Trevor",
           "Points": "255",
@@ -615,7 +627,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "16",
+          "Position": "17",
           "ID": "33859",
           "Name": "Barajas, Omar",
           "Points": "180",
@@ -627,7 +639,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "17",
+          "Position": "18",
           "ID": "15859",
           "Name": "Young, George",
           "Points": "160",
@@ -639,7 +651,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "18",
+          "Position": "19",
           "ID": "35672",
           "Name": "Garcia Caban, Esdras",
           "Points": "155",
@@ -651,7 +663,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "19",
+          "Position": "20",
           "ID": "33816",
           "Name": "Woodard, James",
           "Points": "48",
@@ -873,18 +885,6 @@
         },
         {
           "Position": "18",
-          "ID": "23550",
-          "Name": "Hall, Don",
-          "Points": "951.67",
-          "Handicap": "21.6",
-          "Birdies": "1",
-          "Eagles": "0",
-          "Earnings": "0",
-          "Tournaments": "8",
-          "Detail": "Detail"
-        },
-        {
-          "Position": "19",
           "ID": "39286",
           "Name": "Dixon, Alvin",
           "Points": "750",
@@ -896,7 +896,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "20",
+          "Position": "19",
           "ID": "43242",
           "Name": "Hines, Dan",
           "Points": "738.6",
@@ -908,7 +908,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "21",
+          "Position": "20",
           "ID": "53865",
           "Name": "Kelliher, John",
           "Points": "630",
@@ -920,7 +920,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "22",
+          "Position": "21",
           "ID": "53732",
           "Name": "Taplin, Maurice",
           "Points": "434",
@@ -932,7 +932,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "23",
+          "Position": "22",
           "ID": "44771",
           "Name": "Wright, Danny",
           "Points": "314",
@@ -944,7 +944,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "24",
+          "Position": "23",
           "ID": "28447",
           "Name": "Lilly, Jason",
           "Points": "305",
@@ -956,7 +956,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "25",
+          "Position": "24",
           "ID": "63208",
           "Name": "Dimond, Royal",
           "Points": "285",
@@ -968,7 +968,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "26",
+          "Position": "25",
           "ID": "59005",
           "Name": "Jones, Nathan",
           "Points": "135",
@@ -980,7 +980,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "27",
+          "Position": "26",
           "ID": "60331",
           "Name": "Rangarajan, Madhu",
           "Points": "125",
@@ -992,7 +992,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "28",
+          "Position": "27",
           "ID": "43876",
           "Name": "Dyson, Emile",
           "Points": "100",
@@ -1004,7 +1004,7 @@
           "Detail": "Detail"
         },
         {
-          "Position": "29",
+          "Position": "28",
           "ID": "51661",
           "Name": "Mosquera, Carlos",
           "Points": "90",
@@ -1227,5 +1227,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-09-21T15:11:21+00:00"
+  "fetched_at": "2026-10-15T13:33:25+00:00"
 }
