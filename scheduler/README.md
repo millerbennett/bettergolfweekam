@@ -48,6 +48,7 @@ It cannot edit repository files. Actions write can operate workflows in this
 repository; GitHub does not offer a dispatch-only permission.
 Store it only as the Worker's encrypted `GITHUB_TOKEN` secret, never in Git,
 Worker variables, command-line arguments, or logs. Renew it before expiration.
+The production token created October 17, 2026 expires **October 17, 2027**.
 
 ```powershell
 # Deploy disabled first, then enter the secret interactively.
