@@ -22,6 +22,7 @@ from zoneinfo import ZoneInfo
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from scraper.store import DATA, PUBLIC, load_config, read_json
+from .nationals import championship_view, digest_lines as nationals_digest, summary as nationals_summary
 
 log = logging.getLogger("render")
 
@@ -205,6 +206,7 @@ class Site:
         self.standings = read_json("standings.json", default={"flights": []}) or {"flights": []}
         self.changes = read_json("changes.json", default=[]) or []
         self.meta = read_json("meta.json", default={}) or {}
+        self.nationals = championship_view(cfg, self.today)
 
         # The season the mirror labels itself with comes from the crawled
         # schedule, not from config, so a rollover carries through on its own.
@@ -250,6 +252,7 @@ class Site:
             date_range=date_range,
             slug=slug,
             first_last=_first_last,
+            score_time=lambda stamp: datetime.fromisoformat(stamp).astimezone(self.tz).strftime("%b %d, %I:%M %p %Z"),
         )
 
     def upstream(self, tid: str) -> dict:
@@ -603,6 +606,7 @@ class Site:
                 group_ids=self.group_ids,
                 group_names=self.group_names,
                 players=self.players,
+                nationals=self.nationals,
                 nav=ctx.pop("nav", None) or self.NAV_FOR.get(rel),
                 rel=prefix,
                 url=url,
@@ -621,6 +625,8 @@ class Site:
         next_event = self.next_event
 
         # ---- shared pages: one copy, marking everyone in the group --------
+        self._render("nationals.html", "nationals.html", nav="nationals")
+        self._write("nationals.json", json.dumps(self.nationals, indent=2) + "\n")
         self._render(
             "index.html", "index.html",
             today_board=self.today_board,
@@ -730,6 +736,7 @@ class Site:
             "next_event": None,
             "recent_changes": self.changes[:10],
             "source_last_checked": self.meta.get("last_run"),
+            "nationals": nationals_summary(self.nationals, self.site_url),
         }
 
         if board:
@@ -793,6 +800,7 @@ class Site:
             "",
         ]
 
+        lines.extend(nationals_digest(s["nationals"]))
         if s["live"]:
             live = s["live"]
             lines.append(f"LIVE NOW: {live['event']} at {live['course']}")
@@ -879,6 +887,7 @@ class Site:
             "last_round": None,
             "recent_changes": self.changes[:10],
             "source_last_checked": self.meta.get("last_run"),
+            "nationals": nationals_summary(self.nationals, self.site_url, player),
         }
 
         if board:
@@ -980,6 +989,7 @@ class Site:
             "",
         ]
 
+        lines.extend(nationals_digest(s["nationals"]))
         if s["live"]:
             lines.append(f"LIVE NOW: {s['live']['event']} at {s['live']['course']}")
             lines.append(f"  {s['live']['still_on_course']} of {s['live']['players']} "

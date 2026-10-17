@@ -27,7 +27,8 @@ log = logging.getLogger(__name__)
 # --------------------------------------------------------------------------
 
 def tour_url(cfg: dict, page: str) -> str:
-    return f"{cfg['base_url']}/{cfg['tour_slug']}_tour_pages/{page}"
+    path = cfg.get("tour_path", f"{cfg['tour_slug']}_tour_pages")
+    return f"{cfg['base_url']}/{path}/{page}"
 
 
 def leaderboard_url(cfg: dict) -> str:

@@ -24,7 +24,7 @@ on:
         description: "Crawl mode"
         default: auto
         type: choice
-        options: [auto, daily, live, full]
+        options: [auto, daily, live, full, nationals]
       force:
         description: "Ignore freshness stamps"
         default: false

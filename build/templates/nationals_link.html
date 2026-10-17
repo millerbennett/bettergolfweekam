@@ -1,0 +1,9 @@
+{% if nationals %}
+<section class="card nationals-callout">
+  <p class="eyebrow">Hilton Head · {{ nationals.start_date | date_range(nationals.end_date) }}, {{ nationals.season }}</p>
+  <h2><a href="{{ url('nationals.html') }}">National Championship →</a></h2>
+  <p class="sub">{{ nationals.status }} · {{ nationals.group | length }} from our group on the boards · {{ nationals.dc_count }} DC players</p>
+  <p>All five flights, three rounds, and our group in one place.</p>
+  <a class="button" href="{{ url('nationals.html') }}">Nationals scores →</a>
+</section>
+{% endif %}

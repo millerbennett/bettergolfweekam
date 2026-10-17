@@ -43,9 +43,20 @@
       "slug": "garrett-brown",
       "id": "57627",
       "name": "Brown, Garrett"
+    },
+    {
+      "slug": "dawn-hancock",
+      "id": "49241",
+      "name": "Hancock, Dawn"
+    },
+    {
+      "slug": "cephas-franklin",
+      "id": "18247",
+      "name": "Franklin, Cephas"
     }
   ],
   "crawl_delay_seconds": 10,
+  "nationals": { "enabled": true },
   "freshness": {
     "schedule_hours": 12,
     "standings_hours": 12,

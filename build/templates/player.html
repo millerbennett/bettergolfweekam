@@ -3,6 +3,8 @@
 {% block description %}Tee time, live score and season standing for {{ me.name | first_last }} on the {{ cfg.tour_name }} Golfweek Amateur Tour.{% endblock %}
 {% block content %}
 
+{% include 'nationals_link.html' %}
+
 {% if me_today %}
 <section class="card card-live">
   {% if today_board.status == 'in_progress' %}

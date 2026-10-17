@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}Nationals — {{ cfg.site_title }}{% endblock %}
+{% block description %}National Championship scores in one place: our group, every DC Metro player, and all five flight leaderboards with round-by-round scores.{% endblock %}
+{% macro flight_emblem(flight, slug) %}
+<div class="national-emblem" aria-hidden="true">
+  <svg viewBox="0 0 120 112" focusable="false">
+    <defs>
+      <linearGradient id="flight-metal-{{ slug }}" x1="0" y1="0" x2="1" y2="1">
+        <stop class="emblem-metal-light" offset="0"/>
+        <stop class="emblem-metal-mid" offset=".45"/>
+        <stop class="emblem-metal-dark" offset="1"/>
+      </linearGradient>
+    </defs>
+    {% if flight == 'Champ' %}
+    <path class="emblem-wings" d="M37 36 4 22 10 43 36 57ZM35 60 12 48 19 68 40 79ZM39 81 24 74 32 90 48 96ZM83 36 116 22 110 43 84 57ZM85 60 108 48 101 68 80 79ZM81 81 96 74 88 90 72 96Z"/>
+    <path class="emblem-wing-lines" d="m12 31 20 11m-11 16 13 10m74-37-20 11m11 16-13 10"/>
+    <path fill="url(#flight-metal-{{ slug }})" d="m60 20 27 13-5 48-22 24-22-24-5-48Z"/>
+    <path class="emblem-inset" d="m60 28 19 10-4 40-15 17-15-17-4-40Z"/>
+    <path class="emblem-crown" d="m43 24-5-18 13 8 9-12 9 12 13-8-5 18Z"/>
+    <path class="emblem-star" d="m60 35 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z"/>
+    <path class="emblem-wing-lines" d="m51 80 9 9 9-9"/>
+    {% elif flight == 'A' %}
+    <path class="emblem-wings" d="M36 30 7 18 12 44 34 59ZM35 63 17 51 22 72 41 85ZM84 30 113 18 108 44 86 59ZM85 63 103 51 98 72 79 85Z"/>
+    <path class="emblem-wing-lines" d="m15 29 16 8m74-8-16 8"/>
+    <path fill="url(#flight-metal-{{ slug }})" d="m60 8 28 23-5 47-23 24-23-24-5-47Z"/>
+    <path class="emblem-inset" d="m60 18 20 17-4 40-16 17-16-17-4-40Z"/>
+    <path class="emblem-star" d="m60 2 4 5-4 5-4-5Z"/>
+    {% elif flight == 'B' %}
+    <path class="emblem-wings" d="m23 30-8 7 7 35 14 13-6-24Zm74 0 8 7-7 35-14 13 6-24Z"/>
+    <path fill="url(#flight-metal-{{ slug }})" d="m60 10 35 13-6 52-29 26-29-26-6-52Z"/>
+    <path class="emblem-inset" d="m60 19 26 10-5 42-21 19-21-19-5-42Z"/>
+    <path class="emblem-wing-lines" d="m48 77 12 10 12-10"/>
+    {% elif flight == 'C' %}
+    <path fill="url(#flight-metal-{{ slug }})" d="m60 12 36 39-36 48-36-48Z"/>
+    <path class="emblem-inset" d="m60 23 26 28-26 35-26-35Z"/>
+    {% else %}
+    <path class="emblem-base" d="M39 25h42l9 9v43l-9 9H39l-9-9V34Z"/>
+    <path class="emblem-wing-lines" d="M42 32h36M42 79h36"/>
+    {% endif %}
+  </svg>
+  <span class="national-emblem-letter">{{ flight }}</span>
+</div>
+{% endmacro %}
+{% macro score_table(rows, label, full=false) %}
+<div class="scroll" tabindex="0" role="region" aria-label="{{ label }} — scroll for all scores">
+<table class="data board" aria-label="{{ label }}">
+  <thead><tr><th scope="col">Pos</th><th scope="col">Player</th><th scope="col" class="num">To par</th><th scope="col" class="num">R1</th><th scope="col" class="num">R2</th><th scope="col" class="num">R3</th><th scope="col" class="num">Total</th><th scope="col" class="num">Thru / 54</th></tr></thead>
+  <tbody>{% for row in rows %}
+    <tr{% if row.tracked %} class="mine"{% endif %}>
+      <td>{{ row.position or '—' }}</td>
+      <td>{% if row.slug %}<a href="{{ url('p/' ~ row.slug ~ '/index.html') }}">{{ row.name | first_last }}</a>{% else %}{{ row.name | first_last }}{% endif %}
+        {% if full %}<span class="detail national-tour">{{ row.tour }}</span>{% endif %}</td>
+      <td class="num">{{ row.to_par | replace(' ', '') or '—' }}</td>
+      {% for round in row.rounds %}<td class="num">{{ round or '—' }}</td>{% endfor %}
+      <td class="num">{{ row.total or '—' }}</td><td class="num">{{ row.thru or '—' }}</td>
+    </tr>
+  {% endfor %}</tbody>
+</table></div>
+{% endmacro %}
+{% block content %}
+<section class="card nationals-hero">
+  <p class="eyebrow">Season finale · Hilton Head Island, SC</p>
+  <h1>{% if nationals %}{{ nationals.season }} {% endif %}National Championship</h1>
+  {% if nationals %}
+  <p class="sub">{{ nationals.start_date | date_range(nationals.end_date) }} · 3 rounds · 54 holes</p>
+  <p><span class="tag {% if nationals.active %}tag-live{% else %}tag-done{% endif %}">{{ nationals.status }}</span></p>
+  <ul class="stats"><li><span>{{ nationals.group | length }}</span>our group</li><li><span>{{ nationals.dc_count }}</span>DC players</li><li><span>{{ nationals.available_flights }}/5</span>flight boards</li></ul>
+  <p class="cta-row"><a class="button button-ghost" href="{{ url('nationals.html') }}">Refresh page ↻</a><a href="{{ nationals.source_url }}" target="_blank" rel="noopener">Official schedule ↗</a></p>
+  <nav class="national-jumps" aria-label="Jump to championship flight"><a href="#our-group">Our group</a>{% for flight in nationals.flights %}<a href="#flight-{{ flight.name | lower }}">{{ flight.name }} flight</a>{% endfor %}</nav>
+  {% else %}
+  <p class="notice">Championship scores haven’t been mirrored yet. This page will bring all five flights together when the championship boards are available.</p>
+  <a href="{{ cfg.base_url }}/tour_championship/Schedule.aspx" target="_blank" rel="noopener">Official championship schedule ↗</a>
+  {% endif %}
+</section>
+
+{% if nationals %}
+<section class="card" id="our-group">
+  <h2>Our group at nationals</h2>
+  <div class="national-players">
+  {% for row in nationals.group %}
+    <article class="national-player national-player--{{ row.flight | lower }}{% if nationals.active and row.status == 'in_progress' %} is-playing{% endif %}" style="--card-order: {{ loop.index0 }}">
+      <div class="national-player-heading">
+        <div class="national-player-identity">
+          <p class="national-flight-label">{{ row.flight }} <span>Flight</span></p>
+          <h3><a href="{{ url('p/' ~ row.slug ~ '/index.html') }}">{{ row.name | first_last }}</a></h3>
+          <p class="national-player-progress">{% if nationals.active and row.status == 'in_progress' %}<span class="national-playing-dot" aria-hidden="true"></span>{% endif %}{{ row.progress }}</p>
+        </div>
+        {{ flight_emblem(row.flight, row.slug) }}
+      </div>
+      <div class="national-player-body">
+      <dl class="national-score">
+        {% set position = row.position or '—' %}
+        <div><dt>Position</dt><dd class="national-position">{% if position.startswith('T') and position[1:].isdigit() %}<span class="national-position-tie">T</span><span>{{ position[1:] }}</span>{% else %}{{ position }}{% endif %}</dd></div>
+        <div><dt>To par</dt><dd>{{ row.to_par | replace(' ', '') or '—' }}</dd></div>
+      </dl>
+      <dl class="national-rounds">
+        {% for score in row.rounds %}
+          {% set round_holes = [18, [0, (row.holes or 0) - loop.index0 * 18] | max] | min %}
+          <div class="national-round{% if row.holes is not none %} has-progress{% endif %}{% if 0 < round_holes < 18 %} is-current{% endif %}" style="--round-progress: {{ round_holes / 18 }}"{% if row.holes is not none %} title="Round {{ loop.index }}: {{ round_holes }} of 18 holes entered"{% endif %}><dt>R{{ loop.index }}</dt><dd>{{ score or '—' }}</dd></div>
+        {% endfor %}
+        <div class="national-round-total"><dt>Total</dt><dd>{{ row.total or '—' }}</dd></div>
+      </dl>
+      </div>
+    </article>
+  {% else %}<p class="notice">No scores for our tracked players on the available boards yet.</p>{% endfor %}
+  </div>
+</section>
+
+{% for flight in nationals.flights %}
+<section class="card national-flight" id="flight-{{ flight.name | lower }}">
+  <h2><span class="flt flt-{{ flight.name | lower }}">{{ flight.name }}</span> {{ flight.name }} flight</h2>
+  <p class="sub">{{ flight.dc | length }} DC {{ 'player' if flight.dc | length == 1 else 'players' }} · {{ flight.rows | length }} players on the board{% if flight.updated_at %} · Scores changed <time datetime="{{ flight.updated_at }}">{{ flight.updated_at | score_time }}</time>{% endif %}</p>
+  {% if flight.rows %}
+    {% set leader = flight.rows[0] %}
+    <p class="national-leader">Leading: <strong>{{ leader.name | first_last }}</strong> · {{ leader.to_par | replace(' ', '') }} · {{ leader.progress }}{% if flight.rows | length > 1 and flight.rows[1].position == leader.position %} (tied){% endif %}</p>
+    {% if flight.dc %}{{ score_table(flight.dc, 'DC Metro · ' ~ flight.name ~ ' flight') }}{% else %}<p class="notice">No DC Metro players on this flight’s board.</p>{% endif %}
+    <details class="national-details"><summary>Full {{ flight.name }} flight standings · {{ flight.rows | length }} players</summary>{{ score_table(flight.rows, 'Full field · ' ~ flight.name ~ ' flight', true) }}</details>
+  {% else %}<p class="notice">Scores not available in the mirror yet. Other flights remain available below.</p>{% endif %}
+</section>
+{% endfor %}
+{% endif %}
+{% endblock %}

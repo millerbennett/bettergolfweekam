@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+{% include 'nationals_link.html' %}
+
 {% if today_board %}
 <section class="card card-live">
   {% if today_board.status == 'in_progress' %}

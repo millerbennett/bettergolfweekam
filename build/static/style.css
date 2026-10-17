@@ -5,6 +5,15 @@
    timing screen. Still mobile-first — 44px tap targets, no page-level
    horizontal scroll, and a light theme that stays readable in sunlight. */
 
+/* Barlow Condensed, SIL OFL 1.1; license bundled in fonts/. */
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/barlow-condensed-extrabold.ttf") format("truetype");
+}
+
 :root {
   color-scheme: dark light;
 
@@ -41,8 +50,8 @@
   /* One hue per flight. Deliberately not the lime accent, which already means
      "this is you" - a flight badge is a category, not a highlight. */
   --f-champ: #ffd166;  --f-champ-bg: #362a0d;
-  --f-a:     #7cc4ff;  --f-a-bg:     #0f2436;
-  --f-b:     #c9a2ff;  --f-b-bg:     #241a38;
+  --f-a:     #c9a2ff;  --f-a-bg:     #241a38;
+  --f-b:     #7fa8ff;  --f-b-bg:     #142343;
   --f-c:     #5fe0c8;  --f-c-bg:     #0d2b28;
   --f-d:     #ff9e7a;  --f-d-bg:     #33190f;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
@@ -77,8 +86,8 @@
     --grid: rgba(10, 60, 30, .045);
 
     --f-champ: #7a5600;  --f-champ-bg: #fbf0d3;
-    --f-a:     #14588c;  --f-a-bg:     #ddeefb;
-    --f-b:     #5a3796;  --f-b-bg:     #ece3fb;
+    --f-a:     #5a3796;  --f-a-bg:     #ece3fb;
+    --f-b:     #244ea5;  --f-b-bg:     #e5edff;
     --f-c:     #0a6b5c;  --f-c-bg:     #d8f4ef;
     --f-d:     #9c3d18;  --f-d-bg:     #fde8df;
   }
@@ -822,4 +831,131 @@ table.board td:first-child { width: 3.2rem; }
   .big { font-size: 4rem; }
   .ev-hit { grid-template-columns: 58px 1fr auto; gap: 16px; padding: 14px 10px; margin: 0 -10px; }
   .ev-end { flex-direction: row; align-items: center; gap: 7px; }
+}
+
+/* Championship: compact group cards, then local players within each flight. */
+.nationals-hero, .nationals-callout { border-color: var(--accent-line); }
+.national-jumps { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.national-jumps a { padding: 10px 13px; min-height: 44px; background: var(--surface-3); border: 1px solid var(--line-2); border-radius: 8px; text-decoration: none; font-size: .85rem; }
+.national-players { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; margin-top: 16px; }
+.national-player {
+  --player-accent: var(--f-champ);
+  --player-tint: var(--f-champ-bg);
+  position: relative;
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--player-accent) 35%, var(--line));
+  border-radius: 14px 4px 14px 4px;
+  background: var(--surface-2);
+  box-shadow: 0 5px 16px rgb(0 0 0 / .12);
+}
+.national-player--a { --player-accent: var(--f-a); --player-tint: var(--f-a-bg); }
+.national-player--b { --player-accent: var(--f-b); --player-tint: var(--f-b-bg); }
+.national-player--c { --player-accent: var(--f-c); --player-tint: var(--f-c-bg); }
+.national-player--d { --player-accent: var(--f-d); --player-tint: var(--f-d-bg); }
+/* Flight identity lives in a large, distinct emblem above the score area. */
+.national-player-heading {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-height: 104px;
+  padding: 6px 10px 6px 14px;
+  border-radius: 13px 3px 0 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--player-accent) 28%, var(--line));
+  background:
+    linear-gradient(120deg, transparent 45%, color-mix(in srgb, var(--player-accent) 8%, transparent) 45% 65%, transparent 65%),
+    radial-gradient(ellipse at 100% 30%, color-mix(in srgb, var(--player-accent) 19%, transparent), transparent 70%),
+    linear-gradient(105deg, var(--surface-2), var(--player-tint));
+}
+.national-player-heading::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--player-accent), color-mix(in srgb, var(--player-accent) 15%, transparent));
+}
+.national-player-identity { position: relative; z-index: 1; min-width: 0; flex: 1; }
+.national-flight-label { margin: 0 0 2px; color: var(--player-accent); font-size: .77rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.national-flight-label span { font-size: .65rem; font-weight: 600; letter-spacing: .06em; }
+.national-player h3 { margin: 0; font-size: 1.12rem; font-weight: 750; line-height: 1.2; text-transform: none; letter-spacing: -.02em; }
+.national-player h3 a { display: flex; align-items: center; min-height: 44px; color: var(--ink); text-decoration: none; }
+.national-player h3 a:hover { text-decoration: underline; text-decoration-color: var(--player-accent); }
+.national-emblem { position: relative; flex: 0 0 92px; height: 92px; color: var(--player-accent); }
+.national-emblem svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 4px 3px rgb(0 0 0 / .3)); }
+.national-emblem-letter { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-bottom: 3px; font: 900 2rem/1 var(--mono); color: var(--player-accent); text-shadow: 0 2px 0 rgb(0 0 0 / .3); }
+.emblem-metal-light { stop-color: color-mix(in srgb, var(--player-accent) 65%, white); }
+.emblem-metal-mid { stop-color: var(--player-accent); }
+.emblem-metal-dark { stop-color: color-mix(in srgb, var(--player-accent) 40%, var(--player-tint)); }
+.emblem-wings { fill: color-mix(in srgb, var(--player-accent) 48%, var(--player-tint)); stroke: var(--player-accent); stroke-width: 1; stroke-linejoin: round; }
+.emblem-wing-lines { fill: none; stroke: var(--player-accent); stroke-width: 1.5; stroke-linecap: round; opacity: .75; }
+.emblem-inset { fill: var(--player-tint); stroke: color-mix(in srgb, var(--player-accent) 75%, white); stroke-width: .8; }
+.emblem-crown, .emblem-star { fill: var(--player-accent); }
+.emblem-base { fill: var(--player-tint); stroke: var(--player-accent); stroke-width: 1.5; }
+.national-player--champ {
+  border-color: color-mix(in srgb, var(--player-accent) 70%, var(--line));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--player-accent) 7%, transparent), 0 6px 24px color-mix(in srgb, var(--player-accent) 12%, transparent);
+}
+.national-player--champ .national-player-heading {
+  background:
+    linear-gradient(120deg, transparent 32%, color-mix(in srgb, var(--player-accent) 16%, transparent) 32% 44%, transparent 44% 48%, color-mix(in srgb, var(--player-accent) 10%, transparent) 48% 60%, transparent 60%),
+    radial-gradient(ellipse at 75% 20%, color-mix(in srgb, var(--player-accent) 22%, transparent), transparent 75%),
+    linear-gradient(120deg, var(--surface-2), var(--player-tint));
+}
+.national-player--champ .national-emblem svg { filter: drop-shadow(0 0 8px color-mix(in srgb, var(--player-accent) 25%, transparent)); }
+.national-player--champ .national-emblem-letter { padding-top: 17px; padding-bottom: 0; font-size: .6rem; letter-spacing: -.03em; text-transform: uppercase; }
+.national-player--a .national-emblem svg { filter: drop-shadow(0 0 6px color-mix(in srgb, var(--player-accent) 20%, transparent)); }
+.national-player--a .national-player-heading::after, .national-player--champ .national-player-heading::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 35%, color-mix(in srgb, var(--player-accent) 12%, transparent) 50%, transparent 65%) 200% 0 / 250% 100%;
+}
+.national-player--c .national-player-heading { background: radial-gradient(ellipse at 100% 50%, var(--player-tint), transparent 85%); }
+.national-player--d .national-player-heading { background: linear-gradient(110deg, var(--surface-2) 40%, color-mix(in srgb, var(--player-tint) 40%, var(--surface-2))); border-bottom-color: var(--line); }
+.national-player--d .national-player-heading::before { height: 1px; opacity: .6; }
+.national-player-body { padding: 8px 14px; }
+.national-player-progress { display: flex; align-items: center; gap: 6px; margin: 3px 0 0; color: var(--muted); font-size: .72rem; }
+.national-playing-dot { width: 5px; height: 5px; flex-shrink: 0; border-radius: 50%; background: var(--player-accent); box-shadow: 0 0 8px color-mix(in srgb, var(--player-accent) 35%, transparent); }
+.national-score { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 0 0 8px; }
+.national-score dt { font-size: .75rem; color: var(--muted); }
+.national-score dd { margin: 2px 0 0; font-size: 1.5rem; font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; color: var(--ink); }
+.national-score .national-position { display: inline-flex; align-items: baseline; gap: 2px; font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 2.1rem; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
+.national-position-tie { font-size: .52em; letter-spacing: 0; color: var(--muted); }
+.national-rounds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin: 0; padding-top: 4px; border-top: 1px solid var(--line); }
+.national-round, .national-round-total { position: relative; min-width: 0; padding: 5px 8px 8px; }
+.national-rounds dt { font-size: .65rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.national-rounds dd { margin: 3px 0 0; font: 600 1rem var(--mono); }
+.national-round.is-current::before, .national-round.is-current::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: 4px; height: 2px; border-radius: 2px; }
+.national-round.is-current::before { background: var(--line-2); }
+.national-round.is-current::after { background: var(--player-accent); transform: scaleX(var(--round-progress)); transform-origin: left; }
+.national-round-total { background: none; border-left: 1px solid var(--line-2); border-radius: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .national-player { animation: national-card-enter .45s ease-out both; animation-delay: calc(var(--card-order) * 45ms); transition: border-color .2s, box-shadow .2s; }
+  .national-playing-dot { animation: national-score-pulse 3s ease-in-out infinite; }
+  .national-player--champ .national-emblem { animation: national-emblem-float 5s ease-in-out infinite; }
+  .national-player--a .national-player-heading::after, .national-player--champ .national-player-heading::after { animation: national-emblem-shine 8s ease-in-out infinite; animation-delay: calc(var(--card-order) * 250ms); }
+}
+@media (hover: hover) and (pointer: fine) {
+  .national-player:hover { border-color: color-mix(in srgb, var(--player-accent) 55%, var(--line)); box-shadow: 0 4px 18px color-mix(in srgb, var(--player-accent) 8%, transparent); }
+}
+@keyframes national-card-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes national-emblem-float { 0%, 100% { transform: translateY(1px); } 50% { transform: translateY(-2px); } }
+@keyframes national-emblem-shine { 0%, 65% { background-position: 200% 0; } 95%, 100% { background-position: -100% 0; } }
+@keyframes national-score-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+.national-flight, #our-group { scroll-margin-top: 130px; }
+.national-leader { padding: 12px 0; font-size: .9rem; border-top: 1px solid var(--line); }
+.national-tour { display: block; font-size: .75rem; }
+.national-details { margin-top: 16px; border-top: 1px solid var(--line-2); }
+.national-details summary { cursor: pointer; padding: 15px 0; min-height: 44px; color: var(--accent-ink); font-size: .9rem; font-weight: 600; }
+@media (max-width: 600px) {
+  .topbar nav a { padding-inline: 6px; font-size: .65rem; letter-spacing: .01em; }
+}
+@media (max-width: 374px) {
+  .topbar nav a { padding-inline: 3px; font-size: .61rem; }
 }

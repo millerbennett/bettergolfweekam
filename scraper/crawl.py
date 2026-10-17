@@ -14,7 +14,7 @@ import sys
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
-from . import sources
+from . import nationals, sources
 from .net import Fetcher
 from .store import (
     age_hours,
@@ -311,13 +311,58 @@ class Crawler:
 
     # -- planner ---------------------------------------------------------
 
+    def crawl_nationals_board(self, championship: dict, flight: dict) -> None:
+        key = f"nationals:{championship['season']}:{flight['name']}"
+        rel = f"nationals/{championship['season']}/{flight['name'].lower()}.json"
+        previous = read_json(rel) or {}
+        payload = nationals.fetch_board(self.fetcher, self.cfg, championship, flight)
+        if previous.get("rows") and not payload["rows"]:
+            raise RuntimeError("championship parsed to 0 players; refusing to overwrite")
+        self.save(rel, payload, key)
+
+    def crawl_nationals(self) -> None:
+        if not self.cfg.get("nationals", {}).get("enabled", False):
+            return
+        known_championship = read_json("nationals/schedule.json") or {}
+        discovery_hours = self.fresh.get("schedule_hours", 12)
+        if (known_championship.get("start_date", "9999") <= self.today.isoformat()
+                <= known_championship.get("end_date", "")
+                and any(not f.get("tid") for f in known_championship.get("flights", []))):
+            discovery_hours = 1 / 3  # find boards promptly when scoring opens
+        if self.due("nationals:discovery", discovery_hours):
+            def discover():
+                payload = nationals.discover(self.fetcher, self.cfg)
+                previous = read_json("nationals/schedule.json") or {}
+                # The tournament dropdown can disappear after the event. Keep
+                # verified ids for this season so archived boards still work.
+                if previous.get("season") == payload["season"]:
+                    known = {f["name"]: f.get("tid") for f in previous.get("flights", [])}
+                    for flight in payload["flights"]:
+                        flight["tid"] = flight["tid"] or known.get(flight["name"])
+                self.save("nationals/schedule.json", payload, "nationals:discovery")
+            self.attempt("nationals discovery", discover)
+        championship = read_json("nationals/schedule.json") or {}
+        if not championship:
+            return
+        start = days_until(championship["start_date"], self.today)
+        end = days_until(championship["end_date"], self.today)
+        if not self.force and (end < -10 or start > 30):
+            return
+        interval = 0 if start <= 0 <= end else (6 if start > 0 else 3)
+        for flight in championship.get("flights", []):
+            key = f"nationals:{championship['season']}:{flight['name']}"
+            if flight.get("tid") and self.due(key, interval):
+                self.attempt(f"nationals {flight['name']}", self.crawl_nationals_board,
+                             championship, flight)
+
     def run(self) -> None:
+        self.attempt("nationals", self.crawl_nationals)
         if self.mode in ("full", "auto", "daily"):
             if self.due("schedule", self.fresh["schedule_hours"]):
                 self.attempt("schedule", self.crawl_schedule)
 
         schedule = read_json("schedule.json") or {"events": []}
-        events = [e for e in schedule.get("events", []) if e.get("tid")]
+        events = [e for e in schedule.get("events", []) if e.get("tid")] if self.mode != "nationals" else []
 
         if self.mode == "full":
             # One-off backfill: every event's pairings and results, so the mirror
@@ -384,7 +429,7 @@ class Crawler:
                     self.attempt(f"live {event['tid']}", self.crawl_live, event)
                     self.attempt(f"skins {event['tid']}", self.crawl_skins, event)
 
-        if self.mode in ("full", "daily") or self.due("standings", self.fresh["standings_hours"]):
+        if self.mode != "nationals" and (self.mode in ("full", "daily") or self.due("standings", self.fresh["standings_hours"])):
             self.attempt("standings", self.crawl_standings)
 
         if self.mode in ("full", "auto", "daily"):
@@ -493,7 +538,7 @@ def _first_sentence(text: str, limit: int = 110) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Crawl the Golfweek Am Tour site into data/")
-    parser.add_argument("--mode", default="auto", choices=["auto", "full", "daily", "live"])
+    parser.add_argument("--mode", default="auto", choices=["auto", "full", "daily", "live", "nationals"])
     parser.add_argument("--force", action="store_true", help="ignore freshness stamps")
     parser.add_argument("--verbose", "-v", action="store_true")
     args = parser.parse_args(argv)

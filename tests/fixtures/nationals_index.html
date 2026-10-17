@@ -1,0 +1,274 @@
+<script>console.log('cStatus=1')</script><script>console.log('daysBefore:-20')</script><script>console.log('daysAfter:8')</script><script>console.log('Tournament=0')</script><script>console.log('t1=0')</script><script>console.log('t2=0')</script><script>console.log('is Day 2')</script><script>console.log('tournament is now:0')</script><script>console.log('writing leaderboardtext')</script><script>console.log('tournamentID=0')</script>
+
+
+
+<!DOCTYPE html>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+     <script>
+
+        var timer = setTimeout(function() {
+
+            window.location='/livescore/leaderboard.aspx?t=0';
+
+        }, 60000);
+
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+
+	Golfweek Amateur Tour Leaderboard
+
+</title><link href="lsStyles.css" rel="stylesheet" /><link href="/livescore/inc/footer.css" rel="stylesheet" />
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <form name="form1" method="post" action="./Leaderboard.aspx" id="form1">
+
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="ENpsUX/RdwVEC8l8EN91mwdvj0oZxlsKSMXiKjnl+fv1e0wblqA0aVvPmpCd6GStvlHwXwzzQxkr/tLIpFYqEdkH0psQsnL1pmO5ZEjvrMJDEFnuaVKezbfVHMhyWWQlUkwDllzvGCxnU3CKFQktcz2J1E0U8AcQmDVihN0NGClDwSfFQ2RIcRYZZTThbFQblSIHbCLcGDCD80ojgIAWEsa1il4kwBU2Daybgmo1ss+4ZXa4mM8NRmwZqUpwO3ZHO8q5WFjtMrloNMDJ3ZpHwhLkM0AwUQTJpd+BHjEWlYQASdq5EtirOUIJQMtCE0UMjaS6WAoabZRH5mtc9O14kFFA7bCxRDYudh4FIyU96xb8QQgBYZ12zfe2QPFWDPiVCRdMTF7FkWENRzPZAp8dsnSs2BN3GK9bz3tWQjh+Mc466ISv8f7zu5+1vE68pF13yPCoO8++sx2fLokQPKhiBoNHzkopAcOEdg1sSQOKj4XdiO6fBRlh3h6lmKhtrW6kmJnNkB8Y7oY5obEGnF2iBGz0LdOA+F/IFT07WWzWyqXMkzx6/raFJekILUp1xlPmiZ/M88rISTk/XJriwkxVYIFCrV5gRx92UVTSfIc4Vu7FMiA4I7yFaLIA/znUVGqa" />
+
+
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C6A32B48" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="kvGmNVL7JLQQJGTUsSebnEZeshKfLBvnfWo/3ejEFtzrnhbmDirpTX+iO1iUn1Px7zThO0iVOIW8ve3iVm/wdlIPlt+/7AKa6EM7SMVApiPHFKq9+BN2msB5Fyd2A/UFN48g2U8RIwUMenSdet3com4deBToUN+TgIoxVoCIEMjoUZDSCzQj6zrpGnQ3w+89vtErigEKS0XSym/TuHTuOT0g7nBPdRpAHwbowt1HGIo=" />
+
+      <div id="page-container">
+
+            <div id="content-wrap">
+
+        <div id="header" class="header">&nbsp;</div>            
+
+                 
+
+                        <div class="menu"><a href="skinsLB.aspx">Jump To Skins Leaderboards</a> <a href="https://twoman.amateurgolftour.net/">Two Man Leaderboard</a> <a href="https://directorscup.amateurgolftour.net">Directors' Cup</a><br /><br />
+
+        <div class="leaderBoardLinkTitle">Leaderboards</div>
+
+            <select name="tournaments_dd" id="tournaments_dd">
+
+	<option selected="selected" value="--Select Tournament--">--Select Tournament--</option>
+
+	<option value="18313">2026 Championship - Champ Flight</option>
+
+	<option value="18314">2026 Championship - A Flight</option>
+
+	<option value="18324">2026 Championship - B Flight</option>
+
+	<option value="18326">2026 Championship - C Flight</option>
+
+	<option value="18327">2026 Championship - D Flight</option>
+
+
+
+</select> 
+
+    </div>
+
+                <div>
+
+            <div id="leaderBoard" class="leaderBoard">
+
+              <table class="lsLeaderBoardTable">
+
+                  <tr><td colspan="9" align="center">Updated every 60 seconds</td></tr>
+
+                  <tr>
+
+                      <td colspan="9" class='lbtournamentname'><!--Flight: &nbsp;-->
+
+                          
+
+                      </td>
+
+                  </tr>
+
+                  <span id="lblLeaderBoard"></span>
+
+              </table>
+
+                </div>
+
+        </div>
+
+      </div>
+
+     <script src="/new/Site/javascript/core/jquery.min.js" type="text/javascript"></script>
+
+        <script src="/new/Site/javascript/core/popper.min.js" type="text/javascript"></script>
+
+        <script src="/new/Site/javascript/core/bootstrap.min.js" type="text/javascript"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <footer class="footer-style">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-12">
+
+                       <style type="text/css">
+
+<!--
+
+.footerLink {
+
+}
+
+-->
+
+</style>
+
+<a href="/Default.aspx" class="footerLink">Home</a>
+
+<div class="dropup">
+
+<button class="dropbtn">Find A Tour Near Me &#9652;</button>
+
+    <div class="dropup-content">
+
+        <p><a class="dropdown-item" href="/alabama_tour_pages/default.aspx">Alabama</a>
+
+          <a class="dropdown-item" href="/phoenix_tour_pages/default.aspx">Arizona</a>
+
+          <a class="dropdown-item" href="/arkansas_tour_pages/default.aspx">Arkansas</a>
+
+          <a class="dropdown-item" href="/atlanta_tour_pages/default.aspx">Atlanta, GA</a>
+
+          <a class="dropdown-item" href="/augusta_tour_pages/default.aspx">Augusta, GA</a>
+
+          <a class="dropdown-item" href="/central_california_tour_pages/default.aspx">California</a>
+
+          <a class="dropdown-item" href="/triad_tour_pages/default.aspx">Central North Carolina</a>
+
+          <a class="dropdown-item" href="/charleston_tour_pages/default.aspx">Charleston, SC</a>
+
+          <a class="dropdown-item" href="/Charlotte_tour_pages/default.aspx">Charlotte, NC</a>
+
+          <a class="dropdown-item" href="/chicago_tour_pages/default.aspx">Chicago, IL</a>
+
+          <a class="dropdown-item" href="/cincinnati_tour_pages/default.aspx">Cincinnati/Dayton, OH</a>
+
+          <a class="dropdown-item" href="/cleveland_tour_pages/default.aspx">Cleveland/Akron, OH</a>
+
+          <a class="dropdown-item" href="/columbia_tour_pages/default.aspx">Columbia, SC</a>
+
+          <a class="dropdown-item" href="/columbus_tour_pages/default.aspx">Columbus,OH</a>
+
+          <a class="dropdown-item" href="/dallas_tour_pages/default.aspx">Dallas/Ft. Worth, TX</a>
+
+          <a class="dropdown-item" href="/denver_tour_pages/default.aspx">Denver, CO</a>
+
+          <a class="dropdown-item" href="/downeast_tour_pages/default.aspx">Eastern NC</a>
+
+          <a class="dropdown-item" href="/el_paso_tour_pages/default.aspx">El Paso, TX/ Las Cruces, NM</a>
+
+          <a class="dropdown-item" href="/hiltonhead_tour_pages/default.aspx">Hilton Head- Savannah</a>
+
+          <a class="dropdown-item" href="/houston_tour_pages/default.aspx">Houston, TX</a>
+
+          <a class="dropdown-item" href="/indywky_tour_pages/default.aspx">Indiana-W Ky</a>
+
+          <a class="dropdown-item" href="/indy_tour_pages/default.aspx">Indianapolis, IN</a>
+
+          <a class="dropdown-item" href="/jacksonville_tour_pages/default.aspx">Jacksonville, FL</a>
+
+          <a class="dropdown-item" href="/kansas_tour_pages/default.aspx">Kansas</a>
+
+          <a class="dropdown-item" href="/lexington_tour_pages/default.aspx">Kentucky</a>
+
+          <a class="dropdown-item" href="/las_vegas_tour_pages/default.aspx">Las Vegas, NV</a>
+
+          <a class="dropdown-item" href="/nla_tour_pages/default.aspx">Louisiana North</a>
+
+          <a class="dropdown-item" href="/sla_tour_pages/default.aspx">Louisiana South</a>
+
+          
+
+          <a class="dropdown-item" href="/detroit_tour_pages/default.aspx">Michigan East</a>
+
+          <a class="dropdown-item" href="/miw_tour_pages/default.aspx">Michigan West</a>
+
+          <a class="dropdown-item" href="/milwaukee_tour_pages/default.aspx">Milwaukee, WI</a>
+
+          <a class="dropdown-item" href="/minneapolis_tour_pages/default.aspx">Minneapolis/St. Paul, MN</a>
+
+          <a class="dropdown-item" href="/mississippi_tour_pages/default.aspx">Mississippi</a>
+
+         
+
+          <a class="dropdown-item" href="/nashville_tour_pages/default.aspx">Nashville, TN</a>
+
+          <a class="dropdown-item" href="/new_jersey_tour_pages/default.aspx">New Jersey</a>
+
+          
+
+          <a class="dropdown-item" href="/upstateny_tour_pages/default.aspx">NY Upstate</a>
+
+          <a class="dropdown-item" href="/ncfl_tour_pages/default.aspx">North Central Florida</a>
+
+          <a class="dropdown-item" href="/orlando_tour_pages/default.aspx">Orlando, FL</a>
+
+          <a class="dropdown-item" href="/philly_tour_pages/default.aspx">Philadelphia, PA Metro</a>
+
+          
+
+          <a class="dropdown-item" href="/richmond_tour_pages/default.aspx">Richmond, VA</a>
+
+          
+
+          <a class="dropdown-item" href="/southflorida_tour_pages/default.aspx">South Florida</a>
+
+          <a class="dropdown-item" href="/stlouis_tour_pages/default.aspx">St. Louis, MO</a>
+
+          <a class="dropdown-item" href="/tampa_tour_pages/default.aspx">Tampa, FL</a>
+
+          <a class="dropdown-item" href="/tidewater_tour_pages/default.aspx">Tidewater, VA</a>
+
+          
+
+          
+
+          <a class="dropdown-item" href="/dc_tour_pages/default.aspx">Washington, DC Metro</a>
+
+          <a class="dropdown-item" href="/regional_pages/default.aspx">Regionals</a>
+
+          <a class="dropdown-item" href="/tour_championship/default.aspx">Tour Championship</a></p>
+
+</div>
+
+</div>
+
+<a href="/register/Signup.aspx" class="footerLink">Join Now</a>
+
+<a href="https://www.senioramateurgolftour.net/Default.aspx" class="footerLink">Senior Amateur Golf Tour</a> 
+
+                    </div>
+
+                </div>
+
+            </div>
+
+       </footer>
+
+</div>
+
+        
+
+    </form>
+
+</body>
+
+</html>
+

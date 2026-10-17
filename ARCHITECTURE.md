@@ -21,8 +21,8 @@ Three jobs, in priority order:
    page is pre-rendered server-side and why `digest.txt` exists.
 3. **Cost nothing** — inside the GitHub Actions and Cloudflare Pages free tiers.
 
-Non-goals: writing anything back upstream, replacing the tour's site, serving
-players outside the configured tour.
+Non-goals: writing anything back upstream or replacing the tour's site.
+The championship view also includes other tours for competitive context.
 
 ---
 
@@ -511,7 +511,37 @@ on either day — otherwise it dropped into Played on the morning of round two.
 
 ---
 
-## 15. Known gaps / possible future work
+## 15. National Championship (added October 2026)
+
+`scraper/nationals.py` uses the championship schedule plus the live app's
+`tournaments_dd` to discover five combined 54-hole boards. These have different
+headers from a local board: Position, Player, R1, R2, R3, Total, Thru, Currently.
+**Thru is cumulative through 54**, so 18 and 36 mean between rounds, not finished.
+A1/A2 and B1/B2 are course pools in the schedule; they share A/B leaderboards.
+Positions and to-par are copied from upstream, never recalculated across flights.
+
+`data/nationals/schedule.json` stores season, dates, course rounds, and board ids.
+`data/nationals/<season>/<flight>.json` stores each board independently; a failed
+request or malformed/empty parse cannot erase an existing board or block others.
+Discovery is every 12 hours (20 minutes during play if boards aren't listed yet).
+Board polling is every run on championship dates, every 6 hours in the preceding
+30 days, and every 3 hours for ten days afterward. Verified ids survive removal
+from the current dropdown within the same season. The normal global 10-second
+request delay and unchanged-snapshot rule both apply.
+
+`build/nationals.py` derives the group and DC views offline. `/nationals` renders
+all five flights, the tracked group, DC players, and expandable full fields without
+JavaScript. `/nationals.json` contains the full view; shared and personal status
+and digest artifacts include championship summaries. A tracked player remains in
+the group even if their upstream home tour differs. Missing rows do not assert
+anything about registration. Flight timestamps mean content last changed, not
+last checked; old snapshots are labelled with their original season and dates.
+
+`tests/test_nationals.py` includes real October 17 A/B board fixtures and tests
+the 54-hole boundaries, discovery, source identity, partial failures, polling,
+rendered links, and machine-readable summaries.
+
+## 16. Known gaps / possible future work
 
 - **Live board matches players by name**, not id — the one place ids don't
   exist. Duplicate names would double-highlight, and a misspelled config name

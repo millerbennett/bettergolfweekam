@@ -27,6 +27,21 @@ reader) can watch the tour for you — see [For scheduled checks](#for-scheduled
 
 ## What it mirrors
 
+**Nationals:** `/nationals` puts the Hilton Head championship on one page: the
+tracked group first, every DC Metro player by flight, then expandable full-field
+standings. It preserves upstream positions,
+R1/R2/R3 scores, totals, to-par scores, and cumulative holes through 54. A1/A2
+and B1/B2 are course groups sharing a competitive flight, so they are not counted
+twice. Round scores include strokes entered so far, not just completed rounds.
+
+The crawler discovers the championship season, dates and five combined board
+ids automatically. It polls during all three days on the existing 20-minute
+schedule, with lighter polling before and for ten days after the event.
+`python -m scraper.crawl --mode nationals` refreshes just the championship;
+`--force` also refreshes discovery. Enable/disable it with `nationals.enabled`
+in `config.json`. `/nationals.json` contains the complete mirrored boards;
+group and personal digests/status files also include nationals scores.
+
 | Upstream page | Method | Lands in |
 |---|---|---|
 | `Schedule.aspx` | GET | `data/schedule.json` |
