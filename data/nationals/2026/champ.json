@@ -28,15 +28,15 @@
       "position": "2",
       "rounds": [
         "72",
-        "68",
+        "74",
         ""
       ],
-      "total": "140",
-      "thru": "35",
-      "to_par": "+ 1",
-      "holes": 35,
-      "progress": "R2 · thru 17 of 18",
-      "status": "in_progress"
+      "total": "146",
+      "thru": "36",
+      "to_par": "+ 2",
+      "holes": 36,
+      "progress": "R2 complete · 36 holes",
+      "status": "between_rounds"
     },
     {
       "name": "Jaspers, Joe",
@@ -45,15 +45,15 @@
       "position": "3",
       "rounds": [
         "73",
-        "69",
+        "74",
         ""
       ],
-      "total": "142",
-      "thru": "35",
+      "total": "147",
+      "thru": "36",
       "to_par": "+ 3",
-      "holes": 35,
-      "progress": "R2 · thru 17 of 18",
-      "status": "in_progress"
+      "holes": 36,
+      "progress": "R2 complete · 36 holes",
+      "status": "between_rounds"
     },
     {
       "name": "Little, Mike",
@@ -107,44 +107,10 @@
       "status": "between_rounds"
     },
     {
-      "name": "Fisher, Wayne",
-      "tour": "Philadelphia, PA Metro",
-      "flight": "Champ",
-      "position": "7",
-      "rounds": [
-        "73",
-        "75",
-        ""
-      ],
-      "total": "148",
-      "thru": "35",
-      "to_par": "+ 9",
-      "holes": 35,
-      "progress": "R2 · thru 17 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Centala, Chris",
-      "tour": "Tampa, FL",
-      "flight": "Champ",
-      "position": "T8",
-      "rounds": [
-        "74",
-        "75",
-        ""
-      ],
-      "total": "149",
-      "thru": "35",
-      "to_par": "+ 10",
-      "holes": 35,
-      "progress": "R2 · thru 17 of 18",
-      "status": "in_progress"
-    },
-    {
       "name": "Peden, Drew",
       "tour": "Orlando, FL",
       "flight": "Champ",
-      "position": "T8",
+      "position": "T7",
       "rounds": [
         "77",
         "77",
@@ -158,10 +124,27 @@
       "status": "between_rounds"
     },
     {
+      "name": "Centala, Chris",
+      "tour": "Tampa, FL",
+      "flight": "Champ",
+      "position": "T7",
+      "rounds": [
+        "74",
+        "80",
+        ""
+      ],
+      "total": "154",
+      "thru": "36",
+      "to_par": "+ 10",
+      "holes": 36,
+      "progress": "R2 complete · 36 holes",
+      "status": "between_rounds"
+    },
+    {
       "name": "Lee, Derek",
       "tour": "Richmond",
       "flight": "Champ",
-      "position": "T10",
+      "position": "T9",
       "rounds": [
         "79",
         "76",
@@ -178,10 +161,27 @@
       "name": "Drummond, Nathan",
       "tour": "Tampa, FL",
       "flight": "Champ",
-      "position": "T10",
+      "position": "T9",
       "rounds": [
         "76",
         "79",
+        ""
+      ],
+      "total": "155",
+      "thru": "36",
+      "to_par": "+ 11",
+      "holes": 36,
+      "progress": "R2 complete · 36 holes",
+      "status": "between_rounds"
+    },
+    {
+      "name": "Fisher, Wayne",
+      "tour": "Philadelphia, PA Metro",
+      "flight": "Champ",
+      "position": "T9",
+      "rounds": [
+        "73",
+        "82",
         ""
       ],
       "total": "155",
@@ -464,10 +464,27 @@
       "status": "between_rounds"
     },
     {
+      "name": "Strader, Wes",
+      "tour": "Eastern NC",
+      "flight": "Champ",
+      "position": "T25",
+      "rounds": [
+        "75",
+        "87",
+        ""
+      ],
+      "total": "162",
+      "thru": "36",
+      "to_par": "+ 18",
+      "holes": 36,
+      "progress": "R2 complete · 36 holes",
+      "status": "between_rounds"
+    },
+    {
       "name": "Medlin, Ryan",
       "tour": "Eastern NC",
       "flight": "Champ",
-      "position": "T28",
+      "position": "T29",
       "rounds": [
         "85",
         "78",
@@ -484,7 +501,7 @@
       "name": "Calhoun, Steven",
       "tour": "North Florida",
       "flight": "Champ",
-      "position": "T28",
+      "position": "T29",
       "rounds": [
         "79",
         "84",
@@ -501,27 +518,10 @@
       "name": "Goldschmidt, Joe",
       "tour": "Cincinnati/Dayton",
       "flight": "Champ",
-      "position": "T28",
+      "position": "T29",
       "rounds": [
         "78",
         "85",
-        ""
-      ],
-      "total": "163",
-      "thru": "36",
-      "to_par": "+ 19",
-      "holes": 36,
-      "progress": "R2 complete · 36 holes",
-      "status": "between_rounds"
-    },
-    {
-      "name": "Strader, Wes",
-      "tour": "Eastern NC",
-      "flight": "Champ",
-      "position": "T28",
-      "rounds": [
-        "75",
-        "88",
         ""
       ],
       "total": "163",
@@ -1093,5 +1093,5 @@
       "status": "between_rounds"
     }
   ],
-  "fetched_at": "2026-10-17T17:41:09+00:00"
+  "fetched_at": "2026-10-17T18:01:06+00:00"
 }
