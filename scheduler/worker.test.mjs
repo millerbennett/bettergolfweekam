@@ -19,6 +19,7 @@ test('one tick dispatches exactly once, without contacting the golf site', async
   assert.equal(await tick(event, env, api.fetcher, now), 'dispatched');
   assert.equal(api.calls.length, 2);
   assert.ok(api.calls.every(c => new URL(c.url).hostname === 'api.github.com'));
+  assert.ok(api.calls.every(c => c.redirect === 'manual'));
   assert.deepEqual(JSON.parse(api.calls[1].body), { ref: 'main', inputs: {
     mode: 'auto', force: false, source: 'cloudflare', scheduled_at: '2026-10-17T17:00:00.000Z',
   } });
@@ -57,6 +58,14 @@ test('failed dispatch is never retried', async () => {
   const api = github([], 500);
   await assert.rejects(tick(event, env, api.fetcher, now));
   assert.equal(api.calls.length, 2);
+});
+test('GitHub redirects are rejected without forwarding the credential', async () => {
+  let calls = 0;
+  await assert.rejects(tick(event, env, async () => {
+    calls++;
+    return new Response(null, { status: 302, headers: { Location: 'https://example.invalid' } });
+  }, now));
+  assert.equal(calls, 1);
 });
 test('malformed status response and missing credentials fail closed', async () => {
   await assert.rejects(tick(event, env, async () => Response.json({}), now));

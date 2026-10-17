@@ -19,7 +19,9 @@ export async function tick(event, env, fetcher = fetch, now = Date.now()) {
     'Content-Type': 'application/json',
   };
   const request = (url, options = {}) => fetcher(url, {
-    ...options, headers, signal: AbortSignal.timeout(10_000), redirect: 'error',
+    // Workers supports manual/follow, not Node's redirect: 'error'. A redirect
+    // returns a non-OK response and fails closed without forwarding credentials.
+    ...options, headers, signal: AbortSignal.timeout(10_000), redirect: 'manual',
   });
   const response = await request(`${WORKFLOW}/runs?branch=main&per_page=30`);
   if (!response.ok) throw new Error(`GitHub run check failed: ${response.status}`);
