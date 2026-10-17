@@ -936,6 +936,7 @@ table.board td:first-child { width: 3.2rem; }
 .national-score dd { margin: 0; font: 800 1.5rem/1.1 "Barlow Condensed", "Arial Narrow", sans-serif; font-variant-numeric: tabular-nums; color: var(--ink); }
 .national-score .national-position { display: inline-flex; align-items: baseline; gap: 2px; font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 1.8rem; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
 .national-position-tie { font-size: .52em; letter-spacing: 0; color: var(--muted); }
+.national-position-image { display: block; width: 56px; height: 29px; object-fit: contain; border-radius: 3px; }
 .national-rounds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: 3px; min-width: 0; margin: 0; }
 .national-round, .national-round-total { position: relative; min-width: 0; padding: 0 0 5px; text-align: center; }
 .national-rounds dt { font-size: .58rem; line-height: 1.2; color: var(--muted); text-transform: uppercase; letter-spacing: 0; }

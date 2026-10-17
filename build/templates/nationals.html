@@ -95,7 +95,7 @@
       <div class="national-player-body">
       <dl class="national-score">
         {% set position = row.position or '—' %}
-        <div><dt>Position</dt><dd class="national-position">{% if position.startswith('T') and position[1:].isdigit() %}<span class="national-position-tie">T</span><span>{{ position[1:] }}</span>{% else %}{{ position }}{% endif %}</dd></div>
+        <div><dt>Position</dt><dd class="national-position">{% if row.slug == 'thomas-lemense' %}<img class="national-position-image" src="{{ url('images/thomas-lemense-position.png') }}" alt="Poop" width="56" height="29">{% elif position.startswith('T') and position[1:].isdigit() %}<span class="national-position-tie">T</span><span>{{ position[1:] }}</span>{% else %}{{ position }}{% endif %}</dd></div>
         <div><dt>To par</dt><dd>{{ row.to_par | replace(' ', '') or '—' }}</dd></div>
       </dl>
       <dl class="national-rounds">
