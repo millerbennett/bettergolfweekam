@@ -42,17 +42,25 @@
 </div>
 {% endmacro %}
 {% macro score_table(rows, label, full=false) %}
-<div class="scroll" tabindex="0" role="region" aria-label="{{ label }} — scroll for all scores">
-<table class="data board" aria-label="{{ label }}">
-  <thead><tr><th scope="col">Pos</th><th scope="col">Player</th><th scope="col" class="num">To par</th><th scope="col" class="num">R1</th><th scope="col" class="num">R2</th><th scope="col" class="num">R3</th><th scope="col" class="num">Total</th><th scope="col" class="num">Thru / 54</th></tr></thead>
+<div class="scroll national-table-wrap" tabindex="0" role="region" aria-label="{{ label }}">
+<table class="data board national-board" aria-label="{{ label }}">
+  <thead><tr><th scope="col">Pos</th><th scope="col">Player</th><th scope="col" class="num">To par</th><th scope="col" class="num national-table-round">R1</th><th scope="col" class="num national-table-round">R2</th><th scope="col" class="num national-table-round">R3</th><th scope="col" class="num">Total</th><th scope="col" class="num national-table-thru">Thru / 54</th></tr></thead>
   <tbody>{% for row in rows %}
-    <tr{% if row.tracked %} class="mine"{% endif %}>
+    <tr class="national-result-row{% if row.tracked %} mine{% endif %}">
       <td>{{ row.position or '—' }}</td>
-      <td>{% if row.slug %}<a href="{{ url('p/' ~ row.slug ~ '/index.html') }}">{{ row.name | first_last }}</a>{% else %}{{ row.name | first_last }}{% endif %}
+      <td class="national-table-player">{% if row.slug %}<a href="{{ url('p/' ~ row.slug ~ '/index.html') }}">{{ row.name | first_last }}</a>{% else %}{{ row.name | first_last }}{% endif %}
         {% if full %}<span class="detail national-tour">{{ row.tour }}</span>{% endif %}</td>
       <td class="num">{{ row.to_par | replace(' ', '') or '—' }}</td>
-      {% for round in row.rounds %}<td class="num">{{ round or '—' }}</td>{% endfor %}
-      <td class="num">{{ row.total or '—' }}</td><td class="num">{{ row.thru or '—' }}</td>
+      {% for round in row.rounds %}<td class="num national-table-round">{{ round or '—' }}</td>{% endfor %}
+      <td class="num">{{ row.total or '—' }}</td><td class="num national-table-thru">{{ row.thru or '—' }}</td>
+    </tr>
+    <tr class="national-mobile-rounds{% if row.tracked %} mine{% endif %}">
+      <td colspan="4">
+        <dl class="national-row-rounds" aria-label="Round scores for {{ row.name | first_last }}">
+          {% for round in row.rounds %}<div><dt>R{{ loop.index }}</dt><dd>{{ round or '—' }}</dd></div>{% endfor %}
+          <div><dt>Thru</dt><dd>{{ row.thru or '—' }}{% if row.thru.isdigit() %}/54{% endif %}</dd></div>
+        </dl>
+      </td>
     </tr>
   {% endfor %}</tbody>
 </table></div>
