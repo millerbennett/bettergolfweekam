@@ -5,166 +5,115 @@
   "source_url": "https://www.amateurgolftour.net/livescore/Leaderboard.aspx?t=18326",
   "rows": [
     {
-      "name": "Jenkins, Melvin",
-      "tour": "Central North Carolina",
+      "name": "Little, Jonathan",
+      "tour": "Nashville, TN",
       "flight": "C",
       "position": "1",
       "rounds": [
-        "83",
-        "63",
+        "84",
+        "68",
         ""
       ],
-      "total": "146",
-      "thru": "31",
-      "to_par": "+ 22",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "152",
+      "thru": "32",
+      "to_par": "+ 24",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Jenkins, Melvin",
+      "tour": "Central North Carolina",
+      "flight": "C",
+      "position": "2",
+      "rounds": [
+        "83",
+        "69",
+        ""
+      ],
+      "total": "152",
+      "thru": "32",
+      "to_par": "+ 24",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
       "name": "Branum, Jeff",
       "tour": "Atlanta, GA",
       "flight": "C",
-      "position": "T2",
+      "position": "3",
       "rounds": [
         "88",
-        "60",
+        "66",
         ""
       ],
-      "total": "148",
-      "thru": "31",
-      "to_par": "+ 24",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Groom, Mike",
-      "tour": "Central North Carolina",
-      "flight": "C",
-      "position": "T2",
-      "rounds": [
-        "84",
-        "64",
-        ""
-      ],
-      "total": "148",
-      "thru": "31",
-      "to_par": "+ 24",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Little, Jonathan",
-      "tour": "Nashville, TN",
-      "flight": "C",
-      "position": "T2",
-      "rounds": [
-        "84",
-        "64",
-        ""
-      ],
-      "total": "148",
-      "thru": "31",
-      "to_par": "+ 24",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "154",
+      "thru": "32",
+      "to_par": "+ 25",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
       "name": "Blair, George",
       "tour": "Orlando, FL",
       "flight": "C",
-      "position": "T5",
+      "position": "T4",
       "rounds": [
         "85",
-        "64",
+        "69",
         ""
       ],
-      "total": "149",
-      "thru": "31",
-      "to_par": "+ 25",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "154",
+      "thru": "32",
+      "to_par": "+ 26",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Ellenson, Steve",
-      "tour": "Minneapolis/St. Paul, MN",
+      "name": "Groom, Mike",
+      "tour": "Central North Carolina",
       "flight": "C",
-      "position": "T5",
+      "position": "T4",
       "rounds": [
         "84",
-        "65",
+        "70",
         ""
       ],
-      "total": "149",
-      "thru": "31",
-      "to_par": "+ 25",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Eckel, Bobby",
-      "tour": "Tidewater, VA",
-      "flight": "C",
-      "position": "T5",
-      "rounds": [
-        "82",
-        "67",
-        ""
-      ],
-      "total": "149",
-      "thru": "31",
-      "to_par": "+ 25",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Davidson, Toby",
-      "tour": "Augusta, GA",
-      "flight": "C",
-      "position": "T8",
-      "rounds": [
-        "89",
-        "63",
-        ""
-      ],
-      "total": "152",
-      "thru": "31",
-      "to_par": "+ 27",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Cullom, John",
-      "tour": "Augusta, GA",
-      "flight": "C",
-      "position": "T8",
-      "rounds": [
-        "86",
-        "65",
-        ""
-      ],
-      "total": "151",
-      "thru": "31",
-      "to_par": "+ 27",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "154",
+      "thru": "32",
+      "to_par": "+ 26",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
       "name": "Davis, Aaron",
       "tour": "Milwaukee, WI",
       "flight": "C",
-      "position": "T8",
+      "position": "T6",
       "rounds": [
         "90",
-        "65",
+        "69",
+        ""
+      ],
+      "total": "159",
+      "thru": "33",
+      "to_par": "+ 27",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Ellenson, Steve",
+      "tour": "Minneapolis/St. Paul, MN",
+      "flight": "C",
+      "position": "T6",
+      "rounds": [
+        "84",
+        "71",
         ""
       ],
       "total": "155",
@@ -175,88 +124,139 @@
       "status": "in_progress"
     },
     {
-      "name": "Dabkowski, Stephen",
-      "tour": "Louisiana North",
+      "name": "Eckel, Bobby",
+      "tour": "Tidewater, VA",
       "flight": "C",
-      "position": "T11",
+      "position": "8",
       "rounds": [
-        "86",
-        "66",
+        "82",
+        "74",
         ""
       ],
-      "total": "152",
-      "thru": "31",
+      "total": "156",
+      "thru": "32",
       "to_par": "+ 28",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Thompson, Zak",
-      "tour": "Washington, DC Metro",
+      "name": "Cullom, John",
+      "tour": "Augusta, GA",
       "flight": "C",
-      "position": "T11",
+      "position": "9",
       "rounds": [
-        "81",
-        "71",
+        "86",
+        "76",
         ""
       ],
-      "total": "152",
-      "thru": "31",
-      "to_par": "+ 28",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "162",
+      "thru": "33",
+      "to_par": "+ 29",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Brown, Kevin",
       "tour": "Columbus, OH",
       "flight": "C",
-      "position": "T13",
+      "position": "T10",
       "rounds": [
         "90",
-        "66",
+        "71",
         ""
       ],
-      "total": "156",
-      "thru": "32",
-      "to_par": "+ 29",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "161",
+      "thru": "33",
+      "to_par": "+ 30",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Kode, Rakesh",
-      "tour": "Cincinnati/Dayton",
+      "name": "Davidson, Toby",
+      "tour": "Augusta, GA",
       "flight": "C",
-      "position": "T13",
+      "position": "T10",
       "rounds": [
-        "90",
-        "67",
+        "89",
+        "73",
         ""
       ],
-      "total": "157",
-      "thru": "32",
-      "to_par": "+ 29",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "162",
+      "thru": "33",
+      "to_par": "+ 30",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Louth, Chris",
+      "tour": "Cincinnati/Dayton",
+      "flight": "C",
+      "position": "T10",
+      "rounds": [
+        "89",
+        "73",
+        ""
+      ],
+      "total": "162",
+      "thru": "33",
+      "to_par": "+ 30",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Lane, Brian",
       "tour": "Cincinnati/Dayton",
       "flight": "C",
-      "position": "T13",
+      "position": "T10",
       "rounds": [
         "88",
-        "70",
+        "74",
+        ""
+      ],
+      "total": "162",
+      "thru": "33",
+      "to_par": "+ 30",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Thompson, Zak",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "position": "T10",
+      "rounds": [
+        "81",
+        "77",
         ""
       ],
       "total": "158",
       "thru": "32",
-      "to_par": "+ 29",
+      "to_par": "+ 30",
       "holes": 32,
       "progress": "R2 · thru 14 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Dabkowski, Stephen",
+      "tour": "Louisiana North",
+      "flight": "C",
+      "position": "T10",
+      "rounds": [
+        "86",
+        "77",
+        ""
+      ],
+      "total": "163",
+      "thru": "33",
+      "to_par": "+ 30",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
@@ -266,31 +266,14 @@
       "position": "T16",
       "rounds": [
         "94",
-        "64",
+        "69",
         ""
       ],
-      "total": "158",
-      "thru": "32",
-      "to_par": "+ 30",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Louth, Chris",
-      "tour": "Cincinnati/Dayton",
-      "flight": "C",
-      "position": "T16",
-      "rounds": [
-        "89",
-        "66",
-        ""
-      ],
-      "total": "155",
-      "thru": "31",
-      "to_par": "+ 30",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "163",
+      "thru": "33",
+      "to_par": "+ 31",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
@@ -300,276 +283,208 @@
       "position": "T16",
       "rounds": [
         "89",
-        "69",
+        "74",
         ""
       ],
-      "total": "158",
-      "thru": "32",
-      "to_par": "+ 30",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Bunner, Gil",
-      "tour": "Washington, DC Metro",
-      "flight": "C",
-      "position": "T16",
-      "rounds": [
-        "88",
-        "71",
-        ""
-      ],
-      "total": "159",
-      "thru": "32",
-      "to_par": "+ 30",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "163",
+      "thru": "33",
+      "to_par": "+ 31",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Divine, Paxton",
       "tour": "Indiana-Western KY",
       "flight": "C",
-      "position": "T20",
+      "position": "T18",
       "rounds": [
         "88",
-        "67",
+        "73",
         ""
       ],
-      "total": "155",
-      "thru": "31",
-      "to_par": "+ 31",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "161",
+      "thru": "32",
+      "to_par": "+ 32",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
       "name": "Martyn, Kevin",
       "tour": "Philadelphia, PA Metro",
       "flight": "C",
-      "position": "T20",
+      "position": "T18",
       "rounds": [
         "87",
-        "68",
+        "74",
         ""
       ],
-      "total": "155",
-      "thru": "31",
-      "to_par": "+ 31",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Lorenz, Aaron",
-      "tour": "Tidewater, VA",
-      "flight": "C",
-      "position": "T20",
-      "rounds": [
-        "91",
-        "68",
-        ""
-      ],
-      "total": "159",
+      "total": "161",
       "thru": "32",
-      "to_par": "+ 31",
+      "to_par": "+ 32",
       "holes": 32,
       "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Lee, Jae",
-      "tour": "North Florida",
+      "name": "Kode, Rakesh",
+      "tour": "Cincinnati/Dayton",
       "flight": "C",
-      "position": "T20",
+      "position": "T18",
       "rounds": [
-        "86",
-        "69",
+        "90",
+        "74",
         ""
       ],
-      "total": "155",
-      "thru": "31",
-      "to_par": "+ 31",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "164",
+      "thru": "33",
+      "to_par": "+ 32",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Gardner, Alex",
-      "tour": "Augusta, GA",
+      "name": "Bunner, Gil",
+      "tour": "Washington, DC Metro",
       "flight": "C",
-      "position": "T20",
+      "position": "T18",
       "rounds": [
-        "83",
-        "72",
+        "88",
+        "76",
         ""
       ],
-      "total": "155",
-      "thru": "31",
-      "to_par": "+ 31",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "164",
+      "thru": "33",
+      "to_par": "+ 32",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Hudson, Katie",
       "tour": "Dallas- Fort Worth, TX",
       "flight": "C",
-      "position": "T20",
+      "position": "T18",
       "rounds": [
         "88",
-        "72",
+        "76",
+        ""
+      ],
+      "total": "164",
+      "thru": "33",
+      "to_par": "+ 32",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Gardner, Alex",
+      "tour": "Augusta, GA",
+      "flight": "C",
+      "position": "T18",
+      "rounds": [
+        "83",
+        "77",
         ""
       ],
       "total": "160",
       "thru": "32",
-      "to_par": "+ 31",
+      "to_par": "+ 32",
       "holes": 32,
       "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Claytor, Roger",
-      "tour": "Richmond",
-      "flight": "C",
-      "position": "T26",
-      "rounds": [
-        "94",
-        "63",
-        ""
-      ],
-      "total": "157",
-      "thru": "31",
-      "to_par": "+ 32",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
       "status": "in_progress"
     },
     {
       "name": "Hughes, Kelvin",
       "tour": "Hilton Head-Savannah",
       "flight": "C",
-      "position": "T26",
+      "position": "T24",
       "rounds": [
         "91",
-        "64",
+        "69",
         ""
       ],
-      "total": "155",
-      "thru": "31",
-      "to_par": "+ 32",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "160",
+      "thru": "32",
+      "to_par": "+ 33",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
       "name": "Bahena, Marco",
       "tour": "Michigan",
       "flight": "C",
-      "position": "T26",
+      "position": "T24",
       "rounds": [
         "93",
-        "64",
+        "73",
         ""
       ],
-      "total": "157",
-      "thru": "31",
-      "to_par": "+ 32",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "James, Tony",
-      "tour": "Augusta, GA",
-      "flight": "C",
-      "position": "T26",
-      "rounds": [
-        "90",
-        "69",
-        ""
-      ],
-      "total": "159",
-      "thru": "32",
-      "to_par": "+ 32",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "O'Neal, Gina",
-      "tour": "Louisiana North",
-      "flight": "C",
-      "position": "T26",
-      "rounds": [
-        "93",
-        "69",
-        ""
-      ],
-      "total": "162",
-      "thru": "32",
-      "to_par": "+ 32",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Ley, Stan",
-      "tour": "Cincinnati/Dayton",
-      "flight": "C",
-      "position": "T31",
-      "rounds": [
-        "93",
-        "64",
-        ""
-      ],
-      "total": "157",
-      "thru": "31",
+      "total": "166",
+      "thru": "33",
       "to_par": "+ 33",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Muhammad, Charles",
-      "tour": "Atlanta, GA",
-      "flight": "C",
-      "position": "T31",
-      "rounds": [
-        "93",
-        "65",
-        ""
-      ],
-      "total": "158",
-      "thru": "31",
-      "to_par": "+ 33",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Cole, Wade",
       "tour": "Indianapolis, IN",
       "flight": "C",
-      "position": "T31",
+      "position": "T24",
       "rounds": [
         "91",
-        "70",
+        "74",
         ""
       ],
-      "total": "161",
-      "thru": "32",
+      "total": "165",
+      "thru": "33",
       "to_par": "+ 33",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Lorenz, Aaron",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "position": "T24",
+      "rounds": [
+        "91",
+        "78",
+        ""
+      ],
+      "total": "169",
+      "thru": "34",
+      "to_par": "+ 33",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Lee, Jae",
+      "tour": "North Florida",
+      "flight": "C",
+      "position": "T24",
+      "rounds": [
+        "86",
+        "80",
+        ""
+      ],
+      "total": "166",
+      "thru": "33",
+      "to_par": "+ 33",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Regenold, Rick",
       "tour": "Louisiana North",
       "flight": "C",
-      "position": "T34",
+      "position": "T29",
       "rounds": [
         "99",
         "59",
@@ -583,137 +498,69 @@
       "status": "in_progress"
     },
     {
-      "name": "Maitland, Forest",
+      "name": "Claytor, Roger",
       "tour": "Richmond",
       "flight": "C",
-      "position": "T34",
+      "position": "T29",
       "rounds": [
-        "87",
-        "71",
+        "94",
+        "72",
         ""
       ],
-      "total": "158",
-      "thru": "31",
+      "total": "166",
+      "thru": "33",
       "to_par": "+ 34",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Marquardt, Jack",
-      "tour": "Cleveland/ Akron",
+      "name": "O'Neal, Gina",
+      "tour": "Louisiana North",
       "flight": "C",
-      "position": "T34",
+      "position": "T29",
       "rounds": [
-        "87",
-        "71",
+        "93",
+        "74",
         ""
       ],
-      "total": "158",
-      "thru": "31",
+      "total": "167",
+      "thru": "33",
       "to_par": "+ 34",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Sorhus, Jeremy",
-      "tour": "Pacific Northwest",
-      "flight": "C",
-      "position": "T34",
-      "rounds": [
-        "91",
-        "71",
-        ""
-      ],
-      "total": "162",
-      "thru": "32",
-      "to_par": "+ 34",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Holland, Scott",
+      "name": "James, Tony",
       "tour": "Augusta, GA",
       "flight": "C",
-      "position": "T38",
+      "position": "T29",
       "rounds": [
-        "91",
-        "67",
+        "90",
+        "75",
         ""
       ],
-      "total": "158",
-      "thru": "31",
-      "to_par": "+ 35",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Page, John",
-      "tour": "Charlotte, NC",
-      "flight": "C",
-      "position": "T38",
-      "rounds": [
-        "92",
-        "67",
-        ""
-      ],
-      "total": "159",
-      "thru": "31",
-      "to_par": "+ 35",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "165",
+      "thru": "33",
+      "to_par": "+ 34",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Henson, Dustin",
       "tour": "Atlanta, GA",
       "flight": "C",
-      "position": "T38",
+      "position": "T33",
       "rounds": [
         "94",
-        "69",
+        "74",
         ""
       ],
-      "total": "163",
-      "thru": "32",
-      "to_par": "+ 35",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Lee, Bryan",
-      "tour": "South Florida",
-      "flight": "C",
-      "position": "T38",
-      "rounds": [
-        "93",
-        "70",
-        ""
-      ],
-      "total": "163",
-      "thru": "32",
-      "to_par": "+ 35",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Howell, Joe",
-      "tour": "Louisiana South",
-      "flight": "C",
-      "position": "T38",
-      "rounds": [
-        "95",
-        "70",
-        ""
-      ],
-      "total": "165",
+      "total": "168",
       "thru": "33",
-      "to_par": "+ 35",
+      "to_par": "+ 36",
       "holes": 33,
       "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
@@ -722,49 +569,202 @@
       "name": "Rybarczyk, Greg",
       "tour": "Cincinnati/Dayton",
       "flight": "C",
-      "position": "T38",
+      "position": "T33",
       "rounds": [
         "92",
-        "71",
+        "76",
         ""
       ],
-      "total": "163",
+      "total": "168",
+      "thru": "33",
+      "to_par": "+ 36",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Muhammad, Charles",
+      "tour": "Atlanta, GA",
+      "flight": "C",
+      "position": "T33",
+      "rounds": [
+        "93",
+        "76",
+        ""
+      ],
+      "total": "169",
+      "thru": "33",
+      "to_par": "+ 36",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Holland, Scott",
+      "tour": "Augusta, GA",
+      "flight": "C",
+      "position": "T36",
+      "rounds": [
+        "91",
+        "73",
+        ""
+      ],
+      "total": "164",
       "thru": "32",
-      "to_par": "+ 35",
+      "to_par": "+ 37",
       "holes": 32,
       "progress": "R2 · thru 14 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Lee, Bryan",
+      "tour": "South Florida",
+      "flight": "C",
+      "position": "T36",
+      "rounds": [
+        "93",
+        "76",
+        ""
+      ],
+      "total": "169",
+      "thru": "33",
+      "to_par": "+ 37",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Howell, Joe",
+      "tour": "Louisiana South",
+      "flight": "C",
+      "position": "T36",
+      "rounds": [
+        "95",
+        "77",
+        ""
+      ],
+      "total": "172",
+      "thru": "34",
+      "to_par": "+ 37",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
       "status": "in_progress"
     },
     {
       "name": "Burdi, Benjamin",
       "tour": "North Florida",
       "flight": "C",
-      "position": "T38",
+      "position": "T36",
       "rounds": [
         "90",
-        "72",
+        "78",
         ""
       ],
-      "total": "162",
+      "total": "168",
+      "thru": "33",
+      "to_par": "+ 37",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Sorhus, Jeremy",
+      "tour": "Pacific Northwest",
+      "flight": "C",
+      "position": "T36",
+      "rounds": [
+        "91",
+        "78",
+        ""
+      ],
+      "total": "169",
+      "thru": "33",
+      "to_par": "+ 37",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Simmons, Titus",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "position": "T36",
+      "rounds": [
+        "92",
+        "78",
+        ""
+      ],
+      "total": "170",
+      "thru": "33",
+      "to_par": "+ 37",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Marquardt, Jack",
+      "tour": "Cleveland/ Akron",
+      "flight": "C",
+      "position": "T36",
+      "rounds": [
+        "87",
+        "79",
+        ""
+      ],
+      "total": "166",
       "thru": "32",
-      "to_par": "+ 35",
+      "to_par": "+ 37",
       "holes": 32,
       "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Mccall, Bill",
-      "tour": "Eastern NC",
+      "name": "Maitland, Forest",
+      "tour": "Richmond",
       "flight": "C",
-      "position": "T38",
+      "position": "T36",
       "rounds": [
-        "91",
-        "72",
+        "87",
+        "83",
         ""
       ],
-      "total": "163",
+      "total": "170",
+      "thru": "33",
+      "to_par": "+ 37",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Meaders, Mitchell",
+      "tour": "Atlanta, GA",
+      "flight": "C",
+      "position": "T44",
+      "rounds": [
+        "91",
+        "74",
+        ""
+      ],
+      "total": "165",
       "thru": "32",
-      "to_par": "+ 35",
+      "to_par": "+ 38",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Smith, Doug",
+      "tour": "Denver, CO",
+      "flight": "C",
+      "position": "T44",
+      "rounds": [
+        "91",
+        "74",
+        ""
+      ],
+      "total": "165",
+      "thru": "32",
+      "to_par": "+ 38",
       "holes": 32,
       "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
@@ -773,102 +773,187 @@
       "name": "Porter, Rob",
       "tour": "North Florida",
       "flight": "C",
-      "position": "T46",
+      "position": "T44",
       "rounds": [
         "89",
-        "72",
+        "81",
         ""
       ],
-      "total": "161",
-      "thru": "31",
-      "to_par": "+ 36",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "170",
+      "thru": "33",
+      "to_par": "+ 38",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Simmons, Titus",
-      "tour": "Washington, DC Metro",
+      "name": "Parrish, John",
+      "tour": "Tidewater, VA",
       "flight": "C",
-      "position": "T46",
+      "position": "T44",
       "rounds": [
-        "92",
-        "72",
+        "88",
+        "82",
         ""
       ],
-      "total": "164",
-      "thru": "32",
-      "to_par": "+ 36",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "170",
+      "thru": "33",
+      "to_par": "+ 38",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Joshi, Ballal",
       "tour": "Columbus, OH",
       "flight": "C",
-      "position": "T46",
+      "position": "T44",
       "rounds": [
         "91",
-        "73",
+        "83",
         ""
       ],
-      "total": "164",
-      "thru": "32",
-      "to_par": "+ 36",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "174",
+      "thru": "34",
+      "to_par": "+ 38",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Russell, Chris",
+      "name": "Mccall, Bill",
+      "tour": "Eastern NC",
+      "flight": "C",
+      "position": "T44",
+      "rounds": [
+        "91",
+        "83",
+        ""
+      ],
+      "total": "174",
+      "thru": "34",
+      "to_par": "+ 38",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Geraci, Alex",
+      "tour": "Nashville, TN",
+      "flight": "C",
+      "position": "T50",
+      "rounds": [
+        "99",
+        "71",
+        ""
+      ],
+      "total": "170",
+      "thru": "33",
+      "to_par": "+ 39",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Hargett, Bobby",
+      "tour": "Tidewater, VA",
+      "flight": "C",
+      "position": "T50",
+      "rounds": [
+        "99",
+        "71",
+        ""
+      ],
+      "total": "170",
+      "thru": "33",
+      "to_par": "+ 39",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Robinson, Cary",
+      "tour": "North Florida",
+      "flight": "C",
+      "position": "T50",
+      "rounds": [
+        "92",
+        "79",
+        ""
+      ],
+      "total": "171",
+      "thru": "33",
+      "to_par": "+ 39",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Crews, Joe",
+      "tour": "Louisiana North",
+      "flight": "C",
+      "position": "T50",
+      "rounds": [
+        "93",
+        "79",
+        ""
+      ],
+      "total": "172",
+      "thru": "33",
+      "to_par": "+ 39",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Ley, Stan",
       "tour": "Cincinnati/Dayton",
       "flight": "C",
-      "position": "T46",
+      "position": "T50",
       "rounds": [
-        "91",
-        "73",
+        "93",
+        "79",
         ""
       ],
-      "total": "164",
-      "thru": "32",
-      "to_par": "+ 36",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "172",
+      "thru": "33",
+      "to_par": "+ 39",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Meaders, Mitchell",
-      "tour": "Atlanta, GA",
+      "name": "Lawson, Terry",
+      "tour": "South Florida",
       "flight": "C",
       "position": "T50",
       "rounds": [
-        "91",
-        "69",
+        "97",
+        "79",
         ""
       ],
-      "total": "160",
-      "thru": "31",
-      "to_par": "+ 37",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "176",
+      "thru": "34",
+      "to_par": "+ 39",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Smith, Doug",
-      "tour": "Denver, CO",
+      "name": "Strouse, Owen",
+      "tour": "Charlotte, NC",
       "flight": "C",
       "position": "T50",
       "rounds": [
-        "91",
-        "69",
+        "90",
+        "80",
         ""
       ],
-      "total": "160",
-      "thru": "31",
-      "to_par": "+ 37",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "170",
+      "thru": "33",
+      "to_par": "+ 39",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
@@ -878,80 +963,63 @@
       "position": "T50",
       "rounds": [
         "92",
-        "69",
+        "80",
         ""
       ],
-      "total": "161",
-      "thru": "31",
-      "to_par": "+ 37",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "172",
+      "thru": "33",
+      "to_par": "+ 39",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Berry, Chris",
-      "tour": "Columbus, OH",
+      "name": "Page, John",
+      "tour": "Charlotte, NC",
+      "flight": "C",
+      "position": "T50",
+      "rounds": [
+        "92",
+        "80",
+        ""
+      ],
+      "total": "172",
+      "thru": "33",
+      "to_par": "+ 39",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Davidson, Richie",
+      "tour": "Eastern NC",
       "flight": "C",
       "position": "T50",
       "rounds": [
         "89",
-        "73",
+        "82",
         ""
       ],
-      "total": "162",
-      "thru": "31",
-      "to_par": "+ 37",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "171",
+      "thru": "33",
+      "to_par": "+ 39",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Parrish, John",
-      "tour": "Tidewater, VA",
+      "name": "Hudson, Doug",
+      "tour": "Dallas- Fort Worth, TX",
       "flight": "C",
-      "position": "T50",
+      "position": "T60",
       "rounds": [
-        "88",
-        "78",
+        "101",
+        "66",
         ""
       ],
-      "total": "166",
+      "total": "167",
       "thru": "32",
-      "to_par": "+ 37",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Geraci, Alex",
-      "tour": "Nashville, TN",
-      "flight": "C",
-      "position": "T55",
-      "rounds": [
-        "99",
-        "67",
-        ""
-      ],
-      "total": "166",
-      "thru": "32",
-      "to_par": "+ 38",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Lawson, Terry",
-      "tour": "South Florida",
-      "flight": "C",
-      "position": "T55",
-      "rounds": [
-        "97",
-        "69",
-        ""
-      ],
-      "total": "166",
-      "thru": "32",
-      "to_par": "+ 38",
+      "to_par": "+ 40",
       "holes": 32,
       "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
@@ -960,296 +1028,75 @@
       "name": "Campbell, Christopher",
       "tour": "Indianapolis, IN",
       "flight": "C",
-      "position": "T55",
+      "position": "T60",
       "rounds": [
         "95",
-        "70",
+        "75",
         ""
       ],
-      "total": "165",
-      "thru": "32",
-      "to_par": "+ 38",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "170",
+      "thru": "33",
+      "to_par": "+ 40",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Phillips, Ron",
       "tour": "Orlando, FL",
       "flight": "C",
-      "position": "T55",
+      "position": "T60",
       "rounds": [
         "93",
-        "73",
+        "79",
         ""
       ],
-      "total": "166",
-      "thru": "32",
-      "to_par": "+ 38",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "172",
+      "thru": "33",
+      "to_par": "+ 40",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Horn, John",
       "tour": "Washington, DC Metro",
       "flight": "C",
-      "position": "T55",
+      "position": "T60",
       "rounds": [
         "92",
-        "74",
+        "81",
         ""
       ],
-      "total": "166",
-      "thru": "32",
-      "to_par": "+ 38",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "173",
+      "thru": "33",
+      "to_par": "+ 40",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Strouse, Owen",
-      "tour": "Charlotte, NC",
+      "name": "Berry, Chris",
+      "tour": "Columbus, OH",
       "flight": "C",
-      "position": "T55",
-      "rounds": [
-        "90",
-        "75",
-        ""
-      ],
-      "total": "165",
-      "thru": "32",
-      "to_par": "+ 38",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Crews, Joe",
-      "tour": "Louisiana North",
-      "flight": "C",
-      "position": "T55",
-      "rounds": [
-        "93",
-        "75",
-        ""
-      ],
-      "total": "168",
-      "thru": "32",
-      "to_par": "+ 38",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Hargett, Bobby",
-      "tour": "Tidewater, VA",
-      "flight": "C",
-      "position": "T62",
-      "rounds": [
-        "99",
-        "68",
-        ""
-      ],
-      "total": "167",
-      "thru": "32",
-      "to_par": "+ 39",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Taylor, Nick",
-      "tour": "Arkansas",
-      "flight": "C",
-      "position": "T62",
-      "rounds": [
-        "94",
-        "70",
-        ""
-      ],
-      "total": "164",
-      "thru": "31",
-      "to_par": "+ 39",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Murphy, Timothy",
-      "tour": "Kansas",
-      "flight": "C",
-      "position": "T62",
-      "rounds": [
-        "95",
-        "71",
-        ""
-      ],
-      "total": "166",
-      "thru": "32",
-      "to_par": "+ 39",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Robinson, Cary",
-      "tour": "North Florida",
-      "flight": "C",
-      "position": "T62",
-      "rounds": [
-        "92",
-        "75",
-        ""
-      ],
-      "total": "167",
-      "thru": "32",
-      "to_par": "+ 39",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Moreau, Jody",
-      "tour": "Louisiana North",
-      "flight": "C",
-      "position": "T62",
-      "rounds": [
-        "93",
-        "76",
-        ""
-      ],
-      "total": "169",
-      "thru": "32",
-      "to_par": "+ 39",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Davidson, Richie",
-      "tour": "Eastern NC",
-      "flight": "C",
-      "position": "T62",
+      "position": "T60",
       "rounds": [
         "89",
-        "78",
+        "83",
         ""
       ],
-      "total": "167",
-      "thru": "32",
-      "to_par": "+ 39",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Hudson, Doug",
-      "tour": "Dallas- Fort Worth, TX",
-      "flight": "C",
-      "position": "T68",
-      "rounds": [
-        "101",
-        "63",
-        ""
-      ],
-      "total": "164",
-      "thru": "31",
+      "total": "172",
+      "thru": "33",
       "to_par": "+ 40",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Thompson, Jay",
-      "tour": "Washington, DC Metro",
-      "flight": "C",
-      "position": "T68",
-      "rounds": [
-        "95",
-        "72",
-        ""
-      ],
-      "total": "167",
-      "thru": "32",
-      "to_par": "+ 40",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Kutzan, Dennis",
-      "tour": "Tampa, FL",
-      "flight": "C",
-      "position": "T68",
-      "rounds": [
-        "92",
-        "76",
-        ""
-      ],
-      "total": "168",
-      "thru": "32",
-      "to_par": "+ 40",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Podawiltz, Dan",
-      "tour": "South Florida",
-      "flight": "C",
-      "position": "T68",
-      "rounds": [
-        "92",
-        "76",
-        ""
-      ],
-      "total": "168",
-      "thru": "32",
-      "to_par": "+ 40",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Ptak, Drew",
-      "tour": "Chicago, IL",
-      "flight": "C",
-      "position": "T72",
-      "rounds": [
-        "99",
-        "66",
-        ""
-      ],
-      "total": "165",
-      "thru": "31",
-      "to_par": "+ 41",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Fitzsimmons, Tom",
-      "tour": "Tidewater, VA",
-      "flight": "C",
-      "position": "T72",
-      "rounds": [
-        "95",
-        "71",
-        ""
-      ],
-      "total": "166",
-      "thru": "31",
-      "to_par": "+ 41",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Lupfer, Pete",
       "tour": "Denver, CO",
       "flight": "C",
-      "position": "T72",
+      "position": "T65",
       "rounds": [
         "96",
         "72",
@@ -1266,7 +1113,7 @@
       "name": "Yeager, David",
       "tour": "Columbus, OH",
       "flight": "C",
-      "position": "T72",
+      "position": "T65",
       "rounds": [
         "96",
         "72",
@@ -1280,33 +1127,16 @@
       "status": "in_progress"
     },
     {
-      "name": "Parris, Dan",
-      "tour": "Central North Carolina",
+      "name": "Moreau, Jody",
+      "tour": "Louisiana North",
       "flight": "C",
-      "position": "T72",
+      "position": "T65",
       "rounds": [
         "93",
-        "73",
+        "81",
         ""
       ],
-      "total": "166",
-      "thru": "31",
-      "to_par": "+ 41",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Penza, Vince",
-      "tour": "North Florida",
-      "flight": "C",
-      "position": "T72",
-      "rounds": [
-        "95",
-        "76",
-        ""
-      ],
-      "total": "171",
+      "total": "174",
       "thru": "33",
       "to_par": "+ 41",
       "holes": 33,
@@ -1314,112 +1144,112 @@
       "status": "in_progress"
     },
     {
-      "name": "Sazo, Chris",
-      "tour": "Dallas- Fort Worth, TX",
-      "flight": "C",
-      "position": "T72",
-      "rounds": [
-        "92",
-        "77",
-        ""
-      ],
-      "total": "169",
-      "thru": "32",
-      "to_par": "+ 41",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Kirschenbaum, Neil",
-      "tour": "Louisiana North",
-      "flight": "C",
-      "position": "T79",
-      "rounds": [
-        "99",
-        "71",
-        ""
-      ],
-      "total": "170",
-      "thru": "32",
-      "to_par": "+ 42",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Rocha, Christian",
-      "tour": "Dallas- Fort Worth, TX",
-      "flight": "C",
-      "position": "T79",
-      "rounds": [
-        "93",
-        "73",
-        ""
-      ],
-      "total": "166",
-      "thru": "31",
-      "to_par": "+ 42",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Pleiss, Jeff",
-      "tour": "Indiana-Western KY",
-      "flight": "C",
-      "position": "T79",
-      "rounds": [
-        "96",
-        "73",
-        ""
-      ],
-      "total": "169",
-      "thru": "32",
-      "to_par": "+ 42",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Richardson, Raymond",
+      "name": "Russell, Chris",
       "tour": "Cincinnati/Dayton",
       "flight": "C",
-      "position": "T79",
+      "position": "T65",
       "rounds": [
-        "97",
-        "73",
+        "91",
+        "86",
         ""
       ],
-      "total": "170",
-      "thru": "32",
-      "to_par": "+ 42",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "177",
+      "thru": "34",
+      "to_par": "+ 41",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Pogue, Doug",
-      "tour": "Arkansas",
+      "name": "Fitzsimmons, Tom",
+      "tour": "Tidewater, VA",
       "flight": "C",
-      "position": "T79",
+      "position": "T69",
       "rounds": [
         "95",
-        "74",
+        "79",
         ""
       ],
-      "total": "169",
-      "thru": "32",
+      "total": "174",
+      "thru": "33",
       "to_par": "+ 42",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Taylor, Nick",
+      "tour": "Arkansas",
+      "flight": "C",
+      "position": "T69",
+      "rounds": [
+        "94",
+        "80",
+        ""
+      ],
+      "total": "174",
+      "thru": "33",
+      "to_par": "+ 42",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Murphy, Timothy",
+      "tour": "Kansas",
+      "flight": "C",
+      "position": "T69",
+      "rounds": [
+        "95",
+        "81",
+        ""
+      ],
+      "total": "176",
+      "thru": "34",
+      "to_par": "+ 42",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Parris, Dan",
+      "tour": "Central North Carolina",
+      "flight": "C",
+      "position": "T69",
+      "rounds": [
+        "93",
+        "82",
+        ""
+      ],
+      "total": "175",
+      "thru": "33",
+      "to_par": "+ 42",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Kutzan, Dennis",
+      "tour": "Tampa, FL",
+      "flight": "C",
+      "position": "T69",
+      "rounds": [
+        "92",
+        "83",
+        ""
+      ],
+      "total": "175",
+      "thru": "33",
+      "to_par": "+ 42",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Tsacrios, Hunter",
       "tour": "Tampa, FL",
       "flight": "C",
-      "position": "T84",
+      "position": "T74",
       "rounds": [
         "99",
         "68",
@@ -1433,67 +1263,118 @@
       "status": "in_progress"
     },
     {
-      "name": "Hoerr, Raymond",
-      "tour": "Charlotte, NC",
+      "name": "Penza, Vince",
+      "tour": "North Florida",
       "flight": "C",
-      "position": "T84",
+      "position": "T74",
       "rounds": [
         "95",
-        "75",
+        "83",
         ""
       ],
-      "total": "170",
-      "thru": "32",
+      "total": "178",
+      "thru": "34",
       "to_par": "+ 43",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Taylor, Traci",
-      "tour": "Arkansas",
+      "name": "Richardson, Raymond",
+      "tour": "Cincinnati/Dayton",
       "flight": "C",
-      "position": "T84",
-      "rounds": [
-        "95",
-        "75",
-        ""
-      ],
-      "total": "170",
-      "thru": "32",
-      "to_par": "+ 43",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Thompson, Vince",
-      "tour": "Eastern NC",
-      "flight": "C",
-      "position": "T87",
+      "position": "T74",
       "rounds": [
         "97",
-        "74",
+        "83",
         ""
       ],
-      "total": "171",
-      "thru": "32",
-      "to_par": "+ 44",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "180",
+      "thru": "34",
+      "to_par": "+ 43",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Alexander, Ashby",
-      "tour": "Atlanta, GA",
+      "name": "Podawiltz, Dan",
+      "tour": "South Florida",
       "flight": "C",
-      "position": "T87",
+      "position": "T74",
       "rounds": [
-        "95",
-        "79",
+        "92",
+        "84",
         ""
       ],
-      "total": "174",
+      "total": "176",
+      "thru": "33",
+      "to_par": "+ 43",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Kirschenbaum, Neil",
+      "tour": "Louisiana North",
+      "flight": "C",
+      "position": "T78",
+      "rounds": [
+        "99",
+        "76",
+        ""
+      ],
+      "total": "175",
+      "thru": "33",
+      "to_par": "+ 44",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Ptak, Drew",
+      "tour": "Chicago, IL",
+      "flight": "C",
+      "position": "T78",
+      "rounds": [
+        "99",
+        "78",
+        ""
+      ],
+      "total": "177",
+      "thru": "33",
+      "to_par": "+ 44",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Thompson, Jay",
+      "tour": "Washington, DC Metro",
+      "flight": "C",
+      "position": "T78",
+      "rounds": [
+        "95",
+        "83",
+        ""
+      ],
+      "total": "178",
+      "thru": "34",
+      "to_par": "+ 44",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Sazo, Chris",
+      "tour": "Dallas- Fort Worth, TX",
+      "flight": "C",
+      "position": "T78",
+      "rounds": [
+        "92",
+        "84",
+        ""
+      ],
+      "total": "176",
       "thru": "33",
       "to_par": "+ 44",
       "holes": 33,
@@ -1504,58 +1385,24 @@
       "name": "Gautreaux, Dan",
       "tour": "Louisiana South",
       "flight": "C",
-      "position": "T87",
+      "position": "T78",
       "rounds": [
         "93",
-        "81",
+        "84",
         ""
       ],
-      "total": "174",
-      "thru": "32",
+      "total": "177",
+      "thru": "33",
       "to_par": "+ 44",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Sanders, Darren",
-      "tour": "Augusta, GA",
-      "flight": "C",
-      "position": "T90",
-      "rounds": [
-        "100",
-        "69",
-        ""
-      ],
-      "total": "169",
-      "thru": "31",
-      "to_par": "+ 45",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Fugate, Wayne",
-      "tour": "Indianapolis, IN",
-      "flight": "C",
-      "position": "T90",
-      "rounds": [
-        "99",
-        "70",
-        ""
-      ],
-      "total": "169",
-      "thru": "31",
-      "to_par": "+ 45",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Siders, Jim",
       "tour": "Columbus, OH",
       "flight": "C",
-      "position": "T90",
+      "position": "T83",
       "rounds": [
         "97",
         "75",
@@ -1566,183 +1413,285 @@
       "to_par": "+ 45",
       "holes": 32,
       "progress": "R2 · thru 14 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Pleiss, Jeff",
+      "tour": "Indiana-Western KY",
+      "flight": "C",
+      "position": "T83",
+      "rounds": [
+        "96",
+        "79",
+        ""
+      ],
+      "total": "175",
+      "thru": "33",
+      "to_par": "+ 45",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Pogue, Doug",
+      "tour": "Arkansas",
+      "flight": "C",
+      "position": "T83",
+      "rounds": [
+        "95",
+        "80",
+        ""
+      ],
+      "total": "175",
+      "thru": "33",
+      "to_par": "+ 45",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Taylor, Traci",
+      "tour": "Arkansas",
+      "flight": "C",
+      "position": "T83",
+      "rounds": [
+        "95",
+        "84",
+        ""
+      ],
+      "total": "179",
+      "thru": "34",
+      "to_par": "+ 45",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Thompson, Vince",
+      "tour": "Eastern NC",
+      "flight": "C",
+      "position": "T87",
+      "rounds": [
+        "97",
+        "81",
+        ""
+      ],
+      "total": "178",
+      "thru": "33",
+      "to_par": "+ 46",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Lewis, Glenn",
       "tour": "Eastern NC",
       "flight": "C",
-      "position": "T90",
+      "position": "T87",
       "rounds": [
         "98",
-        "75",
+        "81",
         ""
       ],
-      "total": "173",
-      "thru": "32",
-      "to_par": "+ 45",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "179",
+      "thru": "33",
+      "to_par": "+ 46",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Peny, Joe",
       "tour": "Hilton Head-Savannah",
       "flight": "C",
-      "position": "T90",
+      "position": "T87",
       "rounds": [
         "98",
-        "75",
-        ""
-      ],
-      "total": "173",
-      "thru": "32",
-      "to_par": "+ 45",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Crews, Tad",
-      "tour": "North Florida",
-      "flight": "C",
-      "position": "T90",
-      "rounds": [
-        "92",
         "81",
         ""
       ],
-      "total": "173",
-      "thru": "32",
-      "to_par": "+ 45",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "179",
+      "thru": "33",
+      "to_par": "+ 46",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Smith, Robert",
       "tour": "Tampa, FL",
       "flight": "C",
-      "position": "T90",
+      "position": "T87",
       "rounds": [
         "92",
-        "81",
+        "86",
         ""
       ],
-      "total": "173",
-      "thru": "32",
-      "to_par": "+ 45",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "178",
+      "thru": "33",
+      "to_par": "+ 46",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Hubbard, Don",
       "tour": "Cincinnati/Dayton",
       "flight": "C",
-      "position": "T97",
+      "position": "T91",
       "rounds": [
         "100",
-        "70",
+        "78",
         ""
       ],
-      "total": "170",
-      "thru": "31",
-      "to_par": "+ 46",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "178",
+      "thru": "33",
+      "to_par": "+ 47",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Sanders, Darren",
+      "tour": "Augusta, GA",
+      "flight": "C",
+      "position": "T91",
+      "rounds": [
+        "100",
+        "78",
+        ""
+      ],
+      "total": "178",
+      "thru": "33",
+      "to_par": "+ 47",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Crews, Tad",
+      "tour": "North Florida",
+      "flight": "C",
+      "position": "T91",
+      "rounds": [
+        "92",
+        "87",
+        ""
+      ],
+      "total": "179",
+      "thru": "33",
+      "to_par": "+ 47",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Alexander, Ashby",
+      "tour": "Atlanta, GA",
+      "flight": "C",
+      "position": "T91",
+      "rounds": [
+        "95",
+        "87",
+        ""
+      ],
+      "total": "182",
+      "thru": "34",
+      "to_par": "+ 47",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
       "status": "in_progress"
     },
     {
       "name": "Siders, Derek",
       "tour": "Columbus, OH",
       "flight": "C",
-      "position": "T97",
+      "position": "T95",
       "rounds": [
         "100",
-        "70",
+        "79",
         ""
       ],
-      "total": "170",
-      "thru": "31",
-      "to_par": "+ 46",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "179",
+      "thru": "33",
+      "to_par": "+ 48",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Risner, Don",
-      "tour": "California",
+      "name": "Fugate, Wayne",
+      "tour": "Indianapolis, IN",
       "flight": "C",
-      "position": "T99",
+      "position": "T95",
       "rounds": [
-        "98",
-        "73",
+        "99",
+        "82",
         ""
       ],
-      "total": "171",
-      "thru": "31",
-      "to_par": "+ 47",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "181",
+      "thru": "33",
+      "to_par": "+ 48",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Miller, Tyler",
-      "tour": "Cincinnati/Dayton",
+      "name": "Hoerr, Raymond",
+      "tour": "Charlotte, NC",
       "flight": "C",
-      "position": "T99",
+      "position": "T95",
       "rounds": [
-        "94",
-        "78",
+        "95",
+        "87",
         ""
       ],
-      "total": "172",
-      "thru": "31",
-      "to_par": "+ 47",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "182",
+      "thru": "34",
+      "to_par": "+ 48",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
       "status": "in_progress"
     },
     {
       "name": "Garrett, Jamall",
       "tour": "Tidewater, VA",
       "flight": "C",
-      "position": "T99",
+      "position": "T95",
       "rounds": [
         "92",
-        "83",
+        "88",
         ""
       ],
-      "total": "175",
-      "thru": "32",
-      "to_par": "+ 47",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "total": "180",
+      "thru": "33",
+      "to_par": "+ 48",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Harris, Mark",
-      "tour": "Tampa, FL",
+      "name": "Rocha, Christian",
+      "tour": "Dallas- Fort Worth, TX",
       "flight": "C",
-      "position": "102",
+      "position": "T95",
       "rounds": [
-        "97",
-        "78",
+        "93",
+        "88",
         ""
       ],
-      "total": "175",
-      "thru": "32",
+      "total": "181",
+      "thru": "33",
       "to_par": "+ 48",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Mitchell, Brian",
       "tour": "Milwaukee, WI",
       "flight": "C",
-      "position": "T103",
+      "position": "T100",
       "rounds": [
         "100",
         "73",
@@ -1759,115 +1708,47 @@
       "name": "Franklin, Cephas",
       "tour": "Washington, DC Metro",
       "flight": "C",
-      "position": "T103",
+      "position": "T100",
       "rounds": [
         "99",
-        "78",
-        ""
-      ],
-      "total": "177",
-      "thru": "32",
-      "to_par": "+ 49",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Anders, Austin",
-      "tour": "Cincinnati/Dayton",
-      "flight": "C",
-      "position": "T103",
-      "rounds": [
-        "98",
-        "79",
-        ""
-      ],
-      "total": "177",
-      "thru": "32",
-      "to_par": "+ 49",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Lare, Hal",
-      "tour": "Tidewater, VA",
-      "flight": "C",
-      "position": "T106",
-      "rounds": [
-        "97",
-        "80",
-        ""
-      ],
-      "total": "177",
-      "thru": "32",
-      "to_par": "+ 50",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Payton, Clint",
-      "tour": "Indianapolis, IN",
-      "flight": "C",
-      "position": "T106",
-      "rounds": [
-        "98",
-        "80",
-        ""
-      ],
-      "total": "178",
-      "thru": "32",
-      "to_par": "+ 50",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Meier, Mark",
-      "tour": "Kentucky",
-      "flight": "C",
-      "position": "T106",
-      "rounds": [
-        "96",
         "81",
-        ""
-      ],
-      "total": "177",
-      "thru": "32",
-      "to_par": "+ 50",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Herring, Alex",
-      "tour": "Louisiana South",
-      "flight": "C",
-      "position": "T106",
-      "rounds": [
-        "97",
-        "81",
-        ""
-      ],
-      "total": "178",
-      "thru": "32",
-      "to_par": "+ 50",
-      "holes": 32,
-      "progress": "R2 · thru 14 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Crumbley, Cedric",
-      "tour": "Kentucky",
-      "flight": "C",
-      "position": "T106",
-      "rounds": [
-        "95",
-        "85",
         ""
       ],
       "total": "180",
+      "thru": "33",
+      "to_par": "+ 49",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Harris, Mark",
+      "tour": "Tampa, FL",
+      "flight": "C",
+      "position": "T100",
+      "rounds": [
+        "97",
+        "84",
+        ""
+      ],
+      "total": "181",
+      "thru": "33",
+      "to_par": "+ 49",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Risner, Don",
+      "tour": "California",
+      "flight": "C",
+      "position": "103",
+      "rounds": [
+        "98",
+        "85",
+        ""
+      ],
+      "total": "183",
       "thru": "33",
       "to_par": "+ 50",
       "holes": 33,
@@ -1878,7 +1759,7 @@
       "name": "Krishna, Manju",
       "tour": "Columbus, OH",
       "flight": "C",
-      "position": "111",
+      "position": "T104",
       "rounds": [
         "96",
         "82",
@@ -1892,64 +1773,115 @@
       "status": "in_progress"
     },
     {
-      "name": "Jager, Cole",
-      "tour": "Michigan",
+      "name": "Lare, Hal",
+      "tour": "Tidewater, VA",
       "flight": "C",
-      "position": "T112",
+      "position": "T104",
       "rounds": [
-        "104",
-        "72",
+        "97",
+        "86",
         ""
       ],
-      "total": "176",
-      "thru": "31",
-      "to_par": "+ 52",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "183",
+      "thru": "33",
+      "to_par": "+ 51",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Miller, Brandon",
-      "tour": "Charlotte, NC",
+      "name": "Anders, Austin",
+      "tour": "Cincinnati/Dayton",
       "flight": "C",
-      "position": "T112",
+      "position": "T104",
       "rounds": [
-        "100",
-        "76",
+        "98",
+        "86",
         ""
       ],
-      "total": "176",
-      "thru": "31",
+      "total": "184",
+      "thru": "33",
+      "to_par": "+ 51",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Miller, Tyler",
+      "tour": "Cincinnati/Dayton",
+      "flight": "C",
+      "position": "T104",
+      "rounds": [
+        "94",
+        "89",
+        ""
+      ],
+      "total": "183",
+      "thru": "33",
+      "to_par": "+ 51",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Herring, Alex",
+      "tour": "Louisiana South",
+      "flight": "C",
+      "position": "T104",
+      "rounds": [
+        "97",
+        "91",
+        ""
+      ],
+      "total": "188",
+      "thru": "34",
+      "to_par": "+ 51",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Meier, Mark",
+      "tour": "Kentucky",
+      "flight": "C",
+      "position": "T109",
+      "rounds": [
+        "96",
+        "86",
+        ""
+      ],
+      "total": "182",
+      "thru": "33",
       "to_par": "+ 52",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Crumbley, Cedric",
+      "tour": "Kentucky",
+      "flight": "C",
+      "position": "T109",
+      "rounds": [
+        "95",
+        "92",
+        ""
+      ],
+      "total": "187",
+      "thru": "34",
+      "to_par": "+ 52",
+      "holes": 34,
+      "progress": "R2 · thru 16 of 18",
       "status": "in_progress"
     },
     {
       "name": "Sitko, Edward",
       "tour": "Tidewater, VA",
       "flight": "C",
-      "position": "T114",
+      "position": "T111",
       "rounds": [
         "102",
-        "75",
-        ""
-      ],
-      "total": "177",
-      "thru": "31",
-      "to_par": "+ 53",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Weaver, Wayne",
-      "tour": "Orlando, FL",
-      "flight": "C",
-      "position": "T114",
-      "rounds": [
-        "97",
-        "83",
+        "78",
         ""
       ],
       "total": "180",
@@ -1960,27 +1892,44 @@
       "status": "in_progress"
     },
     {
-      "name": "Martinez, Pattina",
-      "tour": "Eastern NC",
+      "name": "Payton, Clint",
+      "tour": "Indianapolis, IN",
       "flight": "C",
-      "position": "T116",
+      "position": "T111",
       "rounds": [
-        "105",
-        "73",
+        "98",
+        "88",
         ""
       ],
-      "total": "178",
-      "thru": "31",
+      "total": "186",
+      "thru": "33",
+      "to_par": "+ 53",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Jager, Cole",
+      "tour": "Michigan",
+      "flight": "C",
+      "position": "T113",
+      "rounds": [
+        "104",
+        "77",
+        ""
+      ],
+      "total": "181",
+      "thru": "32",
       "to_par": "+ 54",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
       "name": "Nelson, David",
       "tour": "Milwaukee, WI",
       "flight": "C",
-      "position": "T116",
+      "position": "T113",
       "rounds": [
         "100",
         "78",
@@ -1994,156 +1943,207 @@
       "status": "in_progress"
     },
     {
-      "name": "Mathis, Jimmy",
-      "tour": "Columbia, SC",
+      "name": "Martinez, Pattina",
+      "tour": "Eastern NC",
       "flight": "C",
-      "position": "T116",
+      "position": "T115",
       "rounds": [
-        "99",
-        "79",
+        "105",
+        "83",
         ""
       ],
-      "total": "178",
-      "thru": "31",
-      "to_par": "+ 54",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "188",
+      "thru": "33",
+      "to_par": "+ 56",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Weaver, Wayne",
+      "tour": "Orlando, FL",
+      "flight": "C",
+      "position": "T115",
+      "rounds": [
+        "97",
+        "91",
+        ""
+      ],
+      "total": "188",
+      "thru": "33",
+      "to_par": "+ 56",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Drake, Bartel",
       "tour": "California",
       "flight": "C",
-      "position": "119",
+      "position": "T117",
       "rounds": [
         "101",
-        "78",
+        "83",
         ""
       ],
-      "total": "179",
-      "thru": "31",
-      "to_par": "+ 55",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "184",
+      "thru": "32",
+      "to_par": "+ 57",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Sholes, Rodney",
-      "tour": "Augusta, GA",
+      "name": "Miller, Brandon",
+      "tour": "Charlotte, NC",
       "flight": "C",
-      "position": "120",
+      "position": "T117",
       "rounds": [
-        "104",
-        "78",
+        "100",
+        "88",
         ""
       ],
-      "total": "182",
-      "thru": "31",
-      "to_par": "+ 58",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "188",
+      "thru": "33",
+      "to_par": "+ 57",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
-      "name": "McConnico, Duane",
-      "tour": "Dallas- Fort Worth, TX",
+      "name": "Mathis, Jimmy",
+      "tour": "Columbia, SC",
       "flight": "C",
-      "position": "T121",
+      "position": "T117",
       "rounds": [
-        "107",
-        "76",
+        "99",
+        "91",
         ""
       ],
-      "total": "183",
-      "thru": "31",
-      "to_par": "+ 59",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Guminski, Randy",
-      "tour": "Michigan",
-      "flight": "C",
-      "position": "T121",
-      "rounds": [
-        "106",
-        "77",
-        ""
-      ],
-      "total": "183",
-      "thru": "31",
-      "to_par": "+ 59",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "190",
+      "thru": "33",
+      "to_par": "+ 57",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Yim, Terry",
       "tour": "Michigan",
       "flight": "C",
-      "position": "123",
+      "position": "120",
       "rounds": [
         "111",
-        "73",
+        "77",
         ""
       ],
-      "total": "184",
-      "thru": "31",
+      "total": "188",
+      "thru": "32",
       "to_par": "+ 60",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Guminski, Randy",
+      "tour": "Michigan",
+      "flight": "C",
+      "position": "121",
+      "rounds": [
+        "106",
+        "87",
+        ""
+      ],
+      "total": "193",
+      "thru": "33",
+      "to_par": "+ 61",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "McConnico, Duane",
+      "tour": "Dallas- Fort Worth, TX",
+      "flight": "C",
+      "position": "122",
+      "rounds": [
+        "107",
+        "83",
+        ""
+      ],
+      "total": "190",
+      "thru": "32",
+      "to_par": "+ 62",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
       "name": "Taylor, Noah",
       "tour": "Indiana-Western KY",
       "flight": "C",
-      "position": "124",
+      "position": "T123",
       "rounds": [
         "108",
-        "77",
+        "84",
         ""
       ],
-      "total": "185",
-      "thru": "31",
-      "to_par": "+ 61",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "192",
+      "thru": "32",
+      "to_par": "+ 64",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
       "status": "in_progress"
     },
     {
-      "name": "Vohnoutka, Edward",
-      "tour": "New York Upstate",
+      "name": "Sholes, Rodney",
+      "tour": "Augusta, GA",
       "flight": "C",
-      "position": "125",
+      "position": "T123",
       "rounds": [
-        "106",
-        "83",
+        "104",
+        "92",
         ""
       ],
-      "total": "189",
-      "thru": "31",
-      "to_par": "+ 65",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "total": "196",
+      "thru": "33",
+      "to_par": "+ 64",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
       "name": "Miller, Mike",
       "tour": "Tidewater, VA",
       "flight": "C",
-      "position": "126",
+      "position": "125",
       "rounds": [
         "108",
-        "82",
+        "86",
         ""
       ],
-      "total": "190",
-      "thru": "31",
+      "total": "194",
+      "thru": "32",
       "to_par": "+ 66",
-      "holes": 31,
-      "progress": "R2 · thru 13 of 18",
+      "holes": 32,
+      "progress": "R2 · thru 14 of 18",
+      "status": "in_progress"
+    },
+    {
+      "name": "Vohnoutka, Edward",
+      "tour": "New York Upstate",
+      "flight": "C",
+      "position": "126",
+      "rounds": [
+        "106",
+        "96",
+        ""
+      ],
+      "total": "202",
+      "thru": "33",
+      "to_par": "+ 70",
+      "holes": 33,
+      "progress": "R2 · thru 15 of 18",
       "status": "in_progress"
     },
     {
@@ -2181,5 +2181,5 @@
       "status": "between_rounds"
     }
   ],
-  "fetched_at": "2026-10-17T16:38:43+00:00"
+  "fetched_at": "2026-10-17T17:03:51+00:00"
 }
