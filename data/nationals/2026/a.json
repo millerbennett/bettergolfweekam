@@ -2487,30 +2487,30 @@
       "status": "between_rounds"
     },
     {
-      "name": "Savoy, Kain",
-      "tour": "Louisiana South",
+      "name": "Reeder, Todd",
+      "tour": "Indianapolis, IN",
       "flight": "A",
-      "position": "T147",
+      "position": "T145",
       "rounds": [
-        "88",
-        "100",
+        "85",
+        "102",
         ""
       ],
-      "total": "188",
+      "total": "187",
       "thru": "36",
-      "to_par": "+ 44",
+      "to_par": "+ 43",
       "holes": 36,
       "progress": "R2 complete · 36 holes",
       "status": "between_rounds"
     },
     {
-      "name": "Reeder, Todd",
-      "tour": "Indianapolis, IN",
+      "name": "Savoy, Kain",
+      "tour": "Louisiana South",
       "flight": "A",
-      "position": "T147",
+      "position": "148",
       "rounds": [
-        "85",
-        "103",
+        "88",
+        "100",
         ""
       ],
       "total": "188",
@@ -2606,5 +2606,5 @@
       "status": "between_rounds"
     }
   ],
-  "fetched_at": "2026-10-17T18:21:16+00:00"
+  "fetched_at": "2026-10-17T19:21:16+00:00"
 }
