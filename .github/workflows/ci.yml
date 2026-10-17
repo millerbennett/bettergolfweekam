@@ -30,6 +30,13 @@ jobs:
       - name: Parser tests
         run: python -m pytest tests/ -q
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Scheduler safety tests
+        run: node --test scheduler/worker.test.mjs
+
       - name: Render smoke test
         run: |
           python -m build.render --site-url https://example.invalid

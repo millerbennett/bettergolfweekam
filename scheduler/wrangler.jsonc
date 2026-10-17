@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/wrangler@4.151.1/config-schema.json",
+  "name": "bettergolfweekam-scheduler",
+  "main": "worker.mjs",
+  "account_id": "afe8eb498960dc6379d5a36458d4d6cf",
+  "compatibility_date": "2026-10-17",
+  "workers_dev": false,
+  "preview_urls": false,
+  "triggers": { "crons": ["*/20 10-23 * * *", "25 8 * * *"] },
+  "vars": { "ENABLED": "true" },
+  "observability": { "enabled": true }
+}

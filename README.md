@@ -5,7 +5,8 @@ pages — schedule, tee times, live scores, results and the points race — rend
 as a fast static site so you don't have to hunt through ASP.NET dropdowns to
 find out when you tee off.
 
-GitHub Actions crawls the upstream site on a schedule and commits JSON snapshots
+Cloudflare's scheduled Worker starts GitHub Actions, which crawls the upstream
+site and commits JSON snapshots
 to `data/`. When that data actually moves, the site is re-rendered and pushed to
 Cloudflare Pages. Everything stays inside both free tiers.
 
@@ -116,6 +117,12 @@ Add `--force` to ignore freshness stamps.
 
 ## How the schedule stays cheap
 
+The [Cloudflare timer](scheduler/README.md) owns the existing 20-minute daytime
+schedule and one overnight refresh. GitHub's native cron is disabled. Duplicate
+and overlapping runs are skipped, and missed ticks are not replayed. The Worker
+only calls GitHub; all golf-site requests still go through the sequential scraper.
+Routine runs are capped at 60 attempts and stop on rate-limit/overload responses.
+
 `--mode auto` reads `config.json` freshness thresholds and the schedule, then
 fetches only what's due:
 
@@ -154,7 +161,8 @@ The intent is that this needs no attention between seasons. What that required:
   season-specific (the "2026 Hole-N-One Challenge"), so a fixed list would
   quietly mirror dead pages each year. `content_pages` in `config.json` is now
   only a fallback if discovery finds nothing.
-- **A weekly heartbeat keeps the cron alive.** GitHub disables scheduled
+- **A weekly heartbeat remains from the original GitHub cron.** Cloudflare's
+  timer does not depend on repository activity. GitHub disables scheduled
   workflows after 60 days of repository inactivity. Nothing upstream changes
   between late September and March, and unchanged snapshots are deliberately
   left alone — so without this the repo would go silent over the winter and the
@@ -297,5 +305,4 @@ there's no client-side JavaScript that a fetch-only checker would miss.
 - Page links omit `.html`: Cloudflare Pages 308s to the extensionless form, so
   linking to the file name would put a redirect on every click and every
   scheduled fetch.
-- Scheduled workflows on GitHub are disabled after 60 days without repo
-  activity. The data commits keep this one alive on their own.
+- Refresh scheduling now lives in Cloudflare; see [timer operations](scheduler/README.md).

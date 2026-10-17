@@ -2,7 +2,8 @@ name: Update mirror
 
 # Cadence is deliberately conservative. `--mode auto` reads data/state.json and
 # the schedule, then fetches only what is actually stale, so a typical run makes
-# zero or one upstream request and finishes in well under a minute. The site's
+# zero or one upstream request outside active events; nationals adds five boards.
+# Cloudflare owns the timer; do not also enable a GitHub schedule. The site's
 # robots.txt asks for a 10s crawl delay, which the scraper honours.
 #
 # Free-tier notes:
@@ -12,12 +13,6 @@ name: Update mirror
 #    time the cron fires.
 
 on:
-  schedule:
-    # Every 20 minutes, 10:00-23:59 UTC (roughly 6am-8pm Eastern). This is the
-    # window where tee times drop and rounds are played.
-    - cron: "*/20 10-23 * * *"
-    # One deeper pass overnight to pick up schedule/standings/announcement edits.
-    - cron: "25 8 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -29,6 +24,17 @@ on:
         description: "Ignore freshness stamps"
         default: false
         type: boolean
+      source:
+        description: "Refresh initiator"
+        default: manual
+        type: choice
+        options: [manual, cloudflare]
+      scheduled_at:
+        description: "Cloudflare tick time (ISO UTC; leave blank for manual runs)"
+        default: ""
+        type: string
+
+run-name: "${{ inputs.source == 'cloudflare' && 'Cloudflare' || 'Manual' }} refresh (${{ inputs.mode }})"
 
 concurrency:
   group: update-mirror
@@ -36,6 +42,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: read
 
 jobs:
   update:
@@ -52,11 +59,20 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      - name: Prevent duplicate crawls
+        id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REFRESH_SOURCE: ${{ inputs.source }}
+          SCHEDULED_AT: ${{ inputs.scheduled_at }}
+        run: python scheduler/guard.py
+
       # Freshness stamps are what stop every run from re-fetching everything.
       # They are deliberately not committed (that would be ~40 commits a day
       # from the cron alone), so they ride in the Actions cache instead. A cache
       # miss just means one slightly larger crawl, not a broken run.
       - name: Restore crawl state
+        if: steps.guard.outputs.allowed == 'true'
         uses: actions/cache/restore@v4
         with:
           path: data/state.json
@@ -64,30 +80,34 @@ jobs:
           restore-keys: crawl-state-
 
       - name: Pick crawl mode
+        if: steps.guard.outputs.allowed == 'true'
         id: mode
+        env:
+          CRAWL_MODE: ${{ inputs.mode }}
+          CRAWL_FORCE: ${{ inputs.force }}
+          REFRESH_SOURCE: ${{ inputs.source }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
-            echo "force=${{ inputs.force && '--force' || '' }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "25 8 * * *" ]; then
-            echo "mode=daily" >> "$GITHUB_OUTPUT"
-            echo "force=" >> "$GITHUB_OUTPUT"
-          else
-            echo "mode=auto" >> "$GITHUB_OUTPUT"
-            echo "force=" >> "$GITHUB_OUTPUT"
+          case "$CRAWL_MODE" in auto|daily|live|full|nationals) ;; *) exit 1 ;; esac
+          if [ "$REFRESH_SOURCE" = cloudflare ]; then
+            case "$CRAWL_MODE" in auto|daily) ;; *) exit 1 ;; esac
+            CRAWL_FORCE=false
           fi
+          echo "mode=$CRAWL_MODE" >> "$GITHUB_OUTPUT"
+          if [ "$CRAWL_FORCE" = true ]; then echo "force=--force" >> "$GITHUB_OUTPUT"; fi
 
       - name: Crawl
+        if: steps.guard.outputs.allowed == 'true'
         run: python -m scraper.crawl --mode ${{ steps.mode.outputs.mode }} ${{ steps.mode.outputs.force }}
 
       - name: Save crawl state
         uses: actions/cache/save@v4
-        if: always()
+        if: always() && steps.guard.outputs.allowed == 'true'
         with:
           path: data/state.json
           key: crawl-state-${{ github.run_id }}
 
       - name: Detect changes
+        if: steps.guard.outputs.allowed == 'true'
         id: diff
         run: |
           # state.json and meta.json are gitignored. heartbeat.json is
@@ -100,6 +120,7 @@ jobs:
           fi
 
       - name: Commit data
+        if: steps.guard.outputs.allowed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -120,14 +141,14 @@ jobs:
         # A manual run always redeploys: it is the escape hatch if a previous
         # deploy failed after its data was already committed, which would
         # otherwise leave every later run seeing "no change" and never retrying.
-        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.diff.outputs.changed == 'true' || (inputs.source != 'cloudflare' && steps.guard.outputs.allowed == 'true')
         run: python -m build.render --site-url "${{ vars.SITE_URL || 'https://bettergolfweekam.pages.dev' }}"
 
       - name: Deploy to Cloudflare Pages
         # A manual run always redeploys: it is the escape hatch if a previous
         # deploy failed after its data was already committed, which would
         # otherwise leave every later run seeing "no change" and never retrying.
-        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.diff.outputs.changed == 'true' || (inputs.source != 'cloudflare' && steps.guard.outputs.allowed == 'true')
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -135,6 +156,7 @@ jobs:
           command: pages deploy public --project-name=${{ vars.CF_PAGES_PROJECT || 'bettergolfweekam' }} --branch=main
 
       - name: Summary
+        if: always() && steps.guard.outputs.allowed == 'true'
         run: |
           {
             echo "### Mirror update"
@@ -146,3 +168,14 @@ jobs:
             cat data/meta.json
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report upstream failures
+        if: steps.guard.outputs.allowed == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          errors = json.loads(Path('data/meta.json').read_text())['errors']
+          if errors:
+              raise SystemExit(f'Crawl finished with {len(errors)} upstream errors; see the summary.')
+          PY

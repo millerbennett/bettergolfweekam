@@ -309,7 +309,7 @@ up"* asserts a falsehood about the thing the reader most needs to trust.
 | Workflow | Trigger | Does |
 |---|---|---|
 | `ci.yml` | push / PR | 112 tests + render smoke test |
-| `update.yml` | cron `*/20 10-23 * * *` and `25 8 * * *`; dispatch | Crawl → commit → render → deploy (gated) |
+| `update.yml` | Cloudflare Worker dispatch; manual dispatch | Guard → crawl → commit → render → deploy (gated) |
 | `deploy.yml` | push touching `build/**` or `config.json` | Render + deploy (no crawling) |
 
 **Secrets:** `CLOUDFLARE_API_TOKEN` (permission: *Account → Cloudflare Pages →
@@ -323,7 +323,26 @@ Cloudflare project is **Direct Upload**, not the Git integration — CI uploads
 the rendered `public/` itself, so Cloudflare never builds and data commits
 don't trigger builds.
 
+### Refresh scheduler (October 2026)
+
+`scheduler/worker.mjs` replaces GitHub cron with Cloudflare Cron Triggers at
+`*/20 10-23 * * *` and `25 8 * * *`. Never enable both schedulers. The Worker
+calls only GitHub, uses a repo-scoped Actions token stored as a Worker secret,
+and skips active/recent runs and stale ticks without retries. `scheduler/guard.py`
+checks actual Crawl steps inside Actions' concurrency lock to catch duplicate
+dispatch races and reruns. API failures stop the run before fetching upstream.
+Automatic dispatches deploy only on changed content; manual ones retain the
+redeploy escape hatch. See `scheduler/README.md` for setup, pausing and verification.
+
+`Fetcher` now enforces a ten-second minimum, caps routine runs at 60 attempts
+(300 for explicit full backfills), and stops the entire crawl's network activity
+on 403/429/503 or an exhausted retry sequence. Tests simulate requests offline.
+
 ### The heartbeat
+
+The weekly heartbeat remains for compatibility; the Cloudflare timer does not
+depend on GitHub's native scheduled-workflow inactivity rules. The following
+describes why the heartbeat originally existed.
 
 GitHub disables scheduled workflows after **60 days of repository inactivity**.
 Nothing upstream changes between late September and March, and unchanged

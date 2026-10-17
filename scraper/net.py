@@ -25,12 +25,15 @@ HIDDEN_FIELDS = ("__VIEWSTATE", "__VIEWSTATEGENERATOR", "__EVENTVALIDATION")
 
 
 class Fetcher:
-    def __init__(self, crawl_delay: float = 10.0, timeout: int = 45, retries: int = 3):
-        self.crawl_delay = crawl_delay
+    def __init__(self, crawl_delay: float = 10.0, timeout: int = 45, retries: int = 3,
+                 max_requests: int = 60):
+        self.crawl_delay = max(10.0, crawl_delay)
         self.timeout = timeout
         self.retries = retries
         self._last_request = 0.0
         self.request_count = 0
+        self.max_requests = max_requests
+        self._stopped = None
         self._form_cache: dict[str, str] = {}
         self.session = requests.Session()
         self.session.headers.update(
@@ -50,17 +53,31 @@ class Fetcher:
     def _request(self, method: str, url: str, **kwargs) -> str:
         last_error: Exception | None = None
         for attempt in range(self.retries):
+            if self._stopped:
+                raise RuntimeError(self._stopped)
+            if self.request_count >= self.max_requests:
+                self._stopped = f"request budget exhausted ({self.max_requests}); stopping this crawl"
+                raise RuntimeError(self._stopped)
             self._wait()
             self.request_count += 1
             try:
                 resp = self.session.request(method, url, timeout=self.timeout, **kwargs)
+                if resp.status_code in (403, 429, 503):
+                    self._stopped = f"upstream returned HTTP {resp.status_code}; stopping this crawl"
+                    raise RuntimeError(self._stopped)
                 resp.raise_for_status()
                 log.info("%s %s -> %s (%d bytes)", method, url, resp.status_code, len(resp.content))
                 return resp.text
             except Exception as exc:  # network blip, 5xx, timeout
                 last_error = exc
+                if self._stopped:
+                    raise
+                if isinstance(exc, requests.HTTPError) and exc.response is not None and exc.response.status_code < 500:
+                    raise  # Do not retry a missing/invalid page.
                 log.warning("%s %s failed (attempt %d/%d): %s", method, url, attempt + 1, self.retries, exc)
-                time.sleep(2 ** attempt * 5)
+                if attempt + 1 < self.retries:
+                    time.sleep(2 ** attempt * 5)
+        self._stopped = "upstream failed repeatedly; stopping this crawl"
         raise RuntimeError(f"{method} {url} failed after {self.retries} attempts") from last_error
 
     def get(self, url: str) -> str:

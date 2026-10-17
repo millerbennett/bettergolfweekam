@@ -47,7 +47,8 @@ class Crawler:
         self.cfg = cfg
         self.mode = mode
         self.force = force or mode == "full"
-        self.fetcher = Fetcher(crawl_delay=cfg.get("crawl_delay_seconds", 10))
+        self.fetcher = Fetcher(crawl_delay=cfg.get("crawl_delay_seconds", 10),
+                               max_requests=300 if mode == "full" else 60)
         self.state = load_state()
         self.changes = load_changes()
         self.today = local_today(cfg)
