@@ -18,6 +18,8 @@ def may_crawl(runs, current_id, get_jobs, now):
     candidates = []
     for run in runs:
         if str(run["id"]) == str(current_id):
+            if run.get("run_attempt", 1) > 1:
+                candidates.append(run)  # Include earlier attempts of this run.
             continue
         if run["status"] != "completed":
             return False, "another update is active"
@@ -68,9 +70,14 @@ def check_github(now):
             raise RuntimeError(f"GitHub safety check failed: HTTP {response.status_code}")
         return response.json()
 
+    def jobs(run_id):
+        result = get(f"/runs/{run_id}/jobs?filter=all&per_page=100")
+        if result["total_count"] > len(result["jobs"]):
+            raise RuntimeError("Too many workflow attempts to verify safely")
+        return result["jobs"]
+
     runs = get("/workflows/update.yml/runs?branch=main&per_page=100")["workflow_runs"]
-    return may_crawl(runs, os.environ["GITHUB_RUN_ID"],
-                     lambda run_id: get(f"/runs/{run_id}/jobs?per_page=100")["jobs"], now)
+    return may_crawl(runs, os.environ["GITHUB_RUN_ID"], jobs, now)
 
 
 if __name__ == "__main__":

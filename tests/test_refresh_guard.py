@@ -49,3 +49,13 @@ def test_large_backlog_is_skipped_without_fetching_all_jobs():
     def unexpected(_):
         raise AssertionError("must not fetch jobs for a backlog")
     assert not may_crawl([run(n) for n in range(11)], 100, unexpected, NOW)[0]
+
+
+def test_rerunning_the_same_workflow_cannot_bypass_the_cooldown():
+    current = {**run(2, "in_progress"), "run_attempt": 2}
+    assert not may_crawl([current], 2, lambda _: jobs(), NOW)[0]
+
+
+def test_rerun_after_the_cooldown_can_proceed():
+    current = {**run(2, "in_progress"), "run_attempt": 2}
+    assert may_crawl([current], 2, lambda _: jobs(start=20 * 60, end=19 * 60), NOW)[0]
