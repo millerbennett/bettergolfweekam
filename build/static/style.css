@@ -13,6 +13,13 @@
   font-display: swap;
   src: url("fonts/barlow-condensed-extrabold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/barlow-condensed-extrabold-italic.ttf") format("truetype");
+}
 
 :root {
   color-scheme: dark light;
@@ -861,8 +868,8 @@ table.board td:first-child { width: 3.2rem; }
   align-items: center;
   justify-content: space-between;
   gap: 6px;
-  min-height: 104px;
-  padding: 6px 10px 6px 14px;
+  min-height: 64px;
+  padding: 4px 10px;
   border-radius: 13px 3px 0 0;
   border-bottom: 1px solid color-mix(in srgb, var(--player-accent) 28%, var(--line));
   background:
@@ -879,14 +886,15 @@ table.board td:first-child { width: 3.2rem; }
   background: linear-gradient(90deg, var(--player-accent), color-mix(in srgb, var(--player-accent) 15%, transparent));
 }
 .national-player-identity { position: relative; z-index: 1; min-width: 0; flex: 1; }
-.national-flight-label { margin: 0 0 2px; color: var(--player-accent); font-size: .77rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
-.national-flight-label span { font-size: .65rem; font-weight: 600; letter-spacing: .06em; }
-.national-player h3 { margin: 0; font-size: 1.12rem; font-weight: 750; line-height: 1.2; text-transform: none; letter-spacing: -.02em; }
-.national-player h3 a { display: flex; align-items: center; min-height: 44px; color: var(--ink); text-decoration: none; }
-.national-player h3 a:hover { text-decoration: underline; text-decoration-color: var(--player-accent); }
-.national-emblem { position: relative; flex: 0 0 92px; height: 92px; color: var(--player-accent); }
+.national-flight-label { color: var(--player-accent); font-size: .6rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+.national-flight-label span { font-size: .55rem; font-weight: 600; letter-spacing: 0; }
+.national-player h3 { margin: 0; color: var(--ink); font: italic 800 1.5rem/1.05 "Barlow Condensed", "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: .01em; }
+.national-player-link { display: flex; flex-direction: column; justify-content: center; gap: 4px; min-height: 44px; color: var(--ink); text-decoration: none; }
+.national-player-meta { display: flex; align-items: center; flex-wrap: wrap; column-gap: 8px; row-gap: 2px; line-height: 1.2; }
+.national-player-link:hover h3 { text-decoration: underline; text-decoration-color: var(--player-accent); }
+.national-emblem { position: relative; flex: 0 0 56px; height: 56px; color: var(--player-accent); }
 .national-emblem svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 4px 3px rgb(0 0 0 / .3)); }
-.national-emblem-letter { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-bottom: 3px; font: 900 2rem/1 var(--mono); color: var(--player-accent); text-shadow: 0 2px 0 rgb(0 0 0 / .3); }
+.national-emblem-letter { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-bottom: 3px; font: 900 1.35rem/1 var(--mono); color: var(--player-accent); text-shadow: 0 2px 0 rgb(0 0 0 / .3); }
 .emblem-metal-light { stop-color: color-mix(in srgb, var(--player-accent) 65%, white); }
 .emblem-metal-mid { stop-color: var(--player-accent); }
 .emblem-metal-dark { stop-color: color-mix(in srgb, var(--player-accent) 40%, var(--player-tint)); }
@@ -906,7 +914,7 @@ table.board td:first-child { width: 3.2rem; }
     linear-gradient(120deg, var(--surface-2), var(--player-tint));
 }
 .national-player--champ .national-emblem svg { filter: drop-shadow(0 0 8px color-mix(in srgb, var(--player-accent) 25%, transparent)); }
-.national-player--champ .national-emblem-letter { padding-top: 17px; padding-bottom: 0; font-size: .6rem; letter-spacing: -.03em; text-transform: uppercase; }
+.national-player--champ .national-emblem-letter { display: none; }
 .national-player--a .national-emblem svg { filter: drop-shadow(0 0 6px color-mix(in srgb, var(--player-accent) 20%, transparent)); }
 .national-player--a .national-player-heading::after, .national-player--champ .national-player-heading::after {
   content: "";
@@ -919,19 +927,20 @@ table.board td:first-child { width: 3.2rem; }
 .national-player--c .national-player-heading { background: radial-gradient(ellipse at 100% 50%, var(--player-tint), transparent 85%); }
 .national-player--d .national-player-heading { background: linear-gradient(110deg, var(--surface-2) 40%, color-mix(in srgb, var(--player-tint) 40%, var(--surface-2))); border-bottom-color: var(--line); }
 .national-player--d .national-player-heading::before { height: 1px; opacity: .6; }
-.national-player-body { padding: 8px 14px; }
-.national-player-progress { display: flex; align-items: center; gap: 6px; margin: 3px 0 0; color: var(--muted); font-size: .72rem; }
+.national-player-body { display: grid; grid-template-columns: 104px minmax(0, 1fr); align-items: center; gap: 8px; padding: 6px 10px; }
+.national-player-progress { display: inline-flex; align-items: center; gap: 4px; margin: 0; color: var(--muted); font-size: .65rem; font-weight: 400; white-space: nowrap; }
 .national-playing-dot { width: 5px; height: 5px; flex-shrink: 0; border-radius: 50%; background: var(--player-accent); box-shadow: 0 0 8px color-mix(in srgb, var(--player-accent) 35%, transparent); }
-.national-score { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 0 0 8px; }
-.national-score dt { font-size: .75rem; color: var(--muted); }
-.national-score dd { margin: 2px 0 0; font-size: 1.5rem; font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; color: var(--ink); }
-.national-score .national-position { display: inline-flex; align-items: baseline; gap: 2px; font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 2.1rem; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
+.national-score { display: grid; grid-template-columns: 56px minmax(0, 1fr); align-items: center; gap: 8px; margin: 0; }
+.national-score > div { display: grid; grid-template-rows: 12px 29px; align-items: center; }
+.national-score dt { font-size: .6rem; line-height: 1.2; color: var(--muted); }
+.national-score dd { margin: 0; font: 800 1.5rem/1.1 "Barlow Condensed", "Arial Narrow", sans-serif; font-variant-numeric: tabular-nums; color: var(--ink); }
+.national-score .national-position { display: inline-flex; align-items: baseline; gap: 2px; font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 1.8rem; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
 .national-position-tie { font-size: .52em; letter-spacing: 0; color: var(--muted); }
-.national-rounds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin: 0; padding-top: 4px; border-top: 1px solid var(--line); }
-.national-round, .national-round-total { position: relative; min-width: 0; padding: 5px 8px 8px; }
-.national-rounds dt { font-size: .65rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
-.national-rounds dd { margin: 3px 0 0; font: 600 1rem var(--mono); }
-.national-round.is-current::before, .national-round.is-current::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: 4px; height: 2px; border-radius: 2px; }
+.national-rounds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: 3px; min-width: 0; margin: 0; }
+.national-round, .national-round-total { position: relative; min-width: 0; padding: 0 0 5px; text-align: center; }
+.national-rounds dt { font-size: .58rem; line-height: 1.2; color: var(--muted); text-transform: uppercase; letter-spacing: 0; }
+.national-rounds dd { margin: 3px 0 0; font: 800 1.05rem/1.1 "Barlow Condensed", "Arial Narrow", sans-serif; font-variant-numeric: tabular-nums; }
+.national-round.is-current::before, .national-round.is-current::after { content: ""; position: absolute; left: 4px; right: 4px; bottom: 0; height: 2px; border-radius: 2px; }
 .national-round.is-current::before { background: var(--line-2); }
 .national-round.is-current::after { background: var(--player-accent); transform: scaleX(var(--round-progress)); transform-origin: left; }
 .national-round-total { background: none; border-left: 1px solid var(--line-2); border-radius: 0; }
@@ -951,32 +960,27 @@ table.board td:first-child { width: 3.2rem; }
 .national-flight, #our-group { scroll-margin-top: 130px; }
 .national-leader { padding: 12px 0; font-size: .9rem; border-top: 1px solid var(--line); }
 .national-tour { display: block; font-size: .75rem; }
-.national-mobile-rounds { display: none; }
-/* On phones, move round detail below each player instead of widening the table. */
+.national-heading-short { display: none; }
+/* Put the tracked-row marker in the gutter, clear of the position text. */
+table.national-board tr.mine td:first-child { box-shadow: -3px 0 0 var(--accent); }
+/* Keep all eight scores in one player row, with phone-sized column gutters. */
 @media (max-width: 640px) {
-  table.national-board { table-layout: fixed; }
-  table.national-board .national-table-round,
-  table.national-board .national-table-thru { display: none; }
-  table.national-board th { font-size: .62rem; letter-spacing: .05em; }
-  table.national-board th, table.national-board td { padding-right: 6px; }
-  table.national-board th:first-child,
-  table.national-board .national-result-row td:first-child { width: 3rem; }
-  table.national-board th:nth-child(3),
-  table.national-board .national-result-row td:nth-child(3) { width: 3.1rem; text-align: right; }
-  table.national-board th:nth-child(7),
-  table.national-board .national-result-row td:nth-child(7) { width: 3.2rem; text-align: right; padding-right: 8px; }
-  table.national-board .national-table-player { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
-  table.national-board .national-result-row td { border-bottom: 0; padding-top: 8px; padding-bottom: 4px; }
-  table.national-board .national-table-player:has(a) { padding-top: 0; padding-bottom: 0; }
-  table.national-board .national-table-player a { padding: 8px 0 4px; min-height: 44px; }
-  table.national-board .national-tour { font-size: .7rem; line-height: 1.3; margin-bottom: 4px; }
-  table.national-board .national-mobile-rounds { display: table-row; }
-  table.national-board .national-mobile-rounds td { padding: 2px 8px 10px 10px; width: auto; white-space: normal; }
-  .national-row-rounds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 1.4fr; gap: 6px; margin: 0; }
-  .national-row-rounds > div { display: flex; align-items: baseline; gap: 4px; }
-  .national-row-rounds > div:last-child { justify-content: flex-end; }
-  .national-row-rounds dt { color: var(--muted); font: 400 .62rem/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; white-space: nowrap; }
-  .national-row-rounds dd { margin: 0; color: var(--ink-2); font: 500 .75rem/1.4 var(--mono); }
+  .national-table-wrap { padding-inline: 4px; }
+  table.national-board { table-layout: fixed; font-size: .75rem; }
+  .national-col-position { width: 36px; }
+  .national-col-par, .national-col-total { width: 30px; }
+  .national-col-round { width: 24px; }
+  .national-col-thru { width: 26px; }
+  table.national-board th, table.national-board td { padding: 8px 2px 8px 0; }
+  table.national-board th { font-size: .6rem; letter-spacing: 0; }
+  table.national-board th:first-child, table.national-board td:first-child { width: auto; padding-left: 5px; }
+  table.national-board td:nth-child(2) { min-width: 0; overflow-wrap: anywhere; }
+  table.national-board td.num, table.national-board th.num { text-align: center; }
+  table.national-board td:has(a) { padding-block: 0; }
+  table.national-board td a { display: flex; align-items: center; min-height: 44px; padding: 6px 0; }
+  table.national-board .national-tour { font-size: .6rem; line-height: 1.2; padding-bottom: 4px; }
+  .national-heading-long { display: none; }
+  .national-heading-short { display: inline; text-decoration: none; }
 }
 .national-details { margin-top: 16px; border-top: 1px solid var(--line-2); }
 .national-details summary { cursor: pointer; padding: 15px 0; min-height: 44px; color: var(--accent-ink); font-size: .9rem; font-weight: 600; }

@@ -44,23 +44,16 @@
 {% macro score_table(rows, label, full=false) %}
 <div class="scroll national-table-wrap" tabindex="0" role="region" aria-label="{{ label }}">
 <table class="data board national-board" aria-label="{{ label }}">
-  <thead><tr><th scope="col">Pos</th><th scope="col">Player</th><th scope="col" class="num">To par</th><th scope="col" class="num national-table-round">R1</th><th scope="col" class="num national-table-round">R2</th><th scope="col" class="num national-table-round">R3</th><th scope="col" class="num">Total</th><th scope="col" class="num national-table-thru">Thru / 54</th></tr></thead>
+  <colgroup><col class="national-col-position"><col><col class="national-col-par"><col class="national-col-round"><col class="national-col-round"><col class="national-col-round"><col class="national-col-total"><col class="national-col-thru"></colgroup>
+  <thead><tr><th scope="col">Pos</th><th scope="col">Player</th><th scope="col" class="num"><span class="national-heading-long">To par</span><abbr class="national-heading-short" title="To par">+/-</abbr></th><th scope="col" class="num">R1</th><th scope="col" class="num">R2</th><th scope="col" class="num">R3</th><th scope="col" class="num"><span class="national-heading-long">Total</span><abbr class="national-heading-short" title="Total strokes">Tot</abbr></th><th scope="col" class="num"><span class="national-heading-long">Thru / 54</span><abbr class="national-heading-short" title="Holes played out of 54">Thru</abbr></th></tr></thead>
   <tbody>{% for row in rows %}
-    <tr class="national-result-row{% if row.tracked %} mine{% endif %}">
+    <tr{% if row.tracked %} class="mine"{% endif %}>
       <td>{{ row.position or '—' }}</td>
-      <td class="national-table-player">{% if row.slug %}<a href="{{ url('p/' ~ row.slug ~ '/index.html') }}">{{ row.name | first_last }}</a>{% else %}{{ row.name | first_last }}{% endif %}
+      <td>{% if row.slug %}<a href="{{ url('p/' ~ row.slug ~ '/index.html') }}">{{ row.name | first_last }}</a>{% else %}{{ row.name | first_last }}{% endif %}
         {% if full %}<span class="detail national-tour">{{ row.tour }}</span>{% endif %}</td>
       <td class="num">{{ row.to_par | replace(' ', '') or '—' }}</td>
-      {% for round in row.rounds %}<td class="num national-table-round">{{ round or '—' }}</td>{% endfor %}
-      <td class="num">{{ row.total or '—' }}</td><td class="num national-table-thru">{{ row.thru or '—' }}</td>
-    </tr>
-    <tr class="national-mobile-rounds{% if row.tracked %} mine{% endif %}">
-      <td colspan="4">
-        <dl class="national-row-rounds" aria-label="Round scores for {{ row.name | first_last }}">
-          {% for round in row.rounds %}<div><dt>R{{ loop.index }}</dt><dd>{{ round or '—' }}</dd></div>{% endfor %}
-          <div><dt>Thru</dt><dd>{{ row.thru or '—' }}{% if row.thru.isdigit() %}/54{% endif %}</dd></div>
-        </dl>
-      </td>
+      {% for round in row.rounds %}<td class="num">{{ round or '—' }}</td>{% endfor %}
+      <td class="num">{{ row.total or '—' }}</td><td class="num">{{ row.thru or '—' }}</td>
     </tr>
   {% endfor %}</tbody>
 </table></div>
@@ -89,9 +82,13 @@
     <article class="national-player national-player--{{ row.flight | lower }}{% if nationals.active and row.status == 'in_progress' %} is-playing{% endif %}" style="--card-order: {{ loop.index0 }}">
       <div class="national-player-heading">
         <div class="national-player-identity">
-          <p class="national-flight-label">{{ row.flight }} <span>Flight</span></p>
-          <h3><a href="{{ url('p/' ~ row.slug ~ '/index.html') }}">{{ row.name | first_last }}</a></h3>
-          <p class="national-player-progress">{% if nationals.active and row.status == 'in_progress' %}<span class="national-playing-dot" aria-hidden="true"></span>{% endif %}{{ row.progress }}</p>
+          <a class="national-player-link" href="{{ url('p/' ~ row.slug ~ '/index.html') }}">
+            <h3>{{ row.name | first_last }}</h3>
+            <span class="national-player-meta">
+              <span class="national-flight-label">{{ row.flight }} <span>Flight</span></span>
+              <span class="national-player-progress">{% if nationals.active and row.status == 'in_progress' %}<span class="national-playing-dot" aria-hidden="true"></span>{% endif %}{{ row.progress }}</span>
+            </span>
+          </a>
         </div>
         {{ flight_emblem(row.flight, row.slug) }}
       </div>
