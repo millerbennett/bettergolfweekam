@@ -2504,27 +2504,10 @@
       "status": "between_rounds"
     },
     {
-      "name": "Savoy, Kain",
-      "tour": "Louisiana South",
-      "flight": "A",
-      "position": "148",
-      "rounds": [
-        "88",
-        "100",
-        "0"
-      ],
-      "total": "188",
-      "thru": "36",
-      "to_par": "+ 44",
-      "holes": 36,
-      "progress": "R2 complete · 36 holes",
-      "status": "between_rounds"
-    },
-    {
       "name": "Poetz, Chris",
       "tour": "St. Louis, MO",
       "flight": "A",
-      "position": "T149",
+      "position": "T148",
       "rounds": [
         "95",
         "95",
@@ -2541,7 +2524,7 @@
       "name": "Doh, Kevin",
       "tour": "New York Upstate",
       "flight": "A",
-      "position": "T149",
+      "position": "T148",
       "rounds": [
         "92",
         "98",
@@ -2558,7 +2541,7 @@
       "name": "Levine, Frederick",
       "tour": "Central North Carolina",
       "flight": "A",
-      "position": "T151",
+      "position": "T150",
       "rounds": [
         "94",
         "97",
@@ -2575,7 +2558,7 @@
       "name": "Calaway, Patrick",
       "tour": "Mississippi",
       "flight": "A",
-      "position": "T151",
+      "position": "T150",
       "rounds": [
         "93",
         "98",
@@ -2592,7 +2575,7 @@
       "name": "Arns, Bryant",
       "tour": "Hilton Head-Savannah",
       "flight": "A",
-      "position": "153",
+      "position": "152",
       "rounds": [
         "99",
         "95",
@@ -2604,7 +2587,24 @@
       "holes": 36,
       "progress": "R2 complete · 36 holes",
       "status": "between_rounds"
+    },
+    {
+      "name": "Savoy, Kain",
+      "tour": "Louisiana South",
+      "flight": "A",
+      "position": "153",
+      "rounds": [
+        "88",
+        "100",
+        "162"
+      ],
+      "total": "350",
+      "thru": "54",
+      "to_par": "+ 134",
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
     }
   ],
-  "fetched_at": "2026-10-17T21:01:16+00:00"
+  "fetched_at": "2026-10-18T12:21:33+00:00"
 }
