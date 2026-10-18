@@ -3150,27 +3150,10 @@
       "status": "complete"
     },
     {
-      "name": "Martin, DJ",
-      "tour": "North Florida",
-      "flight": "B",
-      "position": "T184",
-      "rounds": [
-        "90",
-        "100",
-        "115"
-      ],
-      "total": "305",
-      "thru": "54",
-      "to_par": "+ 89",
-      "holes": 54,
-      "progress": "Finished · 54 holes",
-      "status": "complete"
-    },
-    {
       "name": "LeMense, Thomas",
       "tour": "Eastern NC",
       "flight": "B",
-      "position": "187",
+      "position": "186",
       "rounds": [
         "109",
         "115",
@@ -3187,7 +3170,7 @@
       "name": "Mullis, Dusty",
       "tour": "Hilton Head-Savannah",
       "flight": "B",
-      "position": "188",
+      "position": "187",
       "rounds": [
         "92",
         "92",
@@ -3204,7 +3187,7 @@
       "name": "Almeida, Orlando",
       "tour": "El Paso, TX/ Las Cruces, NM",
       "flight": "B",
-      "position": "189",
+      "position": "188",
       "rounds": [
         "95",
         "92",
@@ -3221,7 +3204,7 @@
       "name": "Frye, John",
       "tour": "Tidewater, VA",
       "flight": "B",
-      "position": "190",
+      "position": "189",
       "rounds": [
         "93",
         "96",
@@ -3230,6 +3213,23 @@
       "total": "351",
       "thru": "54",
       "to_par": "+ 135",
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
+    },
+    {
+      "name": "Martin, DJ",
+      "tour": "North Florida",
+      "flight": "B",
+      "position": "190",
+      "rounds": [
+        "90",
+        "100",
+        "162"
+      ],
+      "total": "352",
+      "thru": "54",
+      "to_par": "+ 136",
       "holes": 54,
       "progress": "Finished · 54 holes",
       "status": "complete"
@@ -3269,5 +3269,5 @@
       "status": "complete"
     }
   ],
-  "fetched_at": "2026-10-18T18:01:27+00:00"
+  "fetched_at": "2026-10-18T19:21:26+00:00"
 }
