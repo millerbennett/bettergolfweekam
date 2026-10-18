@@ -651,6 +651,23 @@
       "status": "complete"
     },
     {
+      "name": "Layne, Brian",
+      "tour": "Richmond",
+      "flight": "A",
+      "position": "T38",
+      "rounds": [
+        "85",
+        "81",
+        "87"
+      ],
+      "total": "253",
+      "thru": "54",
+      "to_par": "+ 37",
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
+    },
+    {
       "name": "Bryant, Travis",
       "tour": "Augusta, GA",
       "flight": "A",
@@ -671,7 +688,7 @@
       "name": "Blum, Jon",
       "tour": "Tampa, FL",
       "flight": "A",
-      "position": "T40",
+      "position": "T41",
       "rounds": [
         "88",
         "84",
@@ -688,7 +705,7 @@
       "name": "Martin, Mike",
       "tour": "Central North Carolina",
       "flight": "A",
-      "position": "T40",
+      "position": "T41",
       "rounds": [
         "83",
         "86",
@@ -705,7 +722,7 @@
       "name": "Dobbins, John",
       "tour": "Hilton Head-Savannah",
       "flight": "A",
-      "position": "T40",
+      "position": "T41",
       "rounds": [
         "85",
         "83",
@@ -719,27 +736,10 @@
       "status": "complete"
     },
     {
-      "name": "Layne, Brian",
-      "tour": "Richmond",
-      "flight": "A",
-      "position": "T40",
-      "rounds": [
-        "85",
-        "81",
-        "88"
-      ],
-      "total": "254",
-      "thru": "54",
-      "to_par": "+ 38",
-      "holes": 54,
-      "progress": "Finished · 54 holes",
-      "status": "complete"
-    },
-    {
       "name": "King, Stacy",
       "tour": "Louisiana North",
       "flight": "A",
-      "position": "T40",
+      "position": "T41",
       "rounds": [
         "77",
         "87",
@@ -2589,5 +2589,5 @@
       "status": "complete"
     }
   ],
-  "fetched_at": "2026-10-18T18:21:14+00:00"
+  "fetched_at": "2026-10-18T18:41:21+00:00"
 }
