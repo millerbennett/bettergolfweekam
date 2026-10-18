@@ -940,27 +940,10 @@
       "status": "complete"
     },
     {
-      "name": "McCutcheon, Justin",
-      "tour": "Atlanta, GA",
-      "flight": "Champ",
-      "position": "56",
-      "rounds": [
-        "83",
-        "84",
-        "134"
-      ],
-      "total": "301",
-      "thru": "54",
-      "to_par": "+ 85",
-      "holes": 54,
-      "progress": "Finished · 54 holes",
-      "status": "complete"
-    },
-    {
       "name": "Ali, Adam",
       "tour": "Tampa, FL",
       "flight": "Champ",
-      "position": "57",
+      "position": "56",
       "rounds": [
         "94",
         "107",
@@ -977,7 +960,7 @@
       "name": "Amick, Larry",
       "tour": "Chicago, IL",
       "flight": "Champ",
-      "position": "58",
+      "position": "57",
       "rounds": [
         "78",
         "87",
@@ -986,6 +969,23 @@
       "total": "327",
       "thru": "54",
       "to_par": "+ 111",
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
+    },
+    {
+      "name": "McCutcheon, Justin",
+      "tour": "Atlanta, GA",
+      "flight": "Champ",
+      "position": "58",
+      "rounds": [
+        "83",
+        "84",
+        "162"
+      ],
+      "total": "329",
+      "thru": "54",
+      "to_par": "+ 113",
       "holes": 54,
       "progress": "Finished · 54 holes",
       "status": "complete"
@@ -1059,5 +1059,5 @@
       "status": "complete"
     }
   ],
-  "fetched_at": "2026-10-18T17:41:07+00:00"
+  "fetched_at": "2026-10-18T19:01:10+00:00"
 }

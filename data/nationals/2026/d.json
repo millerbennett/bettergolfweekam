@@ -25,45 +25,45 @@
       "name": "Miller, Mike",
       "tour": "Milwaukee, WI",
       "flight": "D",
-      "position": "T2",
+      "position": "2",
       "rounds": [
         "96",
         "93",
-        "89"
+        "94"
       ],
-      "total": "278",
-      "thru": "53",
+      "total": "283",
+      "thru": "54",
       "to_par": "+ 67",
-      "holes": 53,
-      "progress": "R3 · thru 17 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Gray, Josh",
-      "tour": "North Florida",
-      "flight": "D",
-      "position": "T2",
-      "rounds": [
-        "93",
-        "95",
-        "90"
-      ],
-      "total": "278",
-      "thru": "53",
-      "to_par": "+ 67",
-      "holes": 53,
-      "progress": "R3 · thru 17 of 18",
-      "status": "in_progress"
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
     },
     {
       "name": "Aamodt, Robert",
       "tour": "Denver, CO",
       "flight": "D",
-      "position": "4",
+      "position": "T3",
       "rounds": [
         "96",
         "95",
         "94"
+      ],
+      "total": "285",
+      "thru": "54",
+      "to_par": "+ 69",
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
+    },
+    {
+      "name": "Gray, Josh",
+      "tour": "North Florida",
+      "flight": "D",
+      "position": "T3",
+      "rounds": [
+        "93",
+        "95",
+        "97"
       ],
       "total": "285",
       "thru": "54",
@@ -165,37 +165,20 @@
       "rounds": [
         "99",
         "87",
-        "98"
+        "103"
       ],
-      "total": "284",
-      "thru": "53",
+      "total": "289",
+      "thru": "54",
       "to_par": "+ 73",
-      "holes": 53,
-      "progress": "R3 · thru 17 of 18",
-      "status": "in_progress"
-    },
-    {
-      "name": "Novak, Butch",
-      "tour": "Columbus, OH",
-      "flight": "D",
-      "position": "11",
-      "rounds": [
-        "97",
-        "90",
-        "98"
-      ],
-      "total": "285",
-      "thru": "53",
-      "to_par": "+ 74",
-      "holes": 53,
-      "progress": "R3 · thru 17 of 18",
-      "status": "in_progress"
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
     },
     {
       "name": "Gresham, Jamie",
       "tour": "Atlanta, GA",
       "flight": "D",
-      "position": "12",
+      "position": "11",
       "rounds": [
         "92",
         "103",
@@ -212,7 +195,7 @@
       "name": "Van meter, Danny",
       "tour": "St. Louis, MO",
       "flight": "D",
-      "position": "13",
+      "position": "12",
       "rounds": [
         "101",
         "90",
@@ -229,7 +212,7 @@
       "name": "Stephens, Shane",
       "tour": "Louisiana South",
       "flight": "D",
-      "position": "T14",
+      "position": "T13",
       "rounds": [
         "103",
         "92",
@@ -246,11 +229,28 @@
       "name": "Rossi, Walter",
       "tour": "Tampa, FL",
       "flight": "D",
-      "position": "T14",
+      "position": "T13",
       "rounds": [
         "100",
         "95",
         "98"
+      ],
+      "total": "293",
+      "thru": "54",
+      "to_par": "+ 77",
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
+    },
+    {
+      "name": "Novak, Butch",
+      "tour": "Columbus, OH",
+      "flight": "D",
+      "position": "T13",
+      "rounds": [
+        "97",
+        "90",
+        "106"
       ],
       "total": "293",
       "thru": "54",
@@ -1620,23 +1620,6 @@
       "status": "complete"
     },
     {
-      "name": "Copsey, Bruce",
-      "tour": "California",
-      "flight": "D",
-      "position": "T96",
-      "rounds": [
-        "111",
-        "102",
-        "106"
-      ],
-      "total": "319",
-      "thru": "54",
-      "to_par": "+ 103",
-      "holes": 54,
-      "progress": "Finished · 54 holes",
-      "status": "complete"
-    },
-    {
       "name": "Edwards, Adrienne",
       "tour": "Columbus, OH",
       "flight": "D",
@@ -1708,7 +1691,7 @@
       "name": "James, Charlie",
       "tour": "Orlando, FL",
       "flight": "D",
-      "position": "T101",
+      "position": "T100",
       "rounds": [
         "110",
         "105",
@@ -1722,10 +1705,27 @@
       "status": "complete"
     },
     {
+      "name": "Copsey, Bruce",
+      "tour": "California",
+      "flight": "D",
+      "position": "T100",
+      "rounds": [
+        "111",
+        "102",
+        "107"
+      ],
+      "total": "320",
+      "thru": "54",
+      "to_par": "+ 104",
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
+    },
+    {
       "name": "Walker, Chris",
       "tour": "Richmond",
       "flight": "D",
-      "position": "T101",
+      "position": "T100",
       "rounds": [
         "103",
         "102",
@@ -2062,5 +2062,5 @@
       "status": "complete"
     }
   ],
-  "fetched_at": "2026-10-18T18:41:51+00:00"
+  "fetched_at": "2026-10-18T19:01:49+00:00"
 }
