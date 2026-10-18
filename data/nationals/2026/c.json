@@ -2045,27 +2045,10 @@
       "status": "complete"
     },
     {
-      "name": "McConnico, Duane",
-      "tour": "Dallas- Fort Worth, TX",
-      "flight": "C",
-      "position": "121",
-      "rounds": [
-        "107",
-        "99",
-        "121"
-      ],
-      "total": "327",
-      "thru": "54",
-      "to_par": "+ 111",
-      "holes": 54,
-      "progress": "Finished · 54 holes",
-      "status": "complete"
-    },
-    {
       "name": "Taylor, Noah",
       "tour": "Indiana-Western KY",
       "flight": "C",
-      "position": "122",
+      "position": "121",
       "rounds": [
         "108",
         "112",
@@ -2079,27 +2062,10 @@
       "status": "complete"
     },
     {
-      "name": "Sazo, Chris",
-      "tour": "Dallas- Fort Worth, TX",
-      "flight": "C",
-      "position": "123",
-      "rounds": [
-        "92",
-        "101",
-        "142"
-      ],
-      "total": "335",
-      "thru": "54",
-      "to_par": "+ 119",
-      "holes": 54,
-      "progress": "Finished · 54 holes",
-      "status": "complete"
-    },
-    {
       "name": "Siders, Jim",
       "tour": "Columbus, OH",
       "flight": "C",
-      "position": "124",
+      "position": "T122",
       "rounds": [
         "97",
         "96",
@@ -2113,10 +2079,27 @@
       "status": "complete"
     },
     {
+      "name": "Sazo, Chris",
+      "tour": "Dallas- Fort Worth, TX",
+      "flight": "C",
+      "position": "T122",
+      "rounds": [
+        "92",
+        "101",
+        "162"
+      ],
+      "total": "355",
+      "thru": "54",
+      "to_par": "+ 139",
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
+    },
+    {
       "name": "Risner, Don",
       "tour": "California",
       "flight": "C",
-      "position": "125",
+      "position": "124",
       "rounds": [
         "98",
         "100",
@@ -2133,7 +2116,7 @@
       "name": "Payton, Clint",
       "tour": "Indianapolis, IN",
       "flight": "C",
-      "position": "126",
+      "position": "125",
       "rounds": [
         "98",
         "102",
@@ -2142,6 +2125,23 @@
       "total": "362",
       "thru": "54",
       "to_par": "+ 146",
+      "holes": 54,
+      "progress": "Finished · 54 holes",
+      "status": "complete"
+    },
+    {
+      "name": "McConnico, Duane",
+      "tour": "Dallas- Fort Worth, TX",
+      "flight": "C",
+      "position": "126",
+      "rounds": [
+        "107",
+        "99",
+        "162"
+      ],
+      "total": "368",
+      "thru": "54",
+      "to_par": "+ 152",
       "holes": 54,
       "progress": "Finished · 54 holes",
       "status": "complete"
@@ -2181,5 +2181,5 @@
       "status": "complete"
     }
   ],
-  "fetched_at": "2026-10-18T18:01:37+00:00"
+  "fetched_at": "2026-10-18T19:41:36+00:00"
 }
