@@ -296,12 +296,12 @@
       "tid": "18339",
       "date": "2026-10-18",
       "name": "B2 Flight Day 3",
-      "course": "Golden Bear Golf Club",
+      "course": "Oyster Reef Golf Club",
       "start_time": "8:30",
       "start_type": "Shotgun",
       "cost": "$",
       "is_major": false,
-      "course_url": "https://www.clubcorp.com/clubs/golden-bear-golf-club-at-indigo-run/golf/golf-course",
+      "course_url": "https://hiltonheadgolf.net/clubs/oyster-reef",
       "register_url": null,
       "registration_open": false,
       "flight": "B",
@@ -364,5 +364,5 @@
       "tid": "18327"
     }
   ],
-  "fetched_at": "2026-10-17T13:24:47+00:00"
+  "fetched_at": "2026-10-18T08:25:49+00:00"
 }
